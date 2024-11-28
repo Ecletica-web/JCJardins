@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jardins Cansados</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+		margin: 0;
+        }
+	
+        /* Header */
+       /* Header Section */
+header {
+    padding: 1rem 2rem;
+    background: white;
+    display: flex; /* Use flexbox to align elements */
+    justify-content: space-between; /* Adjust spacing between title and nav */
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #2d572c;
+    margin-left: 13rem; /* Move the title slightly to the right */
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem; /* Spacing between navigation links */
+    margin-right: 13rem; /* Move navigation slightly to the left */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #333;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #28a745;
+}
+
+        /* Hero Section */
+        .hero {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the left */
+    color: white;
+    background-image: url('image2.1.jpg'); /* Use your hero image */
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    padding: 2rem;
+}
+
+.hero-content {
+    max-width: 600px;
+       padding: 2rem;
+    border-radius: 8px;
+    margin-left: 2rem; /* Add spacing from the left edge */
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 2.8rem; /* Bigger title font size */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: white;
+    margin-left: 8rem; /* Move the title slightly to the right */
+}
+
+.hero p {
+    font-size: 1.25rem; /* Subtitle font size */
+    margin-bottom: 1.5rem;
+    color: #f0f0f0; /* Slightly lighter subtitle color */
+    margin-left: 8rem; /* Move the title slightly to the right */
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-left: 8rem; /* Move the title slightly to the right */
+}
+
+.cta-button:hover {
+    background-color: #218838;
+    transform: translateY(-3px); /* Subtle hover effect */
+}
+
+       /* About Section */
+.about-container {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start; /* Align items to the top */
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.about-text {
+    flex: 1;
+    color: #333;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 1rem; /* Add space below the title */
+    text-align: left; /* Align the title with the text */
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+    text-align: left; /* Ensure text aligns properly with title */
+}
+
+.about-text a {
+    display: inline-block; /* Make link look like a button */
+    background-color: #28a745;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.about-text a:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+
+	/* Section Styling */
+
+        .section {
+            padding: 4rem 2rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2d572c;
+            margin-bottom: 1.5rem;
+        }
+        .section p {
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+/* Slider Section */
+.image-slider-section {
+    width: 82%; /* Adjusted for better responsiveness */
+    height: 600px;
+    margin: 8rem auto; /* Reduced margin for better spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    position: relative;
+    overflow: hidden; /* Ensures extra slides stay hidden */
+}
+
+/* Slider Container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide slides outside the container */
+}
+
+/* Slider Track */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth slide movement */
+    width: calc(100% * 10); /* Dynamically adjust based on slide count */
+    transform: translateX(0); /* Start position of the slider */
+}
+
+/* Individual Slide */
+.slide {
+    flex: 0 0 33.33333333333333333333%; /* Each slide takes up the full container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1; /* Reduced opacity for inactive slides */
+    transform: scale(1); /* Slightly smaller size for inactive slides */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.slide.active {
+    transform: scale(1); /* Full size for the active slide */
+    opacity: 1; /* Fully visible */
+    z-index: 3; /* Bring to the top */
+}
+
+/* Previous and Next Slides */
+.slide.prev, .slide.next {
+    transform: scale(1); /* Slightly larger than default inactive slides */
+    opacity: 1; /* Make them semi-visible */
+    z-index: 2;
+}
+
+/* Navigation Arrows */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.slider-arrow.left-arrow {
+    left: 1rem; /* Added padding for better accessibility */
+}
+
+.slider-arrow.right-arrow {
+    right: 1rem; /* Added padding for better accessibility */
+}
+
+.slider-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
+
+/* Additional Responsiveness */
+@media (max-width: 768px) {
+    .image-slider-section {
+        width: 100%; /* Full width on smaller screens */
+        height: 400px; /* Adjust height for smaller devices */
+    }
+
+    .slider-arrow {
+        font-size: 1.2rem; /* Smaller arrows */
+        padding: 0.8rem; /* Reduced padding */
+    }
+}
+
+       .services {
+        display: grid;
+justify-content: center; /* Center all items */
+
+	grid-template-columns: repeat(3, 1fr); /* Always 3 columns */  
+	  gap: 1.5rem; /* Space between items */
+	max-width: 1200px;
+	margin: 0 auto; /* Center the grid within the page */
+    justify-content: center; /* Center all items */
+
+}
+
+
+.service-card {
+    flex: 1 1 calc(33%); /* Allow cards to take 30% of the row width */
+    max-width: 400px; /* Ensure the cards don't grow too large */
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    cursor: pointer;
+}
+
+
+.service-card:hover {
+    transform: translateY(-10px); /* Makes the card pop up */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Gives a stronger shadow */
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    margin: 1rem;
+    color: #2d572c;
+}
+
+.service-card p {
+    margin: 0 1rem 1.5rem;
+    color: #555;
+}
+
+.service-card a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #28a745;
+    margin-left: 1rem;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .service-card {
+        flex: 1 1 100%; /* Stacks the cards on smaller screens */
+        max-width: 100%; /* Ensure the cards span full width */
+    }
+}
+
+        /* Contact Section */
+        .contact-section {
+    background-color: #f9f9f9;
+    padding: 4rem 2rem;
+}
+
+.contact-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch; /* Ensure both sections stretch to the same height */
+}
+
+
+/* Form Section */
+.form-section {
+    flex: 1;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    
+    
+}
+
+.form-section h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2d572c;
+    margin-bottom: 0.5rem;
+}
+
+.form-section p {
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 1rem;
+}
+
+.form-section label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.form-section input, .form-section textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-section textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.form-section button {
+    display: inline-block;
+            background-color: #2d572c; /* Orange color */
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 1rem 10rem;
+            border: none;
+            border-radius: 50px; /* Fully rounded edges */
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease; /* Smooth transition */
+            
+    margin-top: 1rem; /* Add spacing above the button */
+    margin-left: 4rem;
+    align-self: center; /* Ensure the button stays centered */
+}
+
+.form-section button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: left;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-container input {
+    width: 16px; /* Smaller width */
+    height: 16px; /* Smaller height */
+    margin-right: 0.5rem;
+}
+
+.checkbox-container label {
+    font-size: 0.9rem;
+    align-items: left;
+}
+/* Information Section */
+.info-section {
+    flex: 1;
+    background: white;
+    padding: 2rem; /* Same padding as form-section */
+    
+    border-radius: 8px;
+    
+    text-align: left;
+    display: flex;
+    flex-direction: column; /* Ensure proper vertical alignment */
+    justify-content: space-between; /* Space content evenly if needed */
+}
+.info-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem; /* Add space below the image */
+}
+.info-section h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2d572c;
+    margin-bottom: 1rem;
+}
+
+.info-section p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.info-section a {
+    color: #28a745;
+    text-decoration: none;
+}
+
+.info-section a:hover {
+    text-decoration: underline;
+}
+
+.info-section h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2d572c;
+    margin-top: 1.5rem;
+}
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eaeaea;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>JARDINS CANSADOS</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="galeria jardins cansados.html">Galeria</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+   <section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Jardins Cansados</h1>
+        <p>Creating Beautiful Green Spaces in Lisbon</p>
+        <a href="#services" class="cta-button">View Services</a>
+    </div>
+</section>
+
+
+    <section class="about-container">
+    <div class="about-text">
+        <h2>Your Green Oasis</h2> <!-- Title now grouped with the text -->
+        <p>
+            At Jardins Cansados, we specialize in creating stunning gardens that breathe life into your surroundings. 
+            Located in the heart of Lisbon, our professional gardening services include meticulous garden construction, 
+            ongoing maintenance, and efficient irrigation solutions tailored to both residential and commercial properties.
+        </p>
+        <a href="#contact" class="cta-button">Get in touch</a>
+    </div>
+    <div class="about-image">
+        <img src="image2.1.jpg" alt="Beautiful Garden">
+    </div>
+</section>
+
+<!-- Image Slider Section -->
+<section class="image-slider-section" style="background-color: #FFFFFF ;">
+    <div class="slider-container">
+        <button class="slider-arrow left-arrow">&#10094;</button>
+        <div class="slider">
+    <div class="slide">
+        <img src="image2.1.jpg" alt="Slide 1">
+    </div>
+    <div class="slide">
+        <img src="image3.jpg" alt="Slide 2">
+    </div>
+    <div class="slide">
+        <img src="image4.jpg" alt="Slide 3">
+    </div>
+    <div class="slide">
+        <img src="image5.jpg" alt="Slide 4">
+    </div>
+    <div class="slide">
+        <img src="image2.1.jpg" alt="Slide 5">
+    </div>
+    <div class="slide">
+        <img src="image3.jpg" alt="Slide 6">
+    </div>
+    <div class="slide">
+        <img src="image4.jpg" alt="Slide 7">
+    </div>
+    <div class="slide">
+        <img src="image5.jpg" alt="Slide 8">
+    </div>
+    <div class="slide">
+        <img src="image2.1.jpg" alt="Slide 9">
+    </div>
+    <div class="slide">
+        <img src="image3.jpg" alt="Slide 10">
+    </div>
+</div>
+        <button class="slider-arrow right-arrow">&#10095;</button>
+    </div>
+</section>
+
+
+    <!-- Services Section -->
+    <section class="section" id="services" style="background-color: #FFFFFF ;">
+        <h2>Expert Gardening Solutions</h2>
+        <p>Tailored for beautiful green spaces</p>
+ <!-- Row 1 -->
+        <div class="services">
+            <a href="Construcao.html" class="service-card">
+                <img src="image2.1.jpg" alt="Garden Construction">
+                <h3>Garden Construction</h3>
+                <p>Transform your outdoor space into a stunning garden.</p>
+            </a>
+            <a href="Rega.html" class="service-card">
+                <img src="image3.jpg" alt="Garden Maintenance">
+                <h3>Manutenção de Jardins</h3>
+                <p>Keep your garden thriving and beautiful all year round.</p>
+            </a>
+            <a href="Manutencao.html" class="service-card">
+                <img src="image4.jpg" alt="Irrigation Solutions">
+                <h3>Sistemas de Irrigação</h3>
+                <p>Efficient irrigation systems for healthy, sustainable gardens.</p>
+            </a>
+ <!-- Row 2 -->
+ 	
+        <a href="Construcao.html" class="service-card">
+            <img src="image2.1.jpg" alt="Garden Construction">
+            <h3>Garden Construction</h3>
+            <p>Transform your outdoor space into a stunning garden.</p>
+        </a>
+        <a href="Rega.html" class="service-card">
+            <img src="image3.jpg" alt="Garden Maintenance">
+            <h3>Manutenção de Jardins</h3>
+            <p>Keep your garden thriving and beautiful all year round.</p>
+        </a>
+        <a href="Manutencao.html" class="service-card">
+            <img src="image4.jpg" alt="Irrigation Solutions">
+            <h3>Sistemas de Irrigação</h3>
+            <p>Efficient irrigation systems for healthy, sustainable gardens.</p>
+        </a>
+
+    </section>
+
+   <section class="contact-section" style="background-color: #FFFFFF;">
+    <div class="contact-container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h2>Get In Touch</h2>
+            <p>Let’s create your dream garden! Fill out the form below, and we’ll get back to you shortly.</p>
+            <form>
+                <label for="name">Name <span>*</span></label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+                
+                <label for="email">Email Address <span>*</span></label>
+                <input type="email" id="email" placeholder="Enter your email address" required>
+                
+                <label for="phone">Phone Number <span>*</span></label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Tell us about your project..."></textarea>
+                
+                <div class="checkbox-container">
+                    <input type="checkbox" id="consent" required>
+                    <label for="consent">
+                        I allow this website to store my submission so they can respond to my inquiry. <span>*</span>
+                    </label>
+                </div>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        
+        <!-- Information Section -->
+        <div class="info-section">
+            <img src="image2.1.jpg" alt="Quote Section Image" class="info-image">
+            <h2>Contacte-nos para saber mais!</h2>
+            <p>Looking for a beautiful, personalized garden? Share your ideas with us, and our expert team will design a unique space tailored just for you.</p>
+            <p>Leave your contact details or contact us.</p>
+            <p><strong>Email:</strong> <a href="mailto:jardinscansados@paçodearcos.pt">jardinscansados@paçodearcos.pt</a></p>
+            <p><strong>Location:</strong> <a href="#">Lisbon, 11 PT</a></p>
+            <h3>Hours</h3>
+            <p>Monday - Friday: 9:00am - 10:00pm</p>
+            <p>Saturday: 9:00am - 6:00pm</p>
+            <p>Sunday: 9:00am - 12:00pm</p>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Jardins Cansados. All rights reserved.</p>
+    </footer>
+</body>
+<script>
+const slides = document.querySelectorAll('.slide'); // Select all slides
+const slider = document.querySelector('.slider'); // The slider container
+const totalSlides = slides.length; // Total number of slides
+let currentSlide = 0; // Start at slide 1 (index 0)
+
+// Function to update the slider position and classes
+function updateSliderPosition() {
+    // Offset calculation to center the active slide
+    const offset = -(currentSlide * 33.333); // Each slide is 1/3 of the container width
+    slider.style.transform = `translateX(${offset}%)`;
+
+    // Update slide classes
+    slides.forEach((slide, index) => {
+        slide.classList.remove('active', 'prev', 'next');
+        if (index === currentSlide) {
+            slide.classList.add('active'); // Active slide
+        } else if (index === (currentSlide - 1 + totalSlides) % totalSlides) {
+            slide.classList.add('prev'); // Previous slide
+        } else if (index === (currentSlide + 1) % totalSlides) {
+            slide.classList.add('next'); // Next slide
+        }
+    });
+}
+
+// Function to handle navigation with early looping
+function changeSlide(direction) {
+    if (direction === 1 && currentSlide === totalSlides - 2) {
+        // If moving forward from the second-to-last slide, jump to the first slide
+        currentSlide = 0;
+    } else if (direction === -1 && currentSlide === 1) {
+        // If moving backward from the second slide, jump to the last slide
+        currentSlide = totalSlides - 1;
+    } else {
+        // Normal circular navigation
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+    }
+
+    updateSliderPosition(); // Update position after change
+}
+
+// Add event listeners for arrow navigation
+document.querySelector('.left-arrow').addEventListener('click', () => changeSlide(-1)); // Move to previous slide
+document.querySelector('.right-arrow').addEventListener('click', () => changeSlide(1)); // Move to next slide
+
+// Initialize the slider
+updateSliderPosition();
+
+</script>
+
+</html>
