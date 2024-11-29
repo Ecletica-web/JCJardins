@@ -16,9 +16,67 @@
 
 body {
     display: block;
-    padding: 0 1rem;
+    padding: 0 1rem; /* Adjusted padding for smaller screens */
     min-height: 100vh;
     background: #FFFFFF;
+}
+
+/* Header Section */
+header {
+    padding: 1rem;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+header h1 {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+    color: #2d572c;
+    margin: 0 auto; /* Center align the title */
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    justify-content: center; /* Center-align menu items */
+    flex-wrap: wrap; /* Wrap navigation items on small screens */
+    padding-top: 1rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #333;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #28a745;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-image: url('media/image3.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh; /* Reduced height for mobile screens */
+    text-align: center; /* Center-align text for better readability */
+    padding: 1rem;
+}
+
+.hero h1 {
+    font-size: 2rem; /* Adjusted font size for mobile */
+    font-weight: bold;
+    color: white;
+    margin: 0;
 }
 
 /* Content Section */
@@ -79,8 +137,54 @@ body {
     transform: scale(1.05);
 }
 
+/* Button Styling */
+.btn-pedir {
+    display: inline-block;
+    background-color: #2d572c;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-pedir:hover {
+    background-color: #d9691a;
+    transform: scale(1.05);
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eaeaea;
+}
+
+footer p {
+    font-size: 0.8rem; /* Adjusted font size for better fit */
+    color: #555;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header elements vertically */
+    }
+
+    header h1 {
+        margin-bottom: 1rem; /* Add spacing between title and nav */
+    }
+
+    .hero {
+        height: 40vh; /* Reduced height for smaller screens */
+    }
+
     .content {
         flex-direction: column; /* Stack image and text vertically on small screens */
         text-align: center;
@@ -95,9 +199,17 @@ body {
         text-align: center; /* Center-align text */
     }
 
+    .content h2 {
+        font-size: 1.3rem; /* Smaller heading size */
+    }
+
+    .content p {
+        font-size: 0.9rem; /* Smaller text size for better fit */
+    }
+
     .btn-pedir {
-        font-size: 0.9rem;
-        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem; /* Smaller button font */
+        padding: 0.6rem 1.5rem; /* Adjust padding for smaller screens */
     }
 }
 
