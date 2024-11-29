@@ -191,12 +191,91 @@ header nav ul li a:hover {
         .lightbox .next {
             right: 20px;
         }
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header elements vertically */
+    }
+
+    header h1 {
+        white-space: nowrap; /* Prevent wrapping to a second line */
+        overflow: hidden; /* Hide overflow if necessary */
+        text-overflow: ellipsis; /* Add ellipsis if the text overflows */
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+        margin-bottom: 2rem;
+        margin: 0 auto;
+    }
+    header nav ul {
+        display: flex; /* Use flexbox for layout */
+        flex-wrap: wrap; /* Allow wrapping to the next line */
+        list-style: none; /* Remove bullet points */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+        gap: 0.5rem; /* Add space between items */
+        justify-content: center; /* Center align items */
+        width: 100%; /* Ensure full width for wrapping */
+        margin-left: 2.4rem;
+        margin-top: 0.2rem;
+    }
+    header nav ul li a {
+    padding: 0rem;
+    margin: 0 auto;
+    }
+    
+    .hero {
+        height: 30vh; /* Reduced height for smaller screens */
+    }
+    .hero h1{
+        margin: 0 auto;
+
+    }
+
+    .hero-content {
+        margin-left: 0; /* Remove unnecessary margin */
+        padding: 1rem; /* Adjust padding */
+    }
+
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust gallery layout */
+        gap: 1rem; /* Adjust gap */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1rem; /* Further reduce font size */
+    }
+
+    header nav ul li a {
+        font-size: 0.9rem; /* Adjust nav link font size */
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* Reduce hero heading size */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Reduce paragraph size */
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust for smaller screens */
+        gap: 0.5rem; /* Adjust gap */
+    }
+
+    .pagination button {
+        font-size: 0.9rem; /* Adjust pagination button font size */
+        padding: 0.3rem 0.5rem; /* Adjust button padding */
+    }
+}
+
     </style>
 </head>
 <body>
    <!-- Header -->
    <header>
-    <h1>Oeiras Jardins</h1>
+    <h1>OEIRAS JARDINS</h1>
     <nav>
         <ul>
             <li><a href="index.html">Ínicio</a></li>

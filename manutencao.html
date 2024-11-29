@@ -5,50 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oeiras Jardins - Manutenção de Jardins</title>
     <style>
-        
-/* General Reset */
-* {
+     /* General Reset */
+     * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
 body {
     display: block;
-    padding: 0 1rem; /* Adjust padding for smaller screens */
+    padding: 0 35px;
     min-height: 100vh;
     background: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Header Section */
 header {
-    padding: 1rem;
+    padding: 1rem 2rem;
     background: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ddd;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 header h1 {
-    font-size: 1.5rem; /* Reduce font size for mobile */
+    font-size: 1.8rem;
     color: #2d572c;
-    margin: 0 auto; /* Center-align for mobile screens */
+    margin-left: 5.5rem; /* Adjust this value to control the position to the right */
 }
 
 header nav {
-    margin: 1rem 0;
+    margin-right: 5rem; /* Adjust this value to control the position to the left */
 }
 
 header nav ul {
     display: flex;
     list-style: none;
-    gap: 1rem; /* Adjust gap for mobile */
-    justify-content: center; /* Center menu items */
-    flex-wrap: wrap; /* Wrap menu items on smaller screens */
-    padding: 0;
+    gap: 1.5rem;
 }
 
 header nav ul li a {
@@ -62,91 +57,111 @@ header nav ul li a:hover {
     color: #28a745;
 }
 
+
+
 /* Hero Section */
 .hero {
     display: flex;
-    flex-direction: column; /* Stack content for smaller screens */
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     color: white;
     background-image: url('media/image2.1.jpg');
     background-size: cover;
     background-position: center;
-    height: 60vh; /* Reduce height for smaller screens */
+    height: 75vh;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     padding: 2rem;
-    text-align: center; /* Center-align text for mobile */
 }
 
 .hero-content {
-    max-width: 90%; /* Allow more width on smaller screens */
-    padding: 1rem;
-    text-align: center; /* Center-align for mobile */
+    max-width: 70%;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: left;
+    margin-left: 5.5rem; /* Adjust this value to control the position to the right */
 }
 
 .hero h1 {
-    font-size: 2rem; /* Reduce font size for smaller screens */
+    font-size: 2.8rem;
     font-weight: bold;
     margin-bottom: 1rem;
+    margin-left: 8rem; /* Adjust this value to control the position to the right */
     color: white;
 }
 
 .hero p {
-    font-size: 1rem; /* Adjust font size for mobile */
+    font-size: 1.25rem;
     margin-bottom: 1.5rem;
     color: #f0f0f0;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        padding: 0 0.5rem; /* Reduce body padding for mobile */
-    }
 
-    header h1 {
-        font-size: 1.3rem; /* Smaller font size for mobile */
-        margin: 0;
-    }
+        /* Content Section */
+        .content {
+            max-width: 1200px;
+            margin: 3rem auto;
+            display: flex;
+            gap: 3rem; /* Spacing between image and text */
+            align-items: center;
+            padding: 0 1.5rem; /* Add padding for better spacing */
+        }
+        .content img {
+            flex: 1;
+            max-width: 600px;
+            height: auto;
+            border-radius: 2000px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0);
+        }
+        .content .text {
+            flex: 2;
+            text-align: left; /* Align text to the left */
+        }
+        .content h2 {
+            font-size: 2rem;
+            color: #2d572c;
+            margin-bottom: 1rem;
+        }
+        .content p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
 
-    header nav ul {
-        gap: 0.5rem; /* Reduce gap between menu items */
-    }
+        /* Button Styling */
+        .btn-pedir {
+            display: inline-block;
+            background-color: #2d572c; /* Orange color */
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px; /* Fully rounded edges */
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease; /* Smooth transition */
+        }
 
-    header nav ul li a {
-        font-size: 0.9rem; /* Reduce font size for links */
-    }
+        /* Hover Effect */
+        .btn-pedir:hover {
+            background-color: #d9691a; /* Slightly darker orange on hover */
+            transform: scale(1.05); /* Slight zoom-in effect */
+        }
 
-    .hero {
-        height: 50vh; /* Further reduce height on smaller screens */
-    }
-
-    .hero h1 {
-        font-size: 1.8rem; /* Smaller heading */
-    }
-
-    .hero p {
-        font-size: 0.9rem; /* Adjust paragraph size for readability */
-    }
-
-    .hero-content {
-        padding: 1rem;
-        max-width: 100%; /* Use full width on smaller screens */
-    }
-}
-
-/* Footer Section */
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #f8f9fa;
-    border-top: 1px solid #eaeaea;
-}
-
-footer p {
-    font-size: 0.8rem; /* Adjusted font size for better fit */
-    color: #555;
-}
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eaeaea;
+        }
+        footer p {
+            font-size: 0.9rem;
+            color: #555;
+        }
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -155,11 +170,36 @@ footer p {
     }
 
     header h1 {
-        margin-bottom: 1rem; /* Add spacing between title and nav */
+        white-space: nowrap; /* Prevent wrapping to a second line */
+        overflow: hidden; /* Hide overflow if necessary */
+        text-overflow: ellipsis; /* Add ellipsis if the text overflows */
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+        margin-bottom: 2rem;
+        margin: 0 auto;
+    }
+    header nav ul {
+        display: flex; /* Use flexbox for layout */
+        flex-wrap: wrap; /* Allow wrapping to the next line */
+        list-style: none; /* Remove bullet points */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+        gap: 0.5rem; /* Add space between items */
+        justify-content: center; /* Center align items */
+        width: 100%; /* Ensure full width for wrapping */
+        margin-left: 2.4rem;
+        margin-top: 0.2rem;
+    }
+    header nav ul li a {
+    padding: 0rem;
+    margin: 0 auto;
     }
 
     .hero {
-        height: 40vh; /* Reduced height for smaller screens */
+        height: 30vh; /* Reduced height for smaller screens */
+    }
+    .hero h1{
+        margin: 0 auto;
+
     }
 
     .content {
@@ -168,7 +208,7 @@ footer p {
     }
 
     .content img {
-        max-width: 90%; /* Make image scale nicely on smaller screens */
+        max-width: 100%; /* Make image scale nicely on smaller screens */
         margin-bottom: 2rem; /* Add space below the image */
     }
 
@@ -189,7 +229,6 @@ footer p {
         padding: 0.6rem 1.5rem; /* Adjust padding for smaller screens */
     }
 }
-
 
     </style>
 </head>

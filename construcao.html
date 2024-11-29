@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oeiras Jardins - Construção de Jardins</title>
     <style>
-         /* General Reset */
-* {
+      /* General Reset */
+      * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -162,13 +162,82 @@ header nav ul li a:hover {
             font-size: 0.9rem;
             color: #555;
         }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header elements vertically */
+    }
+
+    header h1 {
+        white-space: nowrap; /* Prevent wrapping to a second line */
+        overflow: hidden; /* Hide overflow if necessary */
+        text-overflow: ellipsis; /* Add ellipsis if the text overflows */
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+        margin-bottom: 2rem;
+        margin: 0 auto;
+    }
+    header nav ul {
+        display: flex; /* Use flexbox for layout */
+        flex-wrap: wrap; /* Allow wrapping to the next line */
+        list-style: none; /* Remove bullet points */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+        gap: 0.5rem; /* Add space between items */
+        justify-content: center; /* Center align items */
+        width: 100%; /* Ensure full width for wrapping */
+        margin-left: 2.4rem;
+        margin-top: 0.2rem;
+    }
+    header nav ul li a {
+    padding: 0rem;
+    margin: 0 auto;
+    }
+
+    .hero {
+        height: 30vh; /* Reduced height for smaller screens */
+    }
+    .hero h1{
+        margin: 0 auto;
+
+    }
+
+    .content {
+        flex-direction: column; /* Stack image and text vertically on small screens */
+        text-align: center;
+    }
+
+    .content img {
+        max-width: 100%; /* Make image scale nicely on smaller screens */
+        margin-bottom: 2rem; /* Add space below the image */
+    }
+
+    .content .text {
+        text-align: center; /* Center-align text */
+    }
+
+    .content h2 {
+        font-size: 1.3rem; /* Smaller heading size */
+    }
+
+    .content p {
+        font-size: 0.9rem; /* Smaller text size for better fit */
+    }
+
+    .btn-pedir {
+        font-size: 0.9rem; /* Smaller button font */
+        padding: 0.6rem 1.5rem; /* Adjust padding for smaller screens */
+    }
+}
+
+    </style>
     </style>
 </head>
 <body>
     <!-- Header -->
     <!-- Header -->
     <header>
-        <h1>Oeiras Jardins</h1>
+        <h1>OEIRAS JARDINS</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Ínicio</a></li>

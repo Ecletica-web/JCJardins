@@ -533,105 +533,241 @@ footer {
     background-color: #f8f9fa;
     border-top: 1px solid #eaeaea;
 }
+/* Responsive Styles */
 
-/* Responsive Styling */
-@media (max-width: 768px) {
+/* Large Screens (1200px and below) */
+@media (max-width: 1200px) {
+    header {
+        flex-direction: column; /* Stack header elements vertically */
+    }
+
+    header h1 {
+        white-space: nowrap; /* Prevent wrapping to a second line */
+        overflow: hidden; /* Hide overflow if necessary */
+        text-overflow: ellipsis; /* Add ellipsis if the text overflows */
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+        margin-bottom: 2rem;
+        margin: 0 auto;
+    }
+    header nav ul {
+        display: flex; /* Use flexbox for layout */
+        flex-wrap: wrap; /* Allow wrapping to the next line */
+        list-style: none; /* Remove bullet points */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+        gap: 0.5rem; /* Add space between items */
+        justify-content: center; /* Center align items */
+        width: 100%; /* Ensure full width for wrapping */
+        margin-left: 2.4rem;
+        margin-top: 0.2rem;
+    }
+    header nav ul li a {
+    padding: 0rem;
+    margin: 0 auto;
+    }
     .hero {
-        flex-direction: column;
+        height: 30vh; /* Reduced height for smaller screens */
+    }
+    .hero h1{
+        margin: 0 auto;
+
+    }
+
+    .hero-content {
+        margin-left: 0; /* Remove unnecessary margin */
+        padding: 1rem; /* Adjust padding */
+    }
+
+
+
+    .about-container {
+        gap: 1.5rem; /* Reduce gap */
+        padding: 0 1rem; /* Adjust padding */
+    }
+
+    .services {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid layout */
+    }
+
+    .contact-container {
+        flex-direction: column; /* Stack form and info vertically */
+        align-items: center; /* Center align content */
+        gap: 2rem; /* Add spacing between stacked items */
+    }
+
+    .form-section, .info-section {
+        width: 100%; /* Increase width for better utilization */
+        max-width: 600px; /* Optional: Restrict max width */
+        text-align: center; /* Center-align text */
+    }
+
+    .form-section button {
+        width: 60%; /* Make button full-width */
+        padding: 1.2rem; /* Adjust padding for better usability */
+        font-size: 1.2rem; /* Slightly increase font size */
+    }
+
+    .info-section h3 {
+        font-size: 1.3rem; /* Slightly increase font size for better readability */
+    }
+
+    .info-image {
+        width: 100%; /* Ensure image uses full width */
+        margin-bottom: 1rem; /* Add spacing below the image */
+    }
+}
+
+/* Medium Screens (992px and below) */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column; /* Stack header elements vertically */
+    }
+
+    header h1 {
+        white-space: nowrap; /* Prevent wrapping to a second line */
+        overflow: hidden; /* Hide overflow if necessary */
+        text-overflow: ellipsis; /* Add ellipsis if the text overflows */
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+        margin-bottom: 2rem;
+        margin: 0 auto;
+    }
+    header nav ul {
+        display: flex; /* Use flexbox for layout */
+        flex-wrap: wrap; /* Allow wrapping to the next line */
+        list-style: none; /* Remove bullet points */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+        gap: 0.5rem; /* Add space between items */
+        justify-content: center; /* Center align items */
+        width: 100%; /* Ensure full width for wrapping */
+        margin-left: 2.4rem;
+        margin-top: 0.2rem;
+    }
+    header nav ul li a {
+    padding: 0rem;
+    margin: 0 auto;
+    }
+    
+    .hero {
+        height: 30vh; /* Reduced height for smaller screens */
+    }
+    .hero h1{
+        margin: 0 auto;
+
+    }
+
+    .hero-content {
+        max-width: 1000px;
+        display: flex; /* Use flexbox to align buttons */
+        flex-direction: column; /* Default column alignment */
+        align-items: center; /* Center the content horizontally */
+        text-align: center; /* Center the text */
+    }
+
+    .cta-button,
+    .cta-button-secondary {
+        display: inline-block; /* Ensure buttons remain inline */
+        padding: 0.5rem 1rem; /* Reduce padding for smaller size */
+        font-size: 1rem; /* Reduce font size */
+        margin: 0.4rem; /* Add uniform spacing around buttons */
+        border-radius: 4px; /* Slightly smaller border radius */
+        width: auto; /* Ensure buttons don't stretch */
+        text-align: center; /* Center button text */
+    }
+
+    .cta-container {
+        display: flex; /* Use flexbox to arrange buttons side by side */
+        justify-content: center; /* Center the buttons horizontally */
+        flex-wrap: wrap; /* Allow buttons to wrap if needed */
+        gap: 0.5rem; /* Add spacing between buttons */
+        margin-top: 1rem; /* Add spacing above the button container */
+    }
+    .about-container {
+        flex-direction: column; /* Stack about section content */
+        align-items: center; /* Center align content */
+    }
+
+    .about-image img {
+        max-width: 0%; /* Adjust image size */
+    }
+
+    .services {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .contact-container {
+        flex-direction: column; /* Stack form and info vertically */
+        align-items: center; /* Center align content */
+        gap: 0.2rem; /* Add spacing between stacked items */
+        max-height: 1400px;
+    }
+
+    
+
+    .form-section, .info-section {
+        width: 100%; /* Increase width for better utilization */
+        max-width: 1000px; /* Optional: Restrict max width */
+        text-align: left; /* Center-align text */
+    }
+
+    .form-section button {
+        width: 100%; /* Make button full-width */
+        padding: 1.2rem; /* Adjust padding for better usability */
+        font-size: 1.2rem; /* Slightly increase font size */
+        margin: 0 auto;
+    }
+    .form-section h2, .info-section h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #2d572c;
         text-align: center;
+        margin-bottom: 0.5rem;
+    
     }
 
-    .hero h1, .hero p, .cta-button {
-        margin-left: 0;
+    .form-section label {
+        display: block;
+        margin-bottom: 0rem;
+        font-weight: bold;
+        text-align: left;
+        font-size: 1rem;
+        padding: 0.2rem
     }
-
-    .about-container, .contact-container {
-        flex-direction: column;
-        padding: 0 1rem;
-    }
-
-    .form-section, .info-section {
-        order: unset;
+    
+    .form-section input, .form-section textarea {
         width: 100%;
-    }
-
-    .carousel img {
-        width: calc(100% / 2);
-    }
-
-    .service-card {
-        max-width: 100%;
-    }
-
-    .form-section button {
-        padding: 1rem 4rem;
-    }
-
-
-    .hero h1, .hero p, .cta-button {
-        margin-left: 0;
-    }
-
-    .about-container, .contact-container {
-        flex-direction: column;
-        padding: 0 1rem;
-    }
-
-    .form-section, .info-section {
-        flex: 1;
-    }
-
-    .carousel img {
-        width: calc(100% / 2);
-    }
-
-    .service-card {
-        max-width: 100%;
-    }
-
-    .form-section button {
-        padding: 1rem 4rem;
-    }
-
-    .hero h1, .hero p, .cta-button {
-        margin-left: 0;
-    }
-
-    .about-container, .contact-container {
-        flex-direction: column;
-        padding: 0 1rem;
-    }
-
-    .carousel img {
-        width: calc(100% / 2);
-    }
-
-    .service-card {
-        max-width: 100%;
-    }
-
-    .form-section button {
-        padding: 1rem 4rem;
-    }
-
-    .hero h1, .hero p, .cta-button {
-        margin-left: 0;
-    }
-
-    .about-container, .contact-container {
-        flex-direction: column;
-    }
-
-    .slider-arrow {
-        font-size: 1.2rem;
         padding: 0.8rem;
+        margin-bottom: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        background-color: #d2fcdb;
+    }
+    
+    .form-section p {
+        margin-bottom: 0.5rem;
+        color: #555;
+        font-size: 1rem;
+        padding: 0rem;
+        
+    }
+    .checkbox-container input {
+        width: 15px;
+        height: 16px;
+        margin-top: 0.7rem;
+        margin-right: 0.5rem;
+    }
+    .checkbox-container label {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+
+    }
+    .info-section h3 {
+        font-size: 1.2rem; /* Slightly increase font size for better readability */
     }
 
-    .service-card {
-        max-width: 100%;
-    }
-
-    .form-section button {
-        padding: 1rem 4rem;
+    .info-image {
+        width: 100%; /* Ensure image uses full width */
+        margin-bottom: 1rem; /* Add spacing below the image */
     }
 }
