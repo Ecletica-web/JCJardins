@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+     <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Oeiras Jardins</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Ínicio</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="#contact">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+   <section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Oeiras Jardins</h1>
+        <p>Criação de espaços verdes e naturais.</p>
+        <a href="#services" class="cta-button">VER SERVIÇOS</a>
+        <a href="#contact" class="cta-button cta-button-secondary">PEDIR ORÇAMENTO</a>
+    </div>
+</section>
+
+
+    <section class="about-container">
+    <div class="about-text">
+        <h2>O seu Oásis</h2> <!-- Title now grouped with the text -->
+        <p>
+            At Jardins Cansados, we specialize in creating stunning gardens that breathe life into your surroundings. 
+            Located in the heart of Lisbon, our professional gardening services include meticulous garden construction, 
+            ongoing maintenance, and efficient irrigation solutions tailored to both residential and commercial properties.
+        </p>
+        <a href="#contact" class="cta-button">PEDIR ORÇAMENTO</a>
+    </div>
+    <div class="about-image">
+        <img src="media/image2.1.jpg" alt="Beautiful Garden">
+    </div>
+</section>
+
+<!-- Image Slider Section -->
+    <div class="wrapper">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <div class="carousel">
+        <img src="media/image2.1.jpg" alt="img" draggable="false">
+        <img src="media/image3.jpg" alt="img" draggable="false">
+        <img src="media/image4.jpg" alt="img" draggable="false">
+        <img src="media/image5.jpg" alt="img" draggable="false">
+        <img src="media/image2.1.jpg" alt="img" draggable="false">
+        <img src="media/image3.jpg" alt="img" draggable="false">
+        <img src="media/image4.jpg" alt="img" draggable="false">
+        <img src="media/image5.jpg" alt="img" draggable="false">
+        <img src="media/image2.1.jpg" alt="img" draggable="false">
+        <img src="media/image3.jpg" alt="img" draggable="false">
+        </div>
+    <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+    <div class="button-container">
+        <a href="galeria.html" class="button-gallery">Visite a nossa galeria!</a>
+    </div>
+    
+
+    <!-- Services Section -->
+    <section class="section" id="services" style="background-color: #FFFFFF ;">
+        <h2>Os nossos Serviços</h2>
+        <p>Ajustamo-nos sempre às suas necessidades.</p>
+ <!-- Row 1 -->
+        <div class="services">
+            <a href="Construcao.html" class="service-card">
+                <img src="media/image2.1.jpg" alt="Garden Construction">
+                <h3>Construção de Jardins</h3>
+                <p>Transforme o seu espaço exterior num jardim deslumbrante </p>
+            </a>
+            <a href="Manutencao.html" class="service-card">
+                <img src="media/image3.jpg" alt="Garden Maintenance">
+                <h3>Manutenção de Jardins</h3>
+                <p>Nós tratamos do seu jardim quando lhe faltar tempo.</p>
+            </a>
+            <a href="Rega.html" class="service-card">
+                <img src="media/image4.jpg" alt="Irrigation Solutions">
+                <h3>Sistemas de Irrigação</h3>
+                <p>Montamos sistemas topo de gama oh maninho.</p>
+            </a>
+ <!-- Row 2 -->
+ 	
+        <a href="Construcao.html" class="service-card">
+            <img src="media/image2.1.jpg" alt="Garden Construction">
+            <h3>Construção de Jardins</h3>
+            <p>Transforme o seu espaço exterior num jardim deslumbrante </p>
+        </a>
+        <a href="Manutencao.html" class="service-card">
+            <img src="media/image4.jpg" alt="Irrigation Solutions">
+            <h3>Manutenção de Jardins</h3>
+                <p>Nós tratamos do seu jardim quando lhe faltar tempo.</p>
+        </a>
+        <a href="Rega.html" class="service-card">
+            <img src="media/image3.jpg" alt="Garden Maintenance">
+            <h3>Sistemas de Irrigação</h3>
+            <p>Montamos sistemas topo de gama oh maninho.</p>
+        </a>
+
+    </section>
+
+   <section class="contact-section" id="contact" style="background-color: #FFFFFF;">
+    <div class="contact-container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h2>Peça já o seu orçamento!</h2>
+            <p>Cada caso é um caso, contacte-nos com o que precisa para o seu jardim e nós tornamos a sua visão uma realidade!</p>
+            <form>
+                <label for="name">Nome e Apelido<span>*</span></label>
+                <input type="text" id="name" placeholder="O seu nome" required>
+                
+                <label for="email">Email <span>*</span></label>
+                <input type="email" id="email" placeholder="O seu email" required>
+                
+                <label for="phone">Telemóvel <span>*</span></label>
+                <input type="tel" id="phone" placeholder="O seu número de telemóvel" required>
+                
+                <label for="message">Detalhes do Projeto</label>
+                <textarea id="message" placeholder="Diga-nos o que pretende fazer"></textarea>
+                
+                <div class="checkbox-container">
+                    <input type="checkbox" id="consent" required>
+                    <label for="consent">
+                        Eu autorizo que este website guarde os meus dados para entrar em contacto comigo. <span>*</span>
+                    </label>
+                </div>
+                
+                <button type="submit">Submeter</button>
+            </form>
+        </div>
+        
+        <!-- Information Section -->
+        <div class="info-section">
+            <img src="media/image2.1.jpg" alt="Quote Section Image" class="info-image">
+            <h2>Contacte-nos para saber mais!</h2>
+            <p>Looking for a beautiful, personalized garden? Share your ideas with us, and our expert team will design a unique space tailored just for you.</p>
+            <p>Leave your contact details or contact us.</p>
+            <p><strong>Email:</strong> <a href="mailto:jardinscansados@paçodearcos.pt">jardinscansados@paçodearcos.pt</a></p>
+            <p><strong>Localização:</strong> <a href="#">Oeiras, Lisboa, Portugal</a></p>
+            <h3>Horário</h3>
+            <p>Segunda à Sexta: 9:00am - 18:00pm</p>
+            <p>Sábado: 9:00am - 6:00pm</p>
+            <p>Domingo: 9:00am - 12:00pm</p>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Jardins Cansados. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
