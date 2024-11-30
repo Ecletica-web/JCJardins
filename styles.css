@@ -665,6 +665,7 @@ footer {
     }
     .hero-content {
         align-items: center;
+        margin-left: 3.5rem;
     }
     .hero h1 {
         font-size: 2rem;
