@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Dropdown.js" defer></script>
     <title>Oeiras Jardins</title>
     <style>
        /* General Reset */
@@ -22,18 +23,26 @@ body {
 
 /* Header Section */
 header {
-    padding: 1rem 2rem;
-    background: white;
+    position: relative; /* Ensure dropdown menu is positioned relative to header */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
+    background: #ffffff;
     border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    width: 55px; /* Adjust the width for your logo */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Position it in the top-left corner */ /* Add some spacing from the top */
+    left: 6rem; /* Add some spacing from the left */
 }
 
 header h1 {
     font-size: 1.8rem;
     color: #2d572c;
-    margin-left: 5.5rem; /* Adjust this value to control the position to the right */
+    margin-left: 9.5rem; /* Adjust this value to control the position to the right */
 }
 
 header nav {
@@ -44,6 +53,8 @@ header nav ul {
     display: flex;
     list-style: none;
     gap: 1.5rem;
+    margin: 0;
+    padding: 0;
 }
 
 header nav ul li a {
@@ -52,12 +63,67 @@ header nav ul li a {
     color: #333;
     transition: color 0.3s;
 }
-
 header nav ul li a:hover {
     color: #28a745;
 }
 
 
+.menu-toggle {
+    display: none; /* Hidden by default for larger screens */
+    position: absolute; /* Position it relative to the header */
+    top: 0.6rem; /* Adjust vertical alignment */
+    right: 0rem; /* Position it to the right side */
+    background: none; /* No background */
+    border: none; /* Remove border */
+    font-size: 2rem; /* Size of the icon */
+    cursor: pointer; /* Pointer cursor */
+    color: #2d572c; /* Icon color */
+}
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    top: 3rem; /* Adjust distance from the hamburger icon */
+    right:-7rem;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 200px; /* Adjust width as needed */
+    text-align: left;
+    padding: 0.5rem 0;
+}
+
+
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu ul li {
+    display: block; /* Make each item take up the full width */
+    padding: 0.8rem 1rem; /* Add some padding for spacing */
+    border-bottom: 1px solid #ddd; /* Optional: Add a divider between items */
+}
+
+.dropdown-menu ul li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu ul li a {
+    display: block; /* Ensure links fill the full width of the list item */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 1rem; /* Adjust font size */
+    color: #2d572c; /* Text color */
+    transition: color 0.3s ease; /* Add a hover transition effect */
+}
+
+.dropdown-menu ul li a:hover {
+    color: #28a745;
+    background-color: #f9f9f9; /* Optional: Add a light hover background color */
+}
 
 /* Hero Section */
 .hero {
@@ -192,35 +258,35 @@ header nav ul li a:hover {
             right: 20px;
         }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     header {
-        flex-direction: column; /* Stack header elements vertically */
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+
+    }
+
+    .logo {
+        width: 40px;
+        bottom: 0.9rem;
+        left: 0rem;
     }
 
     header h1 {
-        white-space: nowrap; /* Prevent wrapping to a second line */
-        overflow: hidden; /* Hide overflow if necessary */
-        text-overflow: ellipsis; /* Add ellipsis if the text overflows */
-        font-size: 1.5rem; /* Adjust font size for smaller screens */
-        margin-bottom: 2rem;
-        margin: 0 auto;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
     }
+
     header nav ul {
-        display: flex; /* Use flexbox for layout */
-        flex-wrap: wrap; /* Allow wrapping to the next line */
-        list-style: none; /* Remove bullet points */
-        padding: 0; /* Remove default padding */
-        margin: 0; /* Remove default margin */
-        gap: 0.5rem; /* Add space between items */
-        justify-content: center; /* Center align items */
-        width: 100%; /* Ensure full width for wrapping */
-        margin-left: 2.4rem;
-        margin-top: 0.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
     }
-    header nav ul li a {
-    padding: 0rem;
-    margin: 0 auto;
+    .menu-toggle {
+        display: inline;
     }
+
+
     
     .hero {
         height: 30vh; /* Reduced height for smaller screens */
@@ -243,14 +309,26 @@ header nav ul li a:hover {
 }
 
 @media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem
+    }
     header h1 {
-        font-size: 1rem; /* Further reduce font size */
+        display: none;
     }
 
-    header nav ul li a {
-        font-size: 0.9rem; /* Adjust nav link font size */
+    .menu-toggle {
+        display: inline;
     }
 
+    header nav {
+        display:none;
+    }
+    header nav ul {
+        display: flex; /* Main navigation styling */
+        gap: 1.5rem;
+    }
     .hero h1 {
         font-size: 1.8rem; /* Reduce hero heading size */
     }
@@ -275,6 +353,7 @@ header nav ul li a:hover {
 <body>
    <!-- Header -->
    <header>
+    <img src="media/logo.jpg" alt="Logo" class="logo">
     <h1>OEIRAS JARDINS</h1>
     <nav>
         <ul>
@@ -285,6 +364,22 @@ header nav ul li a:hover {
             <li><a href="index.html#contact">Contactos</a></li>
         </ul>
     </nav>
+
+    <button class="menu-toggle" aria-label="Toggle navigation">
+        ☰
+        </button>
+
+     <!-- Dropdown Menu -->
+     <nav class="dropdown-menu">
+        <ul>
+            <li><a href="#home">Ínicio</a></li>
+            <li><a href="#about">Sobre Nós</a></li>
+            <li><a href="index.html#services">Serviços</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="index.html#contact">Contactos</a></li>
+        </ul>
+    </nav>
+
 </header>
 
     <!-- Hero Section -->
@@ -389,6 +484,8 @@ document.addEventListener('keydown', (event) => {
             lightbox.style.display = 'none';
         }
     }
+
+    
 });
 
     </script>

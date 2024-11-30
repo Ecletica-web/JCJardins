@@ -15,18 +15,26 @@ body {
 
 /* Header Section */
 header {
-    padding: 1rem 2rem;
-    background: white;
+    position: relative; /* Ensure dropdown menu is positioned relative to header */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
+    background: #ffffff;
     border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    width: 55px; /* Adjust the width for your logo */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Position it in the top-left corner */ /* Add some spacing from the top */
+    left: 6rem; /* Add some spacing from the left */
 }
 
 header h1 {
     font-size: 1.8rem;
     color: #2d572c;
-    margin-left: 5.5rem; /* Adjust this value to control the position to the right */
+    margin-left: 9.5rem; /* Adjust this value to control the position to the right */
 }
 
 header nav {
@@ -37,6 +45,8 @@ header nav ul {
     display: flex;
     list-style: none;
     gap: 1.5rem;
+    margin: 0;
+    padding: 0;
 }
 
 header nav ul li a {
@@ -45,12 +55,67 @@ header nav ul li a {
     color: #333;
     transition: color 0.3s;
 }
-
 header nav ul li a:hover {
     color: #28a745;
 }
 
 
+.menu-toggle {
+    display: none; /* Hidden by default for larger screens */
+    position: absolute; /* Position it relative to the header */
+    top: 0.6rem; /* Adjust vertical alignment */
+    right: 0rem; /* Position it to the right side */
+    background: none; /* No background */
+    border: none; /* Remove border */
+    font-size: 2rem; /* Size of the icon */
+    cursor: pointer; /* Pointer cursor */
+    color: #2d572c; /* Icon color */
+}
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    top: 3rem; /* Adjust distance from the hamburger icon */
+    right:-7rem;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 200px; /* Adjust width as needed */
+    text-align: left;
+    padding: 0.5rem 0;
+}
+
+
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu ul li {
+    display: block; /* Make each item take up the full width */
+    padding: 0.8rem 1rem; /* Add some padding for spacing */
+    border-bottom: 1px solid #ddd; /* Optional: Add a divider between items */
+}
+
+.dropdown-menu ul li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu ul li a {
+    display: block; /* Ensure links fill the full width of the list item */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 1rem; /* Adjust font size */
+    color: #2d572c; /* Text color */
+    transition: color 0.3s ease; /* Add a hover transition effect */
+}
+
+.dropdown-menu ul li a:hover {
+    color: #28a745;
+    background-color: #f9f9f9; /* Optional: Add a light hover background color */
+}
 
 /* Hero Section */
 .hero {
@@ -170,7 +235,7 @@ header nav ul li a:hover {
 
 .about-image {
     flex: 1;
-    text-align: center;
+    text-align: center
 }
 
 .about-image img {
@@ -534,240 +599,89 @@ footer {
     border-top: 1px solid #eaeaea;
 }
 /* Responsive Styles */
-
 /* Large Screens (1200px and below) */
 @media (max-width: 1200px) {
     header {
-        flex-direction: column; /* Stack header elements vertically */
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+
+    }
+
+    .logo {
+        width: 40px;
+        bottom: 0.9rem;
+        left: 0rem;
     }
 
     header h1 {
-        white-space: nowrap; /* Prevent wrapping to a second line */
-        overflow: hidden; /* Hide overflow if necessary */
-        text-overflow: ellipsis; /* Add ellipsis if the text overflows */
-        font-size: 1.5rem; /* Adjust font size for smaller screens */
-        margin-bottom: 2rem;
-        margin: 0 auto;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
     }
+
     header nav ul {
-        display: flex; /* Use flexbox for layout */
-        flex-wrap: wrap; /* Allow wrapping to the next line */
-        list-style: none; /* Remove bullet points */
-        padding: 0; /* Remove default padding */
-        margin: 0; /* Remove default margin */
-        gap: 0.5rem; /* Add space between items */
-        justify-content: center; /* Center align items */
-        width: 100%; /* Ensure full width for wrapping */
-        margin-left: 2.4rem;
-        margin-top: 0.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
     }
-    header nav ul li a {
-    padding: 0rem;
-    margin: 0 auto;
-    }
+
     .hero {
-        height: 30vh; /* Reduced height for smaller screens */
+        height: 40vh;
     }
-    .hero h1{
-        margin: 0 auto;
-
-    }
-
-    .hero-content {
-        margin-left: 0; /* Remove unnecessary margin */
-        padding: 1rem; /* Adjust padding */
-    }
-
-
 
     .about-container {
-        gap: 1.5rem; /* Reduce gap */
-        padding: 0 1rem; /* Adjust padding */
+        gap: 1.5rem;
+        flex-direction: column;
+        align-items: center;
     }
 
     .services {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid layout */
-    }
-
-    .contact-container {
-        flex-direction: column; /* Stack form and info vertically */
-        align-items: center; /* Center align content */
-        gap: 2rem; /* Add spacing between stacked items */
-    }
-
-    .form-section, .info-section {
-        width: 100%; /* Increase width for better utilization */
-        max-width: 600px; /* Optional: Restrict max width */
-        text-align: center; /* Center-align text */
-    }
-
-    .form-section button {
-        width: 60%; /* Make button full-width */
-        padding: 1.2rem; /* Adjust padding for better usability */
-        font-size: 1.2rem; /* Slightly increase font size */
-    }
-
-    .info-section h3 {
-        font-size: 1.3rem; /* Slightly increase font size for better readability */
-    }
-
-    .info-image {
-        width: 100%; /* Ensure image uses full width */
-        margin-bottom: 1rem; /* Add spacing below the image */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
 
 /* Medium Screens (992px and below) */
 @media (max-width: 992px) {
     header {
-        flex-direction: column; /* Stack header elements vertically */
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem
+    }
+    header h1 {
+        display: none;
     }
 
-    header h1 {
-        white-space: nowrap; /* Prevent wrapping to a second line */
-        overflow: hidden; /* Hide overflow if necessary */
-        text-overflow: ellipsis; /* Add ellipsis if the text overflows */
-        font-size: 1.5rem; /* Adjust font size for smaller screens */
-        margin-bottom: 2rem;
-        margin: 0 auto;
+    .menu-toggle {
+        display: inline;
+    }
+
+    header nav {
+        display:none;
     }
     header nav ul {
-        display: flex; /* Use flexbox for layout */
-        flex-wrap: wrap; /* Allow wrapping to the next line */
-        list-style: none; /* Remove bullet points */
-        padding: 0; /* Remove default padding */
-        margin: 0; /* Remove default margin */
-        gap: 0.5rem; /* Add space between items */
-        justify-content: center; /* Center align items */
-        width: 100%; /* Ensure full width for wrapping */
-        margin-left: 2.4rem;
-        margin-top: 0.2rem;
+        display: flex; /* Main navigation styling */
+        gap: 1.5rem;
     }
-    header nav ul li a {
-    padding: 0rem;
-    margin: 0 auto;
-    }
-    
-    .hero {
-        height: 30vh; /* Reduced height for smaller screens */
-    }
-    .hero h1{
-        margin: 0 auto;
-
-    }
-
     .hero-content {
-        max-width: 1000px;
-        display: flex; /* Use flexbox to align buttons */
-        flex-direction: column; /* Default column alignment */
-        align-items: center; /* Center the content horizontally */
-        text-align: center; /* Center the text */
+        align-items: center;
     }
-
-    .cta-button,
-    .cta-button-secondary {
-        display: inline-block; /* Ensure buttons remain inline */
-        padding: 0.5rem 1rem; /* Reduce padding for smaller size */
-        font-size: 1rem; /* Reduce font size */
-        margin: 0.4rem; /* Add uniform spacing around buttons */
-        border-radius: 4px; /* Slightly smaller border radius */
-        width: auto; /* Ensure buttons don't stretch */
-        text-align: center; /* Center button text */
+    .hero h1 {
+        font-size: 2rem;
     }
-
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .cta-button,.cta-button-secondary {
+        font-size: 1rem;
+    }
     .cta-container {
-        display: flex; /* Use flexbox to arrange buttons side by side */
-        justify-content: center; /* Center the buttons horizontally */
-        flex-wrap: wrap; /* Allow buttons to wrap if needed */
-        gap: 0.5rem; /* Add spacing between buttons */
-        margin-top: 1rem; /* Add spacing above the button container */
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
     }
-    .about-container {
-        flex-direction: column; /* Stack about section content */
-        align-items: center; /* Center align content */
-    }
-
-    .about-image img {
-        max-width: 0%; /* Adjust image size */
-    }
-
-    .services {
-        grid-template-columns: 1fr; /* Single column layout */
-    }
-
-    .contact-container {
-        flex-direction: column; /* Stack form and info vertically */
-        align-items: center; /* Center align content */
-        gap: 0.2rem; /* Add spacing between stacked items */
-        max-height: 1400px;
-    }
-
-    
-
-    .form-section, .info-section {
-        width: 100%; /* Increase width for better utilization */
-        max-width: 1000px; /* Optional: Restrict max width */
-        text-align: left; /* Center-align text */
-    }
-
-    .form-section button {
-        width: 100%; /* Make button full-width */
-        padding: 1.2rem; /* Adjust padding for better usability */
-        font-size: 1.2rem; /* Slightly increase font size */
-        margin: 0 auto;
-    }
-    .form-section h2, .info-section h2 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #2d572c;
-        text-align: center;
-        margin-bottom: 0.5rem;
-    
-    }
-
-    .form-section label {
-        display: block;
-        margin-bottom: 0rem;
-        font-weight: bold;
-        text-align: left;
-        font-size: 1rem;
-        padding: 0.2rem
-    }
-    
-    .form-section input, .form-section textarea {
-        width: 100%;
-        padding: 0.8rem;
-        margin-bottom: 0.5rem;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 1rem;
-        background-color: #d2fcdb;
-    }
-    
-    .form-section p {
-        margin-bottom: 0.5rem;
-        color: #555;
-        font-size: 1rem;
-        padding: 0rem;
-        
-    }
-    .checkbox-container input {
-        width: 15px;
-        height: 16px;
-        margin-top: 0.7rem;
-        margin-right: 0.5rem;
-    }
-    .checkbox-container label {
-        font-size: 0.8rem;
-        margin-bottom: 0.5rem;
-
-    }
-    .info-section h3 {
-        font-size: 1.2rem; /* Slightly increase font size for better readability */
-    }
-
-    .info-image {
-        width: 100%; /* Ensure image uses full width */
-        margin-bottom: 1rem; /* Add spacing below the image */
+    .about-image{
+        display: none;
     }
 }
