@@ -74,6 +74,7 @@ header nav ul li a:hover {
 /* Dropdown Menu Styling */
 .dropdown-menu {
     display: none; /* Hidden by default */
+    white-space: nowrap;
     position: absolute; /* Position relative to the nearest positioned ancestor */
     top: 3rem; /* Adjust distance from the hamburger icon */
     right:-7rem;
@@ -669,10 +670,12 @@ footer {
     }
     .hero h1 {
         font-size: 2rem;
+        white-space: nowrap; /* Prevent text wrapping */
     }
     
     .hero p {
         font-size: 1rem;
+        white-space: nowrap; /* Prevent text wrapping */
     }
     
     .cta-button,.cta-button-secondary {
@@ -683,6 +686,7 @@ footer {
         display: flex;
         justify-content: center;
         gap: 0.5rem;
+        margin-left:2rem
     }
     .about-image{
         display: none;
