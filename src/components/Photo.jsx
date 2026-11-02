@@ -18,6 +18,7 @@ export default function Photo({
   label = true,
   decorative = false,
   compact = false,
+  briefAt = 'bottom',
 }) {
   const data = getImage(image);
   const { showLabels } = usePrototype();
@@ -42,6 +43,7 @@ export default function Photo({
         loaded || isPlaceholder ? 'is-loaded' : '',
         visible ? 'is-visible' : '',
         compact ? 'photo--compact' : '',
+        briefAt === 'top' ? 'photo--brief-top' : '',
         className,
       ].join(' ')}
       style={style}
@@ -50,7 +52,7 @@ export default function Photo({
     >
       {isPlaceholder ? (
         <div className="photo__placeholder" role={decorative ? undefined : 'img'} aria-label={decorative ? undefined : data.alt}>
-          <PlaceholderSketch variant={data.sketch} lightFrom={data.lightFrom} />
+          <PlaceholderSketch variant={data.sketch} />
           {showLabels && label && (
             <div className="photo__brief" aria-hidden="true">
               <span className="proto-chip proto-chip--shoot">Photo to shoot</span>

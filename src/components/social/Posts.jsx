@@ -5,17 +5,24 @@ import Wordmark from '../Wordmark.jsx';
    All type is sized in container units, so a post renders correctly at any
    width — from a grid thumbnail to a full-size export. */
 
+/* Each array item is one line. Wrap words in *asterisks* to set them in the
+   slanted accent, e.g. 'para *baixo.*' */
 function Lines({ lines, className = '' }) {
   return (
     <span className={className}>
-      {lines.map((line, i) => {
-        const slanted = line.startsWith('*') && line.endsWith('*');
-        return (
-          <span key={i} className={`br ${slanted ? 'slant post__accent' : ''}`}>
-            {slanted ? line.slice(1, -1) : line}{' '}
-          </span>
-        );
-      })}
+      {lines.map((line, i) => (
+        <span key={i} className="br">
+          {line.split(/(\*[^*]+\*)/).filter(Boolean).map((part, j) =>
+            part.startsWith('*') ? (
+              <span key={j} className="post__accent">
+                {part.slice(1, -1)}
+              </span>
+            ) : (
+              part
+            ),
+          )}{' '}
+        </span>
+      ))}
     </span>
   );
 }
@@ -50,10 +57,12 @@ export function PostIdea({ tone = 'charcoal', kicker, idea, detail, format = 'po
   const ratio = format === 'story' ? '9 / 16' : '4 / 5';
   return (
     <div className={`post post--idea post--${tone} post--${format}`} style={{ aspectRatio: ratio }}>
-      <span className="post__kicker">{kicker}</span>
-      <Lines lines={idea} className="post__idea" />
-      {detail && <span className="post__detail">{detail}</span>}
-      <span className="post__rule" aria-hidden="true" />
+      <div className="post__inner">
+        <span className="post__kicker">{kicker}</span>
+        <Lines lines={idea} className="post__idea" />
+        {detail && <span className="post__detail">{detail}</span>}
+        <span className="post__rule" aria-hidden="true" />
+      </div>
       <Signature tone={tone === 'chalk' ? 'charcoal' : 'chalk'} />
     </div>
   );
@@ -64,19 +73,21 @@ export function PostInfo({ tone = 'chalk', kicker, title, items, cta, format = '
   const ratio = format === 'story' ? '9 / 16' : '4 / 5';
   return (
     <div className={`post post--info post--${tone} post--${format}`} style={{ aspectRatio: ratio }}>
-      <span className="post__kicker">{kicker}</span>
-      <Lines lines={title} className="post__title" />
-      <span className="post__items">
-        {items.map((it) => (
-          <span key={it.k} className="post__item">
-            <span className="post__item-k">{it.k}</span>
-            <span className="post__item-v">{it.v}</span>
-          </span>
-        ))}
-      </span>
-      <span className="post__cta">
-        {cta} <span aria-hidden="true">→</span>
-      </span>
+      <div className="post__inner">
+        <span className="post__kicker">{kicker}</span>
+        <Lines lines={title} className="post__title" />
+        <span className="post__items">
+          {items.map((it) => (
+            <span key={it.k} className="post__item">
+              <span className="post__item-k">{it.k}</span>
+              <span className="post__item-v">{it.v}</span>
+            </span>
+          ))}
+        </span>
+        <span className="post__cta">
+          {cta} <span aria-hidden="true">→</span>
+        </span>
+      </div>
       <Signature tone={tone === 'chalk' ? 'charcoal' : 'chalk'} />
     </div>
   );

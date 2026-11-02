@@ -26,7 +26,7 @@ export default function Locations() {
         </div>
 
         <div className="locations__media">
-          <Photo image="portableKit" ratio="4 / 5" className="locations__kit" />
+          <Photo image="portableKit" ratio="4 / 5" className="locations__kit" briefAt="top" />
           <Photo image="wrapsWindow" ratio="3 / 2" className="locations__home" compact />
         </div>
       </div>

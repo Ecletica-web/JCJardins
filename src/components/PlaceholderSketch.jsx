@@ -59,30 +59,6 @@ function Seated({ x, y, s = 1, flip = false }) {
   );
 }
 
-function Grid() {
-  return (
-    <g stroke={STROKE} strokeWidth="0.8" strokeDasharray="3 6" opacity="0.22">
-      <line x1="133.3" y1="0" x2="133.3" y2="500" />
-      <line x1="266.6" y1="0" x2="266.6" y2="500" />
-      <line x1="0" y1="166.6" x2="400" y2="166.6" />
-      <line x1="0" y1="333.3" x2="400" y2="333.3" />
-    </g>
-  );
-}
-
-function Light({ from }) {
-  const left = from !== 'right';
-  const pts = left
-    ? ['0,40 120,0 330,500 120,500', '0,180 50,160 190,500 90,500']
-    : ['400,40 280,0 70,500 280,500', '400,180 350,160 210,500 310,500'];
-  return (
-    <g className="sketch__light" fill={STROKE}>
-      <polygon points={pts[0]} opacity="0.07" />
-      <polygon points={pts[1]} opacity="0.05" />
-    </g>
-  );
-}
-
 const scenes = {
   single: () => <Standing x={210} y={470} s={1.45} />,
   motion: () => (
@@ -138,12 +114,10 @@ const scenes = {
   ),
 };
 
-export default function PlaceholderSketch({ variant = 'single', lightFrom = 'left' }) {
+export default function PlaceholderSketch({ variant = 'single' }) {
   const Scene = scenes[variant] ?? scenes.single;
   return (
-    <svg className="sketch" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-      <Light from={lightFrom} />
-      <Grid />
+    <svg className="sketch" viewBox="0 0 400 500" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false">
       <Scene />
     </svg>
   );

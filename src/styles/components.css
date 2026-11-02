@@ -182,11 +182,35 @@
     linear-gradient(195deg, #2b2825 0%, #1d2021 58%, #151819 100%);
 }
 
-.sketch {
+.photo__placeholder::before,
+.photo__placeholder::after {
+  content: '';
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  pointer-events: none;
+}
+
+/* rule-of-thirds guide */
+.photo__placeholder::before {
+  background:
+    linear-gradient(to right, transparent calc(33.33% - 0.5px), rgb(241 235 221 / 0.12) calc(33.33% - 0.5px), rgb(241 235 221 / 0.12) calc(33.33% + 0.5px), transparent calc(33.33% + 0.5px), transparent calc(66.66% - 0.5px), rgb(241 235 221 / 0.12) calc(66.66% - 0.5px), rgb(241 235 221 / 0.12) calc(66.66% + 0.5px), transparent calc(66.66% + 0.5px)),
+    linear-gradient(to bottom, transparent calc(33.33% - 0.5px), rgb(241 235 221 / 0.12) calc(33.33% - 0.5px), rgb(241 235 221 / 0.12) calc(33.33% + 0.5px), transparent calc(33.33% + 0.5px), transparent calc(66.66% - 0.5px), rgb(241 235 221 / 0.12) calc(66.66% - 0.5px), rgb(241 235 221 / 0.12) calc(66.66% + 0.5px), transparent calc(66.66% + 0.5px));
+}
+
+/* shaft of window light from the lit side */
+.photo__placeholder::after {
+  background: linear-gradient(115deg, transparent 8%, rgb(241 235 221 / 0.07) 9%, rgb(241 235 221 / 0.07) 30%, transparent 31%, transparent 36%, rgb(241 235 221 / 0.05) 37%, rgb(241 235 221 / 0.05) 46%, transparent 47%);
+}
+
+.photo[data-light='right'] .photo__placeholder::after {
+  background: linear-gradient(-115deg, transparent 8%, rgb(241 235 221 / 0.07) 9%, rgb(241 235 221 / 0.07) 30%, transparent 31%, transparent 36%, rgb(241 235 221 / 0.05) 37%, rgb(241 235 221 / 0.05) 46%, transparent 47%);
+}
+
+.sketch {
+  position: absolute;
+  inset: 6% 4% 0;
+  width: 92%;
+  height: 94%;
 }
 
 .photo__brief {
@@ -225,6 +249,12 @@
   font-size: 0.72rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.photo--brief-top .photo__brief {
+  top: 0;
+  bottom: auto;
+  background: linear-gradient(to bottom, rgb(17 20 21 / 0.92), rgb(17 20 21 / 0.6) 75%, transparent);
 }
 
 .photo--compact .photo__brief {

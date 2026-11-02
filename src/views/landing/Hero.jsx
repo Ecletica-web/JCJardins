@@ -39,12 +39,14 @@ export default function Hero() {
       </div>
 
       <div className="hero__strip" aria-label="O que inclui o treino">
-        <ul role="list" className="wrap">
-          {hero.strip.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-          <li className="hero__strip-place">Lisboa · no local combinado</li>
-        </ul>
+        <div className="wrap">
+          <ul role="list">
+            {hero.strip.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+            <li className="hero__strip-place">Lisboa · no local combinado</li>
+          </ul>
+        </div>
       </div>
     </section>
   );

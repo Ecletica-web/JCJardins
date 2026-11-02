@@ -153,10 +153,12 @@
 
 /* ---- Layout 2: one useful idea ----------------------------------------- */
 
-.post--idea,
-.post--info {
-  padding: 8cqw 7cqw 7cqw;
+.post__inner {
+  display: flex;
+  flex-direction: column;
   gap: 5cqw;
+  height: 100%;
+  padding: 8cqw 7cqw 7cqw;
 }
 
 .post--charcoal {
@@ -284,10 +286,14 @@
     linear-gradient(to bottom, rgb(17 20 21 / 0.55), transparent 30%);
 }
 
-.post--story.post--idea,
-.post--story.post--info {
-  padding: 44cqw 8cqw 38cqw;
-  gap: 6cqw;
+.post--story .post__inner {
+  padding: 38cqw 8cqw 37cqw;
+  gap: 5cqw;
+}
+
+.post--story.post--info .post__inner {
+  gap: 4cqw;
+  padding-bottom: 41cqw;
 }
 
 .post--story .post__kicker {
@@ -308,12 +314,12 @@
 }
 
 .post--story .post__title {
-  font-size: 17cqw;
+  font-size: 13cqw;
 }
 
 .post--story .post__item {
-  font-size: 5.2cqw;
-  padding-block: 3.4cqw;
+  font-size: 4.8cqw;
+  padding-block: 2.5cqw;
   grid-template-columns: 12% 1fr;
 }
 
@@ -322,13 +328,13 @@
 }
 
 .post--story .post__cta {
-  font-size: 5.2cqw;
-  padding: 4cqw 6cqw;
+  font-size: 4.8cqw;
+  padding: 3.4cqw 5cqw;
   margin-bottom: 0;
 }
 
 .post--story .photo__ref,
 .post--story .photo__brief {
-  top: 16%;
+  top: 3%;
   bottom: auto;
 }

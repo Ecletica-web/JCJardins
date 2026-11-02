@@ -18,10 +18,10 @@ const palette = [
 const contrast = [
   ['Chalk on charcoal', '14.3 : 1', 'Body text, all sizes'],
   ['Charcoal on chalk', '14.3 : 1', 'Body text, all sizes'],
-  ['Rust on chalk', '6.7 : 1', 'Text and links'],
-  ['Chalk on rust', '6.7 : 1', 'Buttons'],
+  ['Rust on chalk', '4.8 : 1', 'Text and links (AA)'],
+  ['Chalk on rust', '4.8 : 1', 'Buttons (AA)'],
   ['Brown on chalk', '5.4 : 1', 'Small labels'],
-  ['Rust on charcoal', '2.1 : 1', 'Graphic marks only. Use the rust tint #D58B6C (6.4 : 1) for text'],
+  ['Rust on charcoal', '3.0 : 1', 'Graphic marks and large display only. Use the rust tint #D58B6C (6.3 : 1) for small text'],
 ];
 
 const photoPrinciples = [

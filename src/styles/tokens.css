@@ -21,11 +21,11 @@
 
   /* Text on surfaces (all pass WCAG AA for body text) */
   --ink-on-chalk: var(--charcoal);                 /* 14.3:1 */
-  --ink-soft-on-chalk: #4a4744;                    /* 8.0:1 */
+  --ink-soft-on-chalk: #4a4744;                    /* 7.8:1 */
   --ink-on-charcoal: var(--chalk);                 /* 14.3:1 */
   --ink-soft-on-charcoal: #b9b2a5;                 /* 8.1:1 */
-  --accent-on-chalk: var(--rust);                  /* 6.7:1 — text allowed */
-  --accent-on-charcoal: #d58b6c;                   /* rust tint, 6.4:1 — use for small accent text on charcoal */
+  --accent-on-chalk: var(--rust);                  /* 4.75:1 — AA text */
+  --accent-on-charcoal: #d58b6c;                   /* rust tint, 6.3:1 — small accent text on charcoal */
 
   /* ---- Typography ------------------------------------------------------- */
   --font-display: 'Archivo Variable', 'Archivo', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
