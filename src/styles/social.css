@@ -1,0 +1,334 @@
+/* ==========================================================================
+   Instagram post / Story layouts (container-unit typography)
+   ========================================================================== */
+
+.post {
+  position: relative;
+  container-type: inline-size;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  isolation: isolate;
+}
+
+.post .br {
+  display: block;
+}
+
+.post__sig {
+  position: absolute;
+  z-index: 4;
+  right: 6cqw;
+  bottom: 5.5cqw;
+  line-height: 1;
+}
+
+.post__sig .wordmark--inline {
+  font-size: 4.6cqw;
+}
+
+.post__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 2cqw;
+  font-family: var(--font-display);
+  font-stretch: var(--stretch-wide);
+  font-weight: 650;
+  font-size: 3cqw;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.post__kicker::before {
+  content: '';
+  width: 6cqw;
+  height: 0.55cqw;
+  background: currentColor;
+  transform: skewX(var(--slant));
+}
+
+.post__accent {
+  font-style: italic;
+}
+
+/* ---- Layout 1: photo + one headline ------------------------------------ */
+
+.post--photo {
+  background: var(--charcoal);
+  color: var(--chalk);
+  justify-content: flex-end;
+}
+
+.post--photo .post__photo {
+  position: absolute !important;
+  inset: 0;
+  aspect-ratio: auto !important;
+}
+
+.post__shade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to top, rgb(17 20 21 / 0.82) 0%, rgb(17 20 21 / 0.25) 42%, transparent 62%);
+}
+
+.post--top .post__shade {
+  background: linear-gradient(to bottom, rgb(17 20 21 / 0.78) 0%, rgb(17 20 21 / 0.2) 40%, transparent 58%),
+    linear-gradient(to top, rgb(17 20 21 / 0.45), transparent 22%);
+}
+
+.post__content {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  gap: 3cqw;
+  padding: 7cqw 7cqw 14cqw;
+}
+
+.post--top {
+  justify-content: flex-start;
+}
+
+.post--top .post__content {
+  padding: 7cqw;
+}
+
+/* hide placeholder briefs behind the headline area in tiny thumbnails */
+.post--photo .photo__brief {
+  top: 0;
+  bottom: auto;
+  background: linear-gradient(to bottom, rgb(17 20 21 / 0.9), rgb(17 20 21 / 0.55) 75%, transparent);
+  padding: 4cqw;
+  font-size: 3.4cqw;
+}
+
+.post--photo .photo__brief .proto-chip {
+  font-size: max(9px, 3cqw);
+}
+
+.post--photo .photo__brief-title {
+  font-size: max(10px, 3.8cqw);
+}
+
+.post--photo .photo__brief-meta {
+  display: none;
+}
+
+.post--photo .photo__ref {
+  font-size: max(9px, 2.8cqw);
+  left: 3cqw;
+  top: 3cqw;
+}
+
+.post--top .photo__brief,
+.post--top .photo__ref {
+  top: auto;
+  bottom: 3cqw;
+}
+
+.post__headline {
+  font-family: var(--font-display);
+  font-weight: 820;
+  font-stretch: var(--stretch-compressed);
+  text-transform: uppercase;
+  font-size: 13.5cqw;
+  line-height: 0.88;
+  letter-spacing: 0.005em;
+}
+
+.post__headline .post__accent {
+  color: var(--chalk);
+}
+
+.post__caption {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+  font-stretch: var(--stretch-condensed);
+  font-size: 6cqw;
+}
+
+/* ---- Layout 2: one useful idea ----------------------------------------- */
+
+.post--idea,
+.post--info {
+  padding: 8cqw 7cqw 7cqw;
+  gap: 5cqw;
+}
+
+.post--charcoal {
+  background: var(--charcoal);
+  color: var(--chalk);
+}
+
+.post--charcoal .post__kicker,
+.post--charcoal .post__accent {
+  color: var(--accent-on-charcoal);
+}
+
+.post--chalk {
+  background: var(--chalk);
+  color: var(--charcoal);
+}
+
+.post--chalk .post__kicker,
+.post--chalk .post__accent {
+  color: var(--rust);
+}
+
+.post__idea {
+  margin-top: auto;
+  font-family: var(--font-display);
+  font-weight: 820;
+  font-stretch: var(--stretch-compressed);
+  text-transform: uppercase;
+  font-size: 17cqw;
+  line-height: 0.86;
+}
+
+.post__detail {
+  max-width: 78%;
+  font-size: 3.9cqw;
+  line-height: 1.45;
+  opacity: 0.86;
+}
+
+.post__rule {
+  height: 0.5cqw;
+  margin-bottom: 7cqw;
+  background: currentColor;
+  opacity: 0.25;
+}
+
+/* ---- Layout 3: practical info + next step ------------------------------ */
+
+.post__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: var(--stretch-condensed);
+  font-size: 10.5cqw;
+  line-height: 0.95;
+}
+
+.post__items {
+  display: grid;
+  margin-top: auto;
+  border-top: 0.35cqw solid currentColor;
+}
+
+.post__item {
+  display: grid;
+  grid-template-columns: 26% 1fr;
+  gap: 3cqw;
+  padding-block: 2.4cqw;
+  border-bottom: 0.25cqw solid rgb(127 127 127 / 0.35);
+  font-size: 3.7cqw;
+  line-height: 1.3;
+}
+
+.post__item-k {
+  font-family: var(--font-display);
+  font-stretch: var(--stretch-wide);
+  font-weight: 650;
+  font-size: 2.8cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  align-self: center;
+}
+
+.post__item-v {
+  font-weight: 600;
+}
+
+.post__cta {
+  align-self: flex-start;
+  margin-bottom: 9cqw;
+  padding: 2.6cqw 4cqw;
+  background: var(--rust);
+  color: var(--chalk);
+  font-family: var(--font-display);
+  font-stretch: var(--stretch-semi);
+  font-weight: 700;
+  font-size: 3.8cqw;
+}
+
+/* ---- Story format (9:16) -----------------------------------------------
+   Safe zones: top 14 % (≈25cqw) and bottom 20 % (≈36cqw) stay clear of key
+   text because the app interface covers them. */
+
+.post--story .post__sig {
+  top: 27cqw;
+  bottom: auto;
+  left: 8cqw;
+  right: auto;
+}
+
+.post--story .post__sig .wordmark--inline {
+  font-size: 6cqw;
+}
+
+.post--story .post__headline {
+  font-size: 19cqw;
+}
+
+.post--story .post__content {
+  padding: 8cqw 8cqw 40cqw;
+}
+
+.post--story .post__shade {
+  background: linear-gradient(to top, rgb(17 20 21 / 0.85) 0%, rgb(17 20 21 / 0.45) 38%, transparent 62%),
+    linear-gradient(to bottom, rgb(17 20 21 / 0.55), transparent 30%);
+}
+
+.post--story.post--idea,
+.post--story.post--info {
+  padding: 44cqw 8cqw 38cqw;
+  gap: 6cqw;
+}
+
+.post--story .post__kicker {
+  font-size: 4cqw;
+}
+
+.post--story .post__idea {
+  font-size: 17cqw;
+}
+
+.post--story .post__detail {
+  font-size: 5cqw;
+  max-width: 92%;
+}
+
+.post--story .post__rule {
+  margin-bottom: 0;
+}
+
+.post--story .post__title {
+  font-size: 17cqw;
+}
+
+.post--story .post__item {
+  font-size: 5.2cqw;
+  padding-block: 3.4cqw;
+  grid-template-columns: 12% 1fr;
+}
+
+.post--story .post__item-k {
+  font-size: 4cqw;
+}
+
+.post--story .post__cta {
+  font-size: 5.2cqw;
+  padding: 4cqw 6cqw;
+  margin-bottom: 0;
+}
+
+.post--story .photo__ref,
+.post--story .photo__brief {
+  top: 16%;
+  bottom: auto;
+}

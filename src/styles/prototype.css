@@ -1,0 +1,143 @@
+/* ==========================================================================
+   Prototype control — intentionally neutral and off-brand so it never
+   reads as part of Tomás's website.
+   ========================================================================== */
+
+.proto {
+  position: fixed;
+  right: max(0.75rem, env(safe-area-inset-right));
+  bottom: max(0.75rem, env(safe-area-inset-bottom));
+  z-index: 100;
+  display: grid;
+  justify-items: end;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  color: var(--proto-ink);
+}
+
+.proto__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.5rem;
+  padding: 0.35rem 0.5rem 0.35rem 0.75rem;
+  border: 1px dashed var(--proto-line);
+  border-radius: 999px;
+  background: var(--proto-bg);
+  color: var(--proto-ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.25);
+}
+
+.proto__toggle:hover {
+  background: #fff3b8;
+}
+
+.proto__toggle:focus-visible,
+.proto__panel :focus-visible {
+  outline: 2px solid #2f6fde;
+  outline-offset: 2px;
+}
+
+.proto__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #2f6fde;
+}
+
+.proto__current {
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--proto-ink);
+  color: var(--proto-bg);
+  font-size: 0.7rem;
+}
+
+.proto__panel {
+  width: min(20rem, calc(100vw - 1.5rem));
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem;
+  border: 1px dashed var(--proto-line);
+  border-radius: 10px;
+  background: var(--proto-bg);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  box-shadow: 0 12px 32px rgb(0 0 0 / 0.3);
+}
+
+.proto__title {
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.proto__group {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.proto__group legend {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.proto__option {
+  min-height: 2.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #1b1b1b33;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--proto-ink);
+  text-align: left;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.proto__option[aria-pressed='true'] {
+  border-color: var(--proto-ink);
+  background: var(--proto-ink);
+  color: #fff;
+}
+
+.proto__switch {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+.proto__switch input {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #2f6fde;
+}
+
+.proto__notes {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0.75rem 0 0 1rem;
+  border-top: 1px solid #1b1b1b22;
+  color: #3a3a3a;
+}
+
+.proto__link {
+  justify-self: start;
+  padding: 0.35rem 0;
+  border: 0;
+  background: none;
+  color: #1f56b8;
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}

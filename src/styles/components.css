@@ -1,0 +1,277 @@
+/* ==========================================================================
+   Shared components: wordmark, monogram, photo, placeholder, prototype chips
+   ========================================================================== */
+
+/* ---- Wordmark ----------------------------------------------------------- */
+
+.wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--font-display);
+  font-weight: 860;
+  font-stretch: var(--stretch-compressed);
+  text-transform: uppercase;
+  line-height: 0.8;
+  letter-spacing: 0.004em;
+  color: var(--chalk);
+  white-space: nowrap;
+  margin: 0;
+}
+
+.wordmark--charcoal {
+  color: var(--charcoal);
+}
+
+.wordmark__first,
+.wordmark__last {
+  display: block;
+}
+
+.wordmark__first {
+  padding-top: 0.17em; /* room for the accent stroke */
+}
+
+.wordmark__last {
+  font-style: italic;
+  padding-left: 0.36em; /* the surname steps forward */
+  margin-top: 0.03em;
+}
+
+.wordmark__a {
+  position: relative;
+  display: inline-block;
+}
+
+.wordmark__acute {
+  position: absolute;
+  left: 38%;
+  top: -0.045em;
+  width: 0.4em;
+  height: 0.085em;
+  background: var(--rust);
+  transform: rotate(-27deg) skewX(-18deg);
+  transform-origin: left bottom;
+}
+
+.wordmark--inline {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.24em;
+  font-size: 1.6rem;
+}
+
+.wordmark--inline .wordmark__first {
+  padding-top: 0.15em;
+}
+
+.wordmark--inline .wordmark__last {
+  padding-left: 0;
+  margin-top: 0;
+}
+
+/* ---- Monogram (secondary) ---------------------------------------------- */
+
+.monogram {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 1em;
+  height: 1em;
+  font-size: 4rem;
+  background: var(--charcoal);
+  color: var(--chalk);
+  font-family: var(--font-display);
+  font-weight: 860;
+  font-stretch: var(--stretch-compressed);
+  line-height: 1;
+  overflow: hidden;
+}
+
+.monogram--chalk-bg {
+  background: var(--chalk);
+  color: var(--charcoal);
+}
+
+.monogram__t,
+.monogram__q {
+  position: absolute;
+  font-size: 0.62em;
+}
+
+.monogram__t {
+  left: 0.2em;
+  top: 0.32em;
+}
+
+.monogram__q {
+  left: 0.6em;
+  top: 0.42em;
+  font-style: italic;
+}
+
+.monogram__acute {
+  left: 22%;
+  top: -0.06em;
+  width: 0.42em;
+}
+
+/* ---- Photo -------------------------------------------------------------- */
+
+.photo {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  background: var(--charcoal-800);
+  isolation: isolate;
+}
+
+.photo > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: var(--photo-filter);
+  opacity: 0;
+  transform: scale(1.035);
+  transition:
+    opacity var(--dur-slow) var(--ease-out),
+    transform 1.6s var(--ease-out);
+}
+
+.photo.is-loaded.is-visible > img {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo.is-loaded > img {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.photo__grain {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 1.4 -0.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+}
+
+/* ---- Placeholder -------------------------------------------------------- */
+
+.photo__placeholder {
+  position: absolute;
+  inset: 0;
+  color: var(--chalk);
+  background:
+    radial-gradient(110% 85% at 0% 18%, rgb(163 79 50 / 0.32), transparent 55%),
+    radial-gradient(90% 70% at 8% 30%, rgb(121 88 62 / 0.55), transparent 62%),
+    linear-gradient(165deg, #2b2825 0%, #1d2021 58%, #151819 100%);
+}
+
+.photo[data-light='right'] .photo__placeholder {
+  background:
+    radial-gradient(110% 85% at 100% 18%, rgb(163 79 50 / 0.32), transparent 55%),
+    radial-gradient(90% 70% at 92% 30%, rgb(121 88 62 / 0.55), transparent 62%),
+    linear-gradient(195deg, #2b2825 0%, #1d2021 58%, #151819 100%);
+}
+
+.sketch {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.photo__brief {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  gap: 0.35rem;
+  padding: clamp(0.75rem, 3%, 1.25rem);
+  background: linear-gradient(to top, rgb(17 20 21 / 0.92), rgb(17 20 21 / 0.6) 75%, transparent);
+  color: var(--chalk);
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  line-height: 1.45;
+}
+
+.photo__brief .proto-chip {
+  justify-self: start;
+}
+
+.photo__brief-title {
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.photo__brief-text {
+  color: #d6cfc1;
+  max-width: 40ch;
+}
+
+.photo__brief-meta {
+  color: #b9b2a5;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.photo--compact .photo__brief {
+  gap: 0.25rem;
+}
+
+.photo--compact .photo__brief-title {
+  font-size: 0.82rem;
+}
+
+/* ---- Prototype chips (deliberately off-brand) --------------------------- */
+
+.proto-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.22rem 0.5rem;
+  border: 1px dashed var(--proto-line);
+  border-radius: 3px;
+  background: var(--proto-bg);
+  color: var(--proto-ink);
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.proto-chip::before {
+  content: '';
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: #2f6fde;
+}
+
+.proto-chip--shoot::before {
+  background: #d4382c;
+}
+
+.photo__ref {
+  position: absolute;
+  z-index: 3;
+  left: 0.6rem;
+  top: 0.6rem;
+  max-width: calc(100% - 1.2rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
