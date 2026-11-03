@@ -122,11 +122,11 @@ export const locations = {
   kicker: 'Locais',
   title: ['No local', 'combinado.'],
   intro:
-    'O treino vai até ti. Antes da primeira sessão, combinamos o sítio que funciona melhor, em Lisboa. O Tomás leva o equipamento portátil necessário.',
+    'O treino vai até ti, com discrição. Antes da primeira sessão, combinamos o sítio que funciona melhor, em Lisboa. O Tomás leva o equipamento portátil necessário.',
   options: [
-    { title: 'Em casa', text: 'Sala, garagem ou terraço. Basta espaço para dar alguns passos em segurança.' },
-    { title: 'Ao ar livre', text: 'Um jardim, um parque ou outro espaço exterior adequado, perto de ti.' },
-    { title: 'No teu prédio ou empresa', text: 'Uma sala comum ou o ginásio do condomínio, se tiveres acesso.' },
+    { title: 'Em casa', text: 'Sala, terraço, jardim ou junto à piscina. Basta espaço para dar alguns passos em segurança.' },
+    { title: 'Ao ar livre', text: 'Sob os pinheiros, num jardim ou perto do mar, num espaço adequado e perto de ti.' },
+    { title: 'No teu condomínio ou empresa', text: 'Uma sala comum ou o ginásio do condomínio, se tiveres acesso.' },
     {
       title: 'Espaço interior',
       text: 'Se precisares de um espaço coberto, podemos discutir opções. Só ficam marcadas depois de confirmadas.',

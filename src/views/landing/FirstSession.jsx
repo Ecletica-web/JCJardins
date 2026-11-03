@@ -5,7 +5,7 @@ import { firstSession } from '../../content/landing.js';
 
 export default function FirstSession() {
   return (
-    <section className="section first on-chalk" id="primeira-sessao" aria-labelledby="primeira-title">
+    <section className="section first on-light" id="primeira-sessao" aria-labelledby="primeira-title">
       <div className="wrap">
         <div className="first__head">
           <SectionTitle id="primeira-title" kicker={firstSession.kicker} lines={firstSession.title} />

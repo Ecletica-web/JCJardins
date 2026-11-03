@@ -4,7 +4,7 @@ import { hero } from '../../content/landing.js';
 
 export default function Hero() {
   return (
-    <section className="hero on-charcoal" id="topo" aria-labelledby="hero-title">
+    <section className="hero on-dark" id="topo" aria-labelledby="hero-title">
       <div className="hero__grid wrap">
         <div className="hero__mark">
           <Wordmark as="p" layout="stacked" />

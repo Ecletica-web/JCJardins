@@ -5,7 +5,7 @@ import { about } from '../../content/landing.js';
 
 export default function About() {
   return (
-    <section className="section about on-charcoal" id="sobre" aria-labelledby="sobre-title">
+    <section className="section about on-dark" id="sobre" aria-labelledby="sobre-title">
       <div className="wrap about__grid">
         <div className="about__media">
           <Photo image="tomasPortrait" ratio="4 / 5" className="about__portrait" briefAt="top" />

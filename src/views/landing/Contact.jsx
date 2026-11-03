@@ -131,7 +131,7 @@ export default function Contact() {
     undefined;
 
   return (
-    <section className="section contact on-charcoal" id="contacto" aria-labelledby="contacto-title">
+    <section className="section contact on-dark" id="contacto" aria-labelledby="contacto-title">
       <div className="wrap contact__grid">
         <div className="contact__intro">
           <SectionTitle id="contacto-title" kicker={contact.kicker} lines={contact.title} />

@@ -27,7 +27,7 @@ function Lines({ lines, className = '' }) {
   );
 }
 
-function Signature({ tone = 'chalk' }) {
+function Signature({ tone = 'light' }) {
   return (
     <span className="post__sig">
       <Wordmark layout="inline" tone={tone} />
@@ -52,8 +52,8 @@ export function PostPhoto({ image, headline, kicker, place = 'bottom', format = 
   );
 }
 
-/* Layout 2 — Charcoal or chalk background with one useful idea */
-export function PostIdea({ tone = 'charcoal', kicker, idea, detail, format = 'post' }) {
+/* Layout 2 — Pine or linen background with one useful idea */
+export function PostIdea({ tone = 'dark', kicker, idea, detail, format = 'post' }) {
   const ratio = format === 'story' ? '9 / 16' : '4 / 5';
   return (
     <div className={`post post--idea post--${tone} post--${format}`} style={{ aspectRatio: ratio }}>
@@ -63,13 +63,13 @@ export function PostIdea({ tone = 'charcoal', kicker, idea, detail, format = 'po
         {detail && <span className="post__detail">{detail}</span>}
         <span className="post__rule" aria-hidden="true" />
       </div>
-      <Signature tone={tone === 'chalk' ? 'charcoal' : 'chalk'} />
+      <Signature tone={tone === 'light' ? 'dark' : 'light'} />
     </div>
   );
 }
 
 /* Layout 3 — Practical information with a clear next step */
-export function PostInfo({ tone = 'chalk', kicker, title, items, cta, format = 'post' }) {
+export function PostInfo({ tone = 'light', kicker, title, items, cta, format = 'post' }) {
   const ratio = format === 'story' ? '9 / 16' : '4 / 5';
   return (
     <div className={`post post--info post--${tone} post--${format}`} style={{ aspectRatio: ratio }}>
@@ -88,7 +88,7 @@ export function PostInfo({ tone = 'chalk', kicker, title, items, cta, format = '
           {cta} <span aria-hidden="true">→</span>
         </span>
       </div>
-      <Signature tone={tone === 'chalk' ? 'charcoal' : 'chalk'} />
+      <Signature tone={tone === 'light' ? 'dark' : 'light'} />
     </div>
   );
 }

@@ -3,24 +3,26 @@
    ========================================================================== */
 
 /* ---- Wordmark ----------------------------------------------------------- */
+/* Wide, quiet capitals. TOMÁS in medium weight, QUEIROZ in light weight,
+   stepped half an em forward. The accent on the Á is one fine sage stroke. */
 
 .wordmark {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   font-family: var(--font-display);
-  font-weight: 860;
-  font-stretch: var(--stretch-compressed);
+  font-weight: var(--weight-medium);
+  font-stretch: var(--stretch-wide);
   text-transform: uppercase;
-  line-height: 0.8;
-  letter-spacing: 0.004em;
-  color: var(--chalk);
+  line-height: 0.92;
+  letter-spacing: var(--tracking-caps);
+  color: var(--linen);
   white-space: nowrap;
   margin: 0;
 }
 
-.wordmark--charcoal {
-  color: var(--charcoal);
+.wordmark--dark {
+  color: var(--pine);
 }
 
 .wordmark__first,
@@ -29,13 +31,13 @@
 }
 
 .wordmark__first {
-  padding-top: 0.17em; /* room for the accent stroke */
+  padding-top: 0.2em; /* room for the accent stroke */
 }
 
 .wordmark__last {
-  font-style: italic;
-  padding-left: 0.36em; /* the surname steps forward */
-  margin-top: 0.03em;
+  font-weight: var(--weight-light);
+  padding-left: 0.5em; /* the surname steps forward */
+  margin-top: 0.06em;
 }
 
 .wordmark__a {
@@ -45,24 +47,29 @@
 
 .wordmark__acute {
   position: absolute;
-  left: 38%;
-  top: -0.045em;
-  width: 0.4em;
-  height: 0.085em;
-  background: var(--rust);
-  transform: rotate(-27deg) skewX(-18deg);
+  left: 40%;
+  top: -0.07em;
+  width: 0.42em;
+  height: max(1.5px, 0.045em);
+  background: var(--accent);
+  transform: rotate(-30deg);
   transform-origin: left bottom;
 }
 
 .wordmark--inline {
   flex-direction: row;
   align-items: baseline;
-  gap: 0.24em;
-  font-size: 1.6rem;
+  gap: 0.55em;
+  font-size: 0.95rem;
+  letter-spacing: 0.22em;
 }
 
 .wordmark--inline .wordmark__first {
-  padding-top: 0.15em;
+  padding-top: 0.25em;
+}
+
+.wordmark--inline .wordmark__acute {
+  height: max(1.25px, 0.06em);
 }
 
 .wordmark--inline .wordmark__last {
@@ -79,41 +86,43 @@
   width: 1em;
   height: 1em;
   font-size: 4rem;
-  background: var(--charcoal);
-  color: var(--chalk);
+  background: var(--pine);
+  color: var(--linen);
   font-family: var(--font-display);
-  font-weight: 860;
-  font-stretch: var(--stretch-compressed);
+  font-weight: var(--weight-light);
+  font-stretch: var(--stretch-wide);
   line-height: 1;
   overflow: hidden;
 }
 
-.monogram--chalk-bg {
-  background: var(--chalk);
-  color: var(--charcoal);
+.monogram--light-bg {
+  background: var(--linen);
+  color: var(--pine);
 }
 
 .monogram__t,
 .monogram__q {
   position: absolute;
-  font-size: 0.62em;
+  font-size: 0.34em;
+  letter-spacing: 0;
 }
 
 .monogram__t {
-  left: 0.2em;
-  top: 0.32em;
+  left: 0.36em;
+  top: 0.92em;
+  font-weight: var(--weight-medium);
 }
 
 .monogram__q {
-  left: 0.6em;
-  top: 0.42em;
-  font-style: italic;
+  left: 1.36em;
+  top: 1.12em;
 }
 
 .monogram__acute {
-  left: 22%;
-  top: -0.06em;
-  width: 0.42em;
+  left: 30%;
+  top: -0.12em;
+  width: 0.5em;
+  height: max(1.25px, 0.06em);
 }
 
 /* ---- Photo -------------------------------------------------------------- */
@@ -122,7 +131,7 @@
   position: relative;
   overflow: hidden;
   margin: 0;
-  background: var(--charcoal-800);
+  background: var(--pine-800);
   isolation: isolate;
 }
 
@@ -155,6 +164,19 @@
   }
 }
 
+/* sage soft-light tint + low vignette: keeps every image in the same dusk */
+.photo--image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 95% at 50% 40%, transparent 55%, var(--photo-vignette) 100%),
+    linear-gradient(var(--photo-tint), var(--photo-tint));
+  mix-blend-mode: multiply;
+}
+
 .photo__grain {
   position: absolute;
   inset: 0;
@@ -171,18 +193,18 @@
 .photo__placeholder {
   position: absolute;
   inset: 0;
-  color: var(--chalk);
+  color: var(--linen);
   background:
-    radial-gradient(110% 85% at 0% 18%, rgb(163 79 50 / 0.32), transparent 55%),
-    radial-gradient(90% 70% at 8% 30%, rgb(121 88 62 / 0.55), transparent 62%),
-    linear-gradient(165deg, #2b2825 0%, #1d2021 58%, #151819 100%);
+    radial-gradient(110% 85% at 0% 14%, rgb(179 191 168 / 0.22), transparent 55%),
+    radial-gradient(90% 70% at 6% 30%, rgb(143 158 134 / 0.26), transparent 62%),
+    linear-gradient(165deg, #1e2622 0%, #151b18 58%, #0d110f 100%);
 }
 
 .photo[data-light='right'] .photo__placeholder {
   background:
-    radial-gradient(110% 85% at 100% 18%, rgb(163 79 50 / 0.32), transparent 55%),
-    radial-gradient(90% 70% at 92% 30%, rgb(121 88 62 / 0.55), transparent 62%),
-    linear-gradient(195deg, #2b2825 0%, #1d2021 58%, #151819 100%);
+    radial-gradient(110% 85% at 100% 14%, rgb(179 191 168 / 0.22), transparent 55%),
+    radial-gradient(90% 70% at 94% 30%, rgb(143 158 134 / 0.26), transparent 62%),
+    linear-gradient(195deg, #1e2622 0%, #151b18 58%, #0d110f 100%);
 }
 
 .photo__placeholder::before,
@@ -196,17 +218,17 @@
 /* rule-of-thirds guide */
 .photo__placeholder::before {
   background:
-    linear-gradient(to right, transparent calc(33.33% - 0.5px), rgb(241 235 221 / 0.12) calc(33.33% - 0.5px), rgb(241 235 221 / 0.12) calc(33.33% + 0.5px), transparent calc(33.33% + 0.5px), transparent calc(66.66% - 0.5px), rgb(241 235 221 / 0.12) calc(66.66% - 0.5px), rgb(241 235 221 / 0.12) calc(66.66% + 0.5px), transparent calc(66.66% + 0.5px)),
-    linear-gradient(to bottom, transparent calc(33.33% - 0.5px), rgb(241 235 221 / 0.12) calc(33.33% - 0.5px), rgb(241 235 221 / 0.12) calc(33.33% + 0.5px), transparent calc(33.33% + 0.5px), transparent calc(66.66% - 0.5px), rgb(241 235 221 / 0.12) calc(66.66% - 0.5px), rgb(241 235 221 / 0.12) calc(66.66% + 0.5px), transparent calc(66.66% + 0.5px));
+    linear-gradient(to right, transparent calc(33.33% - 0.5px), rgb(var(--mist) / 0.1) calc(33.33% - 0.5px), rgb(var(--mist) / 0.1) calc(33.33% + 0.5px), transparent calc(33.33% + 0.5px), transparent calc(66.66% - 0.5px), rgb(var(--mist) / 0.1) calc(66.66% - 0.5px), rgb(var(--mist) / 0.1) calc(66.66% + 0.5px), transparent calc(66.66% + 0.5px)),
+    linear-gradient(to bottom, transparent calc(33.33% - 0.5px), rgb(var(--mist) / 0.1) calc(33.33% - 0.5px), rgb(var(--mist) / 0.1) calc(33.33% + 0.5px), transparent calc(33.33% + 0.5px), transparent calc(66.66% - 0.5px), rgb(var(--mist) / 0.1) calc(66.66% - 0.5px), rgb(var(--mist) / 0.1) calc(66.66% + 0.5px), transparent calc(66.66% + 0.5px));
 }
 
 /* shaft of window light from the lit side */
 .photo__placeholder::after {
-  background: linear-gradient(115deg, transparent 8%, rgb(241 235 221 / 0.07) 9%, rgb(241 235 221 / 0.07) 30%, transparent 31%, transparent 36%, rgb(241 235 221 / 0.05) 37%, rgb(241 235 221 / 0.05) 46%, transparent 47%);
+  background: linear-gradient(115deg, transparent 8%, rgb(var(--mist) / 0.06) 9%, rgb(var(--mist) / 0.06) 30%, transparent 31%, transparent 36%, rgb(var(--mist) / 0.04) 37%, rgb(var(--mist) / 0.04) 46%, transparent 47%);
 }
 
 .photo[data-light='right'] .photo__placeholder::after {
-  background: linear-gradient(-115deg, transparent 8%, rgb(241 235 221 / 0.07) 9%, rgb(241 235 221 / 0.07) 30%, transparent 31%, transparent 36%, rgb(241 235 221 / 0.05) 37%, rgb(241 235 221 / 0.05) 46%, transparent 47%);
+  background: linear-gradient(-115deg, transparent 8%, rgb(var(--mist) / 0.06) 9%, rgb(var(--mist) / 0.06) 30%, transparent 31%, transparent 36%, rgb(var(--mist) / 0.04) 37%, rgb(var(--mist) / 0.04) 46%, transparent 47%);
 }
 
 .sketch {
@@ -225,8 +247,8 @@
   display: grid;
   gap: 0.35rem;
   padding: clamp(0.75rem, 3%, 1.25rem);
-  background: linear-gradient(to top, rgb(17 20 21 / 0.92), rgb(17 20 21 / 0.6) 75%, transparent);
-  color: var(--chalk);
+  background: linear-gradient(to top, rgb(var(--shade) / 0.92), rgb(var(--shade) / 0.6) 75%, transparent);
+  color: var(--linen);
   font-family: var(--font-body);
   font-size: var(--fs-caption);
   line-height: 1.45;
@@ -243,12 +265,12 @@
 }
 
 .photo__brief-text {
-  color: #d6cfc1;
+  color: #d3d2c8;
   max-width: 40ch;
 }
 
 .photo__brief-meta {
-  color: #b9b2a5;
+  color: var(--ink-soft-on-dark);
   font-size: 0.72rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -257,7 +279,7 @@
 .photo--brief-top .photo__brief {
   top: 0;
   bottom: auto;
-  background: linear-gradient(to bottom, rgb(17 20 21 / 0.92), rgb(17 20 21 / 0.6) 75%, transparent);
+  background: linear-gradient(to bottom, rgb(var(--shade) / 0.92), rgb(var(--shade) / 0.6) 75%, transparent);
 }
 
 .photo--compact .photo__brief {

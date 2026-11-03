@@ -26,7 +26,7 @@
 }
 
 .post__sig .wordmark--inline {
-  font-size: 4.6cqw;
+  font-size: 2.6cqw;
 }
 
 .post__kicker {
@@ -35,18 +35,17 @@
   gap: 2cqw;
   font-family: var(--font-display);
   font-stretch: var(--stretch-wide);
-  font-weight: 650;
-  font-size: 3cqw;
-  letter-spacing: 0.14em;
+  font-weight: var(--weight-medium);
+  font-size: 2.4cqw;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
 }
 
 .post__kicker::before {
   content: '';
-  width: 6cqw;
-  height: 0.55cqw;
+  width: 7cqw;
+  height: max(1px, 0.25cqw);
   background: currentColor;
-  transform: skewX(var(--slant));
 }
 
 .post__accent {
@@ -56,8 +55,8 @@
 /* ---- Layout 1: photo + one headline ------------------------------------ */
 
 .post--photo {
-  background: var(--charcoal);
-  color: var(--chalk);
+  background: var(--pine);
+  color: var(--linen);
   justify-content: flex-end;
 }
 
@@ -72,12 +71,12 @@
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  background: linear-gradient(to top, rgb(17 20 21 / 0.82) 0%, rgb(17 20 21 / 0.25) 42%, transparent 62%);
+  background: linear-gradient(to top, rgb(var(--shade) / 0.82) 0%, rgb(var(--shade) / 0.25) 42%, transparent 62%);
 }
 
 .post--top .post__shade {
-  background: linear-gradient(to bottom, rgb(17 20 21 / 0.78) 0%, rgb(17 20 21 / 0.2) 40%, transparent 58%),
-    linear-gradient(to top, rgb(17 20 21 / 0.45), transparent 22%);
+  background: linear-gradient(to bottom, rgb(var(--shade) / 0.78) 0%, rgb(var(--shade) / 0.2) 40%, transparent 58%),
+    linear-gradient(to top, rgb(var(--shade) / 0.45), transparent 22%);
 }
 
 .post__content {
@@ -100,7 +99,7 @@
 .post--photo .photo__brief {
   top: 0;
   bottom: auto;
-  background: linear-gradient(to bottom, rgb(17 20 21 / 0.9), rgb(17 20 21 / 0.55) 75%, transparent);
+  background: linear-gradient(to bottom, rgb(var(--shade) / 0.9), rgb(var(--shade) / 0.55) 75%, transparent);
   padding: 4cqw;
   font-size: 3.4cqw;
 }
@@ -131,24 +130,24 @@
 
 .post__headline {
   font-family: var(--font-display);
-  font-weight: 820;
-  font-stretch: var(--stretch-compressed);
-  text-transform: uppercase;
-  font-size: 13.5cqw;
-  line-height: 0.88;
-  letter-spacing: 0.005em;
+  font-weight: var(--weight-light);
+  font-stretch: var(--stretch-normal);
+  font-size: 10cqw;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
 }
 
 .post__headline .post__accent {
-  color: var(--chalk);
+  color: var(--sage-light);
 }
 
 .post__caption {
   font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 700;
-  font-stretch: var(--stretch-condensed);
-  font-size: 6cqw;
+  font-stretch: var(--stretch-wide);
+  font-weight: var(--weight-regular);
+  font-size: 2.6cqw;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
 }
 
 /* ---- Layout 2: one useful idea ----------------------------------------- */
@@ -161,34 +160,34 @@
   padding: 8cqw 7cqw 7cqw;
 }
 
-.post--charcoal {
-  background: var(--charcoal);
-  color: var(--chalk);
+.post--dark {
+  background: var(--pine);
+  color: var(--linen);
 }
 
-.post--charcoal .post__kicker,
-.post--charcoal .post__accent {
-  color: var(--accent-on-charcoal);
+.post--dark .post__kicker,
+.post--dark .post__accent {
+  color: var(--sage-light);
 }
 
-.post--chalk {
-  background: var(--chalk);
-  color: var(--charcoal);
+.post--light {
+  background: var(--linen);
+  color: var(--pine);
 }
 
-.post--chalk .post__kicker,
-.post--chalk .post__accent {
-  color: var(--rust);
+.post--light .post__kicker,
+.post--light .post__accent {
+  color: var(--sage-deep);
 }
 
 .post__idea {
   margin-top: auto;
   font-family: var(--font-display);
-  font-weight: 820;
-  font-stretch: var(--stretch-compressed);
-  text-transform: uppercase;
-  font-size: 17cqw;
-  line-height: 0.86;
+  font-weight: var(--weight-light);
+  font-stretch: var(--stretch-normal);
+  font-size: 12cqw;
+  line-height: 1;
+  letter-spacing: -0.03em;
 }
 
 .post__detail {
@@ -209,16 +208,17 @@
 
 .post__title {
   font-family: var(--font-display);
-  font-weight: 800;
-  font-stretch: var(--stretch-condensed);
-  font-size: 10.5cqw;
-  line-height: 0.95;
+  font-weight: var(--weight-light);
+  font-stretch: var(--stretch-normal);
+  font-size: 9cqw;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
 }
 
 .post__items {
   display: grid;
   margin-top: auto;
-  border-top: 0.35cqw solid currentColor;
+  border-top: max(1px, 0.25cqw) solid currentColor;
 }
 
 .post__item {
@@ -226,7 +226,7 @@
   grid-template-columns: 26% 1fr;
   gap: 3cqw;
   padding-block: 2.4cqw;
-  border-bottom: 0.25cqw solid rgb(127 127 127 / 0.35);
+  border-bottom: max(1px, 0.2cqw) solid rgb(127 127 127 / 0.3);
   font-size: 3.7cqw;
   line-height: 1.3;
 }
@@ -234,28 +234,35 @@
 .post__item-k {
   font-family: var(--font-display);
   font-stretch: var(--stretch-wide);
-  font-weight: 650;
-  font-size: 2.8cqw;
-  letter-spacing: 0.12em;
+  font-weight: var(--weight-regular);
+  font-size: 2.3cqw;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   opacity: 0.75;
   align-self: center;
 }
 
 .post__item-v {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .post__cta {
   align-self: flex-start;
   margin-bottom: 9cqw;
-  padding: 2.6cqw 4cqw;
-  background: var(--rust);
-  color: var(--chalk);
+  padding: 2.8cqw 4.4cqw;
+  background: var(--sage-light);
+  color: var(--pine);
   font-family: var(--font-display);
-  font-stretch: var(--stretch-semi);
-  font-weight: 700;
-  font-size: 3.8cqw;
+  font-stretch: var(--stretch-wide);
+  font-weight: var(--weight-medium);
+  font-size: 2.3cqw;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.post--light .post__cta {
+  background: var(--sage-deep);
+  color: var(--linen);
 }
 
 /* ---- Story format (9:16) -----------------------------------------------
@@ -270,11 +277,11 @@
 }
 
 .post--story .post__sig .wordmark--inline {
-  font-size: 6cqw;
+  font-size: 3.4cqw;
 }
 
 .post--story .post__headline {
-  font-size: 19cqw;
+  font-size: 13cqw;
 }
 
 .post--story .post__content {
@@ -282,8 +289,8 @@
 }
 
 .post--story .post__shade {
-  background: linear-gradient(to top, rgb(17 20 21 / 0.85) 0%, rgb(17 20 21 / 0.45) 38%, transparent 62%),
-    linear-gradient(to bottom, rgb(17 20 21 / 0.55), transparent 30%);
+  background: linear-gradient(to top, rgb(var(--shade) / 0.85) 0%, rgb(var(--shade) / 0.45) 38%, transparent 62%),
+    linear-gradient(to bottom, rgb(var(--shade) / 0.55), transparent 30%);
 }
 
 .post--story .post__inner {
@@ -297,11 +304,11 @@
 }
 
 .post--story .post__kicker {
-  font-size: 4cqw;
+  font-size: 3.2cqw;
 }
 
 .post--story .post__idea {
-  font-size: 17cqw;
+  font-size: 13cqw;
 }
 
 .post--story .post__detail {
@@ -314,7 +321,7 @@
 }
 
 .post--story .post__title {
-  font-size: 13cqw;
+  font-size: 12cqw;
 }
 
 .post--story .post__item {
@@ -324,11 +331,11 @@
 }
 
 .post--story .post__item-k {
-  font-size: 4cqw;
+  font-size: 3.2cqw;
 }
 
 .post--story .post__cta {
-  font-size: 4.8cqw;
+  font-size: 3.2cqw;
   padding: 3.4cqw 5cqw;
   margin-bottom: 0;
 }

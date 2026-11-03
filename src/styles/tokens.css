@@ -1,63 +1,74 @@
 /* ==========================================================================
-   Tomás Queiroz — design tokens
-   Every colour, type setting, spacing step and motion value lives here.
-   Change a value once and it updates the landing page, brand view and posts.
+   Tomás Queiroz — design tokens  (v2 · pine & sage)
+   Mood: dusk under stone pines on the Atlantic coast. Quiet, private,
+   a little mysterious. Every colour, type setting, spacing step and motion
+   value lives here; change it once and the whole prototype follows.
    ========================================================================== */
 
 :root {
   /* ---- Brand palette ---------------------------------------------------- */
-  --charcoal: #191d1e;
-  --chalk: #f1ebdd;
-  --tobacco: #79583e;
-  --rust: #a34f32;
+  --pine: #121714;        /* primary dark surface — near-black with a green bias */
+  --linen: #e8e4da;       /* primary light surface — sand-washed linen */
+  --sage: #8f9e86;        /* signature accent — muted sage */
+  --sage-light: #b3bfa8;  /* sage for fills and type on pine */
+  --sage-deep: #4a5845;   /* sage for type and fills on linen */
+  --driftwood: #6e604d;   /* a trace of warmth: small labels, meta */
 
-  /* Derived tones (tints/shades of the four brand colours, not new hues) */
-  --charcoal-900: #111415;   /* deeper charcoal for footer / photo wells */
-  --charcoal-800: #22282a;   /* raised charcoal surface */
-  --charcoal-700: #2e3537;   /* hairlines on charcoal */
-  --chalk-200: #e6dfcf;      /* recessed chalk surface */
-  --chalk-300: #d8cfbc;      /* hairlines on chalk */
-  --rust-600: #8c4229;       /* rust hover */
+  /* Derived tones */
+  --pine-900: #0b0f0d;    /* deepest well: footer, photo shadows */
+  --pine-800: #1b221e;    /* raised pine surface, inputs */
+  --pine-700: #2a332e;    /* hairlines on pine */
+  --linen-200: #dcd7cb;   /* recessed linen surface */
+  --linen-300: #c9c3b4;   /* hairlines on linen */
+
+  /* Accent roles (kept as tokens so components never hard-code sage) */
+  --accent: var(--sage);              /* marks, rules, strokes */
+  --accent-hover: var(--sage-light);
 
   /* Text on surfaces (all pass WCAG AA for body text) */
-  --ink-on-chalk: var(--charcoal);                 /* 14.3:1 */
-  --ink-soft-on-chalk: #4a4744;                    /* 7.8:1 */
-  --ink-on-charcoal: var(--chalk);                 /* 14.3:1 */
-  --ink-soft-on-charcoal: #b9b2a5;                 /* 8.1:1 */
-  --accent-on-chalk: var(--rust);                  /* 4.75:1 — AA text */
-  --accent-on-charcoal: #d58b6c;                   /* rust tint, 6.3:1 — small accent text on charcoal */
+  --ink-on-light: var(--pine);         /* 14.3:1 */
+  --ink-soft-on-light: #4d534b;        /* 6.2:1 */
+  --ink-on-dark: var(--linen);         /* 14.3:1 */
+  --ink-soft-on-dark: #a3aa9f;         /* 7.6:1 */
+  --accent-on-light: var(--sage-deep); /* 6.0:1 */
+  --accent-on-dark: var(--sage-light); /* 9.4:1 */
+  --error-on-dark: #e0a58f;            /* 8.6:1 — errors only */
 
   /* ---- Typography ------------------------------------------------------- */
-  --font-display: 'Archivo Variable', 'Archivo', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Archivo Variable', 'Archivo', 'Helvetica Neue', Arial, sans-serif;
   --font-body: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  /* Archivo width axis: 62% (compressed) → 125% (expanded) */
+  /* Archivo width axis: 62% (compressed) → 125% (expanded).
+     v2 lives at the wide end: spacious, quiet capitals. */
   --stretch-compressed: 62%;
-  --stretch-condensed: 74%;
-  --stretch-semi: 88%;
+  --stretch-condensed: 80%;
   --stretch-normal: 100%;
-  --stretch-wide: 118%;
+  --stretch-semi: 108%;
+  --stretch-wide: 125%;
+
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
 
   /* Fluid type scale */
-  --fs-mark: clamp(4.25rem, 15.5vw, 15rem);   /* hero wordmark */
-  --fs-display: clamp(3rem, 8.4vw, 8rem);     /* section display caps */
-  --fs-h1: clamp(2.35rem, 5.2vw, 4.6rem);
-  --fs-h2: clamp(2rem, 4.4vw, 3.9rem);
-  --fs-h3: clamp(1.35rem, 2vw, 1.75rem);
-  --fs-lead: clamp(1.125rem, 1.5vw, 1.35rem);
+  --fs-mark: clamp(2.6rem, 8.6vw, 8.4rem); /* hero wordmark */
+  --fs-h1: clamp(2.3rem, 4.8vw, 4.4rem);
+  --fs-h2: clamp(2rem, 4vw, 3.6rem);
+  --fs-h3: clamp(1.2rem, 1.7vw, 1.5rem);
+  --fs-lead: clamp(1.08rem, 1.35vw, 1.25rem);
   --fs-body: 1.0625rem;
   --fs-small: 0.9375rem;
   --fs-caption: 0.8125rem;
-  --fs-label: 0.75rem;
+  --fs-label: 0.6875rem;
 
-  --lh-tight: 0.9;
-  --lh-heading: 1.02;
-  --lh-body: 1.6;
+  --lh-tight: 1;
+  --lh-heading: 1.06;
+  --lh-body: 1.65;
 
-  --tracking-label: 0.14em;
-  --tracking-caps: 0.01em;
+  --tracking-label: 0.26em;
+  --tracking-caps: 0.14em;
 
-  /* Slant used for movement (wordmark surname, occasional italics) */
+  /* Slant used sparingly for movement */
   --slant: -9deg;
 
   /* ---- Space & layout --------------------------------------------------- */
@@ -72,28 +83,37 @@
   --space-9: 7rem;
   --space-10: 10rem;
 
-  --gutter: clamp(1rem, 4vw, 3.5rem);
+  --gutter: clamp(1rem, 4.5vw, 4rem);
   --max-width: 1440px;
-  --measure: 36rem;
-  --section-pad: clamp(4.5rem, 10vw, 9rem);
-  --header-h: 4rem;
+  --measure: 34rem;
+  --section-pad: clamp(5rem, 12vw, 11rem);
+  --header-h: 4.5rem;
 
-  --radius: 2px;  /* deliberately almost square */
+  --radius: 0px;
 
   /* ---- Photography treatment ------------------------------------------- */
-  --photo-filter: saturate(0.84) contrast(1.05) sepia(0.06) brightness(0.98);
-  --grain-opacity: 0.16;
+  /* Cooler, quieter, lower key: shadows sink, skin stays believable. */
+  --photo-filter: saturate(0.6) contrast(1.08) brightness(0.86) sepia(0.07);
+  --photo-tint: rgb(143 158 134 / 0.24); /* sage wash (multiply) */
+  --photo-vignette: rgb(11 15 13 / 0.62);
+  --grain-opacity: 0.18;
+
+  /* Overlays used on photographs and placeholders */
+  --shade: 11 15 13;      /* pine-900 as RGB channels for alpha mixes */
+  --mist: 232 228 218;    /* linen as RGB channels */
 
   /* ---- Motion ----------------------------------------------------------- */
   --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
-  --dur-fast: 160ms;
-  --dur-med: 320ms;
-  --dur-slow: 900ms;
+  --dur-fast: 200ms;
+  --dur-med: 380ms;
+  --dur-slow: 1100ms;
 
   /* ---- Prototype chrome (deliberately outside the brand) --------------- */
   --proto-bg: #fffbe6;
   --proto-ink: #1b1b1b;
   --proto-line: #1b1b1b;
+
+  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: reduce) {

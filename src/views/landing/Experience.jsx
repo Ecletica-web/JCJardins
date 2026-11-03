@@ -5,7 +5,7 @@ import { experience } from '../../content/landing.js';
 
 export default function Experience() {
   return (
-    <section className="section experience on-chalk" id="treino" aria-labelledby="treino-title">
+    <section className="section experience on-light" id="treino" aria-labelledby="treino-title">
       <div className="wrap">
         <div className="experience__head">
           <SectionTitle id="treino-title" kicker={experience.kicker} lines={experience.title} />

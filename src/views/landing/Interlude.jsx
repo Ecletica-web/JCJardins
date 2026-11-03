@@ -3,8 +3,8 @@ import { interlude } from '../../content/landing.js';
 
 export default function Interlude() {
   return (
-    <section className="interlude on-charcoal" aria-label="Repetição">
-      <Photo image="padworkWide" ratio="auto" className="interlude__photo" sizes="100vw" />
+    <section className="interlude on-dark" aria-label="Repetição">
+      <Photo image="pinesMist" ratio="auto" className="interlude__photo" sizes="100vw" />
       <div className="interlude__shade" aria-hidden="true" />
       <p className="interlude__lines display wrap">
         {interlude.lines.map((l, i) => (

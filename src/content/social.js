@@ -34,7 +34,7 @@ export const posts = [
     id: 'p2',
     category: 'explainer',
     layout: 'idea',
-    tone: 'charcoal',
+    tone: 'dark',
     kicker: 'Técnica · Respiração',
     idea: ['Expira', 'em cada', '*golpe.*'],
     detail: 'Soltar o ar mantém o tronco firme e o ritmo constante. Prender a respiração cansa mais depressa.',
@@ -71,7 +71,7 @@ export const posts = [
     id: 'p6',
     category: 'service',
     layout: 'info',
-    tone: 'chalk',
+    tone: 'light',
     kicker: 'Treino privado',
     title: ['Kickboxing', 'e força,', '*em Lisboa.*'],
     items: [
@@ -123,7 +123,7 @@ export const stories = [
     id: 's2',
     label: 'Story · one useful idea',
     layout: 'idea',
-    tone: 'chalk',
+    tone: 'light',
     kicker: 'Primeira sessão',
     idea: ['Não precisas', 'de *experiência.*'],
     detail: 'Começamos com uma conversa, encontramos o teu ponto de partida e treinamos ao teu ritmo.',
@@ -132,7 +132,7 @@ export const stories = [
     id: 's3',
     label: 'Story · practical next step',
     layout: 'info',
-    tone: 'charcoal',
+    tone: 'dark',
     kicker: 'Locais',
     title: ['Onde', '*treinamos?*'],
     items: [
@@ -141,6 +141,6 @@ export const stories = [
       { k: 'C', v: 'No teu prédio ou empresa' },
       { k: 'D', v: 'Espaço interior, a confirmar' },
     ],
-    cta: 'Envia mensagem para combinar',
+    cta: 'Envia mensagem',
   },
 ];

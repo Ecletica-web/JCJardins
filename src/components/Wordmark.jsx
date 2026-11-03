@@ -1,12 +1,13 @@
 /* Tomás Queiroz wordmark
    ----------------------
-   • TOMÁS sits upright and compressed — the guard, planted.
-   • QUEIROZ is slanted and stepped forward — the strike, in motion.
-   • The acute accent on the Á is drawn as a single rust stroke, cut at the
-     same angle as the slant. It is the only colour in the mark.
+   • Wide, quiet capitals (Archivo at 125 % width).
+   • TOMÁS in medium weight; QUEIROZ lighter and stepped half an em forward,
+     the movement of a single step in.
+   • The acute accent on the Á is one fine sage stroke — the only colour
+     in the mark.
    The visible letters are decorative; assistive tech reads the label. */
 
-export default function Wordmark({ layout = 'stacked', tone = 'chalk', as: Tag = 'span', className = '', size }) {
+export default function Wordmark({ layout = 'stacked', tone = 'light', as: Tag = 'span', className = '', size }) {
   const style = size ? { fontSize: size } : undefined;
   return (
     <Tag
@@ -30,7 +31,7 @@ export default function Wordmark({ layout = 'stacked', tone = 'chalk', as: Tag =
 }
 
 /* Secondary monogram — for avatars, favicons and tight spaces only. */
-export function Monogram({ tone = 'chalk', className = '', size }) {
+export function Monogram({ tone = 'light', className = '', size }) {
   const style = size ? { fontSize: size } : undefined;
   return (
     <span className={`monogram monogram--${tone} ${className}`} style={style} role="img" aria-label="TQ — monograma Tomás Queiroz">

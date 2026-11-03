@@ -4,7 +4,7 @@ import { locations } from '../../content/landing.js';
 
 export default function Locations() {
   return (
-    <section className="section locations on-chalk" id="locais" aria-labelledby="locais-title">
+    <section className="section locations on-light" id="locais" aria-labelledby="locais-title">
       <div className="wrap locations__grid">
         <div className="locations__copy">
           <SectionTitle id="locais-title" kicker={locations.kicker} lines={locations.title} />
@@ -26,8 +26,8 @@ export default function Locations() {
         </div>
 
         <div className="locations__media">
-          <Photo image="portableKit" ratio="4 / 5" className="locations__kit" briefAt="top" />
-          <Photo image="wrapsWindow" ratio="3 / 2" className="locations__home" compact />
+          <Photo image="boardwalk" ratio="4 / 5" className="locations__kit" />
+          <Photo image="portableKit" ratio="3 / 2" className="locations__home" compact />
         </div>
       </div>
     </section>

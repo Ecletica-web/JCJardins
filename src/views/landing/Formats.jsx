@@ -5,7 +5,7 @@ import { formats } from '../../content/landing.js';
 
 export default function Formats() {
   return (
-    <section className="section formats on-charcoal" id="formatos" aria-labelledby="formatos-title">
+    <section className="section formats on-dark" id="formatos" aria-labelledby="formatos-title">
       <div className="wrap">
         <SectionTitle id="formatos-title" kicker={formats.kicker} lines={formats.title} />
 
