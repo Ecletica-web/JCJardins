@@ -9,9 +9,7 @@ function Views() {
 
   useEffect(() => {
     document.title =
-      view === VIEWS.brand
-        ? 'Marca e Instagram — Tomás Queiroz (protótipo)'
-        : 'Tomás Queiroz — Treino privado de kickboxing e força';
+      view === VIEWS.brand ? 'Tomás Queiroz · Marca' : 'Tomás Queiroz';
   }, [view]);
 
   return (

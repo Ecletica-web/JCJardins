@@ -7,7 +7,7 @@ It has two connected views:
 1. **Landing page**, customer-facing, in European Portuguese.
 2. **Brand & Instagram preview**: wordmark, type, colour, photography rules, priority shot list, three post layouts, a nine-post feed and three Story / Reel covers.
 
-To switch between them, use the dashed **Prototype** pill in the bottom-right corner. It sits outside the site content on purpose. The same panel turns the image labels on and off. You can also open the brand view directly at `/?vista=marca`.
+To switch between them, use the dashed **Prototype** pill in the bottom-right corner. It sits outside the site content on purpose. The same panel turns the image labels on and off. You can also open the brand view directly by adding `#marca` to the address (the older `?vista=marca` still works).
 
 ---
 

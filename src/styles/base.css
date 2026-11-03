@@ -323,23 +323,19 @@ select {
 }
 
 /* ---- Reveal ------------------------------------------------------------- */
+/* Content is always visible; entering the viewport only settles a small offset. */
 
 .reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition:
-    opacity var(--dur-slow) var(--ease-out),
-    transform var(--dur-slow) var(--ease-out);
+  transform: translateY(14px);
+  transition: transform var(--dur-slow) var(--ease-out);
 }
 
 .reveal.is-visible {
-  opacity: 1;
   transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal {
-    opacity: 1;
     transform: none;
   }
 }

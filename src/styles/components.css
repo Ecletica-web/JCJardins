@@ -140,8 +140,11 @@
     transform 1.6s var(--ease-out);
 }
 
-.photo.is-loaded.is-visible > img {
+.photo.is-loaded > img {
   opacity: 1;
+}
+
+.photo.is-loaded.is-visible > img {
   transform: none;
 }
 

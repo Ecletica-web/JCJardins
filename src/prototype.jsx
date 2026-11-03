@@ -10,9 +10,23 @@ export const VIEWS = {
   brand: 'marca',
 };
 
-function readView() {
-  const params = new URLSearchParams(window.location.search);
-  return params.get('vista') === VIEWS.brand ? VIEWS.brand : VIEWS.landing;
+/* Views are addressed by a plain #name so links survive hosts that only
+   pass the hash (e.g. a published artifact). #marca opens the brand view;
+   any brand-section anchor keeps it open; landing anchors return to the site.
+   The older ?vista=marca query still works. */
+const BRAND_IDS = new Set(['marca', 'wordmark', 'type', 'colour', 'photo', 'shot-list', 'layouts', 'feed', 'stories']);
+const LANDING_IDS = new Set(['topo', 'treino', 'sobre', 'primeira-sessao', 'formatos', 'locais', 'contacto']);
+
+function readView(current = VIEWS.landing) {
+  const id = window.location.hash.replace('#', '');
+  if (BRAND_IDS.has(id)) return VIEWS.brand;
+  if (LANDING_IDS.has(id)) return VIEWS.landing;
+  try {
+    if (new URLSearchParams(window.location.search).get('vista') === VIEWS.brand) return VIEWS.brand;
+  } catch {
+    /* no query available */
+  }
+  return current;
 }
 
 function readLabels() {
@@ -24,24 +38,21 @@ function readLabels() {
 }
 
 export function PrototypeProvider({ children }) {
-  const [view, setViewState] = useState(readView);
+  const [view, setViewState] = useState(() => readView());
   const [showLabels, setShowLabelsState] = useState(readLabels);
 
   useEffect(() => {
-    const onPop = () => setViewState(readView());
-    window.addEventListener('popstate', onPop);
-    return () => window.removeEventListener('popstate', onPop);
+    const onHash = () => setViewState((current) => readView(current));
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
   }, []);
 
   const setView = useCallback((next, hash = '') => {
-    const url = new URL(window.location.href);
-    if (next === VIEWS.brand) url.searchParams.set('vista', VIEWS.brand);
-    else url.searchParams.delete('vista');
-    url.hash = hash;
-    window.history.pushState({}, '', url);
+    const id = hash ? hash.replace('#', '') : next === VIEWS.brand ? 'marca' : 'topo';
     setViewState(next);
+    if (window.location.hash !== `#${id}`) window.location.hash = id;
     requestAnimationFrame(() => {
-      const target = hash ? document.getElementById(hash.replace('#', '')) : null;
+      const target = hash ? document.getElementById(id) : null;
       if (target) target.scrollIntoView();
       else window.scrollTo(0, 0);
       document.getElementById('conteudo')?.focus({ preventScroll: true });

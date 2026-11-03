@@ -8,7 +8,7 @@
 
 .bp-top {
   position: sticky;
-  top: 0;
+  top: env(safe-area-inset-top, 0px);
   z-index: 40;
   border-bottom: 1px solid var(--charcoal-700);
 }
