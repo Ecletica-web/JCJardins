@@ -1,6 +1,4 @@
-import { useRef } from 'react';
 import Photo from '../../components/Photo.jsx';
-import StripNav, { useStrip } from '../../components/StripNav.jsx';
 import RealClip from '../../components/RealClip.jsx';
 import { Reveal } from '../../components/useReveal.jsx';
 import RevealCard from '../../components/RevealCard.jsx';
@@ -9,8 +7,6 @@ import { useContent } from '../../i18n.jsx';
 
 export default function Experience() {
   const { experience, ui } = useContent();
-  const strip = useRef(null);
-  const { index, goTo } = useStrip(strip, experience.pillars.length);
   return (
     <section className="section experience on-dark" id="treino" aria-labelledby="treino-title">
       <div className="wrap">
@@ -19,7 +15,7 @@ export default function Experience() {
           <p className="lead soft experience__intro">{experience.intro}</p>
         </div>
 
-        <ol role="list" className="pillars" ref={strip}>
+        <ol role="list" className="pillars">
           {experience.pillars.map((p, i) => (
             <Reveal as="li" key={p.n} className={`pillar pillar--${i + 1}`} delay={i % 2 ? 120 : 0}>
               <RevealCard
@@ -38,7 +34,6 @@ export default function Experience() {
             </Reveal>
           ))}
         </ol>
-        <StripNav count={experience.pillars.length} index={index} goTo={goTo} labels={experience.pillars.map((p) => p.title)} />
       </div>
     </section>
   );

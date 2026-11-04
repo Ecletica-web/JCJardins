@@ -191,7 +191,6 @@ export const footer = {
 export const ui = {
   descriptor: 'Boxing · Kickboxing',
   more: 'See more',
-  swipe: 'Swipe',
   scrollCue: 'Keep reading',
   prev: 'Previous photo',
   next: 'Next photo',
