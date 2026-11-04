@@ -756,3 +756,112 @@
   }
 }
 
+
+/* ==========================================================================
+   No light sections: Day one and Places become full-bleed image stages
+   ========================================================================== */
+
+.first.section {
+  padding-top: 0;
+  background: var(--pine-900);
+}
+
+.locations {
+  background: var(--pine-900);
+}
+
+.stage {
+  position: relative;
+  display: grid;
+  align-items: end;
+  min-height: clamp(30rem, 92svh, 58rem);
+  overflow: hidden;
+  background: var(--pine-900);
+}
+
+.stage--tall {
+  min-height: clamp(32rem, 100svh, 62rem);
+}
+
+.stage__photo {
+  position: absolute !important;
+  inset: 0;
+}
+
+.stage .photo::after {
+  display: none;
+}
+
+.stage__shade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(to top, rgb(var(--shade) / 0.95) 0%, rgb(var(--shade) / 0.55) 38%, rgb(var(--shade) / 0.1) 70%),
+    linear-gradient(to right, rgb(var(--shade) / 0.5) 0%, rgb(var(--shade) / 0) 55%);
+}
+
+.stage__body {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  gap: var(--space-5);
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+
+.stage__intro {
+  max-width: 34ch;
+  font-size: var(--fs-small);
+  color: var(--ink-soft-on-dark);
+}
+
+.stage .sequence {
+  margin-top: var(--space-2);
+  border-color: rgb(var(--mist) / 0.18);
+}
+
+.stage .sequence li {
+  color: var(--linen);
+}
+
+.stage .sequence__n {
+  color: var(--accent-on-dark);
+}
+
+.stage .sequence--places li:not(:last-child)::after {
+  background: rgb(var(--mist) / 0.35);
+}
+
+.stage__inset {
+  display: none;
+}
+
+.first .feature {
+  margin-top: var(--space-2);
+}
+
+@media (min-width: 64rem) {
+  .stage__body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: var(--space-7);
+    align-items: end;
+  }
+  .stage__body .section-title {
+    grid-column: 1;
+  }
+  .stage__body .stage__intro {
+    grid-column: 1;
+  }
+  .stage__body .sequence {
+    grid-column: 1 / -1;
+  }
+  .stage__inset {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    right: var(--gutter);
+    bottom: clamp(7rem, 16vh, 11rem);
+    width: clamp(14rem, 20vw, 20rem);
+    outline: 1px solid rgb(var(--mist) / 0.2);
+  }
+}
