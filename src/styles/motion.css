@@ -2305,3 +2305,16 @@
     letter-spacing: 0.42em;
   }
 }
+
+/* slider on desktop only; on phones the origin stage is photo + story row */
+@media (max-width: 63.99rem) {
+  .origin__slider {
+    display: none;
+  }
+  .origin__stage {
+    min-height: 0;
+  }
+  .origin__over {
+    padding-top: 118vw; /* most of the splits photo stays visible above the row */
+  }
+}
