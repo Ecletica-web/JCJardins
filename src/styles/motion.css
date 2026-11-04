@@ -2264,3 +2264,28 @@
 .first .sequence li {
   white-space: nowrap;
 }
+
+/* phones: steps may wrap inside their cell; tighter tracking */
+@media (max-width: 47.99rem) {
+  .first .sequence {
+    gap: 0.9rem 1rem;
+  }
+  .first .sequence li {
+    white-space: normal;
+    align-items: flex-start;
+    letter-spacing: 0.14em;
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+  .first .sequence__n {
+    flex: none;
+    padding-top: 0.1em;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .first .sequence li {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
