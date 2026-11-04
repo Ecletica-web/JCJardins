@@ -42,6 +42,19 @@ export default function Slideshow({ images, label, caption }) {
     return () => window.clearTimeout(t);
   }, [playing, index, go]);
 
+  const swipe = useRef(null);
+  const onPointerDown = (e) => {
+    swipe.current = { x: e.clientX, y: e.clientY };
+  };
+  const onPointerUp = (e) => {
+    const s = swipe.current;
+    swipe.current = null;
+    if (!s) return;
+    const dx = e.clientX - s.x;
+    const dy = e.clientY - s.y;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? index + 1 : index - 1);
+  };
+
   const onKey = (e) => {
     if (e.key === 'ArrowRight') {
       e.preventDefault();
@@ -72,7 +85,13 @@ export default function Slideshow({ images, label, caption }) {
         ))}
       </div>
 
-      <div className="slides__stage" aria-live={playing ? 'off' : 'polite'}>
+      <div
+        className="slides__stage"
+        aria-live={playing ? 'off' : 'polite'}
+        onPointerDown={onPointerDown}
+        onPointerUp={onPointerUp}
+        onPointerCancel={() => (swipe.current = null)}
+      >
         {images.map((key, i) => {
           const img = getImage(key);
           if (!img) return null;

@@ -12,6 +12,7 @@ import './styles/landing.css';
 import './styles/social.css';
 import './styles/brand.css';
 import './styles/prototype.css';
+import './styles/motion.css';
 
 import App from './App.jsx';
 

@@ -36,7 +36,7 @@ The build uses relative paths (`base: './'`), so `dist/` can be dropped onto any
 - **Layout.** An editorial 12-column grid with staggered images, generous whitespace and hairline rules. No rounded cards, gradients-as-decoration, glass, gold, crests or glove icons.
 - **Photography treatment.** Applied in CSS to every image: −40 % saturation, −14 % brightness, a soft sage wash, a low vignette and fine grain, so every photo sits in the same dusk. Location references (pines in mist, dunes, a dune boardwalk) set the mood without naming any venue.
 - **Copy.** Concrete and calm. Claims are limited to what was given: a competitive kickboxing background and personal-training training/qualification. There are no prices, testimonials, years, awards, studio, venue partners or scarcity. Indoor spaces are mentioned only as something to discuss and confirm.
-- **Motion.** Images fade in as they load and text settles slightly as it enters the screen. Nothing waits on scrolling to become visible, and motion is off under `prefers-reduced-motion`.
+- **Motion.** A short opening veil (the name arrives letter by letter, once per visit), a full-screen hero whose image drifts as you scroll, headlines that rise line by line, photographs that wipe open as they enter, scroll-driven parallax on the full-bleed bands, a slow marquee, a header that hides on the way down and returns on the way up, swipeable card strips on mobile, a slideshow with crossfade and swipe, and a small trailing cursor on pointer devices. All of it is in `src/styles/motion.css` and is switched off under `prefers-reduced-motion`; the page is complete without it.
 
 ---
 
@@ -52,6 +52,9 @@ src/
   components/Wordmark.jsx  ← wordmark + monogram
   components/Photo.jsx     ← every photo goes through this (treatment, grain, labels, placeholders)
   components/social/Posts.jsx ← the three reusable post layouts (photo / idea / info)
+  components/Intro.jsx, Cursor.jsx, Marquee.jsx, Slideshow.jsx ← presentation layer
+  components/Disclosure.jsx, RevealCard.jsx ← expandable boxes and media cards
+  styles/motion.css        ← intro, reveals, parallax, hero, galleries, cursor (reduced-motion safe)
   components/PrototypeControl.jsx ← prototype-only navigation, kept out of the site content
   views/landing/*          ← one component per landing section
   views/brand/BrandPreview.jsx

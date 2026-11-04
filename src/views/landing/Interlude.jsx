@@ -5,7 +5,7 @@ export default function Interlude() {
   const { interlude, ui } = useContent();
   return (
     <section className="interlude on-dark" aria-label={ui.interludeLabel}>
-      <Photo image="pinesMist" ratio="auto" className="interlude__photo" sizes="100vw" />
+      <Photo image="pinesMist" ratio="auto" className="interlude__photo parallax" sizes="100vw" />
       <div className="interlude__shade" aria-hidden="true" />
       <p className="interlude__lines display wrap">
         {interlude.lines.map((l, i) => (

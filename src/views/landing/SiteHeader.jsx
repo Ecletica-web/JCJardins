@@ -7,12 +7,29 @@ export default function SiteHeader() {
   const { nav, ui } = useContent();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const menuRef = useRef(null);
   const toggleRef = useRef(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
+    let last = window.scrollY;
+    let ticking = false;
+    const update = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      // hide while scrolling down past the hero, show as soon as you scroll up
+      if (y > last + 6 && y > 160) setHidden(true);
+      else if (y < last - 6 || y < 80) setHidden(false);
+      last = y;
+      ticking = false;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    };
+    update();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -42,7 +59,7 @@ export default function SiteHeader() {
   }, []);
 
   return (
-    <header className={`site-header ${scrolled ? 'is-scrolled' : ''} ${open ? 'is-open' : ''}`}>
+    <header className={`site-header ${scrolled ? 'is-scrolled' : ''} ${hidden ? 'is-hidden' : ''} ${open ? 'is-open' : ''}`}>
       <div className="site-header__bar wrap">
         <a className="site-header__home" href="#topo" aria-label={ui.home}>
           <Wordmark layout="inline" />

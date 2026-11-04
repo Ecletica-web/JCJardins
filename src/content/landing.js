@@ -183,6 +183,7 @@ export const footer = {
 export const ui = {
   descriptor: 'Boxe · Kickboxing',
   more: 'Ver mais',
+  scrollCue: 'Continuar a ler',
   prev: 'Fotografia anterior',
   next: 'Fotografia seguinte',
   slidesLabel: 'Fotografias de treino e competição',

@@ -1,4 +1,6 @@
 import SiteHeader from './SiteHeader.jsx';
+import Intro from '../../components/Intro.jsx';
+import Cursor from '../../components/Cursor.jsx';
 import { useContent } from '../../i18n.jsx';
 import Hero from './Hero.jsx';
 import Experience from './Experience.jsx';
@@ -18,6 +20,8 @@ export default function LandingPage() {
       <a className="skip-link" href="#conteudo">
         {ui.skip}
       </a>
+      <Intro />
+      <Cursor />
       <SiteHeader />
       <main id="conteudo" tabIndex={-1}>
         <Hero />
