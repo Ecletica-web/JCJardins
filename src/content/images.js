@@ -261,7 +261,11 @@ export const images = {
     alt: 'Sessão em duo num relvado sob pinheiros: um treinador segura os pads, outro aluno espera a rir.',
   },
   portableKit: {
-    kind: 'placeholder',
+    kind: 'concept',
+    src: concept('concept-kit-terrace.jpg'),
+    alt: 'Equipamento portátil num terraço junto ao mar: saco, luvas, ligaduras, garrafa e corda de saltar.',
+    focus: '80% 65%',
+    people: false,
     title: 'Portable kit at the client’s location',
     brief:
       'Top-down or 45°. Dark leather pads, gloves, wraps, a kettlebell and bands on a teak deck or pale stone terrace. Raking low light, long shadows.',
@@ -269,7 +273,6 @@ export const images = {
     light: 'Raking window light',
     sketch: 'detail',
     lightFrom: 'left',
-    alt: 'Fotografia a produzir: equipamento portátil no local do cliente.',
   },
   afterSession: {
     kind: 'concept',
