@@ -29,13 +29,11 @@ export const images = {
   /* ---- Reference imagery (Pexels License) ------------------------------ */
 
   heroHands: {
-    kind: 'reference',
-    src: ref('ref-wraps-bench.jpg'),
-    alt: 'Mãos a enrolar ligaduras de boxe, sentado num banco de madeira ao ar livre.',
-    focus: '52% 60%',
+    kind: 'concept',
+    src: concept('concept-wraps-bench.jpg'),
+    alt: 'Mãos a enrolar ligaduras pretas, sentado num banco de madeira à sombra.',
+    focus: '50% 55%',
     people: false,
-    source: pexels(4790417),
-    replaceWith: 'wrapsPrep',
     note: 'Hands only — preparation before a session. Good warmth and texture.',
   },
   wrapsWindow: {
@@ -69,13 +67,11 @@ export const images = {
     note: 'Hard side light, deep shadow that keeps detail.',
   },
   adultPractice: {
-    kind: 'reference',
-    src: ref('ref-adult-practice.jpg'),
-    alt: 'Homem de cabelo grisalho em guarda, com luvas vermelhas, junto a uma janela.',
-    focus: '60% 35%',
+    kind: 'concept',
+    src: concept('concept-adult-guard.jpg'),
+    alt: 'Homem de cabelo grisalho em guarda, com luvas de couro, numa sala calma junto a uma janela.',
+    focus: '55% 35%',
     people: true,
-    source: pexels(6815662),
-    replaceWith: 'tomasPadsBeginner',
     note: 'An ordinary adult practising. Real clients come in every age and level.',
   },
   towelRest: {
@@ -127,13 +123,11 @@ export const images = {
   /* ---- Location mood (no people) --------------------------------------- */
 
   dunes: {
-    kind: 'reference',
-    src: ref('ref-dunes.jpg'),
-    alt: 'Dunas com vegetação rasteira sob um céu carregado.',
-    focus: '45% 60%',
+    kind: 'concept',
+    src: concept('concept-dunes.jpg'),
+    alt: 'Dunas com vegetação rasteira junto ao mar, sob um céu encoberto.',
+    focus: '50% 55%',
     people: false,
-    source: pexels(6728972),
-    replaceWith: 'locationPines',
     note: 'Dune grass and soft Atlantic light. Texture and calm.',
   },
 
@@ -198,7 +192,11 @@ export const images = {
     alt: 'Fotografia a produzir: o Tomás demonstra um pontapé circular.',
   },
   firstConversation: {
-    kind: 'placeholder',
+    kind: 'concept',
+    src: concept('concept-terrace-talk.jpg'),
+    alt: 'O treinador e uma cliente conversam sentados num degrau de pedra ao entardecer, com luvas e um caderno entre os dois.',
+    focus: '50% 45%',
+    people: true,
     title: 'First conversation before training',
     brief:
       'Wide-medium. Tomás and a client seated on a terrace step, talking; gloves and a notebook beside them. Soft evening light, linen and timber, unposed.',
@@ -206,7 +204,6 @@ export const images = {
     light: 'Soft window light',
     sketch: 'seated',
     lightFrom: 'left',
-    alt: 'Fotografia a produzir: conversa entre o Tomás e um cliente antes do treino.',
   },
   duoSession: {
     kind: 'concept',
@@ -234,7 +231,11 @@ export const images = {
     alt: 'Fotografia a produzir: equipamento portátil no local do cliente.',
   },
   afterSession: {
-    kind: 'placeholder',
+    kind: 'concept',
+    src: concept('concept-after-gate.jpg'),
+    alt: 'Dois homens riem junto a um portão de jardim depois do treino, com garrafas de água.',
+    focus: '50% 40%',
+    people: true,
     title: 'After the session',
     brief:
       'Medium. Client and Tomás laughing, gloves off, sharing water by the deck or garden gate. Sweat visible, shoulders relaxed. The quiet satisfaction of finishing.',
@@ -242,7 +243,6 @@ export const images = {
     light: 'Open shade, warm',
     sketch: 'two',
     lightFrom: 'left',
-    alt: 'Fotografia a produzir: final da sessão, cliente e Tomás descontraídos.',
   },
 };
 
