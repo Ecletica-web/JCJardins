@@ -2331,7 +2331,7 @@
 /* hero tagline under the name */
 .hero__tagline {
   margin-top: 0.9rem;
-  margin-left: 0.5em; /* aligns with the QUEIROZ step */
+  margin-left: calc(var(--fs-mark) * 0.5); /* same indent as the QUEIROZ / BOXING line */
   font-family: var(--font-display);
   font-weight: var(--weight-light);
   font-size: clamp(1.05rem, 1.5vw, 1.35rem);
@@ -2355,7 +2355,6 @@
 
 @media (max-width: 47.99rem) {
   .hero__tagline {
-    margin-left: 0;
     font-size: 1rem;
   }
 }
