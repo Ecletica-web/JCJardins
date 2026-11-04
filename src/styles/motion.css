@@ -1225,3 +1225,24 @@
     padding-block: clamp(4rem, 10vw, 7rem) clamp(3rem, 8vw, 5rem);
   }
 }
+
+/* ---- About: the kick leads, the two older frames sit under it --------- */
+
+.about__media {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.about__lead {
+  width: 100%;
+}
+
+@media (min-width: 64rem) {
+  .about__grid {
+    align-items: start;
+  }
+  .about__copy {
+    position: sticky;
+    top: calc(var(--header-h) + 2rem);
+  }
+}

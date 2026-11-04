@@ -10,6 +10,7 @@ export default function About() {
     <section className="section about on-dark" id="sobre" aria-labelledby="sobre-title">
       <div className="wrap about__grid">
         <div className="about__media">
+          <Photo image="tomasKickGarden" ratio="4 / 5" className="about__lead" sizes="(min-width: 64rem) 40vw, 100vw" />
           <div className="about__frames">
             <Photo image="tomasSplit" ratio="4 / 3" className="about__portrait" priority={false} />
             <Photo image="tomasInRing" ratio="1 / 1" className="about__detail" compact />

@@ -8,6 +8,7 @@ export const altEn = {
   kettlebellLight: 'A kettlebell and leather gloves on a timber deck, the sea behind.',
   adultPractice: 'A grey-haired man in a boxing guard with leather gloves, in a calm room by a window.',
   towelRest: 'Tomás in gloves, standing still, catching his breath between rounds.',
+  tomasKickGarden: 'Tomás throws a high kick in a garden, barefoot on the grass, a whitewashed house behind.',
   tomasSplit: 'Tomás stretching in a split before a fight, wearing gloves and shin guards.',
   tomasInRing: 'Tomás in his guard inside the ring, wearing headgear and gloves.',
   tomasTeam: 'Tomás with a group of athletes after a kickboxing session.',

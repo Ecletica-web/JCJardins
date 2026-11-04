@@ -77,6 +77,12 @@ export const images = {
 
   /* ---- Tomás's own photographs (supplied, cropped, black and white) ---- */
 
+  tomasKickGarden: {
+    kind: 'photo',
+    src: own('tomas-kick-garden.jpg'),
+    alt: 'O Tomás dá um pontapé alto num jardim, descalço na relva, com uma casa caiada atrás.',
+    focus: '50% 40%',
+  },
   tomasSplit: {
     kind: 'photo',
     src: own('tomas-split.jpg'),
