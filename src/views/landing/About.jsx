@@ -1,5 +1,4 @@
 import Photo from '../../components/Photo.jsx';
-import SectionTitle from './SectionTitle.jsx';
 import Disclosure from '../../components/Disclosure.jsx';
 import { useContent } from '../../i18n.jsx';
 
@@ -7,15 +6,15 @@ export default function About() {
   const { about, record, ui } = useContent();
   return (
     <section className="section about on-dark" id="sobre" aria-labelledby="sobre-title">
-      <div className="wrap about__grid">
-        <div className="about__media">
-          <Photo image="tomasKickGarden" ratio="4 / 5" className="about__lead" sizes="(min-width: 64rem) 40vw, 100vw" />
-        </div>
-
-        <div className="about__copy">
-          <SectionTitle id="sobre-title" kicker={about.kicker} lines={about.title} />
-          <div className="discs">
-            <Disclosure title={about.storyTitle} marker="01" className="disc--story">
+      <div className="wrap">
+        <div className="about__hero">
+          <Photo image="tomasKickGarden" ratio="4 / 5" className="about__lead" sizes="(min-width: 64rem) 60vw, 100vw" />
+          <div className="about__shade" aria-hidden="true" />
+          <div className="about__over">
+            <h2 id="sobre-title" className="visually-hidden">
+              {about.kicker}
+            </h2>
+            <Disclosure title={about.storyTitle} marker="01" className="disc--story disc--over">
               <div className="story">
                 {about.paragraphs.map((p) => (
                   <p key={p}>{p}</p>
@@ -43,10 +42,6 @@ export default function About() {
               </dl>
             </Disclosure>
           </div>
-        </div>
-
-        <div className="about__frames">
-          <Photo image="tomasSplit" ratio="4 / 3" className="about__portrait" priority={false} />
         </div>
       </div>
 

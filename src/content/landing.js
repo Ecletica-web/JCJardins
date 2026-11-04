@@ -56,7 +56,7 @@ export const experience = {
 };
 
 export const interlude = {
-  lines: ['Mil vezes', 'o mesmo golpe.', 'Nenhum igual.'],
+  lines: ['Respira.'],
 };
 
 export const about = {

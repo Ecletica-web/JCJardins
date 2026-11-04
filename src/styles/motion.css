@@ -1373,3 +1373,89 @@
 .about__frames {
   padding-bottom: 0;
 }
+
+/* ---- Origin: the kick with the story row over its bottom edge ---------- */
+
+.about__hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.about__hero .about__lead {
+  width: 100%;
+  aspect-ratio: 4 / 5 !important;
+}
+
+.about__shade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to top, rgb(var(--shade) / 0.92) 0%, rgb(var(--shade) / 0.5) 22%, rgb(var(--shade) / 0) 45%);
+}
+
+.about__over {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+/* the row lives on the image; the opened story drops below the image */
+.disc--over {
+  border-bottom: 0;
+}
+
+.disc--over .disc__trigger {
+  min-height: 4.25rem;
+}
+
+.disc--over .disc__title {
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+}
+
+.disc--over .disc__body {
+  position: absolute;
+  left: clamp(1rem, 3vw, 2rem);
+  right: clamp(1rem, 3vw, 2rem);
+  top: 100%;
+}
+
+.disc--over.is-open .disc__inner {
+  padding-top: var(--space-5);
+}
+
+/* make room under the image for the opened story */
+.about__hero:has(.disc--over.is-open) {
+  margin-bottom: var(--story-h, 0px);
+}
+
+.disc--over .disc__trigger::after {
+  bottom: 0;
+}
+
+@media (min-width: 64rem) {
+  .about__hero .about__lead {
+    aspect-ratio: 16 / 9 !important;
+    max-height: 80svh;
+  }
+  .about__over {
+    padding: 0 clamp(1.5rem, 3vw, 3rem);
+  }
+  .disc--over .disc__body {
+    left: clamp(1.5rem, 3vw, 3rem);
+    right: clamp(1.5rem, 3vw, 3rem);
+  }
+}
+
+/* single-word band */
+.interlude__lines {
+  font-size: clamp(2.6rem, 9vw, 7.5rem);
+  letter-spacing: 0.22em;
+}
+
+.interlude__lines .br:only-child {
+  padding-left: 0.22em; /* balance the trailing tracking */
+}
