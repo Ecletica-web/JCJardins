@@ -5,7 +5,6 @@ import { useContent } from '../../i18n.jsx';
 import Hero from './Hero.jsx';
 import Experience from './Experience.jsx';
 import Origin from './Origin.jsx';
-import Teaching from './Teaching.jsx';
 import FirstSession from './FirstSession.jsx';
 import Formats from './Formats.jsx';
 import Locations from './Locations.jsx';
@@ -26,7 +25,6 @@ export default function LandingPage() {
         <Hero />
         <Origin />
         <Experience />
-        <Teaching />
         <FirstSession />
         <Formats />
         <Locations />

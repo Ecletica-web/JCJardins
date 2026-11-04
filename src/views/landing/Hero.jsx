@@ -32,7 +32,7 @@ export default function Hero() {
         </a>
       </div>
 
-      <Marquee className="hero__strip" items={[...hero.strip, ui.stripPlace]} label={ui.stripLabel} />
+      <Marquee className="hero__strip" items={hero.strip} label={ui.stripLabel} />
     </section>
   );
 }

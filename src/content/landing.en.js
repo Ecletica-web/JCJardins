@@ -8,7 +8,6 @@
 export const nav = [
   { href: '#sobre', label: 'Origin story' },
   { href: '#treino', label: 'The craft' },
-  { href: '#ensino', label: 'Teaching' },
   { href: '#primeira-sessao', label: 'Day one' },
   { href: '#formatos', label: 'Classes' },
   { href: '#locais', label: 'Places' },
@@ -124,7 +123,7 @@ export const firstSession = {
 };
 
 export const inSession = {
-  kicker: 'Teaching',
+  kicker: 'In session',
   title: ['Hear the strike', '*before you see it.*'],
   text: 'Padwork at your pace. Corrections in the space between combinations.',
   points: [],

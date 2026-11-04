@@ -7,7 +7,6 @@
 export const nav = [
   { href: '#sobre', label: 'História de origem' },
   { href: '#treino', label: 'O ofício' },
-  { href: '#ensino', label: 'Ensino' },
   { href: '#primeira-sessao', label: 'Primeiro dia' },
   { href: '#formatos', label: 'Aulas' },
   { href: '#locais', label: 'Lugares' },
@@ -123,7 +122,7 @@ export const firstSession = {
 };
 
 export const inSession = {
-  kicker: 'Ensino',
+  kicker: 'Em sessão',
   title: ['Ouvir o golpe', '*antes de o ver.*'],
   text: 'Pads ao teu ritmo. Correções no intervalo entre combinações.',
   points: [],

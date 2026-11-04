@@ -2465,3 +2465,45 @@
     padding-bottom: var(--space-3);
   }
 }
+
+/* ==========================================================================
+   Craft: the in-session clip closes the block
+   ========================================================================== */
+
+.craft__close {
+  margin-top: 0;
+}
+
+@media (min-width: 48rem) {
+  /* the vertical clip sits in the right column under the 2x2, full height */
+  .craft__close {
+    max-width: none;
+    margin-inline: 0;
+    justify-items: start;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 0;
+    align-items: end;
+  }
+  .craft__close .feature__frame {
+    grid-column: 2;
+  }
+  .craft__close .feature__cta {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  .craft__close .feature__clip {
+    aspect-ratio: 4 / 5 !important;
+    max-height: none;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .craft__close {
+    padding: 0 0 var(--space-6);
+  }
+  .craft__close .feature__cta {
+    margin-inline: var(--gutter);
+  }
+}
