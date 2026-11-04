@@ -939,7 +939,7 @@
 
 .flow__viewport {
   position: relative;
-  min-height: 16rem;
+  min-height: 11rem;
   overflow: hidden;
 }
 
@@ -968,12 +968,28 @@
 }
 
 .flow__fieldset {
-  display: grid;
-  gap: var(--space-4);
+  display: block; /* a legend never joins a grid, so space children by hand */
   margin: 0;
   padding: 0;
   border: 0;
   min-width: 0;
+}
+
+.flow__fieldset legend {
+  margin-bottom: var(--space-3);
+}
+
+.flow__fieldset .flow__hint {
+  margin: 0 0 var(--space-4);
+}
+
+.flow__fieldset .flow__chips {
+  margin-top: 0;
+}
+
+.flow__fieldset textarea,
+.flow__fieldset input[type='text'] {
+  margin-top: var(--space-5);
 }
 
 .flow__q {
