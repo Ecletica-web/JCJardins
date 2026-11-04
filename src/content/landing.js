@@ -61,7 +61,7 @@ export const interlude = {
 
 export const about = {
   kicker: 'Origem',
-  storyTitle: 'O que o ringue ensina',
+  storyTitle: 'História de origem',
   methodTitle: 'Método',
   title: ['Formado no ringue.', '*Afinado no canto.*'],
   paragraphs: [

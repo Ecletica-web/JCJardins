@@ -18,18 +18,34 @@ export default function About() {
 
         <div className="about__copy">
           <SectionTitle id="sobre-title" kicker={about.kicker} lines={about.title} />
-          <p className="lead about__fact">{about.paragraphs[0]}</p>
-
           <div className="discs">
-            {about.credentials.map((c, i) => (
-              <Disclosure key={c.group} title={c.group} marker={String(i + 1).padStart(2, '0')}>
-                <ul role="list" className="credentials__list">
-                  {c.items.map((it) => (
-                    <li key={it}>{it}</li>
-                  ))}
-                </ul>
-              </Disclosure>
-            ))}
+            <Disclosure title={about.storyTitle} marker="01" className="disc--story">
+              <div className="story">
+                {about.paragraphs.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+              </div>
+              <div className="credentials">
+                {about.credentials.map((c) => (
+                  <div key={c.group} className="credentials__group">
+                    <h4 className="credentials__title">{c.group}</h4>
+                    <ul role="list" className="credentials__list">
+                      {c.items.map((it) => (
+                        <li key={it}>{it}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <dl className="method">
+                {about.principles.map((p) => (
+                  <div key={p.title}>
+                    <dt>{p.title}</dt>
+                    <dd>{p.text}</dd>
+                  </div>
+                ))}
+              </dl>
+            </Disclosure>
           </div>
         </div>
       </div>

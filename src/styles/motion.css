@@ -1182,3 +1182,32 @@
   font-size: var(--fs-small);
   color: var(--ink-soft-on-dark);
 }
+
+/* ---- About: one clickable "Origin story" row ----------------------------- */
+
+.disc--story .disc__title {
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+}
+
+.disc--story .disc__inner {
+  gap: var(--space-5);
+}
+
+.story {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 36rem;
+}
+
+.story p:first-child {
+  color: var(--linen);
+  font-size: var(--fs-body);
+}
+
+.disc--story .credentials {
+  padding-block: var(--space-4);
+}
+
+.disc--story .method {
+  max-width: 36rem;
+}

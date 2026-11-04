@@ -62,7 +62,7 @@ export const interlude = {
 
 export const about = {
   kicker: 'Origin',
-  storyTitle: 'What the ring teaches',
+  storyTitle: 'Origin story',
   methodTitle: 'Method',
   title: ['Shaped in the ring.', '*Refined in the corner.*'],
   paragraphs: [
