@@ -31,7 +31,6 @@ export default function Formats() {
           ))}
         </div>
 
-        <p className="formats__note soft">{formats.note}</p>
       </div>
     </section>
   );

@@ -158,7 +158,6 @@ export const formats = {
       points: ['Small, closed groups', 'Pad rounds in pairs', 'One agreed place for everyone'],
     },
   ],
-  note: 'The details are kept for the first conversation.',
 };
 
 export const locations = {
@@ -184,7 +183,7 @@ export const contact = {
 };
 
 export const footer = {
-  line: 'Boxing, kickboxing and strength. In private, in Lisbon.',
+  line: 'In private · Lisbon',
 };
 
 /* Interface strings (buttons, labels, form messages) */
