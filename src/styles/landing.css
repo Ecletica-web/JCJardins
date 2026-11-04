@@ -320,6 +320,8 @@ body::before {
 
 .hero__media {
   position: relative;
+  width: 80%; /* hero image at 80% of its column */
+  margin-left: auto;
 }
 
 .hero__media-note {

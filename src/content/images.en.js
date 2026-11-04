@@ -16,6 +16,7 @@ export const altEn = {
   tomasFightNight: 'Tomás beside an athlete on a fight night.',
   coachGloves: 'A coach fastens someone’s gloves against a limewashed wall.',
   padsPines: 'Padwork on a lawn under stone pines, late in the afternoon.',
+  heroPads: 'A fighter wearing Tomás Queiroz gloves throws a jab into pads at dusk, by a wall among pines.',
   pinesMist: 'Stone pines in mist on a slope near the coast.',
   boardwalk: 'A timber boardwalk over the dunes towards the sea, under an overcast sky.',
   dunes: 'Dunes with low vegetation by the sea, under an overcast sky.',

@@ -12,7 +12,7 @@ export default function Hero() {
         </div>
 
         <div className="hero__media">
-          <Photo image="tomasShadow" ratio="4 / 5" priority sizes="(min-width: 64rem) 45vw, 100vw" />
+          <Photo image="heroPads" ratio="4 / 5" priority sizes="(min-width: 64rem) 45vw, 100vw" />
           <p className="hero__media-note" aria-hidden="true">
             <span>{ui.heroNote[0]}</span>
             <span>{ui.heroNote[1]}</span>

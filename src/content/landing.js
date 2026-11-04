@@ -180,7 +180,7 @@ export const ui = {
   close: 'Fechar',
   cta: 'Pedir uma sessão',
   contactLink: 'Contacto',
-  heroNote: ['Sombra', 'ao fim do dia, entre pinheiros'],
+  heroNote: ['Pads', 'ao fim do dia, entre pinheiros'],
   stripLabel: 'O que inclui o treino',
   stripPlace: 'Lisboa · no local combinado',
   interludeLabel: 'Repetição',

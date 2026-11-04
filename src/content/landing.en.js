@@ -181,7 +181,7 @@ export const ui = {
   close: 'Close',
   cta: 'Request a session',
   contactLink: 'Contact',
-  heroNote: ['Shadowboxing', 'at dusk, among the pines'],
+  heroNote: ['Padwork', 'at dusk, among the pines'],
   stripLabel: 'What the training includes',
   stripPlace: 'Lisbon · at an agreed place',
   interludeLabel: 'Repetition',
