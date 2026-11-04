@@ -65,8 +65,7 @@ export const about = {
   methodTitle: 'Método',
   title: ['Formado no ringue.', '*Afinado no canto.*'],
   paragraphs: [
-    'Competiu em kickboxing. Hoje prepara e acompanha quem compete. Formação em exercício físico, boxe e kickboxing.',
-    'Que a pressa se paga. Que o pormenor decide. Que cada pessoa chega de um lugar diferente, e é daí que se parte.',
+    'Kickboxing em competição. Hoje, no canto de quem compete.',
     'Para quem compete, e para quem nunca calçou umas luvas.',
   ],
   credentials: [

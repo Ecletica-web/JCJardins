@@ -1575,3 +1575,122 @@
     padding-top: var(--space-7);
   }
 }
+
+/* splits photo: its own block after the origin row, outside the story */
+.about__split {
+  width: 100%;
+}
+
+.about__record {
+  margin-top: 0;
+}
+
+@media (min-width: 64rem) {
+  .about__split {
+    margin-top: var(--space-5);
+  }
+  .about__record {
+    margin-top: var(--space-5);
+  }
+}
+
+@media (max-width: 63.99rem) {
+  .about__split {
+    margin-top: 2px;
+  }
+  .about__record {
+    margin-top: 2px;
+  }
+}
+
+/* ---- Origin story opens OVER the photo (not below it) ------------------- */
+
+.about__over {
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.about__over > * {
+  pointer-events: auto;
+}
+
+.about__over .disc--over {
+  display: flex;
+  flex-direction: column-reverse; /* body above the trigger row */
+}
+
+.disc--over .disc__body {
+  position: static;
+  left: auto;
+  right: auto;
+  top: auto;
+}
+
+.disc--over.is-open .disc__inner {
+  padding-top: 0;
+  padding-bottom: var(--space-5);
+}
+
+.disc--over .story {
+  max-width: 34rem;
+}
+
+.disc--over .story p {
+  color: var(--linen);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  text-shadow: 0 1px 12px rgb(var(--shade) / 0.8);
+}
+
+.disc--over .story p:first-child {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  line-height: 1.2;
+}
+
+.disc--over .credentials {
+  border-color: rgb(var(--mist) / 0.2);
+}
+
+/* darker shade while the story is open so the text reads over the photo */
+.about__hero:has(.disc--over.is-open) .about__shade {
+  background: linear-gradient(to top, rgb(var(--shade) / 0.96) 0%, rgb(var(--shade) / 0.85) 55%, rgb(var(--shade) / 0.35) 100%);
+}
+
+.about__hero:has(.disc--over.is-open) {
+  margin-bottom: 0;
+}
+
+@media (max-width: 63.99rem) {
+  .disc--over .credentials {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+/* small screens: the frame grows to hold the open story, photo stays as backdrop */
+@media (max-width: 63.99rem) {
+  .about__hero:has(.disc--over.is-open) {
+    display: grid;
+  }
+  .about__hero:has(.disc--over.is-open) .about__lead,
+  .about__hero:has(.disc--over.is-open) .about__shade,
+  .about__hero:has(.disc--over.is-open) .about__over {
+    grid-area: 1 / 1;
+  }
+  .about__hero:has(.disc--over.is-open) .about__lead {
+    position: absolute !important;
+    inset: 0;
+    aspect-ratio: auto !important;
+    height: 100%;
+  }
+  .about__hero:has(.disc--over.is-open) .about__over {
+    position: relative;
+    min-height: 100%;
+    padding-top: 60vw; /* keep most of the photo visible above the text */
+  }
+}

@@ -66,8 +66,7 @@ export const about = {
   methodTitle: 'Method',
   title: ['Shaped in the ring.', '*Refined in the corner.*'],
   paragraphs: [
-    'He competed in kickboxing. Today he prepares and corners those who compete. Trained in exercise and fitness, boxing and kickboxing.',
-    'That haste has a price. That detail decides. That everyone arrives from somewhere different, and that is where you begin.',
+    'Kickboxing in competition. Today, in the corner of those who compete.',
     'For those who compete, and for those who have never worn gloves.',
   ],
   credentials: [

@@ -32,18 +32,10 @@ export default function About() {
                   </div>
                 ))}
               </div>
-              <dl className="method">
-                {about.principles.map((p) => (
-                  <div key={p.title}>
-                    <dt>{p.title}</dt>
-                    <dd>{p.text}</dd>
-                  </div>
-                ))}
-              </dl>
-              <Photo image="tomasSplit" ratio="16 / 9" className="story__photo" priority={false} focus="40% 45%" />
             </Disclosure>
           </div>
         </div>
+        <Photo image="tomasSplit" ratio="16 / 9" className="about__split" priority={false} focus="40% 45%" />
       </div>
 
       <div className="wrap">
@@ -55,7 +47,6 @@ export default function About() {
               </div>
             ))}
           </div>
-          <figcaption className="record__caption soft">{record.caption}</figcaption>
         </figure>
       </div>
     </section>
