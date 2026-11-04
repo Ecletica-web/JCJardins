@@ -1784,3 +1784,50 @@
     max-width: none;
   }
 }
+
+/* ==========================================================================
+   Desktop: in-session video full width; format cards bigger
+   ========================================================================== */
+
+@media (min-width: 64rem) {
+  /* in session: wide cinematic frame, text bottom-left */
+  .feature--over {
+    max-width: none;
+  }
+  .feature--over .feature__clip {
+    aspect-ratio: 21 / 9 !important;
+    max-height: 78svh;
+  }
+  .feature__shade {
+    background:
+      linear-gradient(to top, rgb(var(--shade) / 0.9) 0%, rgb(var(--shade) / 0.45) 32%, rgb(var(--shade) / 0) 58%),
+      linear-gradient(to right, rgb(var(--shade) / 0.55) 0%, rgb(var(--shade) / 0) 50%);
+  }
+  .feature__over {
+    padding: clamp(2rem, 4vw, 3.5rem);
+    max-width: 44rem;
+  }
+  .feature__over .h2 {
+    font-size: clamp(2rem, 3.4vw, 3.2rem);
+  }
+  .feature__text {
+    font-size: var(--fs-body);
+    max-width: 38ch;
+  }
+
+  /* formats: three large cards, no stagger */
+  .formats__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--space-3);
+    margin-top: clamp(2rem, 4vw, 3rem);
+  }
+  .format:nth-child(2) {
+    margin-top: 0;
+  }
+  .format .rcard .photo {
+    aspect-ratio: 4 / 5 !important;
+  }
+  .rcard__hint {
+    white-space: nowrap;
+  }
+}
