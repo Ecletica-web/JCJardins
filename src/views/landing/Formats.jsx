@@ -26,7 +26,6 @@ export default function Formats() {
                   ))}
                 </ul>
               </RevealCard>
-              <p className="format__tagline">{f.lead}</p>
             </Reveal>
           ))}
         </div>
