@@ -6,32 +6,32 @@
    ========================================================================== */
 
 export const nav = [
-  { href: '#sobre', label: 'Tomás' },
-  { href: '#treino', label: 'Training' },
-  { href: '#primeira-sessao', label: 'First session' },
+  { href: '#sobre', label: 'Origin' },
+  { href: '#treino', label: 'Craft' },
+  { href: '#primeira-sessao', label: 'Day one' },
   { href: '#formatos', label: 'Formats' },
-  { href: '#locais', label: 'Locations' },
+  { href: '#locais', label: 'Places' },
 ];
 
 export const hero = {
-  headline: ['Private boxing,', 'kickboxing and', 'strength training.'],
-  support: 'In Lisbon, at your pace and at a place we agree on.',
+  headline: ['Boxing, kickboxing', 'and strength.', 'In private.'],
+  support: 'Lisbon. At your pace, in a place we agree on.',
   primary: { label: 'Request a session', href: '#contacto' },
-  secondary: { label: 'See how it works', href: '#treino' },
+  secondary: { label: 'Look closer', href: '#treino' },
   strip: ['Boxing', 'Kickboxing', 'Pads', 'Strength'],
 };
 
 export const experience = {
-  kicker: 'The training',
-  title: ['Competition technique,', 'taught with patience.'],
-  intro: 'Boxing, kickboxing, pads and strength. You choose the focus; the attention to detail stays the same.',
+  kicker: 'The craft',
+  title: ['Simple strikes.', '*Years to refine them.*'],
+  intro: 'The body learns slowly. Then, suddenly, it knows.',
   pillars: [
     {
       n: '01',
       title: 'Technique',
       image: 'tomasCorrecting',
       video: 'real-bagwork',
-      text: 'Guard, stance, footwork, punches and, in kickboxing, kicks. Tomás demonstrates, watches and corrects one detail at a time, until the movement makes sense in your body.',
+      text: 'The guard that never drops. The foot that turns before the hip. One detail at a time, until it no longer needs thinking.',
     },
     {
       n: '02',
@@ -39,19 +39,19 @@ export const experience = {
       image: 'padsPines',
       video: 'real-padwork',
       focus: '50% 60%',
-      text: 'With Tomás holding the pads, combinations gain timing and precision. You repeat, adjust, repeat again. The pace rises when you are ready, not before.',
+      text: 'A conversation without words. The hands across from you say where, when and how much. Repeat until it sounds right.',
     },
     {
       n: '03',
       title: 'Strength',
       image: 'kettlebellLight',
-      text: 'Kettlebells, bands and bodyweight to build a solid base: legs, core and shoulders. Strength you feel in your strikes and in everyday life.',
+      text: 'Legs, core, shoulders. Strength you don’t see, but hear in the strike.',
     },
     {
       n: '04',
       title: 'Conditioning',
       image: 'towelRest',
-      text: 'Short rounds, measured rests and controlled breathing. You build stamina without losing your technique along the way.',
+      text: 'Short rounds. Silence between them. Learning to breathe when it’s hard.',
     },
   ],
 };
@@ -61,14 +61,14 @@ export const interlude = {
 };
 
 export const about = {
-  kicker: 'About Tomás',
-  storyTitle: 'His path',
-  methodTitle: 'How he coaches',
-  title: ['From the ring', 'to your training.'],
+  kicker: 'Origin',
+  storyTitle: 'What the ring teaches',
+  methodTitle: 'Method',
+  title: ['Shaped in the ring.', '*Refined in the corner.*'],
   paragraphs: [
-    'Tomás competed in kickboxing and today prepares and corners athletes for competition. He is qualified in exercise and fitness, and as a boxing and kickboxing coach.',
-    'Competition taught him the value of small details: the guard that stays up, the foot that pivots at the right moment, the breath that never gets held. He brings that technical eye to every session, with the patience of someone who knows every person starts from a different place.',
-    'He trains adults of all levels, including people who have never put on a pair of gloves.',
+    'He competed in kickboxing. Today he prepares and corners those who compete. Trained in exercise and fitness, boxing and kickboxing.',
+    'That haste has a price. That detail decides. That everyone arrives from somewhere different, and that is where you begin.',
+    'For those who compete, and for those who have never worn gloves.',
   ],
   credentials: [
     {
@@ -85,9 +85,9 @@ export const about = {
     },
   ],
   principles: [
-    { title: 'Watch first', text: 'Before correcting anything, Tomás sees how you move and what you find hard.' },
-    { title: 'Explain why', text: 'Every correction comes with a simple reason you can take with you.' },
-    { title: 'Fit the person', text: 'The plan changes with your day, your energy and your goals.' },
+    { title: 'Watch', text: 'First, seeing how you move. Only then, changing it.' },
+    { title: 'Explain', text: 'Every correction comes with a reason you keep.' },
+    { title: 'Adjust', text: 'The plan listens to your day.' },
   ],
 };
 
@@ -103,7 +103,7 @@ export const statements = {
 };
 
 export const record = {
-  caption: 'In training and on fight nights.',
+  caption: 'Training. Fight nights. The same eye.',
   photos: [
     { image: 'tomasTeam', ratio: 2.13, slot: 'team' },
     { image: 'tomasRingside', ratio: 1.72, slot: 'ring' },
@@ -113,85 +113,70 @@ export const record = {
 };
 
 export const firstSession = {
-  kicker: 'First session',
-  title: ['What happens', 'in your first session.'],
-  intro: 'You don’t need experience or to be in shape to start. You just need to come willing to try.',
+  kicker: 'Day one',
+  title: ['Nobody starts', '*ready.*'],
+  intro: 'No experience needed. Only the will to step in.',
   steps: [
-    {
-      title: 'Conversation',
-      text: 'We talk about your goals, your experience, any injuries or limitations, and what brought you here.',
-    },
-    {
-      title: 'Starting point',
-      text: 'A few simple movements show your mobility, coordination and fitness. No tests to the limit.',
-    },
-    {
-      title: 'Guided practice',
-      text: 'Guard, stance and first strikes, then a block of padwork and some strength work. Everything explained step by step.',
-    },
-    {
-      title: 'Recommendation',
-      text: 'At the end, Tomás suggests how to continue: how often, which format and what to focus on next.',
-    },
+    { title: 'Conversation', text: 'What you’re looking for, what you’ve done, where the body asks for care.' },
+    { title: 'Starting point', text: 'A few simple movements. Nothing to the limit. Just to see where we begin.' },
+    { title: 'Practice', text: 'Guard, first strikes, a block of padwork. Everything explained, nothing rushed.' },
+    { title: 'The way on', text: 'At the end, a proposal: rhythm, format and what to work on next.' },
   ],
 };
 
 export const inSession = {
   kicker: 'In session',
-  title: ['Guided practice,', '*in real time.*'],
-  text: 'Padwork at your pace, with corrections between combinations.',
-  points: ['Corrections between combinations', 'Pace adjusted to each person', 'Relaxed atmosphere, real standards'],
+  title: ['Hear the strike', '*before you see it.*'],
+  text: 'Padwork at your pace. Corrections in the space between combinations.',
+  points: [],
   cta: 'Book your first session',
 };
 
 export const formats = {
   kicker: 'Formats',
-  title: ['On your own', 'or as a pair.'],
+  title: ['Alone', '*or as two.*'],
   items: [
     {
       name: 'Individual',
       image: 'adultPractice',
-      lead: 'Full attention, from the first minute to the last.',
-      text: 'The plan follows your goals, your schedule and your progress. Ideal if you want to learn technique carefully or return to training safely.',
-      points: ['Continuous corrections', 'Pace set by you', 'Plan adjusted session by session'],
+      lead: 'All of the attention. None of the noise.',
+      text: 'The plan follows your goals, your schedule and the time you need to learn.',
+      points: ['Constant correction', 'Your pace', 'A plan that evolves with you'],
     },
     {
       name: 'Duo',
       image: 'duoSession',
-      lead: 'Train with someone you know.',
-      text: 'For friends, couples or family. You take turns on the pads and work in pairs, with individual corrections for each of you.',
-      points: ['Two levels, one session', 'Partner work on the pads', 'Shared motivation'],
+      lead: 'Train with someone you already know.',
+      text: 'You take turns on the pads and work in pairs. Each with your own corrections.',
+      points: ['Two levels, one session', 'Partner work', 'Shared rhythm'],
     },
   ],
-  note: 'Details for each format are shared at first contact.',
+  note: 'The details are kept for the first conversation.',
 };
 
 export const locations = {
-  kicker: 'Locations',
-  title: ['At a place', 'we agree on.'],
-  intro: 'The training comes to you, in Lisbon. We agree on the place; Tomás brings the kit.',
+  kicker: 'Places',
+  title: ['Wherever', '*we agree.*'],
+  intro: 'Lisbon. The place is agreed; the kit comes with us.',
   options: [
-    { title: 'At home', text: 'Living room, terrace, garden or by the pool. You only need room to take a few steps safely.' },
-    { title: 'Outdoors', text: 'Under the pines, in a garden or near the sea, in a suitable spot close to you.' },
+    { title: 'At home', text: 'A living room, a terrace, a garden. Room for a few steps is enough.' },
+    { title: 'Outdoors', text: 'Under pines, by the sea, somewhere quiet near you.' },
     { title: 'At your building or workplace', text: 'A shared room or the residents’ gym, if you have access.' },
-    {
-      title: 'Indoor space',
-      text: 'If you need a covered space, we can discuss options. Nothing is booked until it is confirmed.',
-    },
+    { title: 'Indoor space', text: 'If you need shelter, we discuss options. Nothing is booked until confirmed.' },
   ],
 };
 
 export const contact = {
   kicker: 'Contact',
-  title: ['Request', 'a session.'],
-  intro: 'Tell us a little about yourself. Tomás will reply to arrange a first conversation.',
+  title: ['Begin', '*here.*'],
+  intro: 'A few lines about you. A reply follows to arrange the first conversation.',
   goals: ['Learn boxing', 'Learn kickboxing', 'Get stronger', 'Improve fitness', 'Get back into training', 'Relieve stress'],
   availability: ['Early morning', 'Morning', 'Lunchtime', 'Late afternoon', 'Evening', 'Weekend'],
   formats: ['Individual', 'Duo', 'Not sure yet'],
 };
 
 export const footer = {
-  line: 'Private boxing, kickboxing and strength training in Lisbon.',
+  line: 'Boxing, kickboxing and strength. In private, in Lisbon.',
 };
 
 /* Interface strings (buttons, labels, form messages) */
@@ -240,7 +225,7 @@ export const ui = {
     required: 'Fields marked * are required.',
     errors: {
       name: 'Enter your name.',
-      contact: 'Enter an email or phone number so Tomás can reply.',
+      contact: 'Enter an email or phone number so we can reply.',
       contactInvalid: 'Enter a valid email or a phone number with at least 9 digits.',
       area: 'Enter the area of Lisbon where you’d like to train.',
       goals: 'Choose at least one goal or describe it.',

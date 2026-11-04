@@ -5,32 +5,32 @@
    ========================================================================== */
 
 export const nav = [
-  { href: '#sobre', label: 'O Tomás' },
-  { href: '#treino', label: 'O treino' },
-  { href: '#primeira-sessao', label: 'Primeira sessão' },
+  { href: '#sobre', label: 'Origem' },
+  { href: '#treino', label: 'Ofício' },
+  { href: '#primeira-sessao', label: 'Primeiro dia' },
   { href: '#formatos', label: 'Formatos' },
-  { href: '#locais', label: 'Locais' },
+  { href: '#locais', label: 'Lugares' },
 ];
 
 export const hero = {
-  headline: ['Treino privado', 'de boxe, kickboxing', 'e força.'],
-  support: 'Em Lisboa, ao teu ritmo e no local combinado.',
+  headline: ['Boxe, kickboxing', 'e força.', 'Em privado.'],
+  support: 'Lisboa. Ao teu ritmo, num lugar combinado.',
   primary: { label: 'Pedir uma sessão', href: '#contacto' },
-  secondary: { label: 'Conhecer o treino', href: '#treino' },
+  secondary: { label: 'Ver mais de perto', href: '#treino' },
   strip: ['Boxe', 'Kickboxing', 'Pads', 'Força'],
 };
 
 export const experience = {
-  kicker: 'O treino',
-  title: ['Técnica de competição,', 'ensinada com paciência.'],
-  intro: 'Boxe, kickboxing, pads e força. Escolhes o foco; a atenção ao detalhe é sempre a mesma.',
+  kicker: 'O ofício',
+  title: ['Golpes simples.', '*Anos a afiná-los.*'],
+  intro: 'O corpo aprende devagar. Depois, de repente, sabe.',
   pillars: [
     {
       n: '01',
       title: 'Técnica',
       image: 'tomasCorrecting',
       video: 'real-bagwork',
-      text: 'Guarda, postura, deslocação, socos e, no kickboxing, pontapés. O Tomás demonstra, observa e corrige um detalhe de cada vez, até o movimento fazer sentido no teu corpo.',
+      text: 'A guarda que não cai. O pé que roda antes da anca. Um detalhe de cada vez, até deixar de ser pensado.',
     },
     {
       n: '02',
@@ -38,19 +38,19 @@ export const experience = {
       image: 'padsPines',
       video: 'real-padwork',
       focus: '50% 60%',
-      text: 'Com o Tomás a segurar os pads, as combinações ganham tempo e precisão. Repetes, ajustas, repetes outra vez. O ritmo sobe quando estás pronto, não antes.',
+      text: 'Um diálogo sem palavras. As mãos do outro lado dizem onde, quando e quanto. Repetir até soar certo.',
     },
     {
       n: '03',
       title: 'Força',
       image: 'kettlebellLight',
-      text: 'Kettlebell, elásticos e peso corporal para construir uma base sólida: pernas, tronco e ombros. Força que se nota nos golpes e no dia a dia.',
+      text: 'Pernas, tronco, ombros. A força que não se vê, mas se ouve no golpe.',
     },
     {
       n: '04',
       title: 'Condicionamento',
       image: 'towelRest',
-      text: 'Rondas curtas, pausas medidas e respiração controlada. Ganhas fôlego sem perder a técnica pelo caminho.',
+      text: 'Rondas curtas. Silêncio entre elas. Aprender a respirar quando custa.',
     },
   ],
 };
@@ -60,14 +60,14 @@ export const interlude = {
 };
 
 export const about = {
-  kicker: 'Sobre o Tomás',
-  storyTitle: 'O percurso',
-  methodTitle: 'Como treina',
-  title: ['Do ringue', 'para o teu treino.'],
+  kicker: 'Origem',
+  storyTitle: 'O que o ringue ensina',
+  methodTitle: 'Método',
+  title: ['Formado no ringue.', '*Afinado no canto.*'],
   paragraphs: [
-    'O Tomás competiu em kickboxing e hoje prepara e acompanha atletas em competição. É formado em exercício físico e em treino de boxe e de kickboxing.',
-    'A competição ensinou-lhe o valor dos pormenores: a guarda que não desce, o pé que roda no momento certo, a respiração que não se prende. É esse olhar técnico que leva para cada sessão, com a calma de quem sabe que cada pessoa começa num ponto diferente.',
-    'Treina adultos de vários níveis, incluindo quem nunca calçou umas luvas.',
+    'Competiu em kickboxing. Hoje prepara e acompanha quem compete. Formação em exercício físico, boxe e kickboxing.',
+    'Que a pressa se paga. Que o pormenor decide. Que cada pessoa chega de um lugar diferente, e é daí que se parte.',
+    'Para quem compete, e para quem nunca calçou umas luvas.',
   ],
   credentials: [
     {
@@ -84,9 +84,9 @@ export const about = {
     },
   ],
   principles: [
-    { title: 'Observar primeiro', text: 'Antes de corrigir, o Tomás vê como te mexes e o que te custa.' },
-    { title: 'Explicar o porquê', text: 'Cada correção vem com uma razão simples que consegues levar contigo.' },
-    { title: 'Ajustar à pessoa', text: 'O plano muda com o teu dia, a tua energia e os teus objetivos.' },
+    { title: 'Observar', text: 'Primeiro, ver como te moves. Só depois, mudar.' },
+    { title: 'Explicar', text: 'Cada correção traz uma razão que levas contigo.' },
+    { title: 'Ajustar', text: 'O plano escuta o teu dia.' },
   ],
 };
 
@@ -102,7 +102,7 @@ export const statements = {
 };
 
 export const record = {
-  caption: 'No treino e em noites de competição.',
+  caption: 'Treino. Noites de combate. O mesmo olhar.',
   photos: [
     { image: 'tomasTeam', ratio: 2.13, slot: 'team' },
     { image: 'tomasRingside', ratio: 1.72, slot: 'ring' },
@@ -112,85 +112,70 @@ export const record = {
 };
 
 export const firstSession = {
-  kicker: 'Primeira sessão',
-  title: ['O que acontece', 'na primeira sessão.'],
-  intro: 'Não precisas de experiência nem de estar em forma para começar. Precisas apenas de vir com vontade de experimentar.',
+  kicker: 'Primeiro dia',
+  title: ['Ninguém começa', '*pronto.*'],
+  intro: 'Não é preciso experiência. Só vontade de entrar.',
   steps: [
-    {
-      title: 'Conversa',
-      text: 'Falamos sobre os teus objetivos, a tua experiência, lesões ou limitações e o que te trouxe até aqui.',
-    },
-    {
-      title: 'Ponto de partida',
-      text: 'Alguns movimentos simples ajudam a perceber mobilidade, coordenação e condição física. Sem testes ao limite.',
-    },
-    {
-      title: 'Prática guiada',
-      text: 'Guarda, postura e primeiros golpes, depois um bloco de pads e um pouco de força. Tudo explicado passo a passo.',
-    },
-    {
-      title: 'Recomendação',
-      text: 'No fim, o Tomás sugere como continuar: frequência, formato e foco das sessões seguintes.',
-    },
+    { title: 'Conversa', text: 'O que procuras, o que já fizeste, onde o corpo pede cuidado.' },
+    { title: 'Ponto de partida', text: 'Alguns movimentos simples. Nada ao limite. Só para perceber de onde partimos.' },
+    { title: 'Prática', text: 'Guarda, primeiros golpes, um bloco de pads. Tudo explicado, nada apressado.' },
+    { title: 'Caminho', text: 'No fim, uma proposta: ritmo, formato e o que trabalhar a seguir.' },
   ],
 };
 
 export const inSession = {
   kicker: 'Em sessão',
-  title: ['Prática guiada,', '*em tempo real.*'],
-  text: 'Pads ao teu ritmo, com correções entre combinações.',
-  points: ['Correções entre combinações', 'Ritmo ajustado a cada pessoa', 'Ambiente descontraído, exigência real'],
+  title: ['Ouvir o golpe', '*antes de o ver.*'],
+  text: 'Pads ao teu ritmo. Correções no intervalo entre combinações.',
+  points: [],
   cta: 'Marcar a primeira sessão',
 };
 
 export const formats = {
   kicker: 'Formatos',
-  title: ['Sozinho', 'ou a dois.'],
+  title: ['A sós', '*ou a dois.*'],
   items: [
     {
       name: 'Individual',
       image: 'adultPractice',
-      lead: 'Atenção total, do primeiro ao último minuto.',
-      text: 'O plano acompanha os teus objetivos, o teu horário e a tua evolução. Ideal para quem quer aprender a técnica com cuidado ou voltar a treinar com segurança.',
-      points: ['Correções contínuas', 'Ritmo definido por ti', 'Plano ajustado sessão a sessão'],
+      lead: 'Toda a atenção. Nenhum ruído.',
+      text: 'O plano segue os teus objetivos, o teu horário e o tempo que precisas para aprender.',
+      points: ['Correção contínua', 'O teu ritmo', 'Um plano que evolui contigo'],
     },
     {
       name: 'Duo',
       image: 'duoSession',
-      lead: 'Treinar com alguém que conheces.',
-      text: 'Para amigos, casais ou familiares. Alternam nos pads e trabalham a pares, mantendo correções individuais para cada um.',
-      points: ['Dois níveis, uma sessão', 'Trabalho a pares nos pads', 'Motivação partilhada'],
+      lead: 'Treinar com quem já conheces.',
+      text: 'Alternam nos pads, trabalham a pares. Cada um com as suas correções.',
+      points: ['Dois níveis, uma sessão', 'Trabalho a pares', 'Ritmo partilhado'],
     },
   ],
-  note: 'A proposta para cada formato é apresentada no primeiro contacto.',
+  note: 'Os detalhes ficam para a primeira conversa.',
 };
 
 export const locations = {
-  kicker: 'Locais',
-  title: ['No local', 'combinado.'],
-  intro: 'O treino vai até ti, em Lisboa. Combinamos o sítio; o Tomás leva o equipamento.',
+  kicker: 'Lugares',
+  title: ['Onde for', '*combinado.*'],
+  intro: 'Lisboa. O lugar combina-se; o equipamento vem connosco.',
   options: [
-    { title: 'Em casa', text: 'Sala, terraço, jardim ou junto à piscina. Basta espaço para dar alguns passos em segurança.' },
-    { title: 'Ao ar livre', text: 'Sob os pinheiros, num jardim ou perto do mar, num espaço adequado e perto de ti.' },
-    { title: 'No teu condomínio ou empresa', text: 'Uma sala comum ou o ginásio do condomínio, se tiveres acesso.' },
-    {
-      title: 'Espaço interior',
-      text: 'Se precisares de um espaço coberto, podemos discutir opções. Só ficam marcadas depois de confirmadas.',
-    },
+    { title: 'Em casa', text: 'Uma sala, um terraço, um jardim. Basta espaço para alguns passos.' },
+    { title: 'Ao ar livre', text: 'Sob pinheiros, junto ao mar, num lugar tranquilo perto de ti.' },
+    { title: 'No teu prédio ou empresa', text: 'Uma sala comum ou o ginásio do condomínio, se tiveres acesso.' },
+    { title: 'Espaço interior', text: 'Se precisares de abrigo, falamos de opções. Nada fica marcado sem confirmação.' },
   ],
 };
 
 export const contact = {
   kicker: 'Contacto',
-  title: ['Pedir', 'uma sessão.'],
-  intro: 'Conta um pouco sobre ti. O Tomás responde para combinar a primeira conversa.',
+  title: ['Começa', '*por aqui.*'],
+  intro: 'Algumas linhas sobre ti. A resposta chega para combinar a primeira conversa.',
   goals: ['Aprender boxe', 'Aprender kickboxing', 'Ganhar força', 'Melhorar a condição física', 'Voltar a treinar', 'Aliviar o stress'],
   availability: ['Manhã cedo', 'Manhã', 'Hora de almoço', 'Fim de tarde', 'Noite', 'Fim de semana'],
   formats: ['Individual', 'Duo', 'Ainda não sei'],
 };
 
 export const footer = {
-  line: 'Treino privado de boxe, kickboxing e força em Lisboa.',
+  line: 'Boxe, kickboxing e força. Em privado, em Lisboa.',
 };
 
 /* Interface strings (buttons, labels, form messages) */
