@@ -2359,3 +2359,44 @@
     font-size: 1rem;
   }
 }
+
+/* ==========================================================================
+   Desktop: the craft as a seamless 2 x 2 block
+   ========================================================================== */
+
+@media (min-width: 48rem) {
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    margin: 0;
+  }
+  .pillar,
+  .pillar--1,
+  .pillar--2,
+  .pillar--3,
+  .pillar--4 {
+    grid-column: auto;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .pillar .rcard .photo,
+  .pillar .rcard .real-clip {
+    aspect-ratio: 1 / 1 !important;
+  }
+  .pillar .rcard {
+    background: var(--pine-900);
+  }
+  /* the block runs edge to edge of the content column; pull it out of the
+     head's padding so the four tiles touch the gutter */
+  .experience__head {
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+@media (min-width: 64rem) {
+  .pillar .rcard .photo,
+  .pillar .rcard .real-clip {
+    aspect-ratio: 4 / 3 !important;
+  }
+}
