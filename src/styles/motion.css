@@ -1211,3 +1211,17 @@
 .disc--story .method {
   max-width: 36rem;
 }
+
+/* contact on narrow screens: button right under the title, no dead space */
+@media (max-width: 63.99rem) {
+  .contact__grid {
+    gap: var(--space-6);
+  }
+  .flow-start {
+    min-height: 0;
+    align-content: start;
+  }
+  .contact.section {
+    padding-block: clamp(4rem, 10vw, 7rem) clamp(3rem, 8vw, 5rem);
+  }
+}
