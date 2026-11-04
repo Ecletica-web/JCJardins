@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="hero on-dark" id="topo" aria-labelledby="hero-title">
       <div className="hero__grid wrap">
         <div className="hero__mark">
-          <Wordmark as="p" layout="stacked" descriptor="Kickboxing" />
+          <Wordmark as="p" layout="stacked" descriptor={ui.descriptor} />
         </div>
 
         <div className="hero__media">

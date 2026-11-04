@@ -6,33 +6,33 @@
    ========================================================================== */
 
 export const nav = [
+  { href: '#sobre', label: 'Tomás' },
   { href: '#treino', label: 'Training' },
-  { href: '#sobre', label: 'About' },
   { href: '#primeira-sessao', label: 'First session' },
   { href: '#formatos', label: 'Formats' },
   { href: '#locais', label: 'Locations' },
 ];
 
 export const hero = {
-  headline: ['Private kickboxing', 'and strength', 'training.'],
+  headline: ['Private boxing,', 'kickboxing and', 'strength training.'],
   support: 'In Lisbon, at your pace and at a place we agree on.',
   primary: { label: 'Request a session', href: '#contacto' },
   secondary: { label: 'See how it works', href: '#treino' },
-  strip: ['Technique', 'Pads', 'Strength', 'Conditioning'],
+  strip: ['Boxing', 'Kickboxing', 'Pads', 'Strength'],
 };
 
 export const experience = {
   kicker: 'The training',
   title: ['Competition technique,', 'taught with patience.'],
   intro:
-    'Every session combines kickboxing technique, padwork, and strength and conditioning. The intensity adapts to you. The attention to detail stays the same.',
+    'Every session combines boxing and kickboxing technique, padwork, and strength and conditioning. You choose the focus: boxing, kickboxing, or both. The intensity adapts to you. The attention to detail stays the same.',
   pillars: [
     {
       n: '01',
       title: 'Technique',
       image: 'tomasCorrecting',
       video: 'real-bagwork',
-      text: 'Guard, stance, footwork and the basic strikes. Tomás demonstrates, watches and corrects one detail at a time, until the movement makes sense in your body.',
+      text: 'Guard, stance, footwork, punches and, in kickboxing, kicks. Tomás demonstrates, watches and corrects one detail at a time, until the movement makes sense in your body.',
     },
     {
       n: '02',
@@ -65,15 +65,40 @@ export const about = {
   kicker: 'About Tomás',
   title: ['From the ring', 'to your training.'],
   paragraphs: [
-    'Tomás has a competitive background in kickboxing and is trained in personal training.',
+    'Tomás competed in kickboxing and today prepares and corners athletes for competition. He is qualified in exercise and fitness, and as a boxing and kickboxing coach.',
     'Competition taught him the value of small details: the guard that stays up, the foot that pivots at the right moment, the breath that never gets held. He brings that technical eye to every session, with the patience of someone who knows every person starts from a different place.',
     'He trains adults of all levels, including people who have never put on a pair of gloves.',
+  ],
+  credentials: [
+    {
+      group: 'Qualifications',
+      items: [
+        'Higher Technical Course in Exercise and Fitness',
+        'Boxing Coach course',
+        'Kickboxing Coach course',
+      ],
+    },
+    {
+      group: 'Competition',
+      items: ['Kickboxing athlete', 'Prepares and corners athletes for competition'],
+    },
   ],
   principles: [
     { title: 'Watch first', text: 'Before correcting anything, Tomás sees how you move and what you find hard.' },
     { title: 'Explain why', text: 'Every correction comes with a simple reason you can take with you.' },
     { title: 'Fit the person', text: 'The plan changes with your day, your energy and your goals.' },
   ],
+};
+
+export const statements = {
+  intro: {
+    image: 'tomasRingWide',
+    lines: ['One coach.', 'One client.', '*No one else.*'],
+  },
+  close: {
+    image: 'glovesBw',
+    lines: ['A set time.', 'An agreed place.', '*The rest stays between us.*'],
+  },
 };
 
 export const record = {
@@ -160,17 +185,18 @@ export const contact = {
   kicker: 'Contact',
   title: ['Request', 'a session.'],
   intro: 'Tell us a little about yourself. Tomás will reply to arrange a first conversation.',
-  goals: ['Learn kickboxing', 'Get stronger', 'Improve fitness', 'Get back into training', 'Relieve stress'],
+  goals: ['Learn boxing', 'Learn kickboxing', 'Get stronger', 'Improve fitness', 'Get back into training', 'Relieve stress'],
   availability: ['Early morning', 'Morning', 'Lunchtime', 'Late afternoon', 'Evening', 'Weekend'],
   formats: ['Individual', 'Duo', 'Not sure yet'],
 };
 
 export const footer = {
-  line: 'Private kickboxing and strength training in Lisbon.',
+  line: 'Private boxing, kickboxing and strength training in Lisbon.',
 };
 
 /* Interface strings (buttons, labels, form messages) */
 export const ui = {
+  descriptor: 'Boxing · Kickboxing',
   lang: { label: 'Language', pt: 'PT', en: 'EN', ptName: 'Português', enName: 'English' },
   skip: 'Skip to content',
   home: 'Tomás Queiroz — home',

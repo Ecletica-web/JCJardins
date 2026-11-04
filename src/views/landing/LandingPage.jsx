@@ -4,6 +4,7 @@ import Hero from './Hero.jsx';
 import Experience from './Experience.jsx';
 import Interlude from './Interlude.jsx';
 import About from './About.jsx';
+import Statement from './Statement.jsx';
 import FirstSession from './FirstSession.jsx';
 import Formats from './Formats.jsx';
 import Locations from './Locations.jsx';
@@ -20,12 +21,14 @@ export default function LandingPage() {
       <SiteHeader />
       <main id="conteudo" tabIndex={-1}>
         <Hero />
+        <Statement which="intro" />
+        <About />
         <Experience />
         <Interlude />
-        <About />
         <FirstSession />
         <Formats />
         <Locations />
+        <Statement which="close" />
         <Contact />
       </main>
       <SiteFooter />

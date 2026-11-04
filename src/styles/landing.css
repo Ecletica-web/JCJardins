@@ -348,7 +348,7 @@ body::before {
 }
 
 .hero__headline {
-  max-width: 14ch;
+  max-width: 18ch;
 }
 
 .hero__accent {
@@ -561,6 +561,116 @@ body::before {
 .interlude__accent {
   color: var(--sage-light);
   font-weight: var(--weight-light);
+}
+
+/* ---- Statement bands: one quiet phrase over dark B&W --------------------- */
+
+.statement {
+  position: relative;
+  display: grid;
+  align-items: end;
+  min-height: clamp(26rem, 78vh, 46rem);
+  overflow: hidden;
+  background: var(--pine-900);
+}
+
+.statement__photo {
+  position: absolute !important;
+  inset: 0;
+}
+
+.statement .photo > img {
+  filter: grayscale(1) contrast(1.08) brightness(0.82);
+}
+
+.statement .photo::after {
+  display: none;
+}
+
+.statement__shade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(to right, rgb(var(--shade) / 0.9) 0%, rgb(var(--shade) / 0.45) 45%, transparent 75%),
+    linear-gradient(to top, rgb(var(--shade) / 0.85), transparent 45%);
+}
+
+.statement__lines {
+  position: relative;
+  z-index: 3;
+  padding-block: clamp(3rem, 8vw, 6rem);
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: clamp(1.6rem, 3.6vw, 3.2rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--linen);
+}
+
+.statement__accent {
+  font-style: italic;
+  color: var(--sage-light);
+}
+
+/* closing band: phrase sits on the right, image weight on the left */
+.statement--close .statement__shade {
+  background:
+    linear-gradient(to left, rgb(var(--shade) / 0.9) 0%, rgb(var(--shade) / 0.5) 45%, transparent 80%),
+    linear-gradient(to top, rgb(var(--shade) / 0.8), transparent 45%);
+}
+
+.statement--close .statement__lines {
+  text-align: right;
+}
+
+/* ---- About: qualifications & competition ------------------------------- */
+
+.credentials {
+  display: grid;
+  gap: var(--space-5);
+  padding-block: var(--space-5);
+  border-block: 1px solid var(--pine-700);
+}
+
+.credentials__title {
+  margin-bottom: var(--space-3);
+  font-family: var(--font-display);
+  font-stretch: var(--stretch-wide);
+  font-weight: var(--weight-medium);
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--accent-on-dark);
+}
+
+.credentials__list {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+}
+
+.credentials__list li {
+  display: flex;
+  gap: 0.9rem;
+  align-items: baseline;
+  font-size: var(--fs-small);
+}
+
+.credentials__list li::before {
+  content: '';
+  flex: none;
+  width: 0.9rem;
+  height: 1px;
+  background: var(--accent);
+  transform: translateY(-0.3em);
+}
+
+@media (min-width: 48rem) {
+  .credentials {
+    grid-template-columns: 1.25fr 1fr;
+    gap: var(--space-6);
+  }
 }
 
 /* ---- About -------------------------------------------------------------- */

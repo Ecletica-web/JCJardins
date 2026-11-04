@@ -356,11 +356,12 @@ export default function BrandPreview() {
               </li>
             </ul>
             <div className="bp-proposal">
-              <span className="bp-proposal__tag">Proposed About line · needs Tomás's approval</span>
-              <p lang="pt-PT">Também prepara e acompanha atletas em competição.</p>
+              <span className="bp-proposal__tag">Confirmed by Tomás · now on the landing page</span>
+              <p lang="pt-PT">Boxe e kickboxing. Formação em exercício físico e cursos de treinador de boxe e de kickboxing. Competiu em kickboxing e prepara atletas em competição.</p>
               <p className="soft">
-                His photos show him preparing and cornering fighters. The landing page currently says only that he has a
-                competitive background; this line would add it once Tomás confirms the wording.
+                Check the exact official course titles before launch. Two quiet statement bands (“Um treinador. Um
+                aluno. Mais ninguém.” and “Hora marcada. Local combinado. O resto fica entre nós.”) carry the discreet,
+                exclusive voice Tomás asked for, inspired by the dark, cinematic close-ups of BOXRAW and Santos 1990.
               </p>
             </div>
           </div>

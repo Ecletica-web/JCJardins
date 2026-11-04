@@ -27,6 +27,19 @@ export default function About() {
             ))}
           </div>
 
+          <div className="credentials">
+            {about.credentials.map((c) => (
+              <div key={c.group} className="credentials__group">
+                <h3 className="credentials__title">{c.group}</h3>
+                <ul role="list" className="credentials__list">
+                  {c.items.map((it) => (
+                    <li key={it}>{it}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
           <ul role="list" className="principles">
             {about.principles.map((p, i) => (
               <Reveal as="li" key={p.title} className="principle" delay={i * 90}>

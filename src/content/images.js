@@ -101,6 +101,12 @@ export const images = {
     alt: 'O Tomás em guarda dentro do ringue, com capacete e luvas.',
     focus: '45% 40%',
   },
+  tomasRingWide: {
+    kind: 'photo',
+    src: own('tomas-ring-wide.jpg'),
+    alt: 'O Tomás em guarda dentro do ringue, numa noite de combates.',
+    focus: '62% 45%',
+  },
   tomasTeam: {
     kind: 'photo',
     src: own('tomas-team-wide.jpg'),
@@ -168,6 +174,15 @@ export const images = {
     focus: '40% 45%',
     people: false,
     note: 'Hero: jab into pads at dusk, branded TQK gloves.',
+  },
+
+  glovesBw: {
+    kind: 'concept',
+    src: concept('concept-gloves-bw.jpg'),
+    alt: 'Mãos a apertar as luvas de outra pessoa, a preto e branco.',
+    focus: '55% 50%',
+    people: true,
+    note: 'Statement band background: fastening gloves, black and white.',
   },
 
   /* ---- Location mood (no people) --------------------------------------- */
