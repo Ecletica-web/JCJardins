@@ -187,6 +187,7 @@ export const footer = {
 /* Interface strings (buttons, labels, form messages) */
 export const ui = {
   descriptor: 'Boxe · Kickboxing · Força',
+  tagline: 'Sessões privadas em Lisboa',
   more: 'Ver mais',
   scrollCue: 'Continuar a ler',
   prev: 'Fotografia anterior',

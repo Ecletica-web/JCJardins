@@ -2327,3 +2327,35 @@
 .first .stage__photo > img {
   filter: grayscale(1) contrast(1.06) brightness(0.9);
 }
+
+/* hero tagline under the name */
+.hero__tagline {
+  margin-top: 0.9rem;
+  margin-left: 0.5em; /* aligns with the QUEIROZ step */
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  letter-spacing: 0.01em;
+  color: var(--ink-soft-on-dark);
+  opacity: 0;
+  animation: fade-in 0.9s var(--ease-out) forwards;
+  animation-delay: 1.2s;
+}
+
+.is-intro .hero__tagline {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__tagline {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .hero__tagline {
+    margin-left: 0;
+    font-size: 1rem;
+  }
+}

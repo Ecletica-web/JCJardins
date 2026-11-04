@@ -188,6 +188,7 @@ export const footer = {
 /* Interface strings (buttons, labels, form messages) */
 export const ui = {
   descriptor: 'Boxing · Kickboxing · Strength',
+  tagline: 'Private sessions in Lisbon',
   more: 'See more',
   scrollCue: 'Keep reading',
   prev: 'Previous photo',

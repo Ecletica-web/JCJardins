@@ -16,6 +16,7 @@ export default function Hero() {
       <div className="hero__body">
         <div className="hero__mark">
           <Wordmark as="h1" layout="stacked" descriptor={ui.descriptor} letters />
+          <p className="hero__tagline">{ui.tagline}</p>
         </div>
 
         <div className="hero__copy">
