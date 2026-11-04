@@ -569,34 +569,55 @@ body::before {
 }
 
 .record__row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-2);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: var(--space-2);
 }
 
-.record__row:focus-visible {
-  outline-offset: 4px;
+/* Below desktop: a two-column photo grid, nothing to scroll.
+   Each cell sets its own shape; images crop to fit. */
+.record__item--team {
+  grid-column: 1 / -1;
+  order: 1;
 }
 
-/* Mobile: equal-height strip that scrolls sideways */
-.record__item {
-  flex: none;
-  width: calc(13rem * var(--ar));
-  scroll-snap-align: start;
+.record__item--ring {
+  order: 2;
+}
+
+.record__item--night {
+  order: 3;
+}
+
+.record__item--trophy {
+  order: 4;
+}
+
+.record__item--clip {
+  order: 5;
+}
+
+.record__item--ring .photo,
+.record__item--night .photo {
+  aspect-ratio: 4 / 3 !important;
+}
+
+.record__item--trophy .photo,
+.record__item--clip .photo {
+  aspect-ratio: 3 / 4 !important;
 }
 
 /* Desktop: one justified row, every image the same height */
 @media (min-width: 64rem) {
   .record__row {
-    overflow: visible;
-    padding-bottom: 0;
+    display: flex;
   }
   .record__item {
     flex: var(--ar) 1 0;
-    width: auto;
-    max-width: none;
+    order: 0;
+  }
+  .record__item .photo {
+    aspect-ratio: var(--ar) / 1 !important;
   }
 }
 

@@ -39,9 +39,9 @@ export default function About() {
 
       <div className="wrap">
         <figure className="about__record">
-          <div className="record__row" tabIndex={0} aria-label="Fotografias do Tomás em treino e competição">
+          <div className="record__row">
             {record.photos.map((ph) => (
-              <div key={ph.image || ph.video} className="record__item" style={{ '--ar': ph.ratio }}>
+              <div key={ph.image || ph.video} className={`record__item record__item--${ph.slot}`} style={{ '--ar': ph.ratio }}>
                 {ph.video ? (
                   <RealClip video={ph.video} ratio={`${ph.ratio} / 1`} focus="50% 55%" label={false} />
                 ) : (

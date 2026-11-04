@@ -77,11 +77,11 @@ export const about = {
 export const record = {
   caption: 'No treino e em noites de competição.',
   photos: [
-    { image: 'tomasTeam', ratio: 2.13 },
-    { video: 'real-padwork', ratio: 0.5625 },
-    { image: 'tomasRingside', ratio: 1.72 },
-    { image: 'tomasTeamTrophy', ratio: 0.75 },
-    { image: 'tomasFightNight', ratio: 1.24 },
+    { image: 'tomasTeam', ratio: 2.13, slot: 'team' },
+    { video: 'real-padwork', ratio: 0.5625, slot: 'clip' },
+    { image: 'tomasRingside', ratio: 1.72, slot: 'ring' },
+    { image: 'tomasTeamTrophy', ratio: 0.75, slot: 'trophy' },
+    { image: 'tomasFightNight', ratio: 1.24, slot: 'night' },
   ],
 };
 
