@@ -36,15 +36,11 @@ export default function About() {
 
       <div className="wrap">
         <figure className="about__record">
-          <div className="record__grid">
+          <div className="record__row" tabIndex={0} aria-label="Fotografias do Tomás em treino e competição">
             {record.photos.map((ph) => (
-              <Photo
-                key={ph.image}
-                image={ph.image}
-                ratio={ph.wide ? '2.1 / 1' : '1 / 1'}
-                className={ph.wide ? 'record__wide' : 'record__square'}
-                sizes={ph.wide ? '(min-width: 64rem) 40vw, 100vw' : '(min-width: 64rem) 20vw, 33vw'}
-              />
+              <div key={ph.image} className="record__item" style={{ '--ar': ph.ratio }}>
+                <Photo image={ph.image} ratio={`${ph.ratio} / 1`} sizes="(min-width: 64rem) 30vw, 70vw" />
+              </div>
             ))}
           </div>
           <figcaption className="record__caption soft">{record.caption}</figcaption>

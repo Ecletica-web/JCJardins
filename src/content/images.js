@@ -96,21 +96,21 @@ export const images = {
   },
   tomasRingside: {
     kind: 'photo',
-    src: own('tomas-ringside.jpg'),
-    alt: 'Retrato do Tomás junto ao ringue numa noite de competição.',
+    src: own('tomas-ringside-wide.jpg'),
+    alt: 'O Tomás junto ao ringue com dois atletas depois de um combate.',
     focus: '50% 40%',
+  },
+  tomasTeamTrophy: {
+    kind: 'photo',
+    src: own('tomas-team-trophy.jpg'),
+    alt: 'O Tomás com duas atletas num dia de competição.',
+    focus: '50% 45%',
   },
   tomasFightNight: {
     kind: 'photo',
-    src: own('tomas-fight-night.jpg'),
-    alt: 'Retrato do Tomás depois de um combate.',
+    src: own('tomas-fight-night-wide.jpg'),
+    alt: 'O Tomás ao lado de um atleta numa noite de combates.',
     focus: '50% 35%',
-  },
-  tomasCompetitionDay: {
-    kind: 'photo',
-    src: own('tomas-competition-day.jpg'),
-    alt: 'Retrato do Tomás num dia de competição.',
-    focus: '50% 40%',
   },
 
   /* ---- Concept images (AI-generated, supplied) ------------------------- */

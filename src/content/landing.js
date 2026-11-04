@@ -77,10 +77,10 @@ export const about = {
 export const record = {
   caption: 'No treino e em noites de competição.',
   photos: [
-    { image: 'tomasTeam', wide: true },
-    { image: 'tomasRingside' },
-    { image: 'tomasFightNight' },
-    { image: 'tomasCompetitionDay' },
+    { image: 'tomasTeam', ratio: 2.13 },
+    { image: 'tomasRingside', ratio: 1.72 },
+    { image: 'tomasTeamTrophy', ratio: 0.75 },
+    { image: 'tomasFightNight', ratio: 1.24 },
   ],
 };
 

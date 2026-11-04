@@ -135,16 +135,16 @@ export default function BrandPreview() {
         >
           <div className="bp-marks">
             <div className="bp-mark bp-mark--dark">
-              <Wordmark layout="stacked" size="clamp(1.9rem, 6.4vw, 5.6rem)" />
-              <span className="bp-mark__cap">Primary · stacked · linen on pine</span>
+              <Wordmark layout="stacked" descriptor="Kickboxing" size="clamp(1.9rem, 6.4vw, 5.6rem)" />
+              <span className="bp-mark__cap">Primary · stacked with descriptor · linen on pine</span>
             </div>
             <div className="bp-mark bp-mark--light">
               <Wordmark layout="stacked" tone="dark" size="clamp(1.5rem, 2.6vw, 2.4rem)" />
               <span className="bp-mark__cap">Stacked · pine on linen</span>
             </div>
             <div className="bp-mark bp-mark--light">
-              <Wordmark layout="inline" tone="dark" size="clamp(0.85rem, 1.25vw, 1.15rem)" />
-              <span className="bp-mark__cap">Inline · headers, signatures, posts</span>
+              <Wordmark layout="inline" tone="dark" descriptor="Kickboxing" size="clamp(0.85rem, 1.25vw, 1.15rem)" />
+              <span className="bp-mark__cap">Inline lockup · header, towels, kit</span>
             </div>
             <div className="bp-mark bp-mark--dark bp-mark--mono">
               <div className="bp-monos">

@@ -7,15 +7,18 @@
      in the mark.
    The visible letters are decorative; assistive tech reads the label. */
 
-export default function Wordmark({ layout = 'stacked', tone = 'light', as: Tag = 'span', className = '', size }) {
+export default function Wordmark({
+  layout = 'stacked',
+  tone = 'light',
+  as: Tag = 'span',
+  className = '',
+  size,
+  descriptor,
+}) {
   const style = size ? { fontSize: size } : undefined;
-  return (
-    <Tag
-      className={`wordmark wordmark--${layout} wordmark--${tone} ${className}`}
-      style={style}
-      role="img"
-      aria-label="Tomás Queiroz"
-    >
+  const label = descriptor ? `Tomás Queiroz ${descriptor}` : 'Tomás Queiroz';
+  const name = (
+    <>
       <span className="wordmark__first" aria-hidden="true">
         TOM
         <span className="wordmark__a">
@@ -25,6 +28,25 @@ export default function Wordmark({ layout = 'stacked', tone = 'light', as: Tag =
       </span>
       <span className="wordmark__last" aria-hidden="true">
         QUEIROZ
+      </span>
+    </>
+  );
+
+  if (!descriptor) {
+    return (
+      <Tag className={`wordmark wordmark--${layout} wordmark--${tone} ${className}`} style={style} role="img" aria-label={label}>
+        {name}
+      </Tag>
+    );
+  }
+
+  /* Lockup: the name with a small, widely tracked descriptor centred
+     underneath (e.g. KICKBOXING), as on the towels. */
+  return (
+    <Tag className={`wordmark-lockup wordmark-lockup--${layout} wordmark-lockup--${tone} ${className}`} style={style} role="img" aria-label={label}>
+      <span className={`wordmark wordmark--${layout} wordmark--${tone}`}>{name}</span>
+      <span className="wordmark-lockup__line" aria-hidden="true">
+        <span className="wordmark-lockup__descriptor">{descriptor}</span>
       </span>
     </Tag>
   );
