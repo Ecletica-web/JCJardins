@@ -333,9 +333,10 @@ export default function BrandPreview() {
           <div className="bp-refs">
             <h3 className="h3">From Tomás's own photos and video</h3>
             <p className="soft">
-              Supplied event photos and a training clip. Not used on the landing page: they carry club badges, sponsor
-              and federation logos, trophies, other people (including a minor) and club gyms that would suggest a studio
-              or group classes. They are useful as references for the shoot.
+              Supplied photos and three training clips, all authorised for use. On the landing page they appear in black
+              and white: the clips in the Técnica and Pads pillars and in About, and cropped portraits plus the group
+              photo in About. Crops keep trophies, belts, backdrops and most badges out of frame. The flags photo is
+              not used.
             </p>
             <ul role="list" className="bp-notes">
               <li>
@@ -592,12 +593,9 @@ export default function BrandPreview() {
               </p>
               <ul role="list" className="bp-real__list">
                 <li>Cropped to 9:16 so the gym's signage stays out of frame; sound removed.</li>
-                <li>Same grade as the brand photos: low saturation, slightly darker, vignette and grain.</li>
-                <li>
-                  <b>Before publishing:</b> written consent from the athlete in red, and Tomás's OK for the gym to be
-                  recognisable.
-                </li>
-                <li>Too low-resolution (464 px wide) for the website. Not used on the landing page.</li>
+                <li>Black and white, slightly darker, vignette and grain: the same treatment as all of Tomás's real footage.</li>
+                <li>Consent for everyone shown is confirmed by the client.</li>
+                <li>Low resolution (464 px wide): fine for Reels and small frames on the site, not for a hero.</li>
               </ul>
             </div>
           </div>

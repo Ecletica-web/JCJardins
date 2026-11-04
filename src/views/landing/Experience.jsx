@@ -1,4 +1,5 @@
 import Photo from '../../components/Photo.jsx';
+import RealClip from '../../components/RealClip.jsx';
 import { Reveal } from '../../components/useReveal.jsx';
 import SectionTitle from './SectionTitle.jsx';
 import { experience } from '../../content/landing.js';
@@ -15,7 +16,11 @@ export default function Experience() {
         <ol role="list" className="pillars">
           {experience.pillars.map((p, i) => (
             <Reveal as="li" key={p.n} className={`pillar pillar--${i + 1}`} delay={i % 2 ? 120 : 0}>
-              <Photo image={p.image} ratio={i % 3 === 0 ? '4 / 5' : '3 / 4'} sizes="(min-width: 64rem) 40vw, 100vw" />
+              {p.video ? (
+                <RealClip video={p.video} ratio={i % 3 === 0 ? '4 / 5' : '3 / 4'} />
+              ) : (
+                <Photo image={p.image} ratio={i % 3 === 0 ? '4 / 5' : '3 / 4'} sizes="(min-width: 64rem) 40vw, 100vw" />
+              )}
               <div className="pillar__text">
                 <span className="pillar__n" aria-hidden="true">
                   {p.n}

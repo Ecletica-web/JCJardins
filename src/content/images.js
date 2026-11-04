@@ -23,6 +23,7 @@
 const base = import.meta.env.BASE_URL;
 const ref = (file) => `${base}images/reference/${file}`;
 const concept = (file) => `${base}images/concept/${file}`;
+const own = (file) => `${base}images/tomas/${file}`;
 const pexels = (id) => `https://www.pexels.com/photo/${id}/`;
 
 export const images = {
@@ -83,6 +84,33 @@ export const images = {
     source: pexels(6455951),
     replaceWith: 'conditioningClient',
     note: 'Breath and sweat between rounds.',
+  },
+
+  /* ---- Tomás's own photographs (supplied, cropped, black and white) ---- */
+
+  tomasTeam: {
+    kind: 'photo',
+    src: own('tomas-team-wide.jpg'),
+    alt: 'O Tomás com um grupo de atletas depois de um treino de kickboxing.',
+    focus: '45% 55%',
+  },
+  tomasRingside: {
+    kind: 'photo',
+    src: own('tomas-ringside.jpg'),
+    alt: 'Retrato do Tomás junto ao ringue numa noite de competição.',
+    focus: '50% 40%',
+  },
+  tomasFightNight: {
+    kind: 'photo',
+    src: own('tomas-fight-night.jpg'),
+    alt: 'Retrato do Tomás depois de um combate.',
+    focus: '50% 35%',
+  },
+  tomasCompetitionDay: {
+    kind: 'photo',
+    src: own('tomas-competition-day.jpg'),
+    alt: 'Retrato do Tomás num dia de competição.',
+    focus: '50% 40%',
   },
 
   /* ---- Concept images (AI-generated, supplied) ------------------------- */

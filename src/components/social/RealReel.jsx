@@ -3,9 +3,7 @@ import Wordmark from '../Wordmark.jsx';
 import { usePrototype } from '../../prototype.jsx';
 
 /* Reel example built from real footage of Tomás holding pads.
-   INTERNAL PREVIEW ONLY: the other person in the clip has not yet given
-   consent, so it never appears on the customer-facing landing page.
-   Muted, looping, cropped to keep the gym's signage out of frame. */
+   Muted, looping, black and white, cropped to keep the gym's signage out. */
 
 const base = import.meta.env.BASE_URL;
 
@@ -61,7 +59,7 @@ export default function RealReel() {
       </span>
       {showLabels && (
         <span className="proto-chip proto-chip--real photo__ref" aria-hidden="true">
-          Real footage · consent pending · internal only
+          Real footage of Tomás
         </span>
       )}
       <button

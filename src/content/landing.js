@@ -30,12 +30,14 @@ export const experience = {
       n: '01',
       title: 'Técnica',
       image: 'tomasCorrecting',
+      video: 'real-bagwork',
       text: 'Guarda, postura, deslocação e golpes básicos. O Tomás demonstra, observa e corrige um detalhe de cada vez, até o movimento fazer sentido no teu corpo.',
     },
     {
       n: '02',
       title: 'Pads',
       image: 'padsPines',
+      video: 'real-coaching',
       text: 'Com o Tomás a segurar os pads, as combinações ganham tempo e precisão. Repetes, ajustas, repetes outra vez. O ritmo sobe quando estás pronto, não antes.',
     },
     {
@@ -69,6 +71,16 @@ export const about = {
     { title: 'Observar primeiro', text: 'Antes de corrigir, o Tomás vê como te mexes e o que te custa.' },
     { title: 'Explicar o porquê', text: 'Cada correção vem com uma razão simples que consegues levar contigo.' },
     { title: 'Ajustar à pessoa', text: 'O plano muda com o teu dia, a tua energia e os teus objetivos.' },
+  ],
+};
+
+export const record = {
+  caption: 'No treino e em noites de competição.',
+  photos: [
+    { image: 'tomasTeam', wide: true },
+    { image: 'tomasRingside' },
+    { image: 'tomasFightNight' },
+    { image: 'tomasCompetitionDay' },
   ],
 };
 

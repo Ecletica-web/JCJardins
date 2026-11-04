@@ -554,6 +554,49 @@ body::before {
   }
 }
 
+/* ---- About: training & competition record ------------------------------ */
+
+.about__record {
+  margin: clamp(3rem, 7vw, 5rem) 0 0;
+}
+
+.record__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.record__wide {
+  grid-column: 1 / -1;
+}
+
+/* Tomás's own photos are already black and white: skip the sage wash */
+.about__record .photo > img {
+  filter: contrast(1.04);
+}
+
+.about__record .photo::after {
+  display: none;
+}
+
+.record__caption {
+  margin-top: var(--space-3);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.04em;
+}
+
+@media (min-width: 64rem) {
+  .record__grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: stretch;
+  }
+  .record__wide {
+    grid-column: auto;
+    aspect-ratio: auto !important;
+    height: 100%;
+  }
+}
+
 /* ---- First session ------------------------------------------------------ */
 
 .first__head {
