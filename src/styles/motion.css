@@ -1777,3 +1777,10 @@
     margin-inline: var(--gutter);
   }
 }
+
+/* stage intros: use the full width on phones so short lines stay whole */
+@media (max-width: 63.99rem) {
+  .stage__intro {
+    max-width: none;
+  }
+}

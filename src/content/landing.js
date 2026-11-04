@@ -112,7 +112,7 @@ export const record = {
 export const firstSession = {
   kicker: 'Primeiro dia',
   title: ['Ninguém começa', '*pronto.*'],
-  intro: 'Não é preciso experiência. Só vontade de entrar.',
+  intro: 'Não é preciso experiência. Só vontade de\u00a0entrar.',
   steps: [
     { title: 'Conversa', text: 'O que procuras, o que já fizeste, onde o corpo pede cuidado.' },
     { title: 'Ponto de partida', text: 'Alguns movimentos simples. Nada ao limite. Só para perceber de onde partimos.' },
