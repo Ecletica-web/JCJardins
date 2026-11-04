@@ -152,13 +152,31 @@
   opacity: 1;
 }
 
-/* photographs wipe open from the bottom as they enter */
-.photo--image:not(.hero__photo) {
+/* photographs wipe open from the bottom as they enter.
+   The clip sits on the image, not the figure: a fully clipped figure never
+   intersects the viewport in Chrome, so the observer would never fire. */
+.photo--image:not(.hero__photo) > img,
+.photo--image:not(.hero__photo) > .photo__grain,
+.photo--image:not(.hero__photo)::after {
   clip-path: inset(100% 0 0 0);
+}
+
+.photo--image:not(.hero__photo) > img {
+  transition:
+    opacity var(--dur-slow) var(--ease-out),
+    transform 1.4s var(--ease-out),
+    filter var(--dur-med) var(--ease-out),
+    clip-path 1.2s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.photo--image:not(.hero__photo) > .photo__grain,
+.photo--image:not(.hero__photo)::after {
   transition: clip-path 1.2s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-.photo--image.is-visible {
+.photo--image.is-visible > img,
+.photo--image.is-visible > .photo__grain,
+.photo--image.is-visible::after {
   clip-path: inset(0);
 }
 
@@ -624,7 +642,9 @@
     opacity: 1;
     transition: none;
   }
-  .photo--image:not(.hero__photo) {
+  .photo--image:not(.hero__photo) > img,
+  .photo--image:not(.hero__photo) > .photo__grain,
+  .photo--image:not(.hero__photo)::after {
     clip-path: inset(0);
     transition: none;
   }

@@ -133,7 +133,7 @@ export const inSession = {
 
 export const formats = {
   kicker: 'Formatos',
-  title: ['A sós', '*ou a dois.*'],
+  title: ['A sós, a dois', '*ou em grupo.*'],
   items: [
     {
       name: 'Individual',
@@ -148,6 +148,13 @@ export const formats = {
       lead: 'Treinar com quem já conheces.',
       text: 'Alternam nos pads, trabalham a pares. Cada um com as suas correções.',
       points: ['Dois níveis, uma sessão', 'Trabalho a pares', 'Ritmo partilhado'],
+    },
+    {
+      name: 'Grupo',
+      image: 'tomasTeam',
+      lead: 'Poucos. Escolhidos por ti.',
+      text: 'Três a seis pessoas que já se conhecem: amigos, família, uma equipa. Rondas a pares, correções a cada um, o mesmo cuidado.',
+      points: ['Grupos pequenos, fechados', 'Rondas a pares nos pads', 'Local combinado para todos'],
     },
   ],
   note: 'Os detalhes ficam para a primeira conversa.',
@@ -172,7 +179,7 @@ export const contact = {
   intro: 'Algumas linhas sobre ti. A resposta chega para combinar a primeira conversa.',
   goals: ['Aprender boxe', 'Aprender kickboxing', 'Ganhar força', 'Melhorar a condição física', 'Voltar a treinar', 'Aliviar o stress'],
   availability: ['Manhã cedo', 'Manhã', 'Hora de almoço', 'Fim de tarde', 'Noite', 'Fim de semana'],
-  formats: ['Individual', 'Duo', 'Ainda não sei'],
+  formats: ['Individual', 'Duo', 'Grupo', 'Ainda não sei'],
 };
 
 export const footer = {
