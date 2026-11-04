@@ -88,6 +88,19 @@ export const images = {
 
   /* ---- Tomás's own photographs (supplied, cropped, black and white) ---- */
 
+  tomasSplit: {
+    kind: 'photo',
+    src: own('tomas-split.jpg'),
+    alt: 'O Tomás a fazer espargata antes de um combate, de luvas e caneleiras.',
+    focus: '40% 50%',
+    credit: 'B&A Art Moments',
+  },
+  tomasInRing: {
+    kind: 'photo',
+    src: own('tomas-in-ring.jpg'),
+    alt: 'O Tomás em guarda dentro do ringue, com capacete e luvas.',
+    focus: '45% 40%',
+  },
   tomasTeam: {
     kind: 'photo',
     src: own('tomas-team-wide.jpg'),

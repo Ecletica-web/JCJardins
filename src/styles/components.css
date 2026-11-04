@@ -447,3 +447,12 @@
 .real-clip__toggle:hover {
   background: rgb(var(--shade) / 0.85);
 }
+
+/* Tomás's own photographs are delivered in black and white: no sage wash */
+.photo[data-kind='photo'] > img {
+  filter: contrast(1.04);
+}
+
+.photo[data-kind='photo']::after {
+  display: none;
+}

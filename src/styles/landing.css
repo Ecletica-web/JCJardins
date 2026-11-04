@@ -481,9 +481,15 @@ body::before {
   gap: clamp(3rem, 7vw, 5rem);
 }
 
-.about__media {
+.about__frames {
   position: relative;
-  padding-bottom: 18%;
+  padding-bottom: 22%;
+}
+
+.about__credit {
+  margin-top: var(--space-3);
+  font-size: var(--fs-caption);
+  color: var(--ink-soft-on-dark);
 }
 
 .about__detail {

@@ -9,8 +9,11 @@ export default function About() {
     <section className="section about on-dark" id="sobre" aria-labelledby="sobre-title">
       <div className="wrap about__grid">
         <div className="about__media">
-          <RealClip video="real-padwork" ratio="4 / 5" className="about__portrait" focus="50% 62%" />
-          <Photo image="coachGloves" ratio="1 / 1" className="about__detail" compact />
+          <div className="about__frames">
+            <Photo image="tomasSplit" ratio="4 / 3" className="about__portrait" priority={false} />
+            <Photo image="tomasInRing" ratio="1 / 1" className="about__detail" compact />
+          </div>
+          <p className="about__credit">Fotografia: B&amp;A Art Moments</p>
         </div>
 
         <div className="about__copy">
@@ -38,8 +41,12 @@ export default function About() {
         <figure className="about__record">
           <div className="record__row" tabIndex={0} aria-label="Fotografias do Tomás em treino e competição">
             {record.photos.map((ph) => (
-              <div key={ph.image} className="record__item" style={{ '--ar': ph.ratio }}>
-                <Photo image={ph.image} ratio={`${ph.ratio} / 1`} sizes="(min-width: 64rem) 30vw, 70vw" />
+              <div key={ph.image || ph.video} className="record__item" style={{ '--ar': ph.ratio }}>
+                {ph.video ? (
+                  <RealClip video={ph.video} ratio={`${ph.ratio} / 1`} focus="50% 55%" label={false} />
+                ) : (
+                  <Photo image={ph.image} ratio={`${ph.ratio} / 1`} sizes="(min-width: 64rem) 30vw, 70vw" />
+                )}
               </div>
             ))}
           </div>
