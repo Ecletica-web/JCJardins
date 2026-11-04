@@ -1324,3 +1324,48 @@
     justify-items: start;
   }
 }
+
+/* ---- About: story beside the kick; the two older frames underneath ---- */
+
+.about__grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.about__media {
+  display: block;
+}
+
+.about__copy {
+  position: static;
+}
+
+.about__frames {
+  position: relative;
+  padding-bottom: 22%;
+}
+
+@media (min-width: 64rem) {
+  .about__grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-rows: auto auto;
+    column-gap: var(--space-7);
+    row-gap: var(--space-7);
+    align-items: start;
+  }
+  .about__media {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+  .about__copy {
+    grid-column: 2;
+    grid-row: 1;
+    position: static;
+    padding-top: 0;
+  }
+  .about__frames {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: 32rem;
+  }
+}
