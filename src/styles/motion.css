@@ -2199,3 +2199,18 @@
 .about__record {
   display: none;
 }
+
+/* nav labels on one line; hero button sits low on desktop */
+.site-nav a {
+  white-space: nowrap;
+}
+
+.site-header__cta {
+  white-space: nowrap;
+}
+
+@media (min-width: 64rem) {
+  .hero__copy {
+    align-self: flex-end;
+  }
+}
