@@ -37,7 +37,8 @@ export const experience = {
       n: '02',
       title: 'Pads',
       image: 'padsPines',
-      video: 'real-coaching',
+      video: 'real-padwork',
+      focus: '50% 60%',
       text: 'Com o Tomás a segurar os pads, as combinações ganham tempo e precisão. Repetes, ajustas, repetes outra vez. O ritmo sobe quando estás pronto, não antes.',
     },
     {
@@ -78,7 +79,6 @@ export const record = {
   caption: 'No treino e em noites de competição.',
   photos: [
     { image: 'tomasTeam', ratio: 2.13, slot: 'team' },
-    { video: 'real-padwork', ratio: 0.5625, slot: 'clip' },
     { image: 'tomasRingside', ratio: 1.72, slot: 'ring' },
     { image: 'tomasTeamTrophy', ratio: 0.75, slot: 'trophy' },
     { image: 'tomasFightNight', ratio: 1.24, slot: 'night' },
@@ -107,6 +107,14 @@ export const firstSession = {
       text: 'No fim, o Tomás sugere como continuar: frequência, formato e foco das sessões seguintes.',
     },
   ],
+};
+
+export const inSession = {
+  kicker: 'Em sessão',
+  title: ['Prática guiada,', '*em tempo real.*'],
+  text: 'Pads ao ritmo de quem está a aprender. O Tomás ajusta a distância, dá o tempo certo e corrige entre combinações, sem pressa e com boa disposição.',
+  points: ['Correções entre combinações', 'Ritmo ajustado a cada pessoa', 'Ambiente descontraído, exigência real'],
+  cta: 'Marcar a primeira sessão',
 };
 
 export const formats = {

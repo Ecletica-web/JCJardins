@@ -581,20 +581,17 @@ body::before {
   order: 1;
 }
 
-.record__item--ring {
+.record__item--trophy {
   order: 2;
+  grid-row: span 2;
 }
 
-.record__item--night {
+.record__item--ring {
   order: 3;
 }
 
-.record__item--trophy {
+.record__item--night {
   order: 4;
-}
-
-.record__item--clip {
-  order: 5;
 }
 
 .record__item--ring .photo,
@@ -602,9 +599,10 @@ body::before {
   aspect-ratio: 4 / 3 !important;
 }
 
-.record__item--trophy .photo,
-.record__item--clip .photo {
-  aspect-ratio: 3 / 4 !important;
+/* the tall trophy photo fills the height of the two stacked scenes */
+.record__item--trophy .photo {
+  aspect-ratio: auto !important;
+  height: 100%;
 }
 
 /* Desktop: one justified row, every image the same height */
@@ -618,6 +616,10 @@ body::before {
   }
   .record__item .photo {
     aspect-ratio: var(--ar) / 1 !important;
+    height: auto;
+  }
+  .record__item--trophy {
+    grid-row: auto;
   }
 }
 
@@ -675,8 +677,89 @@ body::before {
   font-size: 1.2rem;
 }
 
-.first__cta {
-  margin-top: clamp(2.5rem, 6vw, 4rem);
+/* ---- In-session highlight: real footage of Tomás coaching ------------- */
+
+.feature {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: clamp(3rem, 7vw, 5.5rem);
+  padding: clamp(1.25rem, 4vw, 3.5rem);
+  background: var(--pine);
+  color: var(--ink-on-dark);
+  align-items: center;
+}
+
+.feature__clip {
+  width: 100%;
+  max-width: 26rem;
+}
+
+.feature__body {
+  display: grid;
+  gap: var(--space-5);
+  align-content: center;
+  min-width: 0;
+}
+
+.feature .kicker {
+  color: var(--accent-on-dark);
+}
+
+.feature .h2 .slant {
+  color: var(--accent-on-dark);
+}
+
+.feature .soft {
+  color: var(--ink-soft-on-dark);
+}
+
+.feature .btn {
+  --btn-bg: var(--sage-light);
+  --btn-ink: var(--pine);
+  --btn-line: var(--sage-light);
+  justify-self: start;
+}
+
+.feature .btn:hover {
+  --btn-bg: var(--linen);
+  --btn-line: var(--linen);
+}
+
+.feature :focus-visible {
+  outline-color: var(--accent-on-dark);
+}
+
+.feature__points {
+  display: grid;
+  margin: 0;
+  border-top: 1px solid var(--pine-700);
+}
+
+.feature__points li {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding-block: 0.7rem;
+  border-bottom: 1px solid var(--pine-700);
+  font-size: var(--fs-small);
+}
+
+.feature__points li::before {
+  content: '';
+  flex: none;
+  width: 0.9rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+@media (min-width: 56rem) {
+  .feature {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    column-gap: clamp(2rem, 5vw, 5rem);
+  }
+  .feature__clip {
+    max-width: none;
+  }
 }
 
 @media (min-width: 40rem) {

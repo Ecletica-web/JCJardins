@@ -1,7 +1,8 @@
 import Photo from '../../components/Photo.jsx';
+import RealClip from '../../components/RealClip.jsx';
 import { Reveal } from '../../components/useReveal.jsx';
 import SectionTitle from './SectionTitle.jsx';
-import { firstSession } from '../../content/landing.js';
+import { firstSession, inSession } from '../../content/landing.js';
 
 export default function FirstSession() {
   return (
@@ -26,10 +27,20 @@ export default function FirstSession() {
           ))}
         </ol>
 
-        <div className="first__cta">
-          <a className="btn" href="#contacto">
-            Marcar a primeira sessão <span className="btn__arrow" aria-hidden="true">→</span>
-          </a>
+        <div className="feature">
+          <RealClip video="real-coaching" ratio="3 / 4" className="feature__clip" focus="50% 45%" />
+          <div className="feature__body">
+            <SectionTitle kicker={inSession.kicker} lines={inSession.title} as="h3" />
+            <p className="lead soft">{inSession.text}</p>
+            <ul role="list" className="feature__points">
+              {inSession.points.map((pt) => (
+                <li key={pt}>{pt}</li>
+              ))}
+            </ul>
+            <a className="btn" href="#contacto">
+              {inSession.cta} <span className="btn__arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

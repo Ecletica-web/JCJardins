@@ -17,7 +17,7 @@ export default function Experience() {
           {experience.pillars.map((p, i) => (
             <Reveal as="li" key={p.n} className={`pillar pillar--${i + 1}`} delay={i % 2 ? 120 : 0}>
               {p.video ? (
-                <RealClip video={p.video} ratio={i % 3 === 0 ? '4 / 5' : '3 / 4'} />
+                <RealClip video={p.video} ratio={i % 3 === 0 ? '4 / 5' : '3 / 4'} focus={p.focus} />
               ) : (
                 <Photo image={p.image} ratio={i % 3 === 0 ? '4 / 5' : '3 / 4'} sizes="(min-width: 64rem) 40vw, 100vw" />
               )}
