@@ -35,7 +35,7 @@ export const experience = {
     {
       n: '02',
       title: 'Pads',
-      image: 'padworkClose',
+      image: 'padsPines',
       text: 'Com o Tomás a segurar os pads, as combinações ganham tempo e precisão. Repetes, ajustas, repetes outra vez. O ritmo sobe quando estás pronto, não antes.',
     },
     {

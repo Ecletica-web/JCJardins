@@ -164,6 +164,15 @@
   }
 }
 
+/* Concept images arrive already graded: lighter touch so they don't go muddy */
+.photo[data-kind='concept'] > img {
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.photo[data-kind='concept']::after {
+  opacity: 0.55;
+}
+
 /* sage soft-light tint + low vignette: keeps every image in the same dusk */
 .photo--image::after {
   content: '';
@@ -315,6 +324,10 @@
   height: 0.45rem;
   border-radius: 50%;
   background: #2f6fde;
+}
+
+.proto-chip--concept::before {
+  background: #7a4fd6;
 }
 
 .proto-chip--shoot::before {

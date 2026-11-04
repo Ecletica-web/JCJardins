@@ -76,26 +76,33 @@ The form validates (name, email or phone, area, goals, availability; format is o
 
 ## Assets to replace
 
+### Concept images (AI-generated, supplied)
+
+Labelled on every page as *Concept image · AI-generated · not Tomás or a client*. They live in `public/images/concept/` and set the mood and composition for the real shoot.
+
+| File | Used as | Where |
+| --- | --- | --- |
+| `concept-shadow-dusk.jpg` | `tomasShadow` | Hero, post #3, Reel cover |
+| `concept-duo-pines.jpg` | `duoSession`, `padsPines` | Duo format, Pads pillar |
+| `concept-gloves.jpg` | `coachGloves` | About (detail), post #5, layout sample |
+| `concept-pines-mist.jpg` | `pinesMist` | "Repetir" interlude |
+| `concept-boardwalk.jpg` | `boardwalk` | Locations |
+
 ### Reference images (Pexels License, used for tone only)
 
 Each one is labelled in the prototype as *Reference image · not Tomás or a client*.
 
 | Key | File | Used in | Replace with |
 | --- | --- | --- | --- |
-| `heroHands` | `ref-wraps-bench.jpg` | Hero, post #7 | Hands being wrapped, close detail |
-| `padworkClose` | `ref-padwork-close.jpg` | Pads pillar, post #1 | Tomás holds pads for an adult beginner |
-| `pinesMist` | `ref-pines-mist.jpg` | “Repetir” interlude | Agreed outdoor location at dusk |
-| `boardwalk` | `ref-boardwalk.jpg` | Locations | Agreed outdoor location at dusk |
+| `heroHands` | `ref-wraps-bench.jpg` | Post #7 | Hands being wrapped, close detail |
+| `padworkClose` | `ref-padwork-close.jpg` | Post #1 | Tomás holds pads for an adult beginner |
 | `dunes` | `ref-dunes.jpg` | Brand view mood | Agreed outdoor location at dusk |
 | `kettlebellLight` | `ref-kettlebell-light.jpg` | Strength pillar | Portable kit / strength detail |
 | `towelRest` | `ref-towel-rest.jpg` | Conditioning pillar | Client breathing between rounds |
-| `wrappingClient` | `ref-wrapping-client.jpg` | About (detail) | First conversation / preparation |
 | `adultPractice` | `ref-adult-practice.jpg` | Individual format, post #9 | Adult beginner on pads with Tomás |
-| `coachGloves` | `ref-coach-gloves.jpg` | Post #5, layout sample | Tomás corrects a client |
 | `wrapsWindow` | `ref-wraps-window.jpg` | Brand view mood | Hands being wrapped, window light |
-| `shadowboxing` | `ref-shadowboxing.jpg` | Reel cover | Tomás shadowboxing |
 
-Sources: Pexels photos 4790417, 5837157, 31708346, 20370118, 6728972, 33387759, 6455951, 4058317, 6815662, 6551187, 7290053 and 9944902 (`https://www.pexels.com/photo/<id>/`). They are also linked from the brand view.
+Sources: Pexels photos 4790417, 5837157, 6728972, 33387759, 6455951, 6815662 and 7290053 (`https://www.pexels.com/photo/<id>/`). They are also linked from the brand view.
 
 ### Placeholders (photos to shoot)
 

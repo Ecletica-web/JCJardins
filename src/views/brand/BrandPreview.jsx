@@ -55,6 +55,17 @@ export default function BrandPreview() {
   const { setView } = usePrototype();
   const counts = posts.reduce((acc, p) => ({ ...acc, [p.category]: (acc[p.category] || 0) + 1 }), {});
   const refList = Object.entries(images).filter(([, v]) => v.kind === 'reference');
+  const conceptFiles = [
+    ...new Set(
+      Object.values(images)
+        .filter((v) => v.kind === 'concept')
+        .map((v) => v.src.split('/').pop()),
+    ),
+  ];
+  const conceptUses = (file) =>
+    Object.entries(images)
+      .filter(([, v]) => v.kind === 'concept' && v.src.endsWith(file))
+      .map(([k]) => k);
 
   return (
     <div className="bp">
@@ -308,12 +319,41 @@ export default function BrandPreview() {
                     <p className="bp-shot__why">
                       <b>Used for:</b> {s.why}
                     </p>
+                    {img.kind === 'concept' && (
+                      <p className="bp-shot__status">Concept image in place. Still needs the real shoot.</p>
+                    )}
                     <code className="bp-code">{s.key}</code>
                   </div>
                 </li>
               );
             })}
           </ol>
+
+          <div className="bp-refs">
+            <h3 className="h3">Concept images in use</h3>
+            <p className="soft">
+              AI-generated images supplied for the prototype, labelled on every page. The people are not Tomás or his
+              clients. They set the mood and composition for the real shoot and should be replaced by real photographs.
+            </p>
+            <table className="bp-table">
+              <thead>
+                <tr>
+                  <th scope="col">File</th>
+                  <th scope="col">Image keys</th>
+                </tr>
+              </thead>
+              <tbody>
+                {conceptFiles.map((file) => (
+                  <tr key={file}>
+                    <th scope="row">
+                      <code className="bp-code">{file}</code>
+                    </th>
+                    <td>{conceptUses(file).join(', ')}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
           <div className="bp-refs">
             <h3 className="h3">Reference images to replace</h3>

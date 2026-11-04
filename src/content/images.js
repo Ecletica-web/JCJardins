@@ -11,6 +11,9 @@
    kind: 'reference'   – licensed stock used only to judge tone and layout.
                          Always labelled in the prototype. The people shown
                          are NOT Tomás and NOT clients.
+         'concept'     – AI-generated concept image supplied for the prototype.
+                         Always labelled. The people shown are NOT Tomás
+                         and NOT clients.
          'placeholder' – a photo that must be produced (anything showing
                          Tomás himself). Rendered as an art-directed frame
                          with the brief.
@@ -19,6 +22,7 @@
 
 const base = import.meta.env.BASE_URL;
 const ref = (file) => `${base}images/reference/${file}`;
+const concept = (file) => `${base}images/concept/${file}`;
 const pexels = (id) => `https://www.pexels.com/photo/${id}/`;
 
 export const images = {
@@ -74,26 +78,6 @@ export const images = {
     replaceWith: 'tomasPadsBeginner',
     note: 'An ordinary adult practising. Real clients come in every age and level.',
   },
-  coachGloves: {
-    kind: 'reference',
-    src: ref('ref-coach-gloves.jpg'),
-    alt: 'Um treinador ajusta as luvas de outra pessoa diante de uma parede de tijolo.',
-    focus: '50% 50%',
-    people: true,
-    source: pexels(6551187),
-    replaceWith: 'tomasCorrecting',
-    note: 'Attentive detail — hands helping hands.',
-  },
-  wrappingClient: {
-    kind: 'reference',
-    src: ref('ref-wrapping-client.jpg'),
-    alt: 'Um treinador coloca ligaduras na mão de outra pessoa antes do treino.',
-    focus: '50% 55%',
-    people: true,
-    source: pexels(4058317),
-    replaceWith: 'firstConversation',
-    note: 'A genuine moment of care before training.',
-  },
   towelRest: {
     kind: 'reference',
     src: ref('ref-towel-rest.jpg'),
@@ -104,29 +88,44 @@ export const images = {
     replaceWith: 'conditioningClient',
     note: 'Breath and sweat between rounds.',
   },
-  shadowboxing: {
-    kind: 'reference',
-    src: ref('ref-shadowboxing.jpg'),
-    alt: 'Homem em guarda a fazer sombra numa sala de treino com luz fria.',
-    focus: '50% 40%',
+
+  /* ---- Concept images (AI-generated, supplied) ------------------------- */
+
+  coachGloves: {
+    kind: 'concept',
+    src: concept('concept-gloves.jpg'),
+    alt: 'Um treinador aperta as luvas de outra pessoa, junto a uma parede caiada.',
+    focus: '50% 50%',
     people: true,
-    source: pexels(9944902),
-    replaceWith: 'tomasShadow',
-    note: 'Technique and concentration. Real shoot needs Tomás himself.',
+    note: 'Hands helping hands before training. Quiet, attentive.',
+  },
+  padsPines: {
+    kind: 'concept',
+    src: concept('concept-duo-pines.jpg'),
+    alt: 'Treino de pads num relvado sob pinheiros-mansos, ao fim da tarde.',
+    focus: '33% 55%',
+    people: true,
+    note: 'Padwork under stone pines, cropped to coach and client.',
+  },
+  pinesMist: {
+    kind: 'concept',
+    src: concept('concept-pines-mist.jpg'),
+    alt: 'Pinheiros-mansos entre a neblina, numa encosta junto à costa.',
+    focus: '50% 50%',
+    people: false,
+    note: 'Stone pines in mist: the quiet, private mood of the coast.',
+  },
+  boardwalk: {
+    kind: 'concept',
+    src: concept('concept-boardwalk.jpg'),
+    alt: 'Passadiço de madeira sobre as dunas, a caminho do mar, com o céu encoberto.',
+    focus: '58% 60%',
+    people: false,
+    note: 'Dune boardwalk to the Atlantic: an outdoor setting that feels private.',
   },
 
   /* ---- Location mood (no people) --------------------------------------- */
 
-  pinesMist: {
-    kind: 'reference',
-    src: ref('ref-pines-mist.jpg'),
-    alt: 'Pinheiros-mansos entre a neblina da manhã.',
-    focus: '50% 55%',
-    people: false,
-    source: pexels(31708346),
-    replaceWith: 'locationPines',
-    note: 'Stone pines in mist: the quiet, private mood of the coast west of Lisbon.',
-  },
   dunes: {
     kind: 'reference',
     src: ref('ref-dunes.jpg'),
@@ -136,16 +135,6 @@ export const images = {
     source: pexels(6728972),
     replaceWith: 'locationPines',
     note: 'Dune grass and soft Atlantic light. Texture and calm.',
-  },
-  boardwalk: {
-    kind: 'reference',
-    src: ref('ref-boardwalk.jpg'),
-    alt: 'Passadiço de madeira sobre as dunas, a caminho do mar.',
-    focus: '62% 55%',
-    people: false,
-    source: pexels(20370118),
-    replaceWith: 'locationPines',
-    note: 'Timber boardwalk over the dunes: an outdoor setting that feels private.',
   },
 
   /* ---- Placeholders: photographs to produce ---------------------------- */
@@ -184,7 +173,10 @@ export const images = {
     alt: 'Fotografia a produzir: retrato descontraído do Tomás entre rondas.',
   },
   tomasShadow: {
-    kind: 'placeholder',
+    kind: 'concept',
+    src: concept('concept-shadow-dusk.jpg'),
+    focus: '45% 42%',
+    people: true,
     title: 'Tomás shadowboxing — intentional motion blur',
     brief:
       'Vertical. Slow shutter (1/15 s): hands blurred, head and feet sharp. Blue-hour light among pines or against a dark limewashed wall.',
@@ -192,7 +184,7 @@ export const images = {
     light: 'Blue hour',
     sketch: 'motion',
     lightFrom: 'left',
-    alt: 'Fotografia a produzir: o Tomás a fazer sombra, com desfoque de movimento.',
+    alt: 'Homem a fazer sombra ao anoitecer, junto a um muro, entre pinheiros; a respiração vê-se no ar.',
   },
   tomasTechnique: {
     kind: 'placeholder',
@@ -217,7 +209,10 @@ export const images = {
     alt: 'Fotografia a produzir: conversa entre o Tomás e um cliente antes do treino.',
   },
   duoSession: {
-    kind: 'placeholder',
+    kind: 'concept',
+    src: concept('concept-duo-pines.jpg'),
+    focus: '55% 55%',
+    people: true,
     title: 'Duo session under the pines',
     brief:
       'Wide. Two friends alternating on pads with Tomás on a lawn under stone pines; one waits, laughing, catching breath. Late afternoon, long shadows.',
@@ -225,7 +220,7 @@ export const images = {
     light: 'Late-afternoon sun',
     sketch: 'three',
     lightFrom: 'right',
-    alt: 'Fotografia a produzir: sessão em duo num terraço.',
+    alt: 'Sessão em duo num relvado sob pinheiros: um treinador segura os pads, outro aluno espera a rir.',
   },
   portableKit: {
     kind: 'placeholder',

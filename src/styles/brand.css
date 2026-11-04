@@ -492,6 +492,14 @@
   letter-spacing: 0.06em;
 }
 
+.bp-shot__status {
+  justify-self: start;
+  padding: 0.15rem 0.5rem;
+  border: 1px dashed currentColor;
+  font-size: var(--fs-caption);
+  color: var(--accent-on-light);
+}
+
 .bp-shot__why {
   font-size: var(--fs-caption);
 }

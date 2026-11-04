@@ -9,7 +9,7 @@ export default function About() {
       <div className="wrap about__grid">
         <div className="about__media">
           <Photo image="tomasPortrait" ratio="4 / 5" className="about__portrait" briefAt="top" />
-          <Photo image="wrappingClient" ratio="1 / 1" className="about__detail" compact />
+          <Photo image="coachGloves" ratio="1 / 1" className="about__detail" compact />
         </div>
 
         <div className="about__copy">

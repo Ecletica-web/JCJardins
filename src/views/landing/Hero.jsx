@@ -11,10 +11,10 @@ export default function Hero() {
         </div>
 
         <div className="hero__media">
-          <Photo image="heroHands" ratio="4 / 5" priority sizes="(min-width: 64rem) 45vw, 100vw" />
+          <Photo image="tomasShadow" ratio="4 / 5" priority sizes="(min-width: 64rem) 45vw, 100vw" />
           <p className="hero__media-note" aria-hidden="true">
-            <span>Ligaduras</span>
-            <span>antes da primeira ronda</span>
+            <span>Sombra</span>
+            <span>ao fim do dia, entre pinheiros</span>
           </p>
         </div>
 

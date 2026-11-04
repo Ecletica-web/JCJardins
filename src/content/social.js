@@ -115,7 +115,7 @@ export const stories = [
     id: 's1',
     label: 'Reel cover · technique',
     layout: 'photo',
-    image: 'shadowboxing',
+    image: 'tomasShadow',
     kicker: 'Reel · Técnica',
     headline: ['3 erros', 'na *guarda.*'],
   },

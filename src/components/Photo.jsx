@@ -49,6 +49,7 @@ export default function Photo({
       style={style}
       data-image-key={data.key}
       data-light={data.lightFrom}
+      data-kind={data.kind}
     >
       {isPlaceholder ? (
         <div className="photo__placeholder" role={decorative ? undefined : 'img'} aria-label={decorative ? undefined : data.alt}>
@@ -80,6 +81,11 @@ export default function Photo({
           {showLabels && label && data.kind === 'reference' && (
             <span className="proto-chip proto-chip--ref photo__ref" aria-hidden="true">
               Reference image{data.people ? ' · not Tomás or a client' : ''}
+            </span>
+          )}
+          {showLabels && label && data.kind === 'concept' && (
+            <span className="proto-chip proto-chip--concept photo__ref" aria-hidden="true">
+              Concept image · AI-generated{data.people ? ' · not Tomás or a client' : ''}
             </span>
           )}
         </>
