@@ -2420,3 +2420,44 @@
     overflow: auto;
   }
 }
+
+/* phones: the opened origin story stays under half the frame */
+@media (max-width: 63.99rem) {
+  .origin__over .disc__inner {
+    gap: var(--space-3);
+    max-height: calc(50svh - 4.5rem);
+    overflow: auto;
+    padding-right: 0.25rem;
+  }
+  .origin__over .disc__inner::-webkit-scrollbar {
+    width: 0;
+  }
+  .origin__over .story {
+    gap: var(--space-2);
+  }
+  .origin__over .story p {
+    font-size: var(--fs-small);
+    line-height: 1.4;
+  }
+  .origin__over .story p:first-child {
+    font-size: 1.15rem;
+    line-height: 1.25;
+  }
+  .origin__over .credentials {
+    padding-block: var(--space-3);
+    gap: var(--space-3);
+  }
+  .origin__over .credentials__title {
+    margin-bottom: 0.35rem;
+    font-size: 0.68rem;
+  }
+  .origin__over .credentials__list {
+    gap: 0.25rem;
+  }
+  .origin__over .credentials__list li {
+    font-size: var(--fs-caption);
+  }
+  .origin__over .disc--over.is-open .disc__inner {
+    padding-bottom: var(--space-3);
+  }
+}
