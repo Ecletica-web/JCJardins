@@ -1160,3 +1160,25 @@
     animation: none;
   }
 }
+
+/* ---- Contact: a single button starts the flow ------------------------- */
+
+.flow-start {
+  display: grid;
+  gap: var(--space-5);
+  justify-items: start;
+  align-content: center;
+  min-height: 22rem;
+}
+
+.btn--big {
+  min-height: 4rem;
+  padding: 1.1rem 2.4rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
+}
+
+.flow-start__note {
+  font-size: var(--fs-small);
+  color: var(--ink-soft-on-dark);
+}

@@ -74,6 +74,7 @@ export default function Contact() {
   const [error, setError] = useState('');
   const [submitted, setSubmitted] = useState(null);
   const [furthest, setFurthest] = useState(0);
+  const [started, setStarted] = useState(false);
   const id = useId();
   const stepRef = useRef(null);
   const confirmRef = useRef(null);
@@ -84,12 +85,28 @@ export default function Contact() {
 
   // focus the first control of each step as it arrives
   useEffect(() => {
+    if (!started) return undefined;
     const t = window.setTimeout(() => {
       const el = stepRef.current?.querySelector('input:not([type=checkbox]):not([type=radio]), textarea, .flow__heading');
       el?.focus({ preventScroll: true });
     }, 60);
     return () => window.clearTimeout(t);
-  }, [stepIndex]);
+  }, [stepIndex, started]);
+
+  // any "book a session" link on the page starts the flow
+  useEffect(() => {
+    const onClick = (e) => {
+      const a = e.target instanceof Element ? e.target.closest('a[href="#contacto"]') : null;
+      if (a) setStarted(true);
+    };
+    const onHash = () => window.location.hash === '#contacto' && setStarted(true);
+    document.addEventListener('click', onClick);
+    window.addEventListener('hashchange', onHash);
+    return () => {
+      document.removeEventListener('click', onClick);
+      window.removeEventListener('hashchange', onHash);
+    };
+  }, []);
 
   const goTo = (i) => {
     setDir(i > stepIndex ? 1 : -1);
@@ -251,12 +268,17 @@ export default function Contact() {
       <div className="wrap contact__grid">
         <div className="contact__intro">
           <SectionTitle id="contacto-title" kicker={contact.kicker} lines={contact.title} />
-          <p className="lead soft">{contact.intro}</p>
           <Photo image="afterSession" ratio="4 / 5" className="contact__photo" compact />
         </div>
 
         <div className="contact__panel">
-          {submitted ? (
+          {!started && !submitted ? (
+            <div className="flow-start">
+              <button type="button" className="btn btn--big" onClick={() => setStarted(true)}>
+                {ui.cta} <span className="btn__arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          ) : submitted ? (
             <div className="confirm" ref={confirmRef} tabIndex={-1} role="status" aria-live="polite">
               <p className="kicker">{f.confirm.kicker}</p>
               <h3 className="h2 confirm__title">
