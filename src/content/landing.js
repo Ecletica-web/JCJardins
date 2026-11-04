@@ -175,7 +175,7 @@ export const locations = {
 
 export const contact = {
   kicker: 'Contacto',
-  title: ['Começa', '*por aqui.*'],
+  title: ['Começa *por aqui.*'],
   intro: 'Algumas linhas sobre ti. A resposta chega para combinar a primeira conversa.',
   goals: ['Aprender boxe', 'Aprender kickboxing', 'Ganhar força', 'Melhorar a condição física', 'Voltar a treinar', 'Aliviar o stress'],
   availability: ['Manhã cedo', 'Manhã', 'Hora de almoço', 'Fim de tarde', 'Noite', 'Fim de semana'],

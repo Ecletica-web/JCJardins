@@ -1,6 +1,5 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import SectionTitle from './SectionTitle.jsx';
-import Photo from '../../components/Photo.jsx';
 import { useContent } from '../../i18n.jsx';
 
 /* Enquiry flow — LOCAL DEMONSTRATION ONLY.
@@ -268,7 +267,6 @@ export default function Contact() {
       <div className="wrap contact__grid">
         <div className="contact__intro">
           <SectionTitle id="contacto-title" kicker={contact.kicker} lines={contact.title} />
-          <Photo image="afterSession" ratio="4 / 5" className="contact__photo" compact />
         </div>
 
         <div className="contact__panel">

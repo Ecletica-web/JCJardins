@@ -16,11 +16,19 @@ export default function SectionTitle({ id, kicker, lines, as: Tag = 'h2', classN
       <Tag id={id} className={Tag === 'h1' ? 'h1' : 'h2'}>
         {lines.map((line, i) => {
           const slanted = line.startsWith('*') && line.endsWith('*');
-          const text = slanted ? line.slice(1, -1) : line;
+          const parts = slanted ? [line] : line.split(/(\*[^*]+\*)/).filter(Boolean);
           return (
             <span key={i} className="rise__mask">
               <span className={`br rise__item ${slanted ? 'slant' : ''}`} style={{ '--i': i + 1 }}>
-                {text}
+                {parts.map((part, j) =>
+                  part.startsWith('*') && part.endsWith('*') ? (
+                    <span key={j} className="slant">
+                      {part.slice(1, -1)}
+                    </span>
+                  ) : (
+                    part
+                  ),
+                )}
                 {i < lines.length - 1 ? ' ' : ''}
               </span>
             </span>

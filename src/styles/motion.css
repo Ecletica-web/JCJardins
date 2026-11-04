@@ -1246,3 +1246,81 @@
     top: calc(var(--header-h) + 2rem);
   }
 }
+
+/* ---- Places: description and list merged into one small block --------- */
+
+.places {
+  display: grid;
+  gap: var(--space-2);
+  max-width: 36rem;
+  padding-top: var(--space-3);
+  border-top: 1px solid rgb(var(--mist) / 0.18);
+}
+
+.places__intro {
+  font-size: var(--fs-small);
+  color: var(--linen);
+}
+
+.places__list {
+  font-family: var(--font-display);
+  font-stretch: var(--stretch-wide);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  line-height: 1.9;
+  text-transform: uppercase;
+  color: var(--ink-soft-on-dark);
+}
+
+@media (min-width: 64rem) {
+  .stage__body .places {
+    grid-column: 1;
+  }
+}
+
+/* ---- Contact: compact; title and button on one row ---------------------- */
+
+.contact.section {
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+
+.contact__grid {
+  display: grid;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.contact__intro {
+  position: static;
+  gap: var(--space-3);
+}
+
+.contact__intro .section-title {
+  gap: var(--space-2);
+}
+
+.contact__intro .h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+}
+
+.flow-start {
+  min-height: 0;
+  align-content: center;
+}
+
+@media (min-width: 64rem) {
+  .contact__grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    column-gap: var(--space-7);
+  }
+  .contact__intro {
+    grid-column: 1;
+    top: auto;
+  }
+  .contact__panel {
+    grid-column: 2;
+  }
+  .flow-start {
+    justify-items: start;
+  }
+}

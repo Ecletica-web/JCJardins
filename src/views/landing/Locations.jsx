@@ -13,12 +13,10 @@ export default function Locations() {
         <div className="stage__shade" aria-hidden="true" />
         <div className="stage__body wrap">
           <SectionTitle id="locais-title" kicker={locations.kicker} lines={locations.title} />
-          <p className="stage__intro">{locations.intro}</p>
-          <ul role="list" className="sequence sequence--places">
-            {locations.strip.map((t) => (
-              <li key={t}>{t}</li>
-            ))}
-          </ul>
+          <div className="places">
+            <p className="places__intro">{locations.intro}</p>
+            <p className="places__list">{locations.strip.join(' · ')}</p>
+          </div>
         </div>
         <Photo image="portableKit" ratio="3 / 2" className="stage__inset" compact />
       </div>
