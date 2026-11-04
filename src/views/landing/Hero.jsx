@@ -33,9 +33,6 @@ export default function Hero() {
             <a className="btn" href={hero.primary.href}>
               {hero.primary.label} <span className="btn__arrow" aria-hidden="true">→</span>
             </a>
-            <a className="btn btn--ghost" href={hero.secondary.href}>
-              {hero.secondary.label}
-            </a>
           </div>
         </div>
 

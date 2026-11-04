@@ -17,7 +17,6 @@ export const hero = {
   headline: ['Boxing, kickboxing', 'and strength.', 'In private.'],
   support: 'Lisbon. At your pace, in a place we agree on.',
   primary: { label: 'Request a session', href: '#contacto' },
-  secondary: { label: 'Look closer', href: '#treino' },
   strip: ['Boxing', 'Kickboxing', 'Pads', 'Strength'],
 };
 
