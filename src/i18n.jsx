@@ -6,7 +6,7 @@ import { altEn } from './content/images.en.js';
 /* Customer-facing language: Portuguese (default) or English.
    The choice is remembered in this browser and sets <html lang>. */
 
-const LangContext = createContext({ lang: 'pt', setLang: () => {} });
+const LangContext = createContext({ lang: 'en', setLang: () => {} });
 const content = { pt, en };
 
 function readLang() {
@@ -16,7 +16,7 @@ function readLang() {
   } catch {
     /* storage unavailable */
   }
-  return 'pt';
+  return 'en';
 }
 
 export function LangProvider({ children }) {

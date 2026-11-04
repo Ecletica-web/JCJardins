@@ -4,9 +4,8 @@ import Cursor from '../../components/Cursor.jsx';
 import { useContent } from '../../i18n.jsx';
 import Hero from './Hero.jsx';
 import Experience from './Experience.jsx';
-import Interlude from './Interlude.jsx';
-import About from './About.jsx';
-import Statement from './Statement.jsx';
+import Origin from './Origin.jsx';
+import Teaching from './Teaching.jsx';
 import FirstSession from './FirstSession.jsx';
 import Formats from './Formats.jsx';
 import Locations from './Locations.jsx';
@@ -25,14 +24,12 @@ export default function LandingPage() {
       <SiteHeader />
       <main id="conteudo" tabIndex={-1}>
         <Hero />
-        <Statement which="intro" />
-        <About />
+        <Origin />
         <Experience />
-        <Interlude />
+        <Teaching />
         <FirstSession />
         <Formats />
         <Locations />
-        <Statement which="close" />
         <Contact />
       </main>
       <SiteFooter />

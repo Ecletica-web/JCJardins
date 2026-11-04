@@ -6,10 +6,11 @@
    ========================================================================== */
 
 export const nav = [
-  { href: '#sobre', label: 'Origin' },
-  { href: '#treino', label: 'Craft' },
+  { href: '#sobre', label: 'Origin story' },
+  { href: '#treino', label: 'The craft' },
+  { href: '#ensino', label: 'Teaching' },
   { href: '#primeira-sessao', label: 'Day one' },
-  { href: '#formatos', label: 'Formats' },
+  { href: '#formatos', label: 'Classes' },
   { href: '#locais', label: 'Places' },
 ];
 
@@ -123,7 +124,7 @@ export const firstSession = {
 };
 
 export const inSession = {
-  kicker: 'In session',
+  kicker: 'Teaching',
   title: ['Hear the strike', '*before you see it.*'],
   text: 'Padwork at your pace. Corrections in the space between combinations.',
   points: [],
@@ -131,7 +132,7 @@ export const inSession = {
 };
 
 export const formats = {
-  kicker: 'Formats',
+  kicker: 'Classes',
   title: ['Alone, as two', '*or as a group.*'],
   items: [
     {

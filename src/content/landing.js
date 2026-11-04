@@ -5,10 +5,11 @@
    ========================================================================== */
 
 export const nav = [
-  { href: '#sobre', label: 'Origem' },
-  { href: '#treino', label: 'Ofício' },
+  { href: '#sobre', label: 'História de origem' },
+  { href: '#treino', label: 'O ofício' },
+  { href: '#ensino', label: 'Ensino' },
   { href: '#primeira-sessao', label: 'Primeiro dia' },
-  { href: '#formatos', label: 'Formatos' },
+  { href: '#formatos', label: 'Aulas' },
   { href: '#locais', label: 'Lugares' },
 ];
 
@@ -122,7 +123,7 @@ export const firstSession = {
 };
 
 export const inSession = {
-  kicker: 'Em sessão',
+  kicker: 'Ensino',
   title: ['Ouvir o golpe', '*antes de o ver.*'],
   text: 'Pads ao teu ritmo. Correções no intervalo entre combinações.',
   points: [],
@@ -130,7 +131,7 @@ export const inSession = {
 };
 
 export const formats = {
-  kicker: 'Formatos',
+  kicker: 'Aulas',
   title: ['A sós, a dois', '*ou em grupo.*'],
   items: [
     {

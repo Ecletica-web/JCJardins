@@ -15,7 +15,7 @@ export const VIEWS = {
    any brand-section anchor keeps it open; landing anchors return to the site.
    The older ?vista=marca query still works. */
 const BRAND_IDS = new Set(['marca', 'wordmark', 'type', 'colour', 'photo', 'shot-list', 'layouts', 'feed', 'stories']);
-const LANDING_IDS = new Set(['topo', 'treino', 'sobre', 'primeira-sessao', 'formatos', 'locais', 'contacto']);
+const LANDING_IDS = new Set(['topo', 'treino', 'sobre', 'ensino', 'primeira-sessao', 'formatos', 'locais', 'contacto']);
 
 function readView(current = VIEWS.landing) {
   const id = window.location.hash.replace('#', '');

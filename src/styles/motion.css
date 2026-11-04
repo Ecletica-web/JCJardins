@@ -1969,3 +1969,233 @@
     max-width: 48rem;
   }
 }
+
+/* ==========================================================================
+   Restructure: hero without copy; origin as wallpaper + slider + row;
+   teaching vertical; day one on the pines
+   ========================================================================== */
+
+/* hero: name top-left, button bottom-left */
+.hero__copy {
+  align-self: flex-start;
+}
+
+@media (min-width: 64rem) {
+  .hero__copy {
+    align-self: flex-start;
+    margin-right: 0;
+  }
+}
+
+/* ---- Origin stage -------------------------------------------------------- */
+
+.origin__stage {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--pine-900);
+  isolation: isolate;
+}
+
+.origin__photo {
+  position: absolute !important;
+  inset: 0;
+}
+
+.origin__stage .photo::after {
+  display: none;
+}
+
+.origin__shade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to top, rgb(var(--shade) / 0.96) 0%, rgb(var(--shade) / 0.6) 40%, rgb(var(--shade) / 0.1) 75%);
+}
+
+.origin__over {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--space-5);
+  padding-top: 40svh;
+}
+
+.origin__slider {
+  width: 100%;
+}
+
+.origin__row .disc--over {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.origin__row .disc__body {
+  position: static;
+}
+
+.origin__stage:has(.disc--over.is-open) .origin__shade {
+  background: linear-gradient(to top, rgb(var(--shade) / 0.97) 0%, rgb(var(--shade) / 0.88) 60%, rgb(var(--shade) / 0.4) 100%);
+}
+
+/* slider */
+.oslider {
+  display: grid;
+  gap: var(--space-3);
+  touch-action: pan-y;
+}
+
+.oslider__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  background: rgb(var(--shade) / 0.5);
+  outline: 1px solid rgb(var(--mist) / 0.15);
+}
+
+.oslider__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s var(--ease-out);
+}
+
+.oslider__slide.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.oslider__photo {
+  position: absolute !important;
+  inset: 0;
+}
+
+.oslider__photo > img {
+  clip-path: inset(0) !important;
+}
+
+.oslider__btn {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  width: 2.75rem;
+  height: 2.75rem;
+  translate: 0 -50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(var(--mist) / 0.3);
+  border-radius: 50%;
+  background: rgb(var(--shade) / 0.3);
+  color: var(--linen);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity var(--dur-med) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+}
+
+.oslider__btn--prev {
+  left: 0.75rem;
+}
+
+.oslider__btn--next {
+  right: 0.75rem;
+}
+
+.oslider__stage:hover .oslider__btn,
+.oslider__btn:focus-visible {
+  opacity: 1;
+}
+
+.oslider__btn:hover {
+  background: var(--linen);
+  color: var(--pine);
+}
+
+.oslider__dots {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.oslider__dot {
+  flex: 1;
+  height: 2px;
+  background: rgb(var(--mist) / 0.2);
+  transition: background-color 0.5s var(--ease-out);
+}
+
+.oslider__dot.is-active {
+  background: var(--linen);
+}
+
+@media (min-width: 64rem) {
+  .origin__over {
+    padding-top: 30svh;
+  }
+  .origin__slider {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .oslider {
+    width: min(48rem, 50vw);
+  }
+  .oslider__stage {
+    aspect-ratio: 16 / 8;
+  }
+}
+
+/* ---- Teaching: vertical clip on desktop ---------------------------------- */
+
+.teaching.section {
+  padding-block: clamp(3rem, 7vw, 6rem);
+}
+
+@media (min-width: 64rem) {
+  .feature--vertical {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 30rem;
+    margin-inline: auto;
+    justify-items: center;
+  }
+  .feature--vertical .feature__clip {
+    aspect-ratio: 3 / 4 !important;
+    max-height: 86svh;
+  }
+  .feature--vertical .feature__shade {
+    background: linear-gradient(to top, rgb(var(--shade) / 0.92) 0%, rgb(var(--shade) / 0.5) 32%, rgb(var(--shade) / 0) 58%);
+  }
+  .feature--vertical .feature__over {
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+    max-width: none;
+  }
+  .feature--vertical .feature__over .h2 {
+    font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  }
+  .feature--vertical .feature__text {
+    font-size: var(--fs-body);
+  }
+}
+
+@media (max-width: 63.99rem) {
+  .teaching.section {
+    padding-block: 0;
+  }
+  .teaching .feature--over {
+    padding: 0 0 var(--space-6);
+  }
+}
+
+/* day one on the pines: lighter shade so the trees read */
+.first .stage__shade {
+  background: linear-gradient(to top, rgb(var(--shade) / 0.9) 0%, rgb(var(--shade) / 0.45) 35%, rgb(var(--shade) / 0.15) 70%);
+}
+
+/* about: old origin block no longer used */
+.about__hero,
+.about__split,
+.about__record {
+  display: none;
+}
