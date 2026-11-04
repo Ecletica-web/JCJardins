@@ -1472,3 +1472,106 @@
   margin-top: var(--space-4);
   max-width: 40rem;
 }
+
+/* ==========================================================================
+   Mobile: images edge to edge, one after the other, no empty black bands
+   ========================================================================== */
+
+@media (max-width: 63.99rem) {
+  /* sections: no vertical padding between image blocks */
+  .about.section,
+  .experience.section,
+  .formats.section,
+  .first.section,
+  .contact.section {
+    padding-block: 0;
+  }
+
+  /* text that sits between images gets a tight inner padding instead */
+  .experience__head,
+  .formats .section-title,
+  .contact__grid {
+    padding-block: var(--space-6);
+  }
+
+  .experience__head {
+    margin-bottom: 0;
+  }
+
+  .formats__grid {
+    margin-top: 0;
+  }
+
+  /* origin: the kick runs edge to edge */
+  .about .wrap:first-child {
+    padding-inline: 0;
+  }
+
+  .about__hero .about__lead {
+    aspect-ratio: 4 / 5 !important;
+  }
+
+  .about__over,
+  .disc--over .disc__body {
+    left: var(--gutter);
+    right: var(--gutter);
+    padding-inline: 0;
+  }
+
+  .about__record {
+    margin-top: 0;
+  }
+
+  .about__record .record__row {
+    gap: 2px;
+  }
+
+  .about .wrap:nth-child(2) {
+    padding-inline: 0;
+  }
+
+  .record__caption {
+    padding: var(--space-3) var(--gutter) var(--space-5);
+    margin: 0;
+  }
+
+  /* card strips: full-bleed, cards touching */
+  .pillars,
+  .formats__grid {
+    gap: 2px;
+    padding-inline: 0;
+  }
+
+  .pillar,
+  .format {
+    flex-basis: 92vw;
+  }
+
+  .format__tagline {
+    padding-inline: var(--gutter);
+  }
+
+  /* statement bands and stages already run full width; close their seams */
+  .statement,
+  .stage,
+  .interlude {
+    margin-block: 0;
+  }
+
+  .first .feature {
+    margin: 0;
+    padding: var(--space-6) var(--gutter);
+  }
+
+  .locations .stage--tall {
+    min-height: 100svh;
+  }
+
+  .hero__body {
+    padding-bottom: var(--space-6);
+  }
+
+  .site-footer {
+    padding-top: var(--space-7);
+  }
+}
