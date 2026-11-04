@@ -1,4 +1,5 @@
 import Photo from '../../components/Photo.jsx';
+import RealClip from '../../components/RealClip.jsx';
 import { Reveal } from '../../components/useReveal.jsx';
 import SectionTitle from './SectionTitle.jsx';
 import { about } from '../../content/landing.js';
@@ -8,7 +9,7 @@ export default function About() {
     <section className="section about on-dark" id="sobre" aria-labelledby="sobre-title">
       <div className="wrap about__grid">
         <div className="about__media">
-          <Photo image="tomasPortrait" ratio="4 / 5" className="about__portrait" briefAt="top" />
+          <RealClip ratio="4 / 5" className="about__portrait" />
           <Photo image="coachGloves" ratio="1 / 1" className="about__detail" compact />
         </div>
 
