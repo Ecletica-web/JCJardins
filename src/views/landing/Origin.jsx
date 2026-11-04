@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Photo from '../../components/Photo.jsx';
+import { getImage } from '../../content/images.js';
 import Disclosure from '../../components/Disclosure.jsx';
 import { useContent } from '../../i18n.jsx';
 
@@ -49,6 +50,7 @@ function Slider({ images, label, prev, next }) {
       <div className="oslider__stage">
         {images.map((key, i) => (
           <div key={key} className={`oslider__slide ${i === index ? 'is-active' : ''}`} aria-hidden={i !== index}>
+            <img className="oslider__backdrop" src={getImage(key)?.src} alt="" aria-hidden="true" />
             <Photo image={key} ratio="auto" className="oslider__photo" label={false} sizes="(min-width: 64rem) 50vw, 100vw" eager />
           </div>
         ))}

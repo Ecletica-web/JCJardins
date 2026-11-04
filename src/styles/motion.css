@@ -2214,3 +2214,53 @@
     align-self: flex-end;
   }
 }
+
+/* origin slider: every photo shown whole, over a blurred copy of itself */
+.oslider__stage {
+  aspect-ratio: 4 / 3;
+}
+
+.oslider__backdrop {
+  position: absolute;
+  inset: -8%;
+  width: 116%;
+  height: 116%;
+  object-fit: cover;
+  filter: grayscale(1) blur(26px) brightness(0.35);
+}
+
+.oslider__photo {
+  background: transparent;
+}
+
+.oslider__photo > img {
+  object-fit: contain !important;
+  object-position: 50% 50% !important;
+}
+
+.oslider__photo .photo__grain {
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  .oslider {
+    width: min(40rem, 42vw);
+  }
+  .oslider__stage {
+    aspect-ratio: 4 / 3;
+  }
+  .origin__over {
+    padding-top: 22svh;
+  }
+}
+
+/* day one steps: a 2 x 2 grid */
+.first .sequence {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1.5rem;
+}
+
+.first .sequence li {
+  white-space: nowrap;
+}
