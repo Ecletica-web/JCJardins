@@ -2289,3 +2289,19 @@
     overflow-wrap: anywhere;
   }
 }
+
+/* descriptor with three words: fit under the name on phones */
+@media (max-width: 47.99rem) {
+  .hero .wordmark-lockup--stacked .wordmark-lockup__descriptor {
+    --d: max(0.56rem, 0.14em);
+    letter-spacing: 0.5em;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 23.5rem) {
+  .hero .wordmark-lockup--stacked .wordmark-lockup__descriptor {
+    --d: 0.5rem;
+    letter-spacing: 0.42em;
+  }
+}

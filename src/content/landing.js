@@ -186,7 +186,7 @@ export const footer = {
 
 /* Interface strings (buttons, labels, form messages) */
 export const ui = {
-  descriptor: 'Boxe · Kickboxing',
+  descriptor: 'Boxe · Kickboxing · Força',
   more: 'Ver mais',
   scrollCue: 'Continuar a ler',
   prev: 'Fotografia anterior',
