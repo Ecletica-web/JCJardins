@@ -39,6 +39,14 @@ STYLE = (
     "No text, no logos, no gym branding, no watermark."
 )
 
+# Whenever a prompt shows the coach, describe him close to Tomás's real look
+# (or keep him faceless) so concepts don't set the wrong expectation.
+COACH = (
+    "The coach is a lean man in his mid-twenties with short dark hair and no beard, "
+    "wearing a plain black t-shirt and dark shorts, barefoot. Prefer framing that shows "
+    "his hands, back or profile rather than a clear face."
+)
+
 # Imagen supports 1:1, 3:4, 4:3, 9:16 and 16:9. The site crops with CSS
 # object-fit, so 4:5 → 3:4, 3:2 → 4:3 and 21:9 → 16:9.
 PROMPTS = {
@@ -124,7 +132,7 @@ PROMPTS = {
 def generate(key, api_key):
     aspect, prompt = PROMPTS[key]
     body = {
-        "instances": [{"prompt": f"{prompt} {STYLE}"}],
+        "instances": [{"prompt": f"{prompt} {COACH if 'coach' in prompt.lower() else ''} {STYLE}"}],
         "parameters": {"sampleCount": 1, "aspectRatio": aspect, "personGeneration": "allow_adult"},
     }
     req = urllib.request.Request(

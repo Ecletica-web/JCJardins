@@ -330,6 +330,10 @@
   background: #7a4fd6;
 }
 
+.proto-chip--real::before {
+  background: #1f9d55;
+}
+
 .proto-chip--shoot::before {
   background: #d4382c;
 }

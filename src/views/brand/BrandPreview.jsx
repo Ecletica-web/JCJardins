@@ -1,6 +1,7 @@
 import Wordmark, { Monogram } from '../../components/Wordmark.jsx';
 import Photo from '../../components/Photo.jsx';
 import { Post, PostIdea, PostInfo, PostPhoto } from '../../components/social/Posts.jsx';
+import RealReel from '../../components/social/RealReel.jsx';
 import { usePrototype, VIEWS } from '../../prototype.jsx';
 import { images, shootPriorities, extraShots } from '../../content/images.js';
 import { categories, posts, profile, stories } from '../../content/social.js';
@@ -330,6 +331,40 @@ export default function BrandPreview() {
           </ol>
 
           <div className="bp-refs">
+            <h3 className="h3">From Tomás's own photos and video</h3>
+            <p className="soft">
+              Supplied event photos and a training clip. Not used on the landing page: they carry club badges, sponsor
+              and federation logos, trophies, other people (including a minor) and club gyms that would suggest a studio
+              or group classes. They are useful as references for the shoot.
+            </p>
+            <ul role="list" className="bp-notes">
+              <li>
+                <b>Likeness.</b> Tomás is young and lean, with short dark hair and no beard. The concept images show
+                a different-looking coach; future concepts should stay faceless or match him.
+              </li>
+              <li>
+                <b>How he holds pads.</b> Close to his body, short returns, eyes on the athlete. Brief the
+                photographer to catch this, not big swings.
+              </li>
+              <li>
+                <b>What he wears.</b> Plain black t-shirt, dark shorts, barefoot on the mat. Keep it for the shoot, with
+                no club or sponsor logos.
+              </li>
+              <li>
+                <b>Kit.</b> Dark pads and black wraps for him; clients in white or black wraps.
+              </li>
+            </ul>
+            <div className="bp-proposal">
+              <span className="bp-proposal__tag">Proposed About line · needs Tomás's approval</span>
+              <p lang="pt-PT">Também prepara e acompanha atletas em competição.</p>
+              <p className="soft">
+                His photos show him preparing and cornering fighters. The landing page currently says only that he has a
+                competitive background; this line would add it once Tomás confirms the wording.
+              </p>
+            </div>
+          </div>
+
+          <div className="bp-refs">
             <h3 className="h3">Concept images in use</h3>
             <p className="soft">
               AI-generated images supplied for the prototype, labelled on every page. The people are not Tomás or his
@@ -539,6 +574,33 @@ export default function BrandPreview() {
               </li>
             ))}
           </ul>
+
+          <div className="bp-real">
+            <div className="bp-story bp-real__frame" lang="pt-PT">
+              <div className="bp-story__frame">
+                <RealReel />
+                <span className="bp-story__safe bp-story__safe--top" aria-hidden="true" />
+                <span className="bp-story__safe bp-story__safe--bottom" aria-hidden="true" />
+              </div>
+              <span className="bp-story__label">Reel · real footage of Tomás</span>
+            </div>
+            <div className="bp-real__text">
+              <h3 className="h3">Real footage as a Reel</h3>
+              <p className="soft">
+                Eight seconds of Tomás holding pads, from a phone video he supplied. Close pads, short returns, eyes on
+                the athlete: patience and rhythm, not spectacle. Real footage suits Reels better than the website.
+              </p>
+              <ul role="list" className="bp-real__list">
+                <li>Cropped to 9:16 so the gym's signage stays out of frame; sound removed.</li>
+                <li>Same grade as the brand photos: low saturation, slightly darker, vignette and grain.</li>
+                <li>
+                  <b>Before publishing:</b> written consent from the athlete in red, and Tomás's OK for the gym to be
+                  recognisable.
+                </li>
+                <li>Too low-resolution (464 px wide) for the website. Not used on the landing page.</li>
+              </ul>
+            </div>
+          </div>
         </Section>
 
         <footer className="bp-foot on-dark">
