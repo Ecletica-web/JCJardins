@@ -31,9 +31,10 @@ function readView(current = VIEWS.landing) {
 
 function readLabels() {
   try {
-    return window.localStorage.getItem('tq-proto-labels') !== 'off';
+    // labels are off unless someone turns them on from the prototype panel
+    return window.localStorage.getItem('tq-proto-labels-v2') === 'on';
   } catch {
-    return true;
+    return false;
   }
 }
 
@@ -62,7 +63,7 @@ export function PrototypeProvider({ children }) {
   const setShowLabels = useCallback((value) => {
     setShowLabelsState(value);
     try {
-      window.localStorage.setItem('tq-proto-labels', value ? 'on' : 'off');
+      window.localStorage.setItem('tq-proto-labels-v2', value ? 'on' : 'off');
     } catch {
       /* storage unavailable — labels still toggle for this visit */
     }
