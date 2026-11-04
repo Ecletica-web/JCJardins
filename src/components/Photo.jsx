@@ -20,6 +20,7 @@ export default function Photo({
   decorative = false,
   compact = false,
   briefAt = 'bottom',
+  eager = false,
 }) {
   const data = getImage(image);
   const { showLabels } = usePrototype();
@@ -73,7 +74,7 @@ export default function Photo({
             ref={imgRef}
             src={data.src}
             alt={decorative ? '' : altFor(data.key, data.alt)}
-            loading={priority ? 'eager' : 'lazy'}
+            loading={priority || eager ? 'eager' : 'lazy'}
             decoding="async"
             fetchPriority={priority ? 'high' : undefined}
             sizes={sizes}

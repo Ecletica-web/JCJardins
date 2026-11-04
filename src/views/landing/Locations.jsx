@@ -9,7 +9,7 @@ export default function Locations() {
   return (
     <section className="locations on-dark" id="locais" aria-labelledby="locais-title">
       <div className="stage stage--tall">
-        <Photo image="boardwalk" ratio="auto" className="stage__photo parallax" sizes="100vw" focus="60% 50%" />
+        <Photo image="boardwalk" ratio="auto" className="stage__photo parallax" sizes="100vw" focus="60% 50%" eager />
         <div className="stage__shade" aria-hidden="true" />
         <div className="stage__body wrap">
           <SectionTitle id="locais-title" kicker={locations.kicker} lines={locations.title} />

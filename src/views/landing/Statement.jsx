@@ -15,7 +15,7 @@ export default function Statement({ which }) {
       className={`statement statement--${which} on-dark rise ${visible ? 'is-visible' : ''}`}
       aria-label={st.lines.map((l) => l.replace(/\*/g, '')).join(' ')}
     >
-      <Photo image={st.image} ratio="auto" className="statement__photo parallax" sizes="100vw" label={which !== 'intro'} />
+      <Photo image={st.image} ratio="auto" className="statement__photo parallax" sizes="100vw" label={which !== 'intro'} eager />
       <div className="statement__shade" aria-hidden="true" />
       <p className="statement__lines wrap" aria-hidden="true">
         {st.lines.map((line, i) => {
