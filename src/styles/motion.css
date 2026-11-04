@@ -1694,3 +1694,86 @@
     padding-top: 60vw; /* keep most of the photo visible above the text */
   }
 }
+
+/* ---- In session: title and line over the video, button below ---------- */
+
+.feature--over {
+  display: grid;
+  gap: var(--space-5);
+  padding: 0;
+  background: none;
+  justify-items: start;
+}
+
+.feature__frame {
+  position: relative;
+  width: 100%;
+  isolation: isolate;
+}
+
+.feature--over .feature__clip {
+  max-width: none;
+  width: 100%;
+}
+
+.feature__shade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to top, rgb(var(--shade) / 0.92) 0%, rgb(var(--shade) / 0.5) 30%, rgb(var(--shade) / 0) 55%);
+}
+
+.feature__over {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  gap: var(--space-3);
+  padding: clamp(1rem, 3vw, 2rem);
+  pointer-events: none;
+}
+
+.feature__over .section-title {
+  gap: var(--space-2);
+}
+
+.feature__over .h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2.4rem);
+}
+
+.feature__text {
+  max-width: 32ch;
+  font-size: var(--fs-small);
+  color: var(--linen);
+  text-shadow: 0 1px 10px rgb(var(--shade) / 0.8);
+}
+
+/* keep the clip's own play/pause above the overlay */
+.feature__frame .real-clip__toggle {
+  z-index: 4;
+}
+
+@media (min-width: 64rem) {
+  .feature--over {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 48rem;
+  }
+  .feature--over .feature__clip {
+    aspect-ratio: 16 / 10 !important;
+  }
+  .feature__over {
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+  }
+}
+
+@media (max-width: 63.99rem) {
+  .first .feature--over {
+    padding: 0 0 var(--space-6);
+  }
+  .feature__cta {
+    margin-inline: var(--gutter);
+  }
+}
