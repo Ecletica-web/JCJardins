@@ -1,5 +1,4 @@
 import Photo from '../../components/Photo.jsx';
-import Slideshow from '../../components/Slideshow.jsx';
 import SectionTitle from './SectionTitle.jsx';
 import Disclosure from '../../components/Disclosure.jsx';
 import { useContent } from '../../i18n.jsx';
@@ -51,8 +50,17 @@ export default function About() {
         </div>
       </div>
 
-      <div className="wrap about__slides">
-        <Slideshow images={record.photos.map((ph) => ph.image)} label={ui.slidesLabel} caption={record.caption} />
+      <div className="wrap">
+        <figure className="about__record">
+          <div className="record__row">
+            {record.photos.map((ph) => (
+              <div key={ph.image} className={`record__item record__item--${ph.slot}`} style={{ '--ar': ph.ratio }}>
+                <Photo image={ph.image} ratio={`${ph.ratio} / 1`} sizes="(min-width: 64rem) 30vw, 70vw" />
+              </div>
+            ))}
+          </div>
+          <figcaption className="record__caption soft">{record.caption}</figcaption>
+        </figure>
       </div>
     </section>
   );
