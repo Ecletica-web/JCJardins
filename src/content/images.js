@@ -81,7 +81,7 @@ export const images = {
     kind: 'photo',
     src: own('tomas-kick-garden.jpg'),
     alt: 'O Tomás dá um pontapé alto num jardim, descalço na relva, com uma casa caiada atrás.',
-    focus: '50% 40%',
+    focus: '42% 18%',
   },
   tomasSplit: {
     kind: 'photo',

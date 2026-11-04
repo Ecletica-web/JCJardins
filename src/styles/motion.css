@@ -1459,3 +1459,16 @@
 .interlude__lines .br:only-child {
   padding-left: 0.22em; /* balance the trailing tracking */
 }
+
+/* origin: keep the whole kick in frame on wide screens; splits inside the story */
+@media (min-width: 64rem) {
+  .about__hero .about__lead {
+    aspect-ratio: 3 / 2 !important;
+    max-height: 88svh;
+  }
+}
+
+.story__photo {
+  margin-top: var(--space-4);
+  max-width: 40rem;
+}

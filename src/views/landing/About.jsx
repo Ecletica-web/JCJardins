@@ -40,6 +40,7 @@ export default function About() {
                   </div>
                 ))}
               </dl>
+              <Photo image="tomasSplit" ratio="16 / 9" className="story__photo" priority={false} focus="40% 45%" />
             </Disclosure>
           </div>
         </div>
