@@ -160,7 +160,7 @@ export const images = {
     kind: 'concept',
     src: concept('concept-hero-pads.jpg'),
     alt: 'Um lutador com luvas Tomás Queiroz dá um direto nos pads ao entardecer, junto a um muro entre pinheiros.',
-    focus: '40% 45%',
+    focus: '45% 38%',
     people: false,
     note: 'Hero: jab into pads at dusk, branded TQK gloves.',
   },

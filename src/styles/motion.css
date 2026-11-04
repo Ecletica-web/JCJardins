@@ -672,3 +672,169 @@
     inset: 0 0 18% 0;
   }
 }
+
+/* ==========================================================================
+   Round 2: full-screen hero on desktop, slide arrows in the picture,
+   swipe cue for card strips
+   ========================================================================== */
+
+@media (min-width: 64rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: calc(100svh - var(--header-h));
+  }
+  .hero__media {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .hero__media::after {
+    background:
+      linear-gradient(to left, rgb(var(--shade) / 0.82) 0%, rgb(var(--shade) / 0.35) 38%, rgb(var(--shade) / 0) 60%),
+      linear-gradient(to right, rgb(var(--shade) / 0.55) 0%, rgb(var(--shade) / 0) 35%),
+      linear-gradient(to top, rgb(var(--shade) / 0.85) 0%, rgb(var(--shade) / 0) 40%),
+      linear-gradient(to bottom, rgb(var(--shade) / 0.45) 0%, rgb(var(--shade) / 0) 25%);
+  }
+  .hero__body {
+    grid-column: 1;
+    justify-content: space-between;
+  }
+  .hero__copy {
+    align-self: flex-end;
+    max-width: 28rem;
+    margin-right: clamp(3rem, 6vw, 6rem);
+  }
+  .hero__cue {
+    right: auto;
+    left: var(--gutter);
+  }
+  .hero__strip {
+    grid-column: 1;
+  }
+}
+
+/* slide arrows: in the picture, barely there until you reach for them */
+.slides__btn {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  translate: 0 -50%;
+  border-color: rgb(var(--mist) / 0.22);
+  background: rgb(var(--shade) / 0.15);
+  color: rgb(var(--mist) / 0.7);
+  opacity: 0.45;
+  transition:
+    opacity var(--dur-med) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+
+.slides__btn--prev {
+  left: clamp(0.5rem, 2vw, 1.25rem);
+}
+
+.slides__btn--next {
+  right: clamp(0.5rem, 2vw, 1.25rem);
+}
+
+.slides__stage:hover .slides__btn,
+.slides__btn:focus-visible {
+  opacity: 1;
+}
+
+.slides__btn:hover {
+  background: var(--linen);
+  border-color: var(--linen);
+  color: var(--pine);
+}
+
+@media (hover: none) {
+  .slides__btn {
+    opacity: 0.7;
+  }
+}
+
+/* swipe cue under card strips (mobile only) */
+.strip-nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+  font-family: var(--font-display);
+  font-stretch: var(--stretch-wide);
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft-on-dark);
+}
+
+.strip-nav__hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.strip-nav__arrow {
+  display: inline-block;
+  animation: nudge 1.6s var(--ease-out) infinite;
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+.strip-nav__segs {
+  display: flex;
+  flex: 1;
+  gap: 0.35rem;
+}
+
+.strip-nav__seg {
+  flex: 1;
+  height: 1.5rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.strip-nav__seg::before {
+  content: '';
+  display: block;
+  height: 2px;
+  background: rgb(var(--mist) / 0.18);
+  transition: background-color var(--dur-med) var(--ease-out);
+}
+
+.strip-nav__seg.is-active::before {
+  background: var(--linen);
+}
+
+.strip-nav__count {
+  font-variant-numeric: tabular-nums;
+  color: var(--linen);
+}
+
+.strip-nav__count span {
+  color: var(--ink-soft-on-dark);
+}
+
+@media (max-width: 47.99rem) {
+  .strip-nav {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .strip-nav__arrow {
+    animation: none;
+  }
+}

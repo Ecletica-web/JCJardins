@@ -1,4 +1,6 @@
+import { useRef } from 'react';
 import Photo from '../../components/Photo.jsx';
+import StripNav, { useStrip } from '../../components/StripNav.jsx';
 import { Reveal } from '../../components/useReveal.jsx';
 import RevealCard from '../../components/RevealCard.jsx';
 import SectionTitle from './SectionTitle.jsx';
@@ -6,12 +8,14 @@ import { useContent } from '../../i18n.jsx';
 
 export default function Formats() {
   const { formats, ui } = useContent();
+  const strip = useRef(null);
+  const { index, goTo } = useStrip(strip, formats.items.length);
   return (
     <section className="section formats on-dark" id="formatos" aria-labelledby="formatos-title">
       <div className="wrap">
         <SectionTitle id="formatos-title" kicker={formats.kicker} lines={formats.title} />
 
-        <div className="formats__grid">
+        <div className="formats__grid" ref={strip}>
           {formats.items.map((f, i) => (
             <Reveal key={f.name} className="format" delay={i * 120}>
               <RevealCard
@@ -31,6 +35,7 @@ export default function Formats() {
           ))}
         </div>
 
+        <StripNav count={formats.items.length} index={index} goTo={goTo} labels={formats.items.map((f) => f.name)} />
         <p className="formats__note soft">{formats.note}</p>
       </div>
     </section>

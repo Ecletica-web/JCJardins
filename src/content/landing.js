@@ -56,7 +56,7 @@ export const experience = {
 };
 
 export const interlude = {
-  lines: ['Repetir.', 'Respirar.', 'Repetir melhor.'],
+  lines: ['Mil vezes', 'o mesmo golpe.', 'Nenhum igual.'],
 };
 
 export const about = {
@@ -190,6 +190,7 @@ export const footer = {
 export const ui = {
   descriptor: 'Boxe · Kickboxing',
   more: 'Ver mais',
+  swipe: 'Desliza',
   scrollCue: 'Continuar a ler',
   prev: 'Fotografia anterior',
   next: 'Fotografia seguinte',

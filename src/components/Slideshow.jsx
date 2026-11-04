@@ -111,6 +111,12 @@ export default function Slideshow({ images, label, caption }) {
           );
         })}
         <span className="slides__grain photo__grain" aria-hidden="true" />
+        <button type="button" className="slides__btn slides__btn--prev" onClick={() => go(index - 1)} aria-label={ui.prev}>
+          <span aria-hidden="true">←</span>
+        </button>
+        <button type="button" className="slides__btn slides__btn--next" onClick={() => go(index + 1)} aria-label={ui.next}>
+          <span aria-hidden="true">→</span>
+        </button>
       </div>
 
       <div className="slides__bar">
@@ -118,14 +124,6 @@ export default function Slideshow({ images, label, caption }) {
         <span className="slides__count" aria-hidden="true">
           {String(index + 1).padStart(2, '0')} <span>/ {String(count).padStart(2, '0')}</span>
         </span>
-        <div className="slides__nav">
-          <button type="button" className="slides__btn" onClick={() => go(index - 1)} aria-label={ui.prev}>
-            <span aria-hidden="true">←</span>
-          </button>
-          <button type="button" className="slides__btn" onClick={() => go(index + 1)} aria-label={ui.next}>
-            <span aria-hidden="true">→</span>
-          </button>
-        </div>
       </div>
     </section>
   );
