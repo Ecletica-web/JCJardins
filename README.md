@@ -96,22 +96,15 @@ Labelled on every page as *Concept image · AI-generated · not Tomás or a clie
 | `concept-adult-guard.jpg` | `adultPractice` | Individual format, post #9 |
 | `concept-dunes.jpg` | `dunes` | Brand view mood |
 
-### Reference images (Pexels License, used for tone only)
+### Stills from Tomás's videos
 
-Each one is labelled in the prototype as *Reference image · not Tomás or a client*.
+Black-and-white frames cut from his three training clips, in `public/images/tomas/`: `tomas-still-kick.jpg`, `tomas-still-between-rounds.jpg` (bag work), `tomas-still-pads.jpg` (padwork), `tomas-still-correcting.jpg` and `tomas-still-pads-client.jpg` (coaching a client). They are low resolution (under 600 px wide) and sit in small frames only.
 
-| Key | File | Used in | Replace with |
-| --- | --- | --- | --- |
-| `padworkClose` | `ref-padwork-close.jpg` | Post #1 | Tomás holds pads for an adult beginner |
-| `kettlebellLight` | `ref-kettlebell-light.jpg` | Strength pillar | Portable kit / strength detail |
-| `towelRest` | `ref-towel-rest.jpg` | Conditioning pillar | Client breathing between rounds |
-| `wrapsWindow` | `ref-wraps-window.jpg` | Brand view mood | Hands being wrapped, window light |
+No stock photography remains in the prototype.
 
-Sources: Pexels photos 5837157, 33387759, 6455951 and 7290053 (`https://www.pexels.com/photo/<id>/`). They are also linked from the brand view.
+### Placeholders
 
-### Placeholders (photos to shoot)
-
-Placeholders are art-directed frames with a line sketch of the composition, light direction and ratio, plus the brief. Their keys are `tomasPadsBeginner`, `tomasCorrecting`, `tomasPortrait`, `firstConversation`, `portableKit`, `tomasShadow`, `duoSession`, `afterSession` and `tomasTechnique`.
+None left: every slot has an image. The brand view's shot list still describes the frames the real shoot should produce to replace the concept images and low-resolution stills.
 
 **To swap any image:**
 

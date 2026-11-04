@@ -323,6 +323,9 @@ export default function BrandPreview() {
                     {img.kind === 'concept' && (
                       <p className="bp-shot__status">Concept image in place. Still needs the real shoot.</p>
                     )}
+                    {img.kind === 'photo' && (
+                      <p className="bp-shot__status">Real image of Tomás in place{img.note ? ` (${img.note.toLowerCase().replace(/\.$/, '')})` : ''}.</p>
+                    )}
                     <code className="bp-code">{s.key}</code>
                   </div>
                 </li>
@@ -392,6 +395,7 @@ export default function BrandPreview() {
             </table>
           </div>
 
+          {refList.length > 0 && (
           <div className="bp-refs">
             <h3 className="h3">Reference images to replace</h3>
             <p className="soft">
@@ -425,6 +429,7 @@ export default function BrandPreview() {
               </tbody>
             </table>
           </div>
+          )}
         </Section>
 
         {/* ---- Layouts ---- */}
