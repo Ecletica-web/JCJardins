@@ -158,6 +158,7 @@ export const locations = {
   kicker: 'Places',
   title: ['Wherever', '*we agree.*'],
   intro: 'Lisbon. The place is agreed; the kit comes with us.',
+  strip: ['At home', 'Outdoors', 'Your building or workplace', 'Indoor space, to be confirmed'],
   options: [
     { title: 'At home', text: 'A living room, a terrace, a garden. Room for a few steps is enough.' },
     { title: 'Outdoors', text: 'Under pines, by the sea, somewhere quiet near you.' },
@@ -183,6 +184,9 @@ export const footer = {
 export const ui = {
   descriptor: 'Boxing · Kickboxing',
   more: 'See more',
+  prev: 'Previous photo',
+  next: 'Next photo',
+  slidesLabel: 'Training and competition photos',
   less: 'Close',
   lang: { label: 'Language', pt: 'PT', en: 'EN', ptName: 'Português', enName: 'English' },
   skip: 'Skip to content',

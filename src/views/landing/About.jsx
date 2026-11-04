@@ -1,6 +1,5 @@
 import Photo from '../../components/Photo.jsx';
-import RealClip from '../../components/RealClip.jsx';
-import { Reveal } from '../../components/useReveal.jsx';
+import Slideshow from '../../components/Slideshow.jsx';
 import SectionTitle from './SectionTitle.jsx';
 import Disclosure from '../../components/Disclosure.jsx';
 import { useContent } from '../../i18n.jsx';
@@ -15,7 +14,6 @@ export default function About() {
             <Photo image="tomasSplit" ratio="4 / 3" className="about__portrait" priority={false} />
             <Photo image="tomasInRing" ratio="1 / 1" className="about__detail" compact />
           </div>
-          <p className="about__credit">{ui.photoCredit}</p>
         </div>
 
         <div className="about__copy">
@@ -23,13 +21,8 @@ export default function About() {
           <p className="lead about__fact">{about.paragraphs[0]}</p>
 
           <div className="discs">
-            <Disclosure title={about.storyTitle} marker="01">
-              {about.paragraphs.slice(1).map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </Disclosure>
             {about.credentials.map((c, i) => (
-              <Disclosure key={c.group} title={c.group} marker={String(i + 2).padStart(2, '0')}>
+              <Disclosure key={c.group} title={c.group} marker={String(i + 1).padStart(2, '0')}>
                 <ul role="list" className="credentials__list">
                   {c.items.map((it) => (
                     <li key={it}>{it}</li>
@@ -37,35 +30,12 @@ export default function About() {
                 </ul>
               </Disclosure>
             ))}
-            <Disclosure title={about.methodTitle} marker={String(about.credentials.length + 2).padStart(2, '0')}>
-              <dl className="method">
-                {about.principles.map((p) => (
-                  <div key={p.title}>
-                    <dt>{p.title}</dt>
-                    <dd>{p.text}</dd>
-                  </div>
-                ))}
-              </dl>
-            </Disclosure>
           </div>
         </div>
       </div>
 
-      <div className="wrap">
-        <figure className="about__record">
-          <div className="record__row">
-            {record.photos.map((ph) => (
-              <div key={ph.image || ph.video} className={`record__item record__item--${ph.slot}`} style={{ '--ar': ph.ratio }}>
-                {ph.video ? (
-                  <RealClip video={ph.video} ratio={`${ph.ratio} / 1`} focus="50% 55%" label={false} />
-                ) : (
-                  <Photo image={ph.image} ratio={`${ph.ratio} / 1`} sizes="(min-width: 64rem) 30vw, 70vw" />
-                )}
-              </div>
-            ))}
-          </div>
-          <figcaption className="record__caption soft">{record.caption}</figcaption>
-        </figure>
+      <div className="wrap about__slides">
+        <Slideshow images={record.photos.map((ph) => ph.image)} label={ui.slidesLabel} caption={record.caption} />
       </div>
     </section>
   );

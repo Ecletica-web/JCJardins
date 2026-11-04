@@ -157,6 +157,7 @@ export const locations = {
   kicker: 'Lugares',
   title: ['Onde for', '*combinado.*'],
   intro: 'Lisboa. O lugar combina-se; o equipamento vem connosco.',
+  strip: ['Em casa', 'Ao ar livre', 'No teu prédio ou empresa', 'Espaço interior, a confirmar'],
   options: [
     { title: 'Em casa', text: 'Uma sala, um terraço, um jardim. Basta espaço para alguns passos.' },
     { title: 'Ao ar livre', text: 'Sob pinheiros, junto ao mar, num lugar tranquilo perto de ti.' },
@@ -182,6 +183,9 @@ export const footer = {
 export const ui = {
   descriptor: 'Boxe · Kickboxing',
   more: 'Ver mais',
+  prev: 'Fotografia anterior',
+  next: 'Fotografia seguinte',
+  slidesLabel: 'Fotografias de treino e competição',
   less: 'Fechar',
   lang: { label: 'Idioma', pt: 'PT', en: 'EN', ptName: 'Português', enName: 'English' },
   skip: 'Saltar para o conteúdo',

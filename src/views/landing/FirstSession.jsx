@@ -1,8 +1,6 @@
 import Photo from '../../components/Photo.jsx';
 import RealClip from '../../components/RealClip.jsx';
-import { Reveal } from '../../components/useReveal.jsx';
 import SectionTitle from './SectionTitle.jsx';
-import Disclosure from '../../components/Disclosure.jsx';
 import { useContent } from '../../i18n.jsx';
 
 export default function FirstSession() {
@@ -17,13 +15,14 @@ export default function FirstSession() {
 
         <Photo image="firstConversation" ratio="21 / 9" className="first__photo" sizes="100vw" />
 
-        <ol role="list" className="steps">
+        <ol role="list" className="sequence">
           {firstSession.steps.map((st, i) => (
-            <Reveal as="li" key={st.title} className="step" delay={i * 90}>
-              <Disclosure className="disc--box" marker={String(i + 1).padStart(2, '0')} title={st.title}>
-                <p>{st.text}</p>
-              </Disclosure>
-            </Reveal>
+            <li key={st.title}>
+              <span className="sequence__n" aria-hidden="true">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              {st.title}
+            </li>
           ))}
         </ol>
 

@@ -1,6 +1,5 @@
 import Photo from '../../components/Photo.jsx';
 import SectionTitle from './SectionTitle.jsx';
-import Disclosure from '../../components/Disclosure.jsx';
 import { useContent } from '../../i18n.jsx';
 
 export default function Locations() {
@@ -12,13 +11,11 @@ export default function Locations() {
           <SectionTitle id="locais-title" kicker={locations.kicker} lines={locations.title} />
           <p className="lead soft">{locations.intro}</p>
 
-          <div className="discs">
-            {locations.options.map((o, i) => (
-              <Disclosure key={o.title} marker={String.fromCharCode(65 + i)} title={o.title}>
-                <p>{o.text}</p>
-              </Disclosure>
+          <ul role="list" className="sequence sequence--places">
+            {locations.strip.map((t) => (
+              <li key={t}>{t}</li>
             ))}
-          </div>
+          </ul>
         </div>
 
         <div className="locations__media">
