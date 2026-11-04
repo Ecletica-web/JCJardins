@@ -296,10 +296,11 @@ export default function Contact() {
                     </div>
                   ))}
               </dl>
+              <p className="form__demo">
+                <span className="form__demo-dot" aria-hidden="true" />
+                {f.confirm.demo}
+              </p>
               <div className="confirm__actions">
-                <button type="button" className="btn btn--ghost" onClick={() => reset(true)}>
-                  {f.confirm.edit}
-                </button>
                 <button type="button" className="btn btn--ghost" onClick={() => reset(false)}>
                   {f.confirm.restart}
                 </button>
