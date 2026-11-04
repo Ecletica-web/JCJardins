@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { PrototypeProvider, usePrototype, VIEWS } from './prototype.jsx';
+import { LangProvider } from './i18n.jsx';
 import LandingPage from './views/landing/LandingPage.jsx';
 import BrandPreview from './views/brand/BrandPreview.jsx';
 import PrototypeControl from './components/PrototypeControl.jsx';
@@ -23,7 +24,9 @@ function Views() {
 export default function App() {
   return (
     <PrototypeProvider>
-      <Views />
+      <LangProvider>
+        <Views />
+      </LangProvider>
     </PrototypeProvider>
   );
 }

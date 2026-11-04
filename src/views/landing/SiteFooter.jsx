@@ -1,14 +1,15 @@
 import Wordmark from '../../components/Wordmark.jsx';
-import { footer, nav } from '../../content/landing.js';
+import { useContent } from '../../i18n.jsx';
 
 export default function SiteFooter() {
+  const { footer, nav, ui } = useContent();
   return (
     <footer className="site-footer">
       <div className="wrap site-footer__grid">
         <Wordmark layout="stacked" className="site-footer__mark" />
         <div className="site-footer__info">
           <p>{footer.line}</p>
-          <nav aria-label="Rodapé">
+          <nav aria-label={ui.navFooter}>
             <ul role="list">
               {nav.map((item) => (
                 <li key={item.href}>
@@ -16,7 +17,7 @@ export default function SiteFooter() {
                 </li>
               ))}
               <li>
-                <a href="#contacto">Contacto</a>
+                <a href="#contacto">{ui.contactLink}</a>
               </li>
             </ul>
           </nav>

@@ -2,9 +2,10 @@ import Photo from '../../components/Photo.jsx';
 import RealClip from '../../components/RealClip.jsx';
 import { Reveal } from '../../components/useReveal.jsx';
 import SectionTitle from './SectionTitle.jsx';
-import { experience } from '../../content/landing.js';
+import { useContent } from '../../i18n.jsx';
 
 export default function Experience() {
+  const { experience, ui } = useContent();
   return (
     <section className="section experience on-light" id="treino" aria-labelledby="treino-title">
       <div className="wrap">

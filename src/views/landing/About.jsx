@@ -2,9 +2,10 @@ import Photo from '../../components/Photo.jsx';
 import RealClip from '../../components/RealClip.jsx';
 import { Reveal } from '../../components/useReveal.jsx';
 import SectionTitle from './SectionTitle.jsx';
-import { about, record } from '../../content/landing.js';
+import { useContent } from '../../i18n.jsx';
 
 export default function About() {
+  const { about, record, ui } = useContent();
   return (
     <section className="section about on-dark" id="sobre" aria-labelledby="sobre-title">
       <div className="wrap about__grid">
@@ -13,7 +14,7 @@ export default function About() {
             <Photo image="tomasSplit" ratio="4 / 3" className="about__portrait" priority={false} />
             <Photo image="tomasInRing" ratio="1 / 1" className="about__detail" compact />
           </div>
-          <p className="about__credit">Fotografia: B&amp;A Art Moments</p>
+          <p className="about__credit">{ui.photoCredit}</p>
         </div>
 
         <div className="about__copy">

@@ -1,4 +1,5 @@
 import SiteHeader from './SiteHeader.jsx';
+import { useContent } from '../../i18n.jsx';
 import Hero from './Hero.jsx';
 import Experience from './Experience.jsx';
 import Interlude from './Interlude.jsx';
@@ -10,10 +11,11 @@ import Contact from './Contact.jsx';
 import SiteFooter from './SiteFooter.jsx';
 
 export default function LandingPage() {
+  const { ui } = useContent();
   return (
     <>
       <a className="skip-link" href="#conteudo">
-        Saltar para o conteúdo
+        {ui.skip}
       </a>
       <SiteHeader />
       <main id="conteudo" tabIndex={-1}>

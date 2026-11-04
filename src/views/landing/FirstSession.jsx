@@ -2,9 +2,10 @@ import Photo from '../../components/Photo.jsx';
 import RealClip from '../../components/RealClip.jsx';
 import { Reveal } from '../../components/useReveal.jsx';
 import SectionTitle from './SectionTitle.jsx';
-import { firstSession, inSession } from '../../content/landing.js';
+import { useContent } from '../../i18n.jsx';
 
 export default function FirstSession() {
+  const { firstSession, inSession, ui } = useContent();
   return (
     <section className="section first on-light" id="primeira-sessao" aria-labelledby="primeira-title">
       <div className="wrap">

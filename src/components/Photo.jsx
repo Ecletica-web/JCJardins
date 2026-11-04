@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { getImage } from '../content/images.js';
 import { usePrototype } from '../prototype.jsx';
+import { useAlt } from '../i18n.jsx';
 import useReveal from './useReveal.jsx';
 import PlaceholderSketch from './PlaceholderSketch.jsx';
 
@@ -22,6 +23,7 @@ export default function Photo({
 }) {
   const data = getImage(image);
   const { showLabels } = usePrototype();
+  const altFor = useAlt();
   const [loaded, setLoaded] = useState(false);
   const [revealRef, visible] = useReveal({ threshold: 0.05 });
 
@@ -52,7 +54,7 @@ export default function Photo({
       data-kind={data.kind}
     >
       {isPlaceholder ? (
-        <div className="photo__placeholder" role={decorative ? undefined : 'img'} aria-label={decorative ? undefined : data.alt}>
+        <div className="photo__placeholder" role={decorative ? undefined : 'img'} aria-label={decorative ? undefined : altFor(data.key, data.alt)}>
           <PlaceholderSketch variant={data.sketch} />
           {showLabels && label && (
             <div className="photo__brief" aria-hidden="true">
@@ -70,7 +72,7 @@ export default function Photo({
           <img
             ref={imgRef}
             src={data.src}
-            alt={decorative ? '' : data.alt}
+            alt={decorative ? '' : altFor(data.key, data.alt)}
             loading={priority ? 'eager' : 'lazy'}
             decoding="async"
             fetchPriority={priority ? 'high' : undefined}

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { usePrototype } from '../prototype.jsx';
+import { useContent } from '../i18n.jsx';
 
 /* Real footage of Tomás, muted black-and-white loops.
    Plays only while on screen, never autoplays under reduced motion,
@@ -15,6 +16,7 @@ export const clips = {
 
 export default function RealClip({ video = 'real-padwork', ratio = '4 / 5', className = '', label = true, focus }) {
   const { showLabels } = usePrototype();
+  const { ui } = useContent();
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
   const [userPaused, setUserPaused] = useState(false);
@@ -66,7 +68,7 @@ export default function RealClip({ video = 'real-padwork', ratio = '4 / 5', clas
         loop
         playsInline
         preload="metadata"
-        aria-label={clips[video]}
+        aria-label={ui.video[video] || clips[video]}
         style={focus ? { objectPosition: focus } : undefined}
       />
       {showLabels && label && (
@@ -78,7 +80,7 @@ export default function RealClip({ video = 'real-padwork', ratio = '4 / 5', clas
         type="button"
         className="real-clip__toggle"
         onClick={toggle}
-        aria-label={playing ? 'Pausar vídeo' : 'Reproduzir vídeo'}
+        aria-label={playing ? ui.video.pause : ui.video.play}
       >
         <span aria-hidden="true">{playing ? '❚❚' : '▶'}</span>
       </button>

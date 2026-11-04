@@ -1,8 +1,9 @@
 import Wordmark from '../../components/Wordmark.jsx';
 import Photo from '../../components/Photo.jsx';
-import { hero } from '../../content/landing.js';
+import { useContent } from '../../i18n.jsx';
 
 export default function Hero() {
+  const { hero, ui } = useContent();
   return (
     <section className="hero on-dark" id="topo" aria-labelledby="hero-title">
       <div className="hero__grid wrap">
@@ -13,8 +14,8 @@ export default function Hero() {
         <div className="hero__media">
           <Photo image="tomasShadow" ratio="4 / 5" priority sizes="(min-width: 64rem) 45vw, 100vw" />
           <p className="hero__media-note" aria-hidden="true">
-            <span>Sombra</span>
-            <span>ao fim do dia, entre pinheiros</span>
+            <span>{ui.heroNote[0]}</span>
+            <span>{ui.heroNote[1]}</span>
           </p>
         </div>
 
@@ -38,13 +39,13 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="hero__strip" aria-label="O que inclui o treino">
+      <div className="hero__strip" aria-label={ui.stripLabel}>
         <div className="wrap">
           <ul role="list">
             {hero.strip.map((item) => (
               <li key={item}>{item}</li>
             ))}
-            <li className="hero__strip-place">Lisboa · no local combinado</li>
+            <li className="hero__strip-place">{ui.stripPlace}</li>
           </ul>
         </div>
       </div>

@@ -1,8 +1,9 @@
 import Photo from '../../components/Photo.jsx';
 import SectionTitle from './SectionTitle.jsx';
-import { locations } from '../../content/landing.js';
+import { useContent } from '../../i18n.jsx';
 
 export default function Locations() {
+  const { locations, ui } = useContent();
   return (
     <section className="section locations on-light" id="locais" aria-labelledby="locais-title">
       <div className="wrap locations__grid">

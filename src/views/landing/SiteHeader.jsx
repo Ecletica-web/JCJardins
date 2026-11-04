@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import Wordmark from '../../components/Wordmark.jsx';
-import { nav } from '../../content/landing.js';
+import LangToggle from '../../components/LangToggle.jsx';
+import { useContent } from '../../i18n.jsx';
 
 export default function SiteHeader() {
+  const { nav, ui } = useContent();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef(null);
@@ -42,11 +44,11 @@ export default function SiteHeader() {
   return (
     <header className={`site-header ${scrolled ? 'is-scrolled' : ''} ${open ? 'is-open' : ''}`}>
       <div className="site-header__bar wrap">
-        <a className="site-header__home" href="#topo" aria-label="Tomás Queiroz — início">
+        <a className="site-header__home" href="#topo" aria-label={ui.home}>
           <Wordmark layout="inline" />
         </a>
 
-        <nav className="site-nav" aria-label="Principal">
+        <nav className="site-nav" aria-label={ui.navMain}>
           <ul role="list">
             {nav.map((item) => (
               <li key={item.href}>
@@ -56,8 +58,10 @@ export default function SiteHeader() {
           </ul>
         </nav>
 
+        <LangToggle className="site-header__lang" />
+
         <a className="btn btn--small site-header__cta" href="#contacto">
-          Pedir uma sessão
+          {ui.cta}
         </a>
 
         <button
@@ -68,13 +72,13 @@ export default function SiteHeader() {
           aria-controls="menu-movel"
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="menu-toggle__label">{open ? 'Fechar' : 'Menu'}</span>
+          <span className="menu-toggle__label">{open ? ui.close : ui.menu}</span>
           <span className="menu-toggle__icon" aria-hidden="true" />
         </button>
       </div>
 
       <div id="menu-movel" className="mobile-menu" ref={menuRef} hidden={!open}>
-        <nav aria-label="Menu móvel">
+        <nav aria-label={ui.navMobile}>
           <ul role="list">
             {nav.map((item, i) => (
               <li key={item.href}>
@@ -87,7 +91,7 @@ export default function SiteHeader() {
           </ul>
         </nav>
         <a className="btn mobile-menu__cta" href="#contacto" onClick={() => setOpen(false)}>
-          Pedir uma sessão <span className="btn__arrow" aria-hidden="true">→</span>
+          {ui.cta} <span className="btn__arrow" aria-hidden="true">→</span>
         </a>
       </div>
     </header>

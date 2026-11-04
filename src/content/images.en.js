@@ -1,0 +1,31 @@
+/* English alt text for the image manifest (src/content/images.js).
+   Keys match the manifest; anything missing falls back to Portuguese. */
+
+export const altEn = {
+  heroHands: 'Hands wrapping black hand wraps, seated on a wooden bench in the shade.',
+  wrapsWindow: 'A man by a window in soft side light, putting on hand wraps.',
+  padworkClose: 'Outdoor padwork: a coach smiles while holding pads for someone.',
+  kettlebellLight: 'A black kettlebell on a mat, crossed by a shaft of window light.',
+  adultPractice: 'A grey-haired man in a boxing guard with leather gloves, in a calm room by a window.',
+  towelRest: 'A man wiping sweat from his face with a towel, catching his breath.',
+  tomasSplit: 'Tomás stretching in a split before a fight, wearing gloves and shin guards.',
+  tomasInRing: 'Tomás in his guard inside the ring, wearing headgear and gloves.',
+  tomasTeam: 'Tomás with a group of athletes after a kickboxing session.',
+  tomasRingside: 'Tomás ringside with two athletes after a fight.',
+  tomasTeamTrophy: 'Tomás with two athletes on a competition day.',
+  tomasFightNight: 'Tomás beside an athlete on a fight night.',
+  coachGloves: 'A coach fastens someone’s gloves against a limewashed wall.',
+  padsPines: 'Padwork on a lawn under stone pines, late in the afternoon.',
+  pinesMist: 'Stone pines in mist on a slope near the coast.',
+  boardwalk: 'A timber boardwalk over the dunes towards the sea, under an overcast sky.',
+  dunes: 'Dunes with low vegetation by the sea, under an overcast sky.',
+  tomasCorrecting: 'Photo to be taken: Tomás corrects a client’s guard.',
+  tomasPadsBeginner: 'Photo to be taken: Tomás holds pads for a beginner.',
+  tomasPortrait: 'Photo to be taken: a relaxed portrait of Tomás between rounds.',
+  tomasShadow: 'A man shadowboxing at dusk by a wall among pines; his breath visible in the air.',
+  tomasTechnique: 'Photo to be taken: Tomás demonstrates a roundhouse kick.',
+  firstConversation: 'The coach and a client talk on a stone step at dusk, gloves and a notebook between them.',
+  duoSession: 'A duo session on a lawn under pines: a coach holds pads while another client waits, laughing.',
+  portableKit: 'Portable kit on a terrace by the sea: bag, gloves, wraps, bottle and skipping rope.',
+  afterSession: 'Two men laughing by a garden gate after training, holding water bottles.',
+};

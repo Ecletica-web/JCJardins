@@ -40,7 +40,6 @@ body::before {
 .site-header__home {
   display: inline-flex;
   text-decoration: none;
-  margin-right: auto;
 }
 
 .site-header__home .wordmark-lockup,
@@ -95,6 +94,90 @@ body::before {
 
 .site-header__cta {
   display: none;
+}
+
+/* ---- Language toggle ---------------------------------------------------- */
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-stretch: var(--stretch-wide);
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+}
+
+.lang-toggle__item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.lang-toggle__sep {
+  color: var(--pine-700);
+  padding-inline: 0.15rem;
+}
+
+.lang-toggle__btn {
+  position: relative;
+  min-width: 2.25rem;
+  min-height: 2.75rem;
+  padding: 0 0.35rem 0 0.55rem; /* trailing tracking balanced */
+  border: 0;
+  background: none;
+  color: var(--ink-soft-on-dark);
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.lang-toggle__btn:hover {
+  color: var(--linen);
+}
+
+.lang-toggle__btn[aria-pressed='true'] {
+  color: var(--linen);
+}
+
+.lang-toggle__btn[aria-pressed='true']::after {
+  content: '';
+  position: absolute;
+  left: 0.55rem;
+  right: 0.55rem;
+  bottom: 0.7rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+.site-header__lang {
+  margin-left: auto;
+}
+
+@media (max-width: 30rem) {
+  .site-header__bar {
+    gap: var(--space-3);
+  }
+  /* keep the word for screen readers, show only the icon */
+  .menu-toggle__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .menu-toggle {
+    padding-left: 0.5rem;
+  }
+  .site-header__lang .lang-toggle__btn {
+    min-width: 2rem;
+    padding: 0 0.2rem 0 0.4rem;
+  }
+}
+
+.mobile-menu__lang {
+  align-self: flex-start;
+  font-size: 0.75rem;
 }
 
 .menu-toggle {
@@ -204,6 +287,10 @@ body::before {
 @media (min-width: 64rem) {
   .site-nav {
     display: block;
+    margin-left: auto;
+  }
+  .site-header__lang {
+    margin-left: 0;
   }
   .site-header__cta {
     display: inline-flex;

@@ -1,9 +1,10 @@
 import Photo from '../../components/Photo.jsx';
 import { Reveal } from '../../components/useReveal.jsx';
 import SectionTitle from './SectionTitle.jsx';
-import { formats } from '../../content/landing.js';
+import { useContent } from '../../i18n.jsx';
 
 export default function Formats() {
+  const { formats, ui } = useContent();
   return (
     <section className="section formats on-dark" id="formatos" aria-labelledby="formatos-title">
       <div className="wrap">
