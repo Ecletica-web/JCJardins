@@ -2425,7 +2425,7 @@
 @media (max-width: 63.99rem) {
   .origin__over .disc__inner {
     gap: var(--space-3);
-    max-height: calc(50svh - 4.5rem);
+    max-height: calc(50svh - 3.25rem);
     overflow: auto;
     padding-right: 0.25rem;
   }
@@ -2455,7 +2455,11 @@
     gap: 0.25rem;
   }
   .origin__over .credentials__list li {
-    font-size: var(--fs-caption);
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+  .origin__over .credentials__group:last-child .credentials__list li:last-child {
+    padding-bottom: 0.25rem;
   }
   .origin__over .disc--over.is-open .disc__inner {
     padding-bottom: var(--space-3);
