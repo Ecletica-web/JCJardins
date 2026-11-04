@@ -2,14 +2,14 @@ import Photo from '../../components/Photo.jsx';
 import SectionTitle from './SectionTitle.jsx';
 import { useContent } from '../../i18n.jsx';
 
-/* Day one: the misty pines as a full-bleed backdrop, the title and one
+/* Day one: the garden kick as a full-bleed backdrop, the title and one
    line, and the four steps as a quiet line. */
 export default function FirstSession() {
   const { firstSession } = useContent();
   return (
     <section className="first on-dark" id="primeira-sessao" aria-labelledby="primeira-title">
       <div className="stage stage--tall">
-        <Photo image="pinesMist" ratio="auto" className="stage__photo parallax" sizes="100vw" eager />
+        <Photo image="tomasKickGarden" ratio="auto" className="stage__photo parallax" sizes="100vw" eager focus="40% 30%" />
         <div className="stage__shade" aria-hidden="true" />
         <div className="stage__body wrap">
           <SectionTitle id="primeira-title" kicker={firstSession.kicker} lines={firstSession.title} />

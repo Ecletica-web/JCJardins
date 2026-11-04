@@ -2318,3 +2318,12 @@
     padding-top: 118vw; /* most of the splits photo stays visible above the row */
   }
 }
+
+/* day one on the kick photo: keep the figure clear, shade only the base */
+.first .stage__shade {
+  background: linear-gradient(to top, rgb(var(--shade) / 0.94) 0%, rgb(var(--shade) / 0.55) 32%, rgb(var(--shade) / 0.08) 62%);
+}
+
+.first .stage__photo > img {
+  filter: grayscale(1) contrast(1.06) brightness(0.9);
+}
