@@ -225,7 +225,7 @@
 
 /* Concept images arrive already graded: lighter touch so they don't go muddy */
 .photo[data-kind='concept'] > img {
-  filter: saturate(0.92) contrast(1.02);
+  filter: grayscale(1) contrast(1.1) brightness(0.84);
 }
 
 .photo[data-kind='concept']::after {

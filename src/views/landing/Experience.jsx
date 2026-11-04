@@ -7,7 +7,7 @@ import { useContent } from '../../i18n.jsx';
 export default function Experience() {
   const { experience, ui } = useContent();
   return (
-    <section className="section experience on-light" id="treino" aria-labelledby="treino-title">
+    <section className="section experience on-dark" id="treino" aria-labelledby="treino-title">
       <div className="wrap">
         <div className="experience__head">
           <SectionTitle id="treino-title" kicker={experience.kicker} lines={experience.title} />

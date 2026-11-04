@@ -2,21 +2,23 @@ import Wordmark from '../../components/Wordmark.jsx';
 import Photo from '../../components/Photo.jsx';
 import { useContent } from '../../i18n.jsx';
 
+/* Cinematic opener: Tomás full-height and edge to edge on the right
+   (full-bleed on mobile), quiet type on black on the left. */
 export default function Hero() {
   const { hero, ui } = useContent();
   return (
     <section className="hero on-dark" id="topo" aria-labelledby="hero-title">
-      <div className="hero__grid wrap">
+      <div className="hero__media">
+        <Photo image="heroPads" ratio="auto" className="hero__photo" priority sizes="(min-width: 64rem) 50vw, 100vw" />
+        <p className="hero__media-note" aria-hidden="true">
+          <span>{ui.heroNote[0]}</span>
+          <span>{ui.heroNote[1]}</span>
+        </p>
+      </div>
+
+      <div className="hero__body">
         <div className="hero__mark">
           <Wordmark as="p" layout="stacked" descriptor={ui.descriptor} />
-        </div>
-
-        <div className="hero__media">
-          <Photo image="heroPads" ratio="4 / 5" priority sizes="(min-width: 64rem) 45vw, 100vw" />
-          <p className="hero__media-note" aria-hidden="true">
-            <span>{ui.heroNote[0]}</span>
-            <span>{ui.heroNote[1]}</span>
-          </p>
         </div>
 
         <div className="hero__copy">
@@ -27,7 +29,7 @@ export default function Hero() {
               </span>
             ))}
           </h1>
-          <p className="lead hero__support">{hero.support}</p>
+          <p className="hero__support">{hero.support}</p>
           <div className="hero__actions">
             <a className="btn" href={hero.primary.href}>
               {hero.primary.label} <span className="btn__arrow" aria-hidden="true">→</span>

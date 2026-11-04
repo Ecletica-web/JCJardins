@@ -252,19 +252,18 @@ select {
 }
 
 /* ---- Buttons ------------------------------------------------------------ */
-/* Square, quiet, tracked capitals. On pine the primary is pale sage;
-   on linen it is deep sage. */
+/* Outlined, small, tracked capitals; they fill on hover. */
 
 .btn {
-  --btn-bg: var(--sage-light);
-  --btn-ink: var(--pine);
-  --btn-line: var(--sage-light);
+  --btn-bg: transparent;
+  --btn-ink: var(--linen);
+  --btn-line: var(--linen);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.9rem;
-  min-height: 3.25rem;
-  padding: 0.85rem 1.75rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.6rem;
   border: 1px solid var(--btn-line);
   border-radius: var(--radius);
   background: var(--btn-bg);
@@ -272,8 +271,8 @@ select {
   font-family: var(--font-display);
   font-stretch: var(--stretch-wide);
   font-weight: var(--weight-medium);
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
@@ -285,18 +284,32 @@ select {
 
 .btn:hover {
   --btn-bg: var(--linen);
+  --btn-ink: var(--pine);
+}
+
+.btn--ghost,
+.on-light .on-dark .btn--ghost {
+  --btn-line: rgb(var(--mist) / 0.3);
+  --btn-ink: var(--ink-soft-on-dark);
+}
+
+.btn--ghost:hover {
   --btn-line: var(--linen);
 }
 
 .on-light .btn {
-  --btn-bg: var(--sage-deep);
-  --btn-ink: var(--linen);
-  --btn-line: var(--sage-deep);
+  --btn-ink: var(--pine);
+  --btn-line: var(--pine);
 }
 
 .on-light .btn:hover {
   --btn-bg: var(--pine);
-  --btn-line: var(--pine);
+  --btn-ink: var(--linen);
+}
+
+.on-light .btn--ghost {
+  --btn-line: rgb(var(--shade) / 0.3);
+  --btn-ink: var(--ink-soft-on-light);
 }
 
 .btn__arrow {
@@ -309,35 +322,10 @@ select {
   transform: translateX(4px);
 }
 
-.btn--ghost,
-.on-light .on-dark .btn--ghost {
-  --btn-bg: transparent;
-  --btn-ink: var(--linen);
-  --btn-line: rgb(var(--mist) / 0.35);
-}
-
-.btn--ghost:hover {
-  --btn-bg: var(--linen);
-  --btn-ink: var(--pine);
-  --btn-line: var(--linen);
-}
-
-.on-light .btn--ghost {
-  --btn-bg: transparent;
-  --btn-ink: var(--pine);
-  --btn-line: rgb(var(--shade) / 0.35);
-}
-
-.on-light .btn--ghost:hover {
-  --btn-bg: var(--pine);
-  --btn-ink: var(--linen);
-  --btn-line: var(--pine);
-}
-
 .btn--small {
-  min-height: 2.6rem;
-  padding: 0.5rem 1.1rem;
-  font-size: 0.66rem;
+  min-height: 2.5rem;
+  padding: 0.45rem 1.05rem;
+  font-size: 0.62rem;
 }
 
 .text-link {
