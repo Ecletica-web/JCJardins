@@ -2399,3 +2399,24 @@
     aspect-ratio: 4 / 3 !important;
   }
 }
+
+/* phones: the origin frame keeps its size when the story opens; the story
+   lays over the photo (no growing, no zoom). Scrolls inside if it's taller. */
+@media (max-width: 63.99rem) {
+  .origin__stage {
+    min-height: 0;
+    height: 100svh;
+    max-height: 56rem;
+  }
+  .origin__over {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    padding-top: 0;
+    justify-content: flex-end;
+  }
+  .origin__over .disc__inner {
+    max-height: calc(100svh - 9rem);
+    overflow: auto;
+  }
+}

@@ -9,13 +9,8 @@ import { altEn } from './content/images.en.js';
 const LangContext = createContext({ lang: 'en', setLang: () => {} });
 const content = { pt, en };
 
+/* English on every visit; the PT/EN switch lasts for the visit only. */
 function readLang() {
-  try {
-    const saved = window.localStorage.getItem('tq-lang');
-    if (saved === 'en' || saved === 'pt') return saved;
-  } catch {
-    /* storage unavailable */
-  }
   return 'en';
 }
 
@@ -26,14 +21,7 @@ export function LangProvider({ children }) {
     document.documentElement.lang = lang === 'en' ? 'en' : 'pt-PT';
   }, [lang]);
 
-  const setLang = useCallback((next) => {
-    setLangState(next);
-    try {
-      window.localStorage.setItem('tq-lang', next);
-    } catch {
-      /* storage unavailable — choice lasts for this visit */
-    }
-  }, []);
+  const setLang = useCallback((next) => setLangState(next), []);
 
   const value = useMemo(() => ({ lang, setLang }), [lang, setLang]);
   return <LangContext.Provider value={value}>{children}</LangContext.Provider>;
