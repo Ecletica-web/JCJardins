@@ -1369,3 +1369,7 @@
     max-width: 32rem;
   }
 }
+
+.about__frames {
+  padding-bottom: 0;
+}

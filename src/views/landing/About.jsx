@@ -47,7 +47,6 @@ export default function About() {
 
         <div className="about__frames">
           <Photo image="tomasSplit" ratio="4 / 3" className="about__portrait" priority={false} />
-          <Photo image="tomasInRing" ratio="1 / 1" className="about__detail" compact />
         </div>
       </div>
 
