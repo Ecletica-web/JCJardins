@@ -1521,3 +1521,45 @@ body::before {
     align-items: end;
   }
 }
+
+/* ==========================================================================
+   Compact, interactive layout tweaks
+   ========================================================================== */
+
+.about__copy .discs {
+  margin-top: var(--space-2);
+}
+
+.method {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.method dt {
+  color: var(--linen);
+  font-weight: 500;
+}
+
+.method dd {
+  margin: 0.15rem 0 0;
+}
+
+.steps {
+  align-items: stretch;
+}
+
+.step {
+  border-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.format__tagline {
+  margin-top: var(--space-3);
+  font-size: var(--fs-small);
+  color: var(--ink-soft-on-dark);
+}
+
+.locations__copy .discs {
+  margin-top: var(--space-3);
+}

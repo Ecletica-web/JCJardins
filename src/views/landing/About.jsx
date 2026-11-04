@@ -2,6 +2,7 @@ import Photo from '../../components/Photo.jsx';
 import RealClip from '../../components/RealClip.jsx';
 import { Reveal } from '../../components/useReveal.jsx';
 import SectionTitle from './SectionTitle.jsx';
+import Disclosure from '../../components/Disclosure.jsx';
 import { useContent } from '../../i18n.jsx';
 
 export default function About() {
@@ -19,35 +20,34 @@ export default function About() {
 
         <div className="about__copy">
           <SectionTitle id="sobre-title" kicker={about.kicker} lines={about.title} />
-          <div className="about__text">
-            {about.paragraphs.map((p, i) => (
-              <p key={i} className={i === 0 ? 'lead about__fact' : 'soft'}>
-                {p}
-              </p>
-            ))}
-          </div>
+          <p className="lead about__fact">{about.paragraphs[0]}</p>
 
-          <div className="credentials">
-            {about.credentials.map((c) => (
-              <div key={c.group} className="credentials__group">
-                <h3 className="credentials__title">{c.group}</h3>
+          <div className="discs">
+            <Disclosure title={about.storyTitle} marker="01">
+              {about.paragraphs.slice(1).map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </Disclosure>
+            {about.credentials.map((c, i) => (
+              <Disclosure key={c.group} title={c.group} marker={String(i + 2).padStart(2, '0')}>
                 <ul role="list" className="credentials__list">
                   {c.items.map((it) => (
                     <li key={it}>{it}</li>
                   ))}
                 </ul>
-              </div>
+              </Disclosure>
             ))}
+            <Disclosure title={about.methodTitle} marker={String(about.credentials.length + 2).padStart(2, '0')}>
+              <dl className="method">
+                {about.principles.map((p) => (
+                  <div key={p.title}>
+                    <dt>{p.title}</dt>
+                    <dd>{p.text}</dd>
+                  </div>
+                ))}
+              </dl>
+            </Disclosure>
           </div>
-
-          <ul role="list" className="principles">
-            {about.principles.map((p, i) => (
-              <Reveal as="li" key={p.title} className="principle" delay={i * 90}>
-                <h3 className="principle__title">{p.title}</h3>
-                <p className="soft">{p.text}</p>
-              </Reveal>
-            ))}
-          </ul>
         </div>
       </div>
 

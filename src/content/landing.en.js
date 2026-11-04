@@ -24,8 +24,7 @@ export const hero = {
 export const experience = {
   kicker: 'The training',
   title: ['Competition technique,', 'taught with patience.'],
-  intro:
-    'Every session combines boxing and kickboxing technique, padwork, and strength and conditioning. You choose the focus: boxing, kickboxing, or both. The intensity adapts to you. The attention to detail stays the same.',
+  intro: 'Boxing, kickboxing, pads and strength. You choose the focus; the attention to detail stays the same.',
   pillars: [
     {
       n: '01',
@@ -63,6 +62,8 @@ export const interlude = {
 
 export const about = {
   kicker: 'About Tomás',
+  storyTitle: 'His path',
+  methodTitle: 'How he coaches',
   title: ['From the ring', 'to your training.'],
   paragraphs: [
     'Tomás competed in kickboxing and today prepares and corners athletes for competition. He is qualified in exercise and fitness, and as a boxing and kickboxing coach.',
@@ -138,7 +139,7 @@ export const firstSession = {
 export const inSession = {
   kicker: 'In session',
   title: ['Guided practice,', '*in real time.*'],
-  text: 'Padwork at the pace of someone who is learning. Tomás adjusts the distance, gives the right timing and corrects between combinations, unhurried and in good humour.',
+  text: 'Padwork at your pace, with corrections between combinations.',
   points: ['Corrections between combinations', 'Pace adjusted to each person', 'Relaxed atmosphere, real standards'],
   cta: 'Book your first session',
 };
@@ -168,8 +169,7 @@ export const formats = {
 export const locations = {
   kicker: 'Locations',
   title: ['At a place', 'we agree on.'],
-  intro:
-    'The training comes to you, discreetly. Before the first session, we agree on the place that works best, in Lisbon. Tomás brings the portable equipment needed.',
+  intro: 'The training comes to you, in Lisbon. We agree on the place; Tomás brings the kit.',
   options: [
     { title: 'At home', text: 'Living room, terrace, garden or by the pool. You only need room to take a few steps safely.' },
     { title: 'Outdoors', text: 'Under the pines, in a garden or near the sea, in a suitable spot close to you.' },
@@ -197,6 +197,8 @@ export const footer = {
 /* Interface strings (buttons, labels, form messages) */
 export const ui = {
   descriptor: 'Boxing · Kickboxing',
+  more: 'See more',
+  less: 'Close',
   lang: { label: 'Language', pt: 'PT', en: 'EN', ptName: 'Português', enName: 'English' },
   skip: 'Skip to content',
   home: 'Tomás Queiroz — home',

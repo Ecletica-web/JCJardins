@@ -23,8 +23,7 @@ export const hero = {
 export const experience = {
   kicker: 'O treino',
   title: ['Técnica de competição,', 'ensinada com paciência.'],
-  intro:
-    'Cada sessão junta técnica de boxe e kickboxing, trabalho de pads e força e condicionamento. Escolhes o foco: só boxe, só kickboxing, ou os dois. A intensidade ajusta-se a ti. A atenção ao detalhe é sempre a mesma.',
+  intro: 'Boxe, kickboxing, pads e força. Escolhes o foco; a atenção ao detalhe é sempre a mesma.',
   pillars: [
     {
       n: '01',
@@ -62,6 +61,8 @@ export const interlude = {
 
 export const about = {
   kicker: 'Sobre o Tomás',
+  storyTitle: 'O percurso',
+  methodTitle: 'Como treina',
   title: ['Do ringue', 'para o teu treino.'],
   paragraphs: [
     'O Tomás competiu em kickboxing e hoje prepara e acompanha atletas em competição. É formado em exercício físico e em treino de boxe e de kickboxing.',
@@ -137,7 +138,7 @@ export const firstSession = {
 export const inSession = {
   kicker: 'Em sessão',
   title: ['Prática guiada,', '*em tempo real.*'],
-  text: 'Pads ao ritmo de quem está a aprender. O Tomás ajusta a distância, dá o tempo certo e corrige entre combinações, sem pressa e com boa disposição.',
+  text: 'Pads ao teu ritmo, com correções entre combinações.',
   points: ['Correções entre combinações', 'Ritmo ajustado a cada pessoa', 'Ambiente descontraído, exigência real'],
   cta: 'Marcar a primeira sessão',
 };
@@ -167,8 +168,7 @@ export const formats = {
 export const locations = {
   kicker: 'Locais',
   title: ['No local', 'combinado.'],
-  intro:
-    'O treino vai até ti, com discrição. Antes da primeira sessão, combinamos o sítio que funciona melhor, em Lisboa. O Tomás leva o equipamento portátil necessário.',
+  intro: 'O treino vai até ti, em Lisboa. Combinamos o sítio; o Tomás leva o equipamento.',
   options: [
     { title: 'Em casa', text: 'Sala, terraço, jardim ou junto à piscina. Basta espaço para dar alguns passos em segurança.' },
     { title: 'Ao ar livre', text: 'Sob os pinheiros, num jardim ou perto do mar, num espaço adequado e perto de ti.' },
@@ -196,6 +196,8 @@ export const footer = {
 /* Interface strings (buttons, labels, form messages) */
 export const ui = {
   descriptor: 'Boxe · Kickboxing',
+  more: 'Ver mais',
+  less: 'Fechar',
   lang: { label: 'Idioma', pt: 'PT', en: 'EN', ptName: 'Português', enName: 'English' },
   skip: 'Saltar para o conteúdo',
   home: 'Tomás Queiroz — início',

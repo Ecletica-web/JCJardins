@@ -2,6 +2,7 @@ import Photo from '../../components/Photo.jsx';
 import RealClip from '../../components/RealClip.jsx';
 import { Reveal } from '../../components/useReveal.jsx';
 import SectionTitle from './SectionTitle.jsx';
+import Disclosure from '../../components/Disclosure.jsx';
 import { useContent } from '../../i18n.jsx';
 
 export default function FirstSession() {
@@ -17,13 +18,11 @@ export default function FirstSession() {
         <Photo image="firstConversation" ratio="21 / 9" className="first__photo" sizes="100vw" />
 
         <ol role="list" className="steps">
-          {firstSession.steps.map((s, i) => (
-            <Reveal as="li" key={s.title} className="step" delay={i * 90}>
-              <span className="step__n display" aria-hidden="true">
-                {i + 1}
-              </span>
-              <h3 className="step__title">{s.title}</h3>
-              <p className="soft">{s.text}</p>
+          {firstSession.steps.map((st, i) => (
+            <Reveal as="li" key={st.title} className="step" delay={i * 90}>
+              <Disclosure className="disc--box" marker={String(i + 1).padStart(2, '0')} title={st.title}>
+                <p>{st.text}</p>
+              </Disclosure>
             </Reveal>
           ))}
         </ol>
@@ -33,11 +32,6 @@ export default function FirstSession() {
           <div className="feature__body">
             <SectionTitle kicker={inSession.kicker} lines={inSession.title} as="h3" />
             <p className="lead soft">{inSession.text}</p>
-            <ul role="list" className="feature__points">
-              {inSession.points.map((pt) => (
-                <li key={pt}>{pt}</li>
-              ))}
-            </ul>
             <a className="btn" href="#contacto">
               {inSession.cta} <span className="btn__arrow" aria-hidden="true">→</span>
             </a>
