@@ -1,5 +1,5 @@
-/* Social links for the footer. Fill in the real addresses; a button only
-   appears once its url is set, so nothing points at a wrong account.
+/* Social links for the footer. Every button shows; one without a url is a
+   quiet placeholder ("coming soon") until its real address is filled in.
    Examples:
      instagram: 'https://www.instagram.com/HANDLE/'
      tiktok:    'https://www.tiktok.com/@HANDLE'

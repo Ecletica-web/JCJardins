@@ -3619,3 +3619,11 @@
   padding: 0;
   font-size: 0;
 }
+.socials__btn.is-pending {
+  cursor: default;
+}
+.socials__btn.is-pending:hover {
+  background: transparent;
+  border-color: rgb(var(--mist) / 0.45);
+  color: var(--linen);
+}

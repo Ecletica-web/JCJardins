@@ -204,6 +204,7 @@ export const ui = {
   close: 'Fechar',
   cta: 'Pedir uma sessão',
   contactLink: 'Contacto',
+  soon: 'em breve',
   heroNote: ['Pads', 'ao fim do dia, entre pinheiros'],
   stripLabel: 'O que inclui o treino',
   stripPlace: 'Lisboa · no local combinado',

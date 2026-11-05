@@ -23,24 +23,26 @@ export default function SiteFooter() {
               </li>
             </ul>
           </nav>
-          {socials.some((s) => s.url) && (
-            <ul role="list" className="socials" aria-label="Social">
-              {socials
-                .filter((s) => s.url)
-                .map((s) => (
-                  <li key={s.id}>
-                    <a
-                      className="socials__btn"
-                      href={s.url}
-                      aria-label={s.label}
-                      {...(s.url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                    >
-                      <SocialIcon id={s.id} />
-                    </a>
-                  </li>
-                ))}
-            </ul>
-          )}
+          <ul role="list" className="socials" aria-label="Social">
+            {socials.map((s) => (
+              <li key={s.id}>
+                {s.url ? (
+                  <a
+                    className="socials__btn"
+                    href={s.url}
+                    aria-label={s.label}
+                    {...(s.url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  >
+                    <SocialIcon id={s.id} />
+                  </a>
+                ) : (
+                  <span className="socials__btn is-pending" role="img" aria-label={`${s.label}: ${ui.soon}`} title={`${s.label} · ${ui.soon}`}>
+                    <SocialIcon id={s.id} />
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
           <p className="site-footer__small">© {new Date().getFullYear()} Tomás Queiroz · Lisboa</p>
         </div>
       </div>
