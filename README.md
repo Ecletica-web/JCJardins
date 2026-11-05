@@ -144,3 +144,13 @@ Also needed: hand-wrap close-ups, a strength set with a client and Tomás observ
 - The function forwards each request by email through Resend and stores nothing.
   It needs `RESEND_API_KEY`, `ENQUIRY_TO` and `ENQUIRY_FROM` in the Vercel project;
   until the key exists it answers "unconfigured" and the site shows the prototype note.
+
+## Search, link previews and socials
+
+- `index.html` holds the title, description, Open Graph / Twitter tags (link
+  previews use `public/og.jpg`, 1200x630) and JSON-LD structured data.
+- `public/robots.txt` and `public/sitemap.xml` point search engines at
+  https://tqboxing.com/. Update `lastmod` in the sitemap after big changes.
+- Footer social buttons come from `src/content/socials.js`; a button appears
+  only once its url is filled in. Add the same urls to `sameAs` in the JSON-LD.
+

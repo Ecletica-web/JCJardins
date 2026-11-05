@@ -182,7 +182,7 @@ export default function Contact() {
           }),
         });
         const data = await r.json().catch(() => ({}));
-        ok = data.reason === 'unconfigured' ? null : r.ok && data.ok === true;
+        ok = r.ok && data.ok === true;
       } catch {
         ok = false;
       }
@@ -318,6 +318,23 @@ export default function Contact() {
                 {ui.cta} <span className="btn__arrow" aria-hidden="true">→</span>
               </button>
             </div>
+          ) : submitted && delivered === false ? (
+            <div className="confirm confirm--failed" ref={confirmRef} tabIndex={-1} role="alert">
+              <p className="kicker">{f.confirm.failKicker}</p>
+              <h3 className="h2 confirm__title">
+                <span className="br">{f.confirm.failTitle[0]}</span>
+                <span className="br slant">{f.confirm.failTitle[1]}</span>
+              </h3>
+              <p className="soft">{f.confirm.failText}</p>
+              <div className="confirm__actions">
+                <button type="button" className="btn" onClick={submit} disabled={sending}>
+                  {sending ? f.sending : f.confirm.retry} <span className="btn__arrow" aria-hidden="true">→</span>
+                </button>
+                <button type="button" className="btn btn--ghost" onClick={() => reset(true)}>
+                  {f.confirm.edit}
+                </button>
+              </div>
+            </div>
           ) : submitted ? (
             <div className="confirm" ref={confirmRef} tabIndex={-1} role="status" aria-live="polite">
               <p className="kicker">{f.confirm.kicker}</p>
@@ -336,10 +353,10 @@ export default function Contact() {
                     </div>
                   ))}
               </dl>
-              {delivered !== true && (
+              {!ENDPOINT && (
                 <p className="form__demo">
                   <span className="form__demo-dot" aria-hidden="true" />
-                  {delivered === false ? f.confirm.failed : f.confirm.demo}
+                  {f.confirm.demo}
                 </p>
               )}
               <div className="confirm__actions">

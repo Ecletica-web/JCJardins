@@ -1,4 +1,6 @@
 import Mark from '../../components/Mark.jsx';
+import SocialIcon from '../../components/SocialIcon.jsx';
+import { socials } from '../../content/socials.js';
 import { useContent } from '../../i18n.jsx';
 
 export default function SiteFooter() {
@@ -21,6 +23,24 @@ export default function SiteFooter() {
               </li>
             </ul>
           </nav>
+          {socials.some((s) => s.url) && (
+            <ul role="list" className="socials" aria-label="Social">
+              {socials
+                .filter((s) => s.url)
+                .map((s) => (
+                  <li key={s.id}>
+                    <a
+                      className="socials__btn"
+                      href={s.url}
+                      aria-label={s.label}
+                      {...(s.url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    >
+                      <SocialIcon id={s.id} />
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          )}
           <p className="site-footer__small">© {new Date().getFullYear()} Tomás Queiroz · Lisboa</p>
         </div>
       </div>
