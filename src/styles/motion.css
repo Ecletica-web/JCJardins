@@ -2669,3 +2669,58 @@
     aspect-ratio: 1600 / 752 !important;
   }
 }
+
+/* ==========================================================================
+   Origin on desktop: the split photo is anchored to the top (face always in
+   frame, any crop comes off the bottom); the slider is smaller, borderless,
+   and sits bottom left above the story line
+   ========================================================================== */
+@media (min-width: 64rem) {
+  .origin__over {
+    gap: var(--space-4);
+  }
+  .origin__slider {
+    justify-content: flex-start;
+  }
+  .oslider {
+    width: min(34rem, 36vw);
+    gap: var(--space-2);
+  }
+  .oslider__stage {
+    aspect-ratio: 3 / 2;
+    background: transparent;
+    outline: none;
+  }
+  .oslider__backdrop {
+    display: none;
+  }
+  .oslider__photo > img {
+    object-position: 0% 100% !important; /* photos sit on the baseline, flush left */
+    filter: grayscale(1) contrast(1.08) brightness(0.92) drop-shadow(0 18px 40px rgb(0 0 0 / 0.55));
+  }
+  .oslider__photo .photo__grain {
+    display: none;
+  }
+  .oslider__btn {
+    opacity: 0;
+  }
+  .oslider__stage:hover .oslider__btn,
+  .oslider__btn:focus-visible {
+    opacity: 0.8;
+  }
+}
+
+/* desktop: nudge the split photo so the studio watermark at its top right
+   leaves the frame, and darken that corner so what remains disappears */
+@media (min-width: 64rem) {
+  .origin__photo > img,
+  .photo.origin__photo.is-loaded.is-visible > img {
+    transform: scale(1.18) !important;
+    transform-origin: 0 0;
+  }
+  .origin__shade {
+    background:
+      linear-gradient(to left, rgb(var(--shade) / 0.94) 0%, rgb(var(--shade) / 0.6) 14%, rgb(var(--shade) / 0) 38%),
+      linear-gradient(to top, rgb(var(--shade) / 0.96) 0%, rgb(var(--shade) / 0.6) 40%, rgb(var(--shade) / 0.1) 75%);
+  }
+}
