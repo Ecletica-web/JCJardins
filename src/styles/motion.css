@@ -2881,9 +2881,8 @@
 }
 
 /* ==========================================================================
-   Intro: the TQ mark alone in the centre, then its two strokes unfold into
-   the name. The T bar stretches into TOMÁS, the Q hook into QUEIROZ, and
-   each fades as its letters land. Travel distances are measured in JS.
+   Intro: the TQ mark alone in the centre, held, then it vanishes and the
+   name lands in its place
    ========================================================================== */
 .intro__stack {
   position: relative;
@@ -2895,52 +2894,37 @@
   left: 50%;
   top: 50%;
   height: clamp(4.5rem, 12vw, 8.5rem);
-  aspect-ratio: 895 / 774;
-  transform: translate(-50%, -50%);
+  translate: -50% -50%;
   color: var(--linen);
-  pointer-events: none;
-}
-.intro__stroke {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
   opacity: 0;
-  animation: intro-unfold 2.2s cubic-bezier(0.7, 0, 0.2, 1) forwards;
+  pointer-events: none;
+  animation: intro-mark 2.5s var(--ease-out) forwards;
 }
-.intro__stroke--q {
-  animation-delay: 0.06s;
-}
-@keyframes intro-unfold {
+@keyframes intro-mark {
   0% {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.94);
   }
-  22% {
+  24% {
     opacity: 1;
     transform: none;
   }
-  50% {
+  76% {
     opacity: 1;
     transform: none;
-  }
-  82% {
-    opacity: 0.9;
-    transform: translate(var(--dx, 0), var(--dy, 0)) scale(var(--sx, 1), var(--sy, 1));
   }
   100% {
     opacity: 0;
-    transform: translate(var(--dx, 0), var(--dy, 0)) scale(var(--sx, 1), var(--sy, 1));
+    transform: scale(1.04);
   }
 }
-/* letters land as the strokes arrive and dissolve into them */
 .intro .wordmark__ch {
-  animation-delay: calc(1.55s + var(--i) * 40ms);
+  animation-delay: calc(2.55s + var(--i) * 55ms);
 }
 .intro .wordmark-lockup__descriptor {
-  animation-delay: 2.15s;
+  animation-delay: 3.35s;
 }
-.intro--out .intro__stroke {
+.intro--out .intro__logo {
   animation: none;
   opacity: 0;
 }
