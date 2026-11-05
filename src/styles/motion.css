@@ -2653,6 +2653,11 @@
    full width underneath
    ========================================================================== */
 @media (min-width: 64rem) {
+  /* the title follows straight on from the Day one photo: no full section
+     gap above it */
+  .formats.section {
+    padding-top: clamp(3rem, 5vw, 4.5rem);
+  }
   .formats__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-3);
