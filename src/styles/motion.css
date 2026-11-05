@@ -2814,3 +2814,68 @@
     white-space: nowrap;
   }
 }
+
+/* ==========================================================================
+   Day one, desktop: the in-session clip stands on the right with its copy
+   on the footage; the booking button sits under it on the photo
+   ========================================================================== */
+@media (min-width: 48rem) {
+  .first__session {
+    max-width: none;
+    gap: var(--space-3);
+  }
+  .first__clip {
+    position: relative;
+    width: min(22rem, 46vw);
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--pine-900);
+  }
+  .first__clip .real-clip {
+    aspect-ratio: 3 / 4 !important;
+  }
+  .first__clip-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(to top, rgb(var(--shade) / 0.94) 0%, rgb(var(--shade) / 0.55) 40%, rgb(var(--shade) / 0.05) 72%);
+  }
+  .first__clip-over {
+    position: absolute;
+    z-index: 3;
+    inset: auto 0 0 0;
+    display: grid;
+    gap: var(--space-2);
+    padding: clamp(1rem, 2vw, 1.5rem);
+  }
+  .first__clip-over .section-title {
+    margin: 0;
+  }
+  .first__clip-over .h2,
+  .first__clip-over h3 {
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+  }
+  .first__session-text {
+    font-size: var(--fs-small);
+    max-width: 32ch;
+  }
+  .first__clip .real-clip__toggle {
+    z-index: 4;
+  }
+  .first__session .btn {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 64rem) {
+  .first__session {
+    grid-row: 1 / 4;
+  }
+  .first__clip {
+    width: min(26rem, 28vw);
+  }
+  .first .stage__body {
+    padding-top: clamp(5rem, 10vh, 7rem);
+  }
+}
