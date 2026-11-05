@@ -3248,3 +3248,57 @@
     line-height: 1.06;
   }
 }
+
+/* desktop: once the form opens it moves to the right, over Tomás, on a
+   smoked-glass panel; the headline stays on the left */
+@media (min-width: 64rem) {
+  .contact:has(.flow, .confirm) .contact__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 36rem) !important;
+    column-gap: clamp(2rem, 5vw, 5rem);
+    align-items: end;
+    justify-items: stretch;
+  }
+  .contact:has(.flow, .confirm) .contact__intro {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+  }
+  .contact:has(.flow, .confirm) .contact__panel {
+    grid-column: 2 !important;
+    grid-row: 1;
+    max-width: none;
+    padding: clamp(1.5rem, 2.5vw, 2.25rem);
+    background: rgb(var(--shade) / 0.58);
+    -webkit-backdrop-filter: blur(14px) saturate(0.8);
+    backdrop-filter: blur(14px) saturate(0.8);
+    border: 1px solid rgb(var(--mist) / 0.12);
+    animation: panel-in 0.7s var(--ease-out) both;
+  }
+  .contact:has(.flow, .confirm) .contact__shade {
+    background:
+      linear-gradient(to right, rgb(var(--shade) / 0.92) 0%, rgb(var(--shade) / 0.6) 40%, rgb(var(--shade) / 0.15) 70%),
+      linear-gradient(to top, rgb(var(--shade) / 0.85) 0%, rgb(var(--shade) / 0) 45%);
+  }
+  @keyframes panel-in {
+    from {
+      opacity: 0;
+      transform: translateX(1.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+@media (min-width: 64rem) {
+  .contact__panel .flow__actions .btn,
+  .contact__panel .flow__enter {
+    white-space: nowrap;
+  }
+  .contact__panel .flow__actions .btn--ghost {
+    flex-direction: row;
+  }
+  .contact__panel .flow__enter {
+    font-size: 0.8rem;
+  }
+}
