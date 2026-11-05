@@ -275,7 +275,7 @@
 .marquee__inner {
   display: flex;
   width: max-content;
-  animation: marquee 48s linear infinite;
+  animation: marquee 120s linear infinite;
 }
 
 .marquee:hover .marquee__inner {
@@ -2881,40 +2881,68 @@
 }
 
 /* ==========================================================================
-   Intro: the mark alone in the centre, then it rises and the name unfolds
+   Intro: the TQ mark alone in the centre, then its two strokes unfold into
+   the name. The T bar stretches into TOMÁS, the Q hook into QUEIROZ, and
+   each fades as its letters land. Travel distances are measured in JS.
    ========================================================================== */
-.intro {
-  --intro-fs: clamp(2.4rem, 9vw, 6rem);
+.intro__stack {
+  position: relative;
+  display: grid;
+  place-items: center;
 }
 .intro__logo {
-  opacity: 0;
-  animation: intro-logo 1.5s var(--ease-out) forwards;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: clamp(4.5rem, 12vw, 8.5rem);
+  aspect-ratio: 895 / 774;
+  transform: translate(-50%, -50%);
+  color: var(--linen);
+  pointer-events: none;
 }
-@keyframes intro-logo {
+.intro__stroke {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: intro-unfold 2.2s cubic-bezier(0.7, 0, 0.2, 1) forwards;
+}
+.intro__stroke--q {
+  animation-delay: 0.06s;
+}
+@keyframes intro-unfold {
   0% {
     opacity: 0;
-    transform: translateY(calc(var(--intro-fs) * 1.5)) scale(0.92);
+    transform: scale(0.9);
   }
-  40% {
-    opacity: 1;
-    transform: translateY(calc(var(--intro-fs) * 1.5)) scale(1);
-  }
-  62% {
-    transform: translateY(calc(var(--intro-fs) * 1.5));
-  }
-  100% {
+  22% {
     opacity: 1;
     transform: none;
   }
+  50% {
+    opacity: 1;
+    transform: none;
+  }
+  82% {
+    opacity: 0.9;
+    transform: translate(var(--dx, 0), var(--dy, 0)) scale(var(--sx, 1), var(--sy, 1));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx, 0), var(--dy, 0)) scale(var(--sx, 1), var(--sy, 1));
+  }
 }
-.intro .wordmark__ch,
+/* letters land as the strokes arrive and dissolve into them */
+.intro .wordmark__ch {
+  animation-delay: calc(1.55s + var(--i) * 40ms);
+}
 .intro .wordmark-lockup__descriptor {
-  animation-delay: calc(1.15s + var(--i) * 55ms);
+  animation-delay: 2.15s;
 }
-.intro--out .intro__logo {
+.intro--out .intro__stroke {
   animation: none;
   opacity: 0;
-  transform: translateY(-6vh);
 }
 
 /* header and footer: the mark alone */
@@ -2959,25 +2987,19 @@
   .origin__row .disc--over .disc__inner {
     --w: min(34rem, 36vw);
     display: grid;
-    grid-template-columns: minmax(0, 1fr) calc(var(--w) + 2.5rem);
-    grid-template-rows: auto auto;
-    row-gap: var(--space-4);
+    grid-template-columns: minmax(0, 1fr);
     align-content: end;
-    height: calc(100svh - 13rem);
+    row-gap: var(--space-4);
+    margin-right: calc(var(--w) + 3rem);
+    max-height: calc(100svh - 13rem);
     overflow: auto;
     overscroll-behavior: contain;
     padding-bottom: var(--space-4);
   }
   .origin__row .story {
-    grid-column: 1 / -1;
-    grid-row: 1;
     max-width: none;
   }
   .origin__row .credentials {
-    grid-column: 1;
-    grid-row: 2;
-    align-self: start;
-    min-height: calc(var(--w) * 0.667 + 0.7rem);
     margin: 0;
   }
   .origin__row .story p {
