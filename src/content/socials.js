@@ -9,5 +9,5 @@ export const socials = [
   { id: 'instagram', label: 'Instagram', url: '' },
   { id: 'tiktok', label: 'TikTok', url: '' },
   { id: 'whatsapp', label: 'WhatsApp', url: '' },
-  { id: 'email', label: 'Email', url: '' },
+  { id: 'email', label: 'Email', url: 'mailto:info@tqboxing.com' },
 ];
