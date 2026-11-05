@@ -278,8 +278,10 @@
   animation: marquee 120s linear infinite;
 }
 
-.marquee:hover .marquee__inner {
-  animation-play-state: paused;
+@media (hover: hover) and (pointer: fine) {
+  .marquee:hover .marquee__inner {
+    animation-play-state: paused;
+  }
 }
 
 .marquee__track {
@@ -3478,5 +3480,60 @@
     inset: auto 0 3.5rem 0;
     max-height: 50%;
     padding: 0.9rem 1rem 0.6rem;
+  }
+}
+
+/* strip on phones: keep it moving, slowly */
+@media (max-width: 47.99rem) {
+  .marquee__inner {
+    animation-duration: 220s;
+    will-change: transform;
+  }
+}
+
+/* Day one on phones: let touches reach the swipeable media */
+@media (max-width: 47.99rem) {
+  .first .stage__shade,
+  .first .stage__photo::after,
+  .first .photo__grain {
+    pointer-events: none;
+  }
+  .first .parallax {
+    animation: none;
+    transform: none;
+  }
+  .first__track {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+  }
+  .first__slide {
+    scroll-snap-stop: always;
+  }
+  .first__dots {
+    pointer-events: auto;
+    gap: 0;
+    top: calc(var(--header-h, 4.5rem) + 0.25rem);
+    right: calc(var(--gutter) - 0.6rem);
+  }
+  .first__dots button {
+    display: grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+  .first__dots button span {
+    display: block;
+    width: 1.6rem;
+    height: 2px;
+    background: rgb(232 228 218 / 0.35);
+    transition: background-color 0.3s var(--ease-out);
+  }
+  .first__dots button.is-active span {
+    background: var(--linen);
   }
 }

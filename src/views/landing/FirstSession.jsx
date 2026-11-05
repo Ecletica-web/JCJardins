@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Photo from '../../components/Photo.jsx';
 import RealClip from '../../components/RealClip.jsx';
 import SectionTitle from './SectionTitle.jsx';
@@ -12,6 +12,11 @@ import { useContent } from '../../i18n.jsx';
 export default function FirstSession() {
   const { firstSession, inSession, ui } = useContent();
   const [slide, setSlide] = useState(0);
+  const trackRef = useRef(null);
+  const goTo = (i) => {
+    const t = trackRef.current;
+    if (t) t.scrollTo({ left: i * t.clientWidth, behavior: 'smooth' });
+  };
   const onScroll = (e) => {
     const el = e.currentTarget;
     setSlide(Math.round(el.scrollLeft / Math.max(1, el.clientWidth)));
@@ -20,7 +25,7 @@ export default function FirstSession() {
     <section className="first on-dark" id="primeira-sessao" aria-labelledby="primeira-title">
       <div className="stage stage--tall">
         <div className="first__media">
-          <div className="first__track" onScroll={onScroll} aria-label={ui.slidesLabel}>
+          <div className="first__track" ref={trackRef} onScroll={onScroll} aria-label={ui.slidesLabel}>
             <div className="first__slide">
               <Photo image="tomasKickGarden" ratio="auto" className="stage__photo parallax" sizes="100vw" eager focus="45% 14%" />
             </div>
@@ -28,9 +33,19 @@ export default function FirstSession() {
               <RealClip video="real-coaching" ratio="auto" focus="50% 40%" label={false} />
             </div>
           </div>
-          <div className="first__dots" aria-hidden="true">
-            <span className={slide === 0 ? 'is-active' : ''} />
-            <span className={slide === 1 ? 'is-active' : ''} />
+          <div className="first__dots">
+            {[ui.prev, ui.next].map((label, i) => (
+              <button
+                key={label}
+                type="button"
+                className={slide === i ? 'is-active' : ''}
+                aria-label={label}
+                aria-pressed={slide === i}
+                onClick={() => goTo(i)}
+              >
+                <span />
+              </button>
+            ))}
           </div>
         </div>
         <div className="stage__shade" aria-hidden="true" />
