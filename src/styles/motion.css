@@ -2575,3 +2575,97 @@
 .origin__photo.is-loaded > img {
   opacity: 1;
 }
+
+/* ==========================================================================
+   Day one hosts the in-session note and the booking button (tablet up)
+   ========================================================================== */
+.first__session {
+  display: none;
+}
+
+@media (min-width: 48rem) {
+  .craft__close {
+    display: none;
+  }
+  /* breathing room between the 2x2 and the stage */
+  .experience.section {
+    padding-bottom: clamp(5rem, 10vw, 9rem);
+  }
+  .first .stage {
+    min-height: max(100svh, 54rem);
+    align-items: stretch;
+  }
+  .first .stage__body {
+    min-height: 100%;
+    padding-top: clamp(6rem, 12vh, 9rem);
+  }
+  .first__session {
+    display: grid;
+    gap: var(--space-3);
+    justify-items: start;
+    max-width: 32rem;
+  }
+  .first__session .section-title {
+    margin: 0;
+  }
+  .first__session-text {
+    max-width: 36ch;
+    font-size: var(--fs-lead);
+    color: var(--ink-soft-on-dark);
+  }
+  .first__session .btn {
+    margin-top: var(--space-2);
+  }
+  /* darken the top right so the note reads on the wall */
+  .first .stage__shade {
+    background:
+      linear-gradient(to bottom, rgb(var(--shade) / 0.72) 0%, rgb(var(--shade) / 0.3) 30%, rgb(var(--shade) / 0) 50%),
+      linear-gradient(to top, rgb(var(--shade) / 0.94) 0%, rgb(var(--shade) / 0.55) 32%, rgb(var(--shade) / 0.08) 62%);
+  }
+}
+
+@media (min-width: 64rem) {
+  .first .stage__body {
+    grid-template-rows: minmax(0, 1fr) auto auto auto;
+    row-gap: var(--space-4);
+  }
+  .first__session {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    justify-self: end;
+  }
+  .first .stage__body > .section-title {
+    grid-row: 2;
+  }
+  .first .stage__body > .stage__intro {
+    grid-row: 3;
+  }
+  .first .stage__body > .sequence {
+    grid-row: 4;
+  }
+}
+
+/* ==========================================================================
+   Classes on desktop: landscape photos shown nearly whole; the group runs
+   full width underneath
+   ========================================================================== */
+@media (min-width: 64rem) {
+  .formats__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+  }
+  .format,
+  .format:nth-child(2) {
+    margin-top: 0;
+  }
+  .format:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+  .format .rcard .photo {
+    aspect-ratio: 16 / 10 !important;
+  }
+  .format:nth-child(3) .rcard .photo {
+    aspect-ratio: 1600 / 752 !important;
+  }
+}
