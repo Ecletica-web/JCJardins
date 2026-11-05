@@ -3537,3 +3537,43 @@
     background: var(--linen);
   }
 }
+
+/* Classes on phones: the open card always shows its whole text (it sizes
+   to the copy, about half the card at normal text size), and the title
+   bar keeps only the +/× icon so long names never get clipped */
+@media (max-width: 63.99rem) {
+  .format .rcard__panel {
+    max-height: calc(100% - 3.5rem);
+    overflow: hidden;
+  }
+  .format .rcard__panel-inner {
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    line-height: 1.38;
+  }
+  .format .rcard__panel-inner ul {
+    gap: 0.05rem;
+    margin-top: 0.2rem;
+  }
+  .format .rcard__hint {
+    display: none;
+  }
+  .format .rcard__title {
+    font-size: clamp(0.95rem, 4.4vw, 1.2rem);
+    white-space: nowrap;
+  }
+  .format .rcard__trigger {
+    gap: 0.6rem;
+  }
+}
+@media (max-width: 63.99rem) {
+  .format .rcard__title {
+    font-size: min(4.3vw, 1.2rem);
+  }
+}
+/* all reveal cards on phones: the +/× icon alone, no "See more / Close" */
+@media (max-width: 63.99rem) {
+  .rcard__hint {
+    display: none !important;
+  }
+}
