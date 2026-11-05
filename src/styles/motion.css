@@ -3302,3 +3302,181 @@
     font-size: 0.8rem;
   }
 }
+
+/* ==========================================================================
+   Phone feedback round
+   ========================================================================== */
+
+/* intro: the name always fits the screen, so mark and name share a centre */
+.intro__mark {
+  font-size: min(clamp(2.4rem, 9vw, 6rem), calc((100vw - 3rem) / 7.6));
+}
+
+/* Day one media: one photo on desktop; on phones photo -> clip by swipe */
+.first__media {
+  position: absolute;
+  inset: 0;
+}
+.first__track {
+  position: absolute;
+  inset: 0;
+}
+.first__slide {
+  position: absolute;
+  inset: 0;
+}
+.first__slide--clip,
+.first__dots {
+  display: none;
+}
+.first__slide .real-clip {
+  position: absolute !important;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto !important;
+}
+.first__cta {
+  justify-self: start;
+}
+
+@media (max-width: 47.99rem) {
+  .first__track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .first__track::-webkit-scrollbar {
+    display: none;
+  }
+  .first__slide {
+    position: relative;
+    inset: auto;
+    flex: 0 0 100%;
+    height: 100%;
+    scroll-snap-align: start;
+  }
+  .first__slide--clip {
+    display: block;
+  }
+  .first__dots {
+    position: absolute;
+    z-index: 4;
+    top: calc(var(--header-h, 4.5rem) + 1rem);
+    right: var(--gutter);
+    display: flex;
+    gap: 0.35rem;
+    pointer-events: none;
+  }
+  .first__dots span {
+    width: 1.4rem;
+    height: 2px;
+    background: rgb(232 228 218 / 0.35);
+    transition: background-color 0.3s var(--ease-out);
+  }
+  .first__dots span.is-active {
+    background: var(--linen);
+  }
+  /* the copy sits over the lower half; let swipes through it */
+  .first .stage__body {
+    pointer-events: none;
+  }
+  .first .stage__body a,
+  .first .stage__body button {
+    pointer-events: auto;
+  }
+  .first__slide .real-clip__toggle {
+    top: calc(var(--header-h, 4.5rem) + 2.25rem);
+  }
+}
+
+@media (min-width: 48rem) {
+  .first__cta {
+    display: none;
+  }
+}
+
+/* Classes on phones: smaller cards */
+@media (max-width: 63.99rem) {
+  .format {
+    flex: 0 0 72vw !important;
+  }
+  .format .rcard .photo {
+    aspect-ratio: 1 / 1 !important;
+  }
+  .format .rcard__panel-inner {
+    font-size: 0.84rem;
+  }
+}
+
+/* Places on phones: smaller type */
+@media (max-width: 47.99rem) {
+  .locations .section-title .h2 {
+    font-size: clamp(1.7rem, 7.6vw, 2.1rem);
+  }
+  .locations .places__intro {
+    font-size: 0.95rem;
+  }
+  .locations .places__list {
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    line-height: 1.9;
+  }
+}
+
+/* Footer on phones: the mark and everything else on one row */
+@media (max-width: 47.99rem) {
+  .site-footer {
+    padding-block: var(--space-6) calc(var(--space-6) + 3rem);
+  }
+  .site-footer__grid {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: start;
+  }
+  .site-footer__logo {
+    height: 2.1rem;
+  }
+  .site-footer__info {
+    gap: 0.45rem;
+    align-content: start;
+  }
+  .site-footer__info p {
+    font-size: 0.72rem;
+    margin: 0;
+  }
+  .site-footer__info ul {
+    gap: 0 0.8rem;
+  }
+  .site-footer__info a {
+    font-size: 0.74rem;
+    padding-block: 0.15rem;
+  }
+}
+
+/* intro descriptor on phones: same fit as the hero */
+@media (max-width: 47.99rem) {
+  .intro .wordmark-lockup--stacked .wordmark-lockup__descriptor {
+    --d: max(0.56rem, 0.14em);
+    letter-spacing: 0.5em;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 23.5rem) {
+  .intro .wordmark-lockup--stacked .wordmark-lockup__descriptor {
+    --d: 0.5rem;
+    letter-spacing: 0.42em;
+  }
+}
+
+/* Classes on phones: the opened text stops above the title bar so the two
+   never overlap; the text area is capped at half the card */
+@media (max-width: 63.99rem) {
+  .format .rcard__panel {
+    inset: auto 0 3.5rem 0;
+    max-height: 50%;
+    padding: 0.9rem 1rem 0.6rem;
+  }
+}

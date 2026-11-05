@@ -160,8 +160,8 @@ export const formats = {
 
 export const locations = {
   kicker: 'Lugares',
-  title: ['Onde for', '*combinado.*'],
-  intro: 'Lisboa. O lugar combina-se; o equipamento vem connosco.',
+  title: ['Onde?', '*Onde for combinado.*'],
+  intro: 'Lisboa. O equipamento vem connosco.',
   strip: ['Em casa', 'Ao ar livre', 'No teu prédio ou empresa', 'Espaço interior, a confirmar'],
   options: [
     { title: 'Em casa', text: 'Uma sala, um terraço, um jardim. Basta espaço para alguns passos.' },

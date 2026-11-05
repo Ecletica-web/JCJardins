@@ -161,8 +161,8 @@ export const formats = {
 
 export const locations = {
   kicker: 'Places',
-  title: ['Wherever', '*we agree.*'],
-  intro: 'Lisbon. The place is agreed; the kit comes with us.',
+  title: ['Where?', '*Wherever we agree.*'],
+  intro: 'Lisbon. The kit comes with us.',
   strip: ['At home', 'Outdoors', 'Your building or workplace', 'Indoor space, to be confirmed'],
   options: [
     { title: 'At home', text: 'A living room, a terrace, a garden. Room for a few steps is enough.' },

@@ -50,7 +50,7 @@ function CraftPanels({ pillars }) {
 }
 
 export default function Experience() {
-  const { experience, inSession, ui } = useContent();
+  const { experience } = useContent();
   return (
     <section className="section experience on-dark" id="treino" aria-labelledby="treino-title">
       <div className="wrap">
@@ -81,14 +81,6 @@ export default function Experience() {
           ))}
         </ol>
 
-        <div className="feature feature--over feature--vertical craft__close">
-          <div className="feature__frame">
-            <RealClip video="real-coaching" ratio="3 / 4" className="feature__clip" focus="50% 45%" />
-          </div>
-          <a className="btn feature__cta" href="#contacto">
-            {inSession.cta} <span className="btn__arrow" aria-hidden="true">→</span>
-          </a>
-        </div>
       </div>
     </section>
   );
