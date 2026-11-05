@@ -3627,3 +3627,61 @@
   border-color: rgb(var(--mist) / 0.45);
   color: var(--linen);
 }
+
+/* Footer on desktop: one row at the mark's height */
+@media (min-width: 64rem) {
+  .site-footer {
+    padding-block: clamp(2.25rem, 4vw, 3rem) calc(clamp(2.25rem, 4vw, 3rem) + 1rem);
+  }
+  .site-footer__grid {
+    display: flex !important;
+    align-items: center;
+    gap: clamp(1.5rem, 3vw, 3rem);
+  }
+  .site-footer__logo {
+    flex: none;
+    height: 2.75rem;
+  }
+  .site-footer__info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(1rem, 2.4vw, 2.5rem);
+    min-width: 0;
+  }
+  .site-footer__info > p {
+    margin: 0;
+    white-space: nowrap;
+    font-size: 0.85rem;
+  }
+  .site-footer__info ul {
+    flex-wrap: nowrap;
+    gap: 0 clamp(0.9rem, 1.6vw, 1.5rem);
+  }
+  .site-footer__info nav a {
+    font-size: 0.9rem;
+    white-space: nowrap;
+    padding-block: 0.25rem;
+  }
+  .socials {
+    flex: none;
+    gap: 0.5rem;
+  }
+  .site-footer__info a.socials__btn,
+  .socials__btn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .site-footer__small {
+    font-size: 0.8rem !important;
+  }
+}
+@media (min-width: 64rem) and (max-width: 79.99rem) {
+  .site-footer__info > p:first-child {
+    display: none;
+  }
+  .site-footer__info {
+    gap: 1.25rem;
+  }
+}
