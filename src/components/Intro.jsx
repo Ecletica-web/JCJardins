@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Wordmark from './Wordmark.jsx';
+import Mark from './Mark.jsx';
 import { useContent } from '../i18n.jsx';
 
 /* Opening sequence: black, the name letter by letter, then the veil
@@ -50,6 +51,7 @@ export default function Intro() {
   if (stage === 'done') return null;
   return (
     <div className={`intro intro--${stage}`} aria-hidden="true">
+      <Mark className="intro__logo" />
       <Wordmark layout="stacked" descriptor={ui.descriptor} letters className="intro__mark" />
     </div>
   );

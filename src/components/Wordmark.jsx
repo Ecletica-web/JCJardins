@@ -1,3 +1,5 @@
+import Mark from './Mark.jsx';
+
 /* Tomás Queiroz wordmark
    ----------------------
    • Wide, quiet capitals (Archivo at 125 % width).
@@ -93,13 +95,8 @@ export default function Wordmark({
 export function Monogram({ tone = 'light', className = '', size }) {
   const style = size ? { fontSize: size } : undefined;
   return (
-    <span className={`monogram monogram--${tone} ${className}`} style={style} role="img" aria-label="TQ — monograma Tomás Queiroz">
-      <span className="monogram__t" aria-hidden="true">
-        T<span className="wordmark__acute monogram__acute" />
-      </span>
-      <span className="monogram__q" aria-hidden="true">
-        Q
-      </span>
+    <span className={`monogram monogram--${tone} ${className}`} style={style}>
+      <Mark label="TQ — monograma Tomás Queiroz" />
     </span>
   );
 }

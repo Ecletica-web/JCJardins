@@ -2724,3 +2724,93 @@
       linear-gradient(to top, rgb(var(--shade) / 0.96) 0%, rgb(var(--shade) / 0.6) 40%, rgb(var(--shade) / 0.1) 75%);
   }
 }
+
+/* ==========================================================================
+   The TQ mark
+   ========================================================================== */
+.mark {
+  display: block;
+  height: 1em;
+  width: auto;
+  aspect-ratio: 895 / 774;
+  fill: currentColor;
+}
+
+/* header: mark before the name */
+.site-header__home {
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--linen);
+}
+.site-header__logo {
+  height: 1.3rem;
+  flex: none;
+}
+
+/* hero: the mark sits above the name and fades in first */
+.hero__logo {
+  height: clamp(2.2rem, 4.2vw, 3.4rem);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  color: var(--linen);
+  opacity: 0;
+  transform: translateY(0.35em);
+  animation: letter-in 0.9s var(--ease-out) forwards;
+  animation-delay: 0.05s;
+}
+.is-intro .hero__logo {
+  animation-play-state: paused;
+}
+
+/* intro veil: mark over the letters, lifts away with them */
+.intro {
+  align-content: center;
+  gap: clamp(1.2rem, 3vw, 2rem);
+}
+.intro__logo {
+  height: clamp(2.6rem, 7vw, 5rem);
+  color: var(--linen);
+  transition: transform 0.9s var(--ease-out), opacity 0.6s var(--ease-out);
+}
+.intro--out .intro__logo {
+  transform: translateY(-6vh);
+  opacity: 0;
+}
+
+/* footer */
+.site-footer__brand {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: start;
+}
+.site-footer__logo {
+  height: clamp(2.2rem, 4vw, 3.2rem);
+  color: var(--linen);
+}
+
+/* monogram tile (brand page, avatar): the mark sits inside the square */
+.monogram .mark {
+  height: 0.54em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__logo {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* phones: mark + name must share the bar with PT/EN and the menu button */
+@media (max-width: 47.99rem) {
+  .site-header__home {
+    gap: 0.55rem;
+    min-width: 0;
+  }
+  .site-header__logo {
+    height: 1.15rem;
+  }
+  .site-header__home .wordmark--inline {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+}
