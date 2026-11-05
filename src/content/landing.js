@@ -250,6 +250,7 @@ export const ui = {
     availabilityPlaceholder: 'Dias ou horas preferidos (opcional)',
     format: 'Formato',
     submit: 'Pedir uma sessão',
+    sending: 'A enviar…',
     required: 'Campos com * são necessários.',
     errors: {
       name: 'Indica o teu nome.',
@@ -264,6 +265,7 @@ export const ui = {
       title: ['Obrigado.', 'Em breve falamos.'],
       text: 'Vais receber uma resposta com os próximos passos: a primeira conversa, o local e a data.',
       demo: 'Protótipo: este pedido não foi enviado nem guardado.',
+      failed: 'Não foi possível enviar o pedido. Tenta de novo daqui a pouco.',
       restart: 'Começar de novo',
     },
   },

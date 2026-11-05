@@ -2507,3 +2507,6 @@
     margin-inline: var(--gutter);
   }
 }
+
+/* Form button while a request is in flight */
+.btn:disabled { opacity: 0.55; cursor: progress; pointer-events: none; }

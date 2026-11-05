@@ -135,3 +135,12 @@ Every page and post updates automatically.
 Also needed: hand-wrap close-ups, a strength set with a client and Tomás observing, a wide outdoor scene at dusk (pines, dune path or garden), and breath and sweat between rounds.
 
 **Across the set:** low sun through pines, soft window light and blue hour; believable skin; muted, cool-leaning colour (never orange or glossy); fine grain; deep shadows that keep detail. Private settings only: no signage, logos or recognisable venues. Mix wide, medium and close frames, sharp coaching and some motion blur. At least half should show coaching or client practice. Clients should be ordinary adults of different ages and levels, with model releases.
+
+## Hosting and the enquiry form
+
+- Hosted on Vercel (project `tomas-queiroz`), built with `npm run build`, output `dist`.
+- The form posts to `api/enquiry.js` (a Vercel function) only when the build has
+  `VITE_FORM_ENDPOINT=/api/enquiry`. Without it the form stays a local prototype.
+- The function forwards each request by email through Resend and stores nothing.
+  It needs `RESEND_API_KEY`, `ENQUIRY_TO` and `ENQUIRY_FROM` in the Vercel project;
+  until the key exists it answers "unconfigured" and the site shows the prototype note.

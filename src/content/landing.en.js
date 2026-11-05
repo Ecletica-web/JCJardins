@@ -251,6 +251,7 @@ export const ui = {
     availabilityPlaceholder: 'Preferred days or times (optional)',
     format: 'Format',
     submit: 'Request a session',
+    sending: 'Sending…',
     required: 'Fields marked * are required.',
     errors: {
       name: 'Enter your name.',
@@ -265,6 +266,7 @@ export const ui = {
       title: ['Thank you.', 'We’ll be in touch.'],
       text: 'You’ll hear back with the next steps: the first conversation, the place and the date.',
       demo: 'Prototype: this request was not sent or stored.',
+      failed: 'The request could not be sent. Please try again in a moment.',
       restart: 'Start again',
     },
   },

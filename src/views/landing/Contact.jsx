@@ -8,6 +8,10 @@ import { useContent } from '../../i18n.jsx';
    says so. Chip selections are stored by position so they survive a
    language switch. */
 
+/* Set VITE_FORM_ENDPOINT (e.g. /api/enquiry) to send requests for real;
+   without it the form stays a local prototype and nothing leaves the page. */
+const ENDPOINT = import.meta.env.VITE_FORM_ENDPOINT || '';
+
 const STEPS = ['nome', 'contacto', 'zona', 'objetivos', 'disponibilidade', 'formato', 'review'];
 
 const empty = {
@@ -72,6 +76,8 @@ export default function Contact() {
   const [dir, setDir] = useState(1);
   const [error, setError] = useState('');
   const [submitted, setSubmitted] = useState(null);
+  const [sending, setSending] = useState(false);
+  const [delivered, setDelivered] = useState(null);
   const [furthest, setFurthest] = useState(0);
   const [started, setStarted] = useState(false);
   const id = useId();
@@ -152,8 +158,37 @@ export default function Contact() {
     else next();
   };
 
-  const submit = () => {
-    setSubmitted({ ...values });
+  const submit = async () => {
+    if (sending) return;
+    const snapshot = { ...values };
+    let ok = null;
+    if (ENDPOINT) {
+      setSending(true);
+      try {
+        const r = await fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: snapshot.nome,
+            contact: snapshot.contacto,
+            area: snapshot.zona,
+            goals: pick(contact.goals, snapshot.objetivos),
+            goalsNote: snapshot.objetivosTexto,
+            availability: pick(contact.availability, snapshot.disponibilidade),
+            availabilityNote: snapshot.disponibilidadeTexto,
+            format: snapshot.formato === null ? '' : contact.formats[snapshot.formato],
+            lang: document.documentElement.lang,
+          }),
+        });
+        const data = await r.json().catch(() => ({}));
+        ok = data.reason === 'unconfigured' ? null : r.ok && data.ok === true;
+      } catch {
+        ok = false;
+      }
+      setSending(false);
+    }
+    setDelivered(ok);
+    setSubmitted(snapshot);
     window.requestAnimationFrame(() => confirmRef.current?.focus());
   };
 
@@ -163,6 +198,7 @@ export default function Contact() {
       setFurthest(0);
     }
     setSubmitted(null);
+    setDelivered(null);
     setError('');
     setDir(-1);
     setStepIndex(0);
@@ -294,10 +330,12 @@ export default function Contact() {
                     </div>
                   ))}
               </dl>
-              <p className="form__demo">
-                <span className="form__demo-dot" aria-hidden="true" />
-                {f.confirm.demo}
-              </p>
+              {delivered !== true && (
+                <p className="form__demo">
+                  <span className="form__demo-dot" aria-hidden="true" />
+                  {delivered === false ? f.confirm.failed : f.confirm.demo}
+                </p>
+              )}
               <div className="confirm__actions">
                 <button type="button" className="btn btn--ghost" onClick={() => reset(false)}>
                   {f.confirm.restart}
@@ -314,12 +352,15 @@ export default function Contact() {
               }}
               onKeyDown={onKeyDown}
               noValidate
-              aria-describedby={`${id}-demo`}
+              aria-describedby={ENDPOINT ? undefined : `${id}-demo`}
+              aria-busy={sending}
             >
-              <p className="form__demo" id={`${id}-demo`}>
-                <span className="form__demo-dot" aria-hidden="true" />
-                {f.demo}
-              </p>
+              {!ENDPOINT && (
+                <p className="form__demo" id={`${id}-demo`}>
+                  <span className="form__demo-dot" aria-hidden="true" />
+                  {f.demo}
+                </p>
+              )}
 
               <div className="flow__progress" role="progressbar" aria-valuemin={1} aria-valuemax={total} aria-valuenow={stepIndex + 1} aria-label={q.progress}>
                 <div className="flow__segs" aria-hidden="true">
@@ -359,8 +400,8 @@ export default function Contact() {
                   <span />
                 )}
                 {step === 'review' ? (
-                  <button type="submit" className="btn">
-                    {f.submit} <span className="btn__arrow" aria-hidden="true">→</span>
+                  <button type="submit" className="btn" disabled={sending}>
+                    {sending ? f.sending : f.submit} <span className="btn__arrow" aria-hidden="true">→</span>
                   </button>
                 ) : step !== 'formato' ? (
                   <span className="flow__next">
