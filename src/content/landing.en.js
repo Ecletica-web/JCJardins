@@ -173,9 +173,9 @@ export const locations = {
 };
 
 export const contact = {
-  kicker: 'Contact',
-  title: ['Begin *here.*'],
-  intro: 'A few lines about you. A reply follows to arrange the first conversation.',
+  kicker: 'The first round',
+  title: ['Become who', '*you were meant to be.*'],
+  intro: 'One conversation. Then the work begins.',
   goals: ['Learn boxing', 'Learn kickboxing', 'Get stronger', 'Improve fitness', 'Get back into training', 'Relieve stress'],
   availability: ['Early morning', 'Morning', 'Lunchtime', 'Late afternoon', 'Evening', 'Weekend'],
   formats: ['Individual', 'Duo', 'Group', 'Not sure yet'],

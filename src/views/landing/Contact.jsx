@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import SectionTitle from './SectionTitle.jsx';
+import Photo from '../../components/Photo.jsx';
 import { useContent } from '../../i18n.jsx';
 
 /* Enquiry flow — LOCAL DEMONSTRATION ONLY.
@@ -300,9 +301,14 @@ export default function Contact() {
 
   return (
     <section className="section contact on-dark" id="contacto" aria-labelledby="contacto-title">
+      <div className="contact__backdrop" aria-hidden="true">
+        <Photo image="tomasRingWide" ratio="auto" className="contact__bgphoto" sizes="100vw" eager decorative label={false} />
+      </div>
+      <div className="contact__shade" aria-hidden="true" />
       <div className="wrap contact__grid">
         <div className="contact__intro">
           <SectionTitle id="contacto-title" kicker={contact.kicker} lines={contact.title} />
+          {!started && !submitted && <p className="contact__line">{contact.intro}</p>}
         </div>
 
         <div className="contact__panel">
