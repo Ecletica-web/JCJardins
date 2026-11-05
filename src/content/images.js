@@ -73,7 +73,7 @@ export const images = {
     kind: 'reference',
     src: ref('ref-towel-rest.jpg'),
     alt: 'Homem a limpar o suor da cara com uma toalha, a recuperar o fôlego.',
-    focus: '50% 30%',
+    focus: '50% 12%',
     people: true,
     source: pexels(6455951),
     replaceWith: 'conditioningClient',

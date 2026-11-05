@@ -30,6 +30,7 @@ export const experience = {
       title: 'Technique',
       image: 'tomasCorrecting',
       video: 'real-bagwork',
+      focus: '50% 22%',
       text: 'The guard that never drops. The foot that turns before the hip. One detail at a time, until it no longer needs thinking.',
     },
     {
@@ -37,7 +38,7 @@ export const experience = {
       title: 'Pads',
       image: 'padsPines',
       video: 'real-padwork',
-      focus: '50% 60%',
+      focus: '50% 52%',
       text: 'A conversation without words. The hands across from you say where, when and how much. Repeat until it sounds right.',
     },
     {

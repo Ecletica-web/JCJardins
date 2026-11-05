@@ -9,7 +9,7 @@ export default function FirstSession() {
   return (
     <section className="first on-dark" id="primeira-sessao" aria-labelledby="primeira-title">
       <div className="stage stage--tall">
-        <Photo image="tomasKickGarden" ratio="auto" className="stage__photo parallax" sizes="100vw" eager focus="40% 30%" />
+        <Photo image="tomasKickGarden" ratio="auto" className="stage__photo parallax" sizes="100vw" eager focus="45% 14%" />
         <div className="stage__shade" aria-hidden="true" />
         <div className="stage__body wrap">
           <SectionTitle id="primeira-title" kicker={firstSession.kicker} lines={firstSession.title} />

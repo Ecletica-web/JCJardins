@@ -2510,3 +2510,68 @@
 
 /* Form button while a request is in flight */
 .btn:disabled { opacity: 0.55; cursor: progress; pointer-events: none; }
+
+/* ==========================================================================
+   Crops: gentler parallax so heads stay in frame on wide screens
+   ========================================================================== */
+@supports (animation-timeline: view()) {
+  @keyframes drift {
+    from {
+      transform: translateY(-3%) scale(1.06);
+    }
+    to {
+      transform: translateY(3%) scale(1.06);
+    }
+  }
+}
+
+/* Classes on phones: the details cover at most half the photo, in smaller
+   type, and scroll inside if they need more */
+@media (max-width: 63.99rem) {
+  .format .rcard .photo {
+    aspect-ratio: 4 / 5 !important;
+  }
+  .format .rcard__panel {
+    inset: auto 0 0 0;
+    max-height: 50%;
+    align-items: flex-start;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 1rem 1rem 3.6rem;
+    background: linear-gradient(to bottom, rgb(var(--shade) / 0.7) 0%, rgb(var(--shade) / 0.94) 22%, rgb(var(--shade) / 0.97) 100%);
+  }
+  .format .rcard__panel-inner {
+    gap: 0.45rem;
+    font-size: 0.88rem;
+    line-height: 1.42;
+  }
+  .format .rcard__panel-inner ul {
+    gap: 0.2rem;
+    margin-top: 0.35rem;
+  }
+  .format .rcard__panel-inner li::before {
+    width: 0.6rem;
+  }
+}
+
+/* Full-screen backdrops don't wipe open: a half-revealed photo under a
+   section reads as a bad crop. They simply fade in once, already in place. */
+.stage__photo > img,
+.stage__photo > .photo__grain,
+.stage__photo::after,
+.origin__photo > img,
+.origin__photo > .photo__grain,
+.origin__photo::after {
+  clip-path: inset(0) !important;
+}
+
+.stage__photo > img,
+.origin__photo > img {
+  opacity: 0;
+  transition: opacity 0.9s var(--ease-out), transform 1.4s var(--ease-out), filter var(--dur-med) var(--ease-out);
+}
+
+.stage__photo.is-loaded > img,
+.origin__photo.is-loaded > img {
+  opacity: 1;
+}

@@ -29,6 +29,7 @@ export const experience = {
       title: 'Técnica',
       image: 'tomasCorrecting',
       video: 'real-bagwork',
+      focus: '50% 22%',
       text: 'A guarda que não cai. O pé que roda antes da anca. Um detalhe de cada vez, até deixar de ser pensado.',
     },
     {
@@ -36,7 +37,7 @@ export const experience = {
       title: 'Pads',
       image: 'padsPines',
       video: 'real-padwork',
-      focus: '50% 60%',
+      focus: '50% 52%',
       text: 'Um diálogo sem palavras. As mãos do outro lado dizem onde, quando e quanto. Repetir até soar certo.',
     },
     {

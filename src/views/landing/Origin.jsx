@@ -75,7 +75,7 @@ export default function Origin() {
   return (
     <section className="origin on-dark" id="sobre" aria-labelledby="sobre-title">
       <div className="origin__stage">
-        <Photo image="tomasSplit" ratio="auto" className="origin__photo parallax" sizes="100vw" eager focus="42% 40%" />
+        <Photo image="tomasSplit" ratio="auto" className="origin__photo parallax" sizes="100vw" eager focus="42% 58%" />
         <div className="origin__shade" aria-hidden="true" />
 
         <div className="origin__over">
