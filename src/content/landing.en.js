@@ -17,7 +17,7 @@ export const hero = {
   headline: ['Boxing, kickboxing', 'and strength.', 'In private.'],
   support: 'Lisbon. At your pace, in a place we agree on.',
   primary: { label: 'Request a session', href: '#contacto' },
-  strip: ['Boxing', 'Kickboxing', 'Pads', 'Strength'],
+  strip: ['Boxing', 'Kickboxing', 'Pads', 'Strength', 'Conditioning', 'Technique', 'Footwork', 'Mobility', 'Private sessions', 'Duo', 'Small groups', 'At home', 'Outdoors', 'Lisbon'],
 };
 
 export const experience = {

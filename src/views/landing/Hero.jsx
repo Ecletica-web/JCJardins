@@ -1,5 +1,4 @@
 import Wordmark from '../../components/Wordmark.jsx';
-import Mark from '../../components/Mark.jsx';
 import Photo from '../../components/Photo.jsx';
 import Marquee from '../../components/Marquee.jsx';
 import { useContent } from '../../i18n.jsx';
@@ -16,7 +15,6 @@ export default function Hero() {
 
       <div className="hero__body">
         <div className="hero__mark">
-          <Mark className="hero__logo" />
           <Wordmark as="h1" layout="stacked" descriptor={ui.descriptor} letters />
           <p className="hero__tagline">{ui.tagline}</p>
         </div>

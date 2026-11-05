@@ -2879,3 +2879,115 @@
     padding-top: clamp(5rem, 10vh, 7rem);
   }
 }
+
+/* ==========================================================================
+   Intro: the mark alone in the centre, then it rises and the name unfolds
+   ========================================================================== */
+.intro {
+  --intro-fs: clamp(2.4rem, 9vw, 6rem);
+}
+.intro__logo {
+  opacity: 0;
+  animation: intro-logo 1.5s var(--ease-out) forwards;
+}
+@keyframes intro-logo {
+  0% {
+    opacity: 0;
+    transform: translateY(calc(var(--intro-fs) * 1.5)) scale(0.92);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(calc(var(--intro-fs) * 1.5)) scale(1);
+  }
+  62% {
+    transform: translateY(calc(var(--intro-fs) * 1.5));
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.intro .wordmark__ch,
+.intro .wordmark-lockup__descriptor {
+  animation-delay: calc(1.15s + var(--i) * 55ms);
+}
+.intro--out .intro__logo {
+  animation: none;
+  opacity: 0;
+  transform: translateY(-6vh);
+}
+
+/* header and footer: the mark alone */
+.site-header__logo {
+  height: 1.5rem;
+}
+.site-footer__logo {
+  height: clamp(2.6rem, 5vw, 4rem);
+}
+
+/* no copy on the clips */
+.first__clip-shade,
+.first__clip-over,
+.craft__close .feature__shade,
+.craft__close .feature__over {
+  display: none;
+}
+
+/* ==========================================================================
+   Origin on desktop: slider bottom right and fixed in place; the story
+   opens above the title row in smaller type and wraps around the slider
+   (paragraphs run full width above it, the credentials sit beside it)
+   ========================================================================== */
+@media (min-width: 64rem) {
+  .origin__stage,
+  .origin__over {
+    overflow-anchor: none;
+  }
+  .origin__slider {
+    justify-content: flex-end;
+  }
+  .origin__row .disc--over {
+    position: relative;
+  }
+  .origin__row .disc--over .disc__body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    z-index: 2;
+  }
+  .origin__row .disc--over .disc__inner {
+    --w: min(34rem, 36vw);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) calc(var(--w) + 2.5rem);
+    grid-template-rows: auto auto;
+    row-gap: var(--space-4);
+    align-content: end;
+    height: calc(100svh - 13rem);
+    overflow: auto;
+    overscroll-behavior: contain;
+    padding-bottom: var(--space-4);
+  }
+  .origin__row .story {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    max-width: none;
+  }
+  .origin__row .credentials {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+    min-height: calc(var(--w) * 0.667 + 0.7rem);
+    margin: 0;
+  }
+  .origin__row .story p {
+    font-size: calc(var(--fs-lead) * 0.8);
+  }
+  .origin__row .story p:first-child {
+    font-size: clamp(1.28rem, 2.1vw, 1.9rem);
+  }
+  .origin__row .credentials__list li,
+  .origin__row .credentials__title {
+    font-size: calc(var(--fs-body) * 0.8);
+  }
+}

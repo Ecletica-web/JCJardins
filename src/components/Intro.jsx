@@ -8,7 +8,7 @@ import { useContent } from '../i18n.jsx';
    motion. The page underneath is fully rendered the whole time. */
 
 const KEY = 'tq-intro-seen';
-const LENGTH = 1900;
+const LENGTH = 3000; // logo alone, then the name unfolds under it
 
 function shouldPlay() {
   try {

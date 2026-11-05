@@ -1,4 +1,3 @@
-import Wordmark from '../../components/Wordmark.jsx';
 import Mark from '../../components/Mark.jsx';
 import { useContent } from '../../i18n.jsx';
 
@@ -7,10 +6,7 @@ export default function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="wrap site-footer__grid">
-        <div className="site-footer__brand">
-          <Mark className="site-footer__logo" />
-          <Wordmark layout="stacked" className="site-footer__mark" />
-        </div>
+        <Mark className="site-footer__logo" label="Tomás Queiroz" />
         <div className="site-footer__info">
           <p>{footer.line}</p>
           <nav aria-label={ui.navFooter}>

@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import Wordmark from '../../components/Wordmark.jsx';
 import Mark from '../../components/Mark.jsx';
 import LangToggle from '../../components/LangToggle.jsx';
 import { useContent } from '../../i18n.jsx';
@@ -64,7 +63,6 @@ export default function SiteHeader() {
       <div className="site-header__bar wrap">
         <a className="site-header__home" href="#topo" aria-label={ui.home}>
           <Mark className="site-header__logo" />
-          <Wordmark layout="inline" />
         </a>
 
         <nav className="site-nav" aria-label={ui.navMain}>

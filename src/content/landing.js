@@ -16,7 +16,7 @@ export const hero = {
   headline: ['Boxe, kickboxing', 'e força.', 'Em privado.'],
   support: 'Lisboa. Ao teu ritmo, num lugar combinado.',
   primary: { label: 'Pedir uma sessão', href: '#contacto' },
-  strip: ['Boxe', 'Kickboxing', 'Pads', 'Força'],
+  strip: ['Boxe', 'Kickboxing', 'Pads', 'Força', 'Condicionamento', 'Técnica', 'Jogo de pernas', 'Mobilidade', 'Sessões privadas', 'Duo', 'Grupos pequenos', 'Em casa', 'Ao ar livre', 'Lisboa'],
 };
 
 export const experience = {

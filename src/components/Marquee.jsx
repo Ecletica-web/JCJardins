@@ -17,6 +17,8 @@ export default function Marquee({ items, label, className = '' }) {
       <div className="marquee__inner">
         {track(false)}
         {track(true)}
+        {track(true)}
+        {track(true)}
       </div>
     </div>
   );
